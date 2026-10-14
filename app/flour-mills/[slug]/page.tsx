@@ -141,27 +141,16 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
             </p>
 
             {product.keyHighlights && product.keyHighlights.length > 0 && (
-              ["wonder-mill", "atta-expert", "horizontal-mill", "iquadra-mill", "ultra-mini-horizontal-mill"].includes(product.id) ? (
-                <div className="flex flex-wrap gap-3 mb-10">
-                  {product.keyHighlights.map((tag, idx) => (
-                    <span
-                      key={idx}
-                      className={`px-4 py-2 ${tagColors[idx % tagColors.length]} text-white text-sm font-bold rounded-lg shadow-sm inline-flex items-center justify-center text-center`}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              ) : (
-                <div className="mb-8">
-                  <h3 className="text-lg font-bold text-[#0a4c2a] mb-4">Product highlights</h3>
-                  <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base text-slate-700">
-                    {product.keyHighlights.map((highlight, idx) => (
-                      <li key={idx} className="pl-1">{highlight}</li>
-                    ))}
-                  </ul>
-                </div>
-              )
+              <div className="flex flex-wrap gap-3 mb-10">
+                {product.keyHighlights.map((tag, idx) => (
+                  <span
+                    key={idx}
+                    className={`px-4 py-2 ${tagColors[idx % tagColors.length]} text-white text-sm font-bold rounded-lg shadow-sm inline-flex items-center justify-center text-center`}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             )}
 
             {product.technicalSpecs && Object.keys(product.technicalSpecs).length > 0 && (
@@ -309,7 +298,11 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                 const Icon = c.Icon;
 
                 return (
-                  <div key={idx} className="w-[74vw] max-w-[290px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col h-full">
+                  <div key={idx} className={`w-[78vw] max-w-[320px] md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none self-stretch bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col ${
+                    idx === product.coreCapabilities.length - 1 && product.coreCapabilities.length % 2 === 1 && product.coreCapabilities.length > 1
+                      ? "md:col-span-2 md:justify-self-center md:w-[calc(50%-12px)] lg:col-span-1 lg:w-auto lg:justify-self-stretch"
+                      : "md:w-auto"
+                  }`}>
                     <div className="flex items-center gap-4 mb-5">
                       <div className={`w-12 h-12 rounded-full flex items-center justify-center shrink-0 ${c.bg} ${c.text}`}>
                         <Icon className="w-6 h-6" />

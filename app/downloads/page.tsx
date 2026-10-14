@@ -18,8 +18,9 @@ import Footer from "@/components/Footer";
 import { 
   downloadCategories, 
   downloadsData, 
+  downloadGroups,
+  getDownloadGroup,
   DownloadItem, 
-  CategoryFilter 
 } from "./downloadsData";
 
 function CategoryIcon({ id, className = "w-4 h-4 shrink-0" }: { id: string; className?: string }) {
@@ -160,7 +161,15 @@ function DownloadsContent() {
     return downloadCategories.find((c) => c.id === activeCategory);
   }, [activeCategory]);
 
-  const activeCategoryLabel = activeCategory === "all" ? "All Resources" : activeCategoryObj?.name || "Resources";
+  // "All" view: grouped into 4 sections; a single category: one section
+  const sections = useMemo(() => {
+    if (activeCategory !== "all") {
+      return [{ title: activeCategoryObj?.name || "Resources", items: filteredItems }];
+    }
+    return downloadGroups
+      .map((title) => ({ title, items: filteredItems.filter((item) => getDownloadGroup(item) === title) }))
+      .filter((section) => section.items.length > 0);
+  }, [activeCategory, activeCategoryObj, filteredItems]);
 
   // Function to track and trigger download
   const handleDownload = (item: DownloadItem, e?: React.MouseEvent) => {
@@ -241,10 +250,10 @@ function DownloadsContent() {
 
       {/* Main 2-Column Layout */}
       <div className="w-full flex-1 border-t border-[#E2E8F0] relative px-6 sm:px-12 lg:px-16 xl:px-24 pt-32 sm:pt-36 md:pt-40 pb-16 sm:pb-20">
-        <div className="w-full min-h-screen grid grid-cols-1 lg:grid-cols-[250px_minmax(0,1fr)] xl:grid-cols-[270px_minmax(0,1fr)] gap-8 lg:gap-12 xl:gap-14">
+        <div className="w-full min-h-screen grid grid-cols-1 lg:grid-cols-[230px_minmax(0,1fr)] xl:grid-cols-[260px_minmax(0,1fr)] gap-8 lg:gap-10 xl:gap-14">
           
           {/* ================= DESKTOP SIDEBAR ================= */}
-          <aside className="hidden lg:flex flex-col justify-between bg-white border-r border-[#E2E8F0] pr-6 xl:pr-8 py-1 sticky top-[125px] h-[calc(100vh-150px)] overflow-hidden">
+          <aside className="hidden lg:flex flex-col justify-between bg-white border-r border-[#E2E8F0] pr-4 xl:pr-8 py-1 sticky top-[125px] h-[calc(100vh-150px)] overflow-hidden">
             <div className="flex flex-col min-h-0 flex-1">
               {/* Category Label */}
               <div className="px-3.5 mb-4 text-xs font-extrabold tracking-[0.14em] text-[#015435] select-none uppercase">
@@ -402,35 +411,30 @@ function DownloadsContent() {
               </div>
             </section>
 
-            {/* Search Input Bar */}
-            <div className="relative mb-7">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" />
-              <input
-                type="search"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search documents..."
-                aria-label="Search documents"
-                className="w-full h-13 pl-12 pr-10 bg-white border border-[#E2E8F0] rounded-xl text-base text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#0E3321] focus:ring-3 focus:ring-[#0E3321]/10 transition-all duration-200"
-              />
-              {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery("")}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1"
-                  aria-label="Clear search"
-                >
-                  <X className="w-4 h-4" />
-                </button>
-              )}
-            </div>
+            {/* Search & Sort Row */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-9">
+              <div className="relative flex-1">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" />
+                <input
+                  type="search"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search documents..."
+                  aria-label="Search documents"
+                  className="w-full h-12 pl-12 pr-10 bg-white border border-[#E2E8F0] rounded-xl text-[15px] text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#0E3321] focus:ring-3 focus:ring-[#0E3321]/10 transition-all duration-200"
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery("")}
+                    className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1"
+                    aria-label="Clear search"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                )}
+              </div>
 
-            {/* Section Heading & Sorting Row */}
-            <div className="flex items-center justify-between mb-5 pb-3 border-b border-slate-100">
-              <h2 className="text-lg sm:text-xl font-extrabold text-[#0E3321] tracking-tight">
-                {activeCategoryLabel}
-              </h2>
-
-              <div className="flex items-center gap-2">
+              <div className="h-12 flex items-center gap-2 px-3.5 bg-white border border-[#E2E8F0] rounded-xl self-start sm:self-auto">
                 <ArrowUpDown className="w-4 h-4 text-slate-500" />
                 <select
                   value={sortBy}
@@ -438,71 +442,83 @@ function DownloadsContent() {
                   aria-label="Sort resources"
                   className="bg-transparent text-sm text-slate-600 font-semibold outline-none cursor-pointer hover:text-slate-900 transition-colors py-1"
                 >
-                  <option value="default">Sort: Featured</option>
-                  <option value="az">Name: A to Z</option>
+                  <option value="default">Sort: Default</option>
+                  <option value="az">Sort: A to Z</option>
                 </select>
               </div>
             </div>
 
-            {/* Resource Cards Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5 sm:gap-6" aria-live="polite">
-              {filteredItems.map((item) => {
-                const isCardHighlighted = highlightedId === item.id;
-                return (
-                  <article
-                    key={item.id}
-                    id={`card-${item.id}`}
-                    onClick={() => handleDownload(item)}
-                    className={`bg-white border rounded-[16px] p-4 flex flex-col transition-all duration-300 hover:-translate-y-1.5 cursor-pointer group ${
-                      isCardHighlighted
-                        ? "border-[#FFAA17] ring-4 ring-[#FFAA17]/30 shadow-lg scale-[1.02]"
-                        : "border-[#E2E8F0] hover:border-[#0E3321]/30 hover:shadow-[0_20px_40px_rgba(9,39,26,0.12)]"
-                    }`}
-                  >
-                    {/* Cover Thumbnail */}
-                    <div className="h-[155px] sm:h-[165px] rounded-[12px] relative overflow-hidden mb-4 bg-[#F3F4F2]">
-                      <span className="absolute left-2.5 top-2.5 bg-white/95 backdrop-blur-sm border border-white/60 rounded-md px-2 py-0.5 text-[10px] font-extrabold tracking-wider text-[#0E3321] z-10 shadow-xs">
-                        {item.format}
-                      </span>
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                        loading="lazy"
-                      />
-                    </div>
+            {/* Resource Sections */}
+            <div className="space-y-12" aria-live="polite">
+              {sections.map((section) => (
+                <section key={section.title}>
+                  <div className="flex items-center justify-between mb-4 sm:mb-5 pb-2.5 border-b-[1.5px] border-slate-100">
+                    <h2 className="text-lg sm:text-xl font-extrabold text-[#0E3321] tracking-tight">
+                      {section.title}
+                    </h2>
+                    <span className="text-xs text-slate-400 font-semibold whitespace-nowrap">
+                      {section.items.length} {section.items.length === 1 ? "file" : "files"}
+                    </span>
+                  </div>
 
-                    {/* Card Content */}
-                    <h3 className="text-base sm:text-[17px] font-bold text-[#0F172A] leading-snug mb-2 line-clamp-1 group-hover:text-[#0E5A36] transition-colors" title={item.title}>
-                      {item.title}
-                    </h3>
+                  <div className="grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3 sm:gap-5">
+                    {section.items.map((item) => {
+                      const isCardHighlighted = highlightedId === item.id;
+                      return (
+                        <article
+                          key={item.id}
+                          id={`card-${item.id}`}
+                          onClick={() => handleDownload(item)}
+                          className={`bg-white border rounded-xl sm:rounded-[14px] p-2.5 sm:p-3.5 min-w-0 flex flex-col transition-all duration-300 hover:-translate-y-1.5 cursor-pointer group ${
+                            isCardHighlighted
+                              ? "border-[#FFAA17] ring-4 ring-[#FFAA17]/30 shadow-lg scale-[1.02]"
+                              : "border-[#E2E8F0] hover:border-[#0E3321]/20 hover:shadow-[0_16px_34px_rgba(9,39,26,0.11)]"
+                          }`}
+                        >
+                          {/* Cover Thumbnail */}
+                          <div className="w-full aspect-[481/281] rounded-lg sm:rounded-[10px] relative overflow-hidden mb-3 sm:mb-4 bg-[#F3F4F2]">
+                            <img
+                              src={item.image}
+                              alt={item.title}
+                              className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                              loading="lazy"
+                            />
+                          </div>
 
-                    <p className="text-xs sm:text-[13px] text-[#475569] leading-relaxed line-clamp-2 min-h-[38px] mb-2 font-normal">
-                      {item.desc}
-                    </p>
+                          {/* Card Content (full title & description, never truncated) */}
+                          <h3 className="text-[13px] sm:text-[15px] font-bold text-[#0F172A] leading-snug mb-1.5 group-hover:text-[#0E5A36] transition-colors">
+                            {item.title}
+                          </h3>
 
-                    {/* Card Bottom Meta & Download Button (Revealed on hover on desktop, always visible on mobile touch) */}
-                    <div className="mt-auto pt-3 border-t border-[#E2E8F0] flex items-center justify-between gap-2 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-200">
-                      <span className="text-xs text-[#64748B] font-semibold whitespace-nowrap">
-                        {item.format} · {item.size}
-                      </span>
+                          <p className="text-[11px] sm:text-[13px] text-[#475569] leading-relaxed mb-3 sm:mb-4 font-normal">
+                            {item.desc}
+                          </p>
 
-                      <button
-                        onClick={(e) => handleDownload(item, e)}
-                        className="inline-flex items-center gap-1.5 bg-[#0E5A36] hover:bg-[#176B43] text-white text-xs font-bold px-3.5 py-2 rounded-lg shadow-[0_4px_10px_rgba(14,90,54,0.14)] hover:shadow-[0_8px_18px_rgba(14,51,33,0.18)] hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer group/btn"
-                        title={`Download ${item.title}`}
-                      >
-                        <Download className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-y-0.5" />
-                        <span>Download</span>
-                      </button>
-                    </div>
-                  </article>
-                );
-              })}
+                          {/* Card Bottom: meta + download (always visible) */}
+                          <div className="mt-auto pt-2.5 sm:pt-3 border-t border-[#E2E8F0] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <span className="text-[10px] sm:text-xs text-[#94A3B8] font-semibold whitespace-nowrap">
+                              {item.format} · {item.size}
+                            </span>
+
+                            <button
+                              onClick={(e) => handleDownload(item, e)}
+                              className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 bg-[#0E5A36] hover:bg-[#176B43] text-white text-[11px] sm:text-xs font-bold px-3 py-2 rounded-lg shadow-[0_4px_10px_rgba(14,90,54,0.14)] hover:shadow-[0_8px_18px_rgba(14,51,33,0.18)] hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer group/btn"
+                              title={`Download ${item.title}`}
+                            >
+                              <Download className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-y-0.5" />
+                              <span>Download</span>
+                            </button>
+                          </div>
+                        </article>
+                      );
+                    })}
+                  </div>
+                </section>
+              ))}
 
               {/* Empty State */}
               {filteredItems.length === 0 && (
-                <div className="col-span-full py-16 px-6 text-center bg-white border border-dashed border-slate-300 rounded-xl text-slate-500 text-sm">
+                <div className="py-16 px-6 text-center bg-white border border-dashed border-slate-300 rounded-xl text-slate-500 text-sm">
                   <p className="font-semibold text-slate-700 mb-1">No documents found</p>
                   <p className="text-xs text-slate-500">
                     Try another search keyword or switch to another category.

@@ -33,7 +33,7 @@ export default function ContactPage() {
       <Header />
 
       {/* Hero Banner Section */}
-      <section className="relative w-full pt-32 sm:pt-36 pb-52 sm:pb-64 lg:pb-72 overflow-hidden flex flex-col items-center justify-center text-center">
+      <section className="relative w-full pt-28 sm:pt-36 pb-24 sm:pb-64 lg:pb-72 overflow-hidden flex flex-col items-center justify-center text-center">
         {/* Background Image */}
         <Image
           src="/images/contact/factory.png"
@@ -47,7 +47,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-black/45" />
 
         {/* Banner Text Content */}
-        <div className="relative z-10 px-6 sm:px-12 max-w-3xl mx-auto space-y-3 pb-6">
+        <div className="relative z-10 px-6 sm:px-12 max-w-3xl mx-auto space-y-2 sm:space-y-3 pb-4 sm:pb-6">
           <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-black text-white tracking-tight leading-tight font-heading">
             Contact us
           </h1>
@@ -59,11 +59,11 @@ export default function ContactPage() {
       </section>
 
       {/* Main Overlapping Card Section */}
-      <section className="relative z-20 w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto -mt-16 sm:-mt-20 lg:-mt-24 pb-20 sm:pb-28 flex-1">
-        <div className="w-full max-w-[1240px] mx-auto bg-white rounded-[28px] sm:rounded-[36px] shadow-2xl border border-slate-200/80 p-8 sm:p-12 lg:p-14">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+      <section className="relative z-20 w-full px-4 sm:px-12 lg:px-16 xl:px-24 mx-auto -mt-12 sm:-mt-20 lg:-mt-24 pb-12 sm:pb-28 flex-1">
+        <div className="w-full max-w-[1240px] mx-auto bg-white rounded-[24px] sm:rounded-[36px] shadow-2xl border border-slate-200/80 p-5 sm:p-12 lg:p-14">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-start">
             {/* Left Column: Contact Details & Map */}
-            <div className="lg:col-span-5 space-y-8">
+            <div className="lg:col-span-5 space-y-5 sm:space-y-8">
               <div>
                 <span className="text-xs sm:text-sm font-bold text-[#0E3321] tracking-wider block mb-1">
                   Contact
@@ -77,12 +77,12 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              {/* Contact Items */}
-              <div className="space-y-6">
+              {/* Contact Items (email & phone side by side on mobile) */}
+              <div className="grid grid-cols-1 gap-y-4 sm:gap-6">
                 {/* Corporate Headquarters */}
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
-                    <MapPin className="w-5 h-5 text-slate-900" />
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900" />
                   </div>
                   <div className="space-y-0.5">
                     <span className="text-[11px] font-bold text-slate-400 tracking-wider block">
@@ -96,9 +96,9 @@ export default function ContactPage() {
                 </div>
 
                 {/* Factory Unit */}
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
-                    <MapPin className="w-5 h-5 text-slate-900" />
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900" />
                   </div>
                   <div className="space-y-0.5">
                     <span className="text-[11px] font-bold text-slate-400 tracking-wider block">
@@ -112,17 +112,17 @@ export default function ContactPage() {
                 </div>
 
                 {/* Email */}
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
-                    <Mail className="w-5 h-5 text-slate-900" />
+                <div className="flex items-start gap-3 sm:gap-4 min-w-0">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                    <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900" />
                   </div>
-                  <div className="space-y-0.5">
+                  <div className="space-y-0.5 min-w-0">
                     <span className="text-[11px] font-bold text-slate-400 tracking-wider block">
                       Email
                     </span>
                     <a
                       href="mailto:info@rschoyalgroup.com"
-                      className="text-sm font-semibold text-slate-800 hover:text-[#0E3321] transition-colors block leading-snug"
+                      className="text-[13px] sm:text-sm font-semibold text-slate-800 hover:text-[#0E3321] transition-colors block leading-snug break-words"
                     >
                       info@rschoyalgroup.com
                     </a>
@@ -130,9 +130,9 @@ export default function ContactPage() {
                 </div>
 
                 {/* Phone */}
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
-                    <Phone className="w-5 h-5 text-slate-900" />
+                <div className="flex items-start gap-3 sm:gap-4 min-w-0">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900" />
                   </div>
                   <div className="space-y-0.5">
                     <span className="text-[11px] font-bold text-slate-400 tracking-wider block">
@@ -140,7 +140,7 @@ export default function ContactPage() {
                     </span>
                     <a
                       href="tel:+919240289259"
-                      className="text-sm font-semibold text-slate-800 hover:text-[#0E3321] transition-colors block leading-snug"
+                      className="text-[13px] sm:text-sm font-semibold text-slate-800 hover:text-[#0E3321] transition-colors block leading-snug whitespace-nowrap"
                     >
                       +91 9240289259
                     </a>
@@ -149,7 +149,7 @@ export default function ContactPage() {
               </div>
 
               {/* Map Embed Box */}
-              <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm mt-8">
+              <div className="relative w-full aspect-[16/9] sm:aspect-[16/10] rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm sm:mt-8">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1121.2328852168694!2d74.5342179!3d26.3016254!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39696185f6ccf15b%3A0x3c82ebb0ad52417e!2sChoyal!5e1!3m2!1sen!2sin!4v1790678363898!5m2!1sen!2sin"
                   width="100%"
@@ -174,7 +174,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right Column: Enquiry Form */}
-            <div className="lg:col-span-7 space-y-6 lg:pl-6">
+            <div className="lg:col-span-7 space-y-4 sm:space-y-6 lg:pl-6">
               <div>
                 <span className="text-xs sm:text-sm font-bold text-[#0E3321] tracking-wider block mb-1">
                   Enquiry
@@ -190,10 +190,10 @@ export default function ContactPage() {
 
               <form
                 onSubmit={handleSubmit}
-                className="space-y-4 sm:space-y-5 pt-2"
+                className="space-y-3.5 sm:space-y-5 sm:pt-2"
               >
                 {/* Row 1: Name & Company */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                <div className="grid grid-cols-2 gap-3 sm:gap-5">
                   <div className="space-y-1.5">
                     <label className="text-xs font-bold text-slate-700 block">
                       Name
@@ -226,7 +226,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Row 2: Email & Phone */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                <div className="grid grid-cols-2 gap-3 sm:gap-5">
                   <div className="space-y-1.5">
                     <label className="text-xs font-bold text-slate-700 block">
                       Email
@@ -298,7 +298,7 @@ export default function ContactPage() {
                     Message
                   </label>
                   <textarea
-                    rows={5}
+                    rows={4}
                     value={formData.message}
                     onChange={(e) =>
                       setFormData({ ...formData, message: e.target.value })
@@ -312,7 +312,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold py-4 rounded-xl shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all duration-200 text-sm sm:text-base cursor-pointer hover:scale-[1.005] active:scale-[0.99] disabled:opacity-70 flex items-center justify-center gap-2"
+                  className="w-full bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold py-3.5 sm:py-4 rounded-xl shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all duration-200 text-sm sm:text-base cursor-pointer hover:scale-[1.005] active:scale-[0.99] disabled:opacity-70 flex items-center justify-center gap-2"
                 >
                   <span>{isSubmitting ? "Sending..." : "Send message"}</span>
                 </button>

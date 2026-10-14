@@ -78,8 +78,10 @@ export const projectsData: ProjectItem[] = [
     "capacity": "40 TPD Atta Plant",
     "projectType": "Flour milling plant",
     "commissioned": "",
+    "heroDesktop": "/images/projects/case_studies/bakhresa-group/bakhresa-desktop.png",
+    "heroMobile": "/images/projects/case_studies/bakhresa-group/bakhresa-mobile.png",
     "images": [
-      "/images/projects/case_studies/bakhresa-group/mainimg.jpg"
+      "/images/projects/case_studies/bakhresa-group/bakhresa-desktop.png"
     ],
     "content": [
       {

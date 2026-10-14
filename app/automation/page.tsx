@@ -263,7 +263,7 @@ export default function AutomationPage() {
           </p>
         </div>
 
-        <div className="flex lg:grid lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 overflow-x-auto lg:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 lg:pb-0">
+        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
           {[
             {
               title: "Digital plant",
@@ -284,11 +284,11 @@ export default function AutomationPage() {
               icon: Database
             }
           ].map((service, idx) => (
-            <div key={idx} className="w-[74vw] max-w-[290px] lg:w-full lg:max-w-none shrink-0 lg:shrink snap-start lg:snap-align-none bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col xl:flex-row group hover:shadow-md transition-shadow h-full">
+            <div key={idx} className={`w-[78vw] max-w-[320px] md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none self-stretch bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col xl:flex-row group hover:shadow-md transition-shadow ${idx === 2 ? "md:col-span-2 md:justify-self-center md:w-[calc(50%-12px)] lg:col-span-1 lg:w-full lg:justify-self-stretch" : "md:w-full"}`}>
               <div className="relative min-h-[200px] xl:min-h-[160px] xl:w-[60%] flex-shrink-0 overflow-hidden">
                 <Image src={service.img} alt={service.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <div className="p-4 xl:p-5 xl:w-[40%] flex flex-col justify-center">
+              <div className="p-4 sm:p-5 xl:w-[40%] flex flex-col justify-start xl:justify-center flex-1">
                 <div className="w-8 h-8 bg-[#0B1510]/10 text-[#0B1510] rounded-full flex items-center justify-center mb-3 flex-shrink-0">
                   <service.icon className="w-4 h-4" />
                 </div>
@@ -297,7 +297,7 @@ export default function AutomationPage() {
               </div>
             </div>
           ))}
-          <div className="w-4 shrink-0 lg:hidden" aria-hidden="true" />
+          <div className="w-4 shrink-0 md:hidden" aria-hidden="true" />
         </div>
       </section>
 
@@ -322,7 +322,7 @@ export default function AutomationPage() {
               </div>
             </div>
 
-            <div className="relative z-10 shrink-0">
+            <div className="relative z-10 shrink-0 flex justify-center md:justify-start lg:justify-end">
               <Link 
                 href="/contact" 
                 className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap"

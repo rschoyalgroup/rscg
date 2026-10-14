@@ -37,7 +37,7 @@ export default function GrainStorageHandlingPage() {
 
 
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-foreground font-sans">
+    <div className="min-h-screen bg-white text-brand-foreground font-sans">
       <Header />
 
       {/* Hero Banner Section - Standardized responsive hero */}
@@ -226,29 +226,29 @@ export default function GrainStorageHandlingPage() {
       </section>
 
       {/* Detailed Silo Solutions CTA Section */}
-      <section className="w-full py-20 px-6 sm:px-12 lg:px-16 xl:px-24 bg-slate-50 relative z-10">
-        <div className="w-full bg-white rounded-[2rem] border border-slate-200 shadow-xl overflow-hidden flex flex-col">
+      <section className="w-full py-12 sm:py-20 px-4 sm:px-12 lg:px-16 xl:px-24 bg-slate-50 relative z-10">
+        <div className="w-full bg-white rounded-3xl sm:rounded-[2rem] border border-slate-200 shadow-xl overflow-hidden flex flex-col">
           
           {/* Top Main Content Area */}
-          <div className="flex flex-col lg:flex-row items-stretch">
+          <div className="flex flex-col xl:flex-row items-stretch">
             
             {/* Left Content */}
-            <div className="flex-1 flex flex-col justify-center space-y-8 p-8 lg:p-16">
+            <div className="flex-1 flex flex-col justify-center space-y-6 sm:space-y-8 p-6 sm:p-10 xl:p-16">
               <div className="space-y-4">
                 <div className="flex items-center gap-3 text-sm font-bold text-[#eab308] tracking-widest">
                   <span className="w-10 h-[3px] bg-[#eab308]"></span>
                   Silo solutions
                 </div>
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black text-[#0a3118] leading-[1.1] tracking-tight">
-                  Let’s design the right<br className="hidden lg:block"/>silo for your plant.
+                <h2 className="text-3xl sm:text-5xl xl:text-6xl font-heading font-black text-[#0a3118] leading-[1.1] tracking-tight">
+                  Let’s design the right<br className="hidden xl:block"/> silo for your plant.
                 </h2>
-                <p className="text-slate-600 font-medium leading-relaxed max-w-xl text-lg">
+                <p className="text-slate-600 font-medium leading-relaxed max-w-xl text-base sm:text-lg">
                   From capacity planning to layout, materials and integration - our experts help you build efficient, future-ready storage systems.
                 </p>
               </div>
 
               {/* 4 Features Row */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-slate-100">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-6 sm:gap-6 pt-6 border-t border-slate-100">
                 <div className="space-y-3">
                   <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center text-slate-700">
                     <Headset className="w-6 h-6" />
@@ -281,7 +281,7 @@ export default function GrainStorageHandlingPage() {
             </div>
 
             {/* Right Image */}
-            <div className="flex-1 relative min-h-[300px] lg:min-h-[500px] overflow-hidden bg-[#f4f2eb]">
+            <div className="flex-1 relative min-h-[260px] sm:min-h-[380px] xl:min-h-[500px] overflow-hidden bg-[#f4f2eb]">
               <Image
                 src="/images/silos/silo_cta_image.png"
                 alt="Silo Solutions Design"
@@ -292,19 +292,19 @@ export default function GrainStorageHandlingPage() {
           </div>
 
           {/* Bottom Contact Strip */}
-          <div className="flex flex-col lg:flex-row border-t border-slate-200 bg-slate-50">
+          <div className="flex flex-col xl:flex-row border-t border-slate-200 bg-slate-50">
             {/* Dark Green CTA box */}
-            <div className="bg-[#0a3118] p-8 lg:p-10 flex flex-col sm:flex-row items-start sm:items-center gap-6 lg:w-[45%] rounded-br-[4rem] lg:rounded-br-[0] lg:rounded-tr-[4rem] relative overflow-hidden">
+            <div className="bg-[#0a3118] p-6 sm:p-8 xl:p-10 flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6 xl:w-[45%] rounded-br-[2.5rem] sm:rounded-br-[4rem] xl:rounded-br-[0] xl:rounded-tr-[4rem] relative overflow-hidden">
                <div className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center flex-shrink-0 text-white z-10">
                  <Phone className="w-6 h-6" />
                </div>
-               <div className="z-10">
+               <div className="z-10 w-full sm:w-auto">
                  <h3 className="text-white font-heading font-extrabold text-xl lg:text-2xl mb-4">
-                   Ready to discuss your<br/>silo requirements?
+                   Ready to discuss your<br className="hidden sm:block"/> silo requirements?
                  </h3>
                  <Link 
                    href="/contact"
-                   className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap"
+                   className="flex sm:inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-6 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap"
                  >
                    <span>Discuss your requirement</span>
                    <ArrowRight className="w-4 h-4" />
@@ -316,32 +316,32 @@ export default function GrainStorageHandlingPage() {
             </div>
 
             {/* Quick Contact Info */}
-            <div className="flex-1 bg-slate-50 p-8 lg:p-10 flex flex-col sm:flex-row items-start sm:items-center justify-around gap-6 sm:gap-8">
-               <div className="flex items-center gap-4">
+            <div className="flex-1 bg-slate-50 p-6 sm:p-8 xl:p-10 grid grid-cols-1 sm:grid-cols-3 items-center gap-5 sm:gap-6">
+               <div className="flex items-center gap-4 min-w-0">
                  <div className="w-12 h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-700 shrink-0">
                    <Phone className="w-5 h-5" />
                  </div>
-                 <div>
+                 <div className="min-w-0">
                    <p className="text-xs text-slate-500 font-bold tracking-wider">Call us</p>
                    <p className="text-sm font-extrabold text-[#0a3118]">+91 91161 44665</p>
                  </div>
                </div>
                
-               <div className="flex items-center gap-4">
+               <div className="flex items-center gap-4 min-w-0">
                  <div className="w-12 h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-700 shrink-0">
                    <Mail className="w-5 h-5" />
                  </div>
-                 <div>
+                 <div className="min-w-0">
                    <p className="text-xs text-slate-500 font-bold tracking-wider">Email us</p>
-                   <p className="text-sm font-extrabold text-[#0a3118]">info@rschoyalgroup.com</p>
+                   <p className="text-sm font-extrabold text-[#0a3118] break-all">info@rschoyalgroup.com</p>
                  </div>
                </div>
                
-               <div className="flex items-center gap-4">
+               <div className="flex items-center gap-4 min-w-0">
                  <div className="w-12 h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-700 shrink-0">
                    <MessageCircle className="w-5 h-5" />
                  </div>
-                 <div>
+                 <div className="min-w-0">
                    <p className="text-xs text-slate-500 font-bold tracking-wider">Chat on WhatsApp</p>
                    <p className="text-sm font-extrabold text-[#0a3118]">+91 91161 44665</p>
                  </div>

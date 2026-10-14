@@ -150,13 +150,19 @@ export default function EmeryStones() {
                   className="object-contain max-h-full max-w-full group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-3.5 sm:p-6 text-center">
+              <div className="p-3.5 sm:p-6 text-center flex-1 flex flex-col">
                 <h3 className="text-sm sm:text-xl font-heading font-extrabold text-slate-800 group-hover:text-brand-primary transition-colors leading-snug">
                   Horizontal emery stones - Daniya type
                 </h3>
                 <p className="text-xs text-slate-400 mt-1.5 sm:mt-2 font-medium leading-relaxed">
                   Designed and manufactured with premium abrasives to maintain natural wheat aroma & taste.
                 </p>
+                <span className="mt-auto pt-3 sm:pt-5 block">
+                  <span className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg sm:rounded-xl bg-brand-primary group-hover:bg-[#0a4c2a] text-white text-xs sm:text-sm font-bold py-2 sm:py-2.5 transition-colors">
+                    View product
+                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-0.5 transition-transform" />
+                  </span>
+                </span>
               </div>
             </Link>
 
@@ -172,13 +178,19 @@ export default function EmeryStones() {
                   className="object-contain max-h-full max-w-full group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-3.5 sm:p-6 text-center">
+              <div className="p-3.5 sm:p-6 text-center flex-1 flex flex-col">
                 <h3 className="text-sm sm:text-xl font-heading font-extrabold text-slate-800 group-hover:text-brand-primary transition-colors leading-snug">
                   Horizontal emery stones - Agate/sheller type
                 </h3>
                 <p className="text-xs text-slate-400 mt-1.5 sm:mt-2 font-medium leading-relaxed">
                   Agate shelling stones optimized for de-husking, pulse splitting, and industrial mill pre-cleaning.
                 </p>
+                <span className="mt-auto pt-3 sm:pt-5 block">
+                  <span className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg sm:rounded-xl bg-brand-primary group-hover:bg-[#0a4c2a] text-white text-xs sm:text-sm font-bold py-2 sm:py-2.5 transition-colors">
+                    View product
+                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-0.5 transition-transform" />
+                  </span>
+                </span>
               </div>
             </Link>
 
@@ -194,7 +206,7 @@ export default function EmeryStones() {
                   className="object-contain max-h-full max-w-full group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-3.5 sm:p-6 text-center flex flex-col h-full justify-between">
+              <div className="p-3.5 sm:p-6 text-center flex-1 flex flex-col">
                 <div>
                   <h3 className="text-sm sm:text-xl font-heading font-extrabold text-slate-800 group-hover:text-brand-primary transition-colors leading-snug">
                     Emery stone dresser
@@ -203,6 +215,12 @@ export default function EmeryStones() {
                     Engineered to restore and maintain the cutting profile of emery stones for consistent performance.
                   </p>
                 </div>
+                <span className="mt-auto pt-3 sm:pt-5 block">
+                  <span className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg sm:rounded-xl bg-brand-primary group-hover:bg-[#0a4c2a] text-white text-xs sm:text-sm font-bold py-2 sm:py-2.5 transition-colors">
+                    View product
+                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-0.5 transition-transform" />
+                  </span>
+                </span>
               </div>
             </Link>
           </div>

@@ -37,15 +37,15 @@ export default function MillingSolutionsSection() {
       num: "01",
       heading: "Stone milling is our foundation.",
       desc: "Choyal built its expertise in emery stones, milling geometry, grain flow and grinding conditions, understanding the fundamentals that shape flour quality and milling performance.",
-      img: "/images/stone-milling/emery-stones-v2.png",
-      alt: "Emery stones milling foundation",
+      img: "/images/stone-milling/stone-foundation-v3.png",
+      alt: "Early Choyal stone mill - the foundation of stone milling",
       href: "/emery-stones"
     },
     {
       num: "02",
       heading: "Innovation brought stone milling into the digital age.",
       desc: "The expertise led to WonderMill, the world's first digital stone mill, combining traditional stone milling with digital control, automation and intelligent monitoring.",
-      img: "/images/stone-milling/digital-era-v2.png",
+      img: "/images/stone-milling/digital-era-v3.png",
       alt: "Digital stone mill innovation",
       href: "/flour-mills"
     },
@@ -153,7 +153,7 @@ export default function MillingSolutionsSection() {
           }}
         >
           <Image
-            src="/images/stone-milling/stone-milling-section-bg.png"
+            src="/images/stone-milling/stone-milling-section-bg-v2.png"
             alt="Traditional Stone Millstone Assembly"
             fill
             className="object-contain object-center drop-shadow-[0_20px_40px_rgba(0,0,0,0.08)]"
@@ -345,14 +345,9 @@ export default function MillingSolutionsSection() {
                 className="w-[74vw] max-w-[290px] sm:w-full sm:max-w-none shrink-0 sm:shrink snap-start sm:snap-align-none group relative bg-white rounded-2xl p-5 sm:p-7 border border-[#E2E8F0] shadow-sm hover:shadow-md hover:border-[#FFAA17]/60 transition-all flex flex-col justify-between overflow-hidden"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs sm:text-sm font-bold text-[#FFAA17] tracking-[0.08em]">
-                      {feat.num}
-                    </span>
-                    <div className="w-9 h-9 rounded-full flex items-center justify-center border border-[#8fb89d]/70 text-[#0E3321] group-hover:bg-[#F3F8F5] group-hover:border-[#0E3321] transition-all">
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                    </div>
-                  </div>
+                  <span className="block mb-3 text-xs sm:text-sm font-bold text-[#FFAA17] tracking-[0.08em]">
+                    {feat.num}
+                  </span>
 
                   <h4 className="text-xl sm:text-[22px] font-bold text-[#0F172A] tracking-tight leading-[1.25] mb-2.5">
                     {feat.heading}
@@ -363,15 +358,24 @@ export default function MillingSolutionsSection() {
                   </p>
                 </div>
 
-                {/* Mobile Image Strip */}
-                <div className="w-full h-44 sm:h-48 rounded-xl overflow-hidden relative bg-[#F3F4F2] shadow-inner mt-auto">
-                  <Image
-                    src={feat.img}
-                    alt={feat.alt}
-                    fill
-                    className="object-cover object-center group-hover:scale-102 transition-transform duration-500"
-                    sizes="(max-width: 640px) 85vw, 400px"
-                  />
+                {/* Mobile Image (square, shown in full) */}
+                <div className="mt-auto">
+                  <div className="w-full aspect-square rounded-xl overflow-hidden relative bg-[#F3F4F2] shadow-inner">
+                    <Image
+                      src={feat.img}
+                      alt={feat.alt}
+                      fill
+                      className="object-cover object-center group-hover:scale-102 transition-transform duration-500"
+                      sizes="(max-width: 640px) 85vw, 400px"
+                    />
+                  </div>
+
+                  {/* Arrow below the image */}
+                  <div className="flex justify-end mt-4">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center border border-[#8fb89d]/70 text-[#0E3321] group-hover:bg-[#F3F8F5] group-hover:border-[#0E3321] transition-all">
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                    </div>
+                  </div>
                 </div>
               </Link>
             ))}

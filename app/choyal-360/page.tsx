@@ -38,8 +38,8 @@ const coreServices = [
   {
     title: "Design & engineering",
     desc: "Plant layouts, technical detailing, system planning, and engineering coordination.",
-    iconPath: "/images/services/grain360/new_icons/our core services/design_and_engineering-removebg-previe.png",
-    iconBg: "bg-[#E8F1F5]"
+    iconPath: "/images/services/grain360/new_icons/our core services/design_and_engineering-green.png",
+    iconBg: "bg-[#EAF3EA]"
   },
   {
     title: "Licensing & certifications",
@@ -62,8 +62,8 @@ const coreServices = [
   {
     title: "Technology upgradation",
     desc: "Modernization of existing plants with improved systems, automation, and digital capabilities.",
-    iconPath: "/images/services/grain360/new_icons/our core services/technology_upgrade.png",
-    iconBg: "bg-[#E8F1F5]"
+    iconPath: "/images/services/grain360/new_icons/our core services/technology_upgrade-green.png",
+    iconBg: "bg-[#EAF3EA]"
   }
 ];
 

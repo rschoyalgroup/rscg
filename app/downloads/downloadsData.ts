@@ -22,7 +22,7 @@ export const downloadCategories: CategoryFilter[] = [
   { id: "all", name: "All Downloads", iconName: "LayoutGrid" },
   { id: "about-company", name: "About Company", iconName: "Building2" },
   { id: "turnkey-projects", name: "Turnkey Projects", iconName: "Factory" },
-  { id: "training", name: "Training", iconName: "GraduationCap" },
+  { id: "training", name: "Training and Knowledge", iconName: "GraduationCap" },
   { id: "digital-flour-mill", name: "Digital Flour Mill", iconName: "Cpu" },
   { id: "semi-automatic-flour-mill", name: "Semi Automatic Flour Mill", iconName: "Cog" },
   { id: "horizontal-flour-mill", name: "Horizontal Flour Mill", iconName: "Sliders" },
@@ -33,6 +33,21 @@ export const downloadCategories: CategoryFilter[] = [
   { id: "automatic-machines", name: "Automatic Machines", iconName: "Bot" },
   { id: "semi-automatic-machines", name: "Semi Automatic Machines", iconName: "Wrench" },
 ];
+
+// "All Downloads" view is grouped into these 4 sections (in this order)
+export const downloadGroups = [
+  "About Company",
+  "Turnkey Projects",
+  "Training and Knowledge",
+  "Machines and Technology",
+] as const;
+
+export function getDownloadGroup(item: DownloadItem): (typeof downloadGroups)[number] {
+  if (item.category === "about-company") return "About Company";
+  if (item.category === "turnkey-projects") return "Turnkey Projects";
+  if (item.category === "training") return "Training and Knowledge";
+  return "Machines and Technology";
+}
 
 export const downloadsData: DownloadItem[] = [
   // 1. About Company
@@ -161,7 +176,7 @@ export const downloadsData: DownloadItem[] = [
     id: "charge",
     title: "CHARGE",
     category: "training",
-    categoryLabel: "Training",
+    categoryLabel: "Training and Knowledge",
     desc: "CHARGE training resource and programme information.",
     format: "PDF",
     size: "2.9 MB",

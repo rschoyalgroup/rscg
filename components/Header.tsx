@@ -93,7 +93,7 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
     { name: "Power Saving", desc: "iQuadra smart mills and energy-efficient conveying systems.", href: "/power-saving", icon: Zap, imgIcon: "/navbar-icons/power_saving.png" },
     { name: "Grain Storage & Handling", desc: "Heavy-duty steel silos, load cells, and distribution networks.", href: "/grain-storage-handling", icon: Database, imgIcon: "/navbar-icons/grain_storage.png" },
     { name: "Grain Processing", desc: "High-efficiency scourers, polishers, and entoletors.", href: "/grain-processing", icon: Filter, imgIcon: "/navbar-icons/grain_process.png" },
-    { name: "Flour Processing", desc: "Engineered flour processing solutions.", href: "/flour-processing", icon: Workflow, imgIcon: "/navbar-icons/flourprocess.png" },
+    { name: "Flour Processing", desc: "Engineered flour processing solutions.", href: "/flour-processing", icon: Workflow, imgIcon: "/navbar-icons/flourprocess-v2.png" },
     { name: "Vending Machines", desc: "Floura fresh stone-ground flour on-demand vending machines.", href: "/vending-machines", icon: ShoppingBag, imgIcon: "/navbar-icons/vending_machine.png" },
     { name: "Books", desc: "Industry-standard guides and publications by RS Choyal.", href: "/books", icon: BookOpen, imgIcon: "/navbar-icons/book.png" },
   ];
@@ -396,37 +396,26 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
             id="mobile-submenu-container"
             className="lg:hidden relative border-t border-slate-100 px-4 sm:px-6 py-1.5 bg-slate-50/70 flex items-center justify-between"
           >
-            <div className="flex items-center gap-2 min-w-0">
-              <span className="text-[10px] font-black text-slate-400 uppercase tracking-wider shrink-0">Section:</span>
-              <button
-                type="button"
-                onClick={() => {
-                  setMobileSubmenuOpen(!mobileSubmenuOpen);
-                  if (!mobileSubmenuOpen) setMobileMenuOpen(false);
-                }}
-                className="inline-flex items-center gap-1.5 bg-white border border-slate-200/90 shadow-2xs hover:border-brand-primary/40 px-3 py-1 rounded-full text-xs font-bold text-brand-primary cursor-pointer transition-all active:scale-95 min-w-0"
-                aria-label="Toggle section selector"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-                <span className="truncate max-w-[170px] sm:max-w-[240px]">
-                  {submenu.items.find((i) => i.id === submenu.activeId)?.label || submenu.items[0]?.label || "Jump to section"}
-                </span>
-                <ChevronDown className={`w-3.5 h-3.5 text-slate-500 transition-transform duration-200 shrink-0 ${mobileSubmenuOpen ? "rotate-180" : ""}`} />
-              </button>
-            </div>
-
-            <span className="text-[10px] font-semibold text-slate-400 shrink-0 ml-2">
-              {(() => {
-                const idx = submenu.items.findIndex((i) => i.id === submenu.activeId);
-                return idx >= 0 ? `${idx + 1} of ${submenu.items.length}` : "";
-              })()}
-            </span>
+            <button
+              type="button"
+              onClick={() => {
+                setMobileSubmenuOpen(!mobileSubmenuOpen);
+                if (!mobileSubmenuOpen) setMobileMenuOpen(false);
+              }}
+              className="w-full flex items-center justify-between gap-2 bg-white border border-slate-200/90 shadow-2xs hover:border-brand-primary/40 px-3.5 py-1.5 rounded-full text-[13px] font-bold text-brand-primary cursor-pointer transition-all active:scale-[0.99] min-w-0"
+              aria-label="Toggle section selector"
+            >
+              <span className="truncate">
+                {submenu.items.find((i) => i.id === submenu.activeId)?.label || submenu.items[0]?.label || "Jump to section"}
+              </span>
+              <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ${mobileSubmenuOpen ? "rotate-180" : ""}`} />
+            </button>
 
             {/* Mobile Submenu Dropdown Popover */}
             {mobileSubmenuOpen && (
               <div className="absolute top-full left-0 right-0 bg-white border-b border-x border-slate-200 shadow-xl rounded-b-xl z-50 p-2 max-h-64 overflow-y-auto animate-fade-in">
                 <div className="flex flex-col gap-0.5">
-                  {submenu.items.map((item, idx) => {
+                  {submenu.items.map((item) => {
                     const isActive = submenu.activeId === item.id;
                     return (
                       <button
@@ -442,12 +431,7 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
                             : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                         }`}
                       >
-                        <span className="flex items-center gap-2">
-                          <span className={`text-[10px] font-mono ${isActive ? "text-white/80" : "text-slate-400"}`}>
-                            0{idx + 1}
-                          </span>
-                          <span>{item.label}</span>
-                        </span>
+                        <span>{item.label}</span>
                         {isActive && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
                       </button>
                     );

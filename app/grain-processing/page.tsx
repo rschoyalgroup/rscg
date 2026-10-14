@@ -64,7 +64,7 @@ export default function GrainProcessingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-foreground font-sans">
+    <div className="min-h-screen bg-white text-brand-foreground font-sans">
       <Header />
 
       {/* Hero Section - Standardized responsive hero */}

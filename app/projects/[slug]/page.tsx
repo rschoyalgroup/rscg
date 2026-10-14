@@ -58,7 +58,7 @@ export default function ProjectDetailPage() {
         <Header />
 
         {/* Hero Section - Matches exact aspect ratio so images are never cut off */}
-        <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] flex items-center overflow-hidden bg-[#0B1510]">
+        <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] md:min-h-[480px] flex items-center overflow-hidden bg-[#0B1510]">
            {/* Project background image (Desktop & Mobile) */}
            <div className="absolute inset-0 w-full h-full">
              <img 
@@ -78,7 +78,7 @@ export default function ProjectDetailPage() {
            <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/60 via-[#0B1510]/20 to-transparent z-10" />
 
            {/* Hero content */}
-           <div className="relative z-20 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
+           <div className="relative z-20 w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-24 pb-12 sm:pb-14">
              <div className="max-w-2xl space-y-3 sm:space-y-4">
                <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] tracking-widest">
                  <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
@@ -99,52 +99,32 @@ export default function ProjectDetailPage() {
            </div>
         </section>
 
-        {/* Quick Facts Bar - straddles hero boundary 50/50 */}
-        <div className="relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 sm:p-8">
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-slate-100">
-               <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left px-4 gap-4">
-                  <div className="bg-slate-50 p-3 rounded-full flex-shrink-0">
-                    <Factory className="w-5 h-5 text-brand-primary" />
+        {/* Quick Facts Bar - slight overlap with hero (never covers hero text) */}
+        <div className="relative z-30 -mt-10 sm:-mt-12 lg:-mt-14 w-full mx-auto px-4 sm:px-12 lg:px-16 xl:px-24">
+          <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-slate-100 p-4 sm:p-6 lg:p-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-4 sm:gap-6 lg:gap-0 lg:divide-x lg:divide-slate-100">
+              {[
+                { label: "Client", value: currentProject.client, Icon: Factory },
+                { label: "Location", value: currentProject.location, Icon: MapPin },
+                { label: "Plant capacity", value: currentProject.capacity, Icon: Factory },
+                { label: "Project type", value: currentProject.projectType, Icon: Box },
+              ].map(({ label, value, Icon }) => (
+                <div key={label} className="flex flex-row items-start text-left gap-2.5 sm:gap-4 lg:px-4 min-w-0">
+                  <div className="bg-slate-50 p-2 sm:p-3 rounded-full flex-shrink-0">
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-brand-primary" />
                   </div>
-                  <div className="flex flex-col">
-                    <span className="text-[10px] font-bold text-slate-400 tracking-wider mb-1">Client</span>
-                    <span className="text-[13px] font-black text-slate-800 leading-snug">{currentProject.client || "N/A"}</span>
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-[10px] font-bold text-slate-400 tracking-wider mb-0.5 sm:mb-1">{label}</span>
+                    <span className="text-[12px] sm:text-[13px] font-black text-slate-800 leading-snug break-words">{value || "N/A"}</span>
                   </div>
-               </div>
-               <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left px-4 gap-4">
-                  <div className="bg-slate-50 p-3 rounded-full flex-shrink-0">
-                    <MapPin className="w-5 h-5 text-brand-primary" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-[10px] font-bold text-slate-400 tracking-wider mb-1">Location</span>
-                    <span className="text-[13px] font-black text-slate-800 leading-snug">{currentProject.location || "N/A"}</span>
-                  </div>
-               </div>
-               <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left px-4 gap-4">
-                  <div className="bg-slate-50 p-3 rounded-full flex-shrink-0">
-                    <Factory className="w-5 h-5 text-brand-primary" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-[10px] font-bold text-slate-400 tracking-wider mb-1">Plant capacity</span>
-                    <span className="text-[13px] font-black text-slate-800 leading-snug">{currentProject.capacity || "N/A"}</span>
-                  </div>
-               </div>
-               <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left px-4 gap-4">
-                  <div className="bg-slate-50 p-3 rounded-full flex-shrink-0">
-                    <Box className="w-5 h-5 text-brand-primary" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-[10px] font-bold text-slate-400 tracking-wider mb-1">Project type</span>
-                    <span className="text-[13px] font-black text-slate-800 leading-snug">{currentProject.projectType || "N/A"}</span>
-                  </div>
-               </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
         {/* Project Overview */}
-        <section className="w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 pt-4 sm:pt-6 lg:pt-12 pb-16 lg:pb-24 -mt-8 sm:-mt-10 lg:-mt-12">
+        <section className="w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 pt-10 sm:pt-12 lg:pt-16 pb-16 lg:pb-24">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-16">
              <div className="space-y-6 lg:order-1 order-2">
                 <div className="mb-8">

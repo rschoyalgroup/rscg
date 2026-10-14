@@ -10,7 +10,7 @@ const aboutLinks = [
   { name: "Our philosophy", href: "/about#philosophy" },
   { name: "R&D and innovation", href: "/about#research-development" },
   { name: "Social responsibility", href: "/about#social-responsibility" },
-  { name: "Why RSC", href: "/about#why-rsc" },
+  { name: "Why RSCG", href: "/about#why-rsc" },
   { name: "Our network", href: "/about#network" },
 ];
 

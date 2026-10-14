@@ -134,7 +134,7 @@ export default function TurnkeyProjects() {
       title: "Carr's Flour",
       desc: "40 TPD atta plant",
       location: "United Kingdom",
-      image: "/images/projects/case_studies/thumbnails/carr_flourmill.jpg",
+      image: "/images/projects/case_studies/carrs-flour/carr-flour-desktop.png",
       logo: "/images/projects/case_studies/logos/carr_flour_mill.png",
       slug: "carrs-flour"
     },
@@ -142,7 +142,7 @@ export default function TurnkeyProjects() {
       title: "Al Ghurair Foods",
       desc: "120 TPD atta plant",
       location: "Dubai, UAE",
-      image: "/images/projects/case_studies/thumbnails/Alghuriar.jpg",
+      image: "/images/projects/case_studies/al-ghurair-foods/al-ghurair-desktop.png",
       logo: "/images/projects/case_studies/logos/al_ghurair.png",
       slug: "al-ghurair-foods"
     },
@@ -150,7 +150,7 @@ export default function TurnkeyProjects() {
       title: "Bakhresa Group",
       desc: "40 TPD atta plant",
       location: "Tanzania, East Africa",
-      image: "/images/projects/case_studies/thumbnails/bakhresa.jpg",
+      image: "/images/projects/case_studies/bakhresa-group/bakhresa-desktop.png",
       logo: "/images/projects/case_studies/logos/bakhresa.png",
       slug: "bakhresa-group"
     },
@@ -158,7 +158,7 @@ export default function TurnkeyProjects() {
       title: "Winnie's pure health",
       desc: "40 TPD atta plant",
       location: "Kenya, East Africa",
-      image: "/images/projects/case_studies/thumbnails/winnie_pure_health.jpg",
+      image: "/images/projects/case_studies/winnies-pure-health/winnie-desktop.png",
       logo: "/images/projects/case_studies/logos/winnie_pure_health.png",
       slug: "winnies-pure-health"
     }
@@ -394,9 +394,9 @@ export default function TurnkeyProjects() {
               <Link 
                 key={idx} 
                 href={`/projects/${proj.slug}`}
-                className="w-[74vw] max-w-[290px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none group flex flex-col sm:flex-row bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300"
+                className="w-[74vw] max-w-[290px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none group flex flex-col xl:flex-row bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300"
               >
-                <div className="sm:w-[40%] h-48 sm:h-auto relative overflow-hidden bg-slate-100 flex-shrink-0">
+                <div className="xl:w-[40%] h-48 sm:h-64 md:h-60 xl:h-auto relative overflow-hidden bg-slate-100 flex-shrink-0">
                   <Image 
                     src={proj.image} 
                     alt={proj.title} 
@@ -404,7 +404,7 @@ export default function TurnkeyProjects() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500" 
                   />
                 </div>
-                <div className="p-6 sm:p-8 flex flex-col justify-between flex-1">
+                <div className="p-6 sm:p-7 xl:p-8 flex flex-col justify-between flex-1">
                   <div className="space-y-4">
                     <div>
                       <h3 className="text-lg sm:text-xl font-black text-slate-800 leading-tight mb-2">

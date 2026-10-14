@@ -26,7 +26,7 @@ export default function NewsDetailPage() {
 
   if (!currentPost) {
     return (
-      <div className="min-h-screen bg-brand-bg text-slate-800 flex flex-col justify-between">
+      <div className="min-h-screen bg-white text-slate-800 flex flex-col justify-between">
         <div>
           <Header />
           <div className="flex-1 flex flex-col items-center justify-center p-16 space-y-4 max-w-lg mx-auto text-center">
@@ -47,16 +47,16 @@ export default function NewsDetailPage() {
   const otherNews = newsData.filter((post) => post.slug !== slug);
 
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-foreground font-sans flex flex-col justify-between">
+    <div className="min-h-screen bg-white text-brand-foreground font-sans flex flex-col justify-between">
       <div>
         <Header />
 
         {/* Article Body Section */}
         <section className="w-full pt-28 sm:pt-32 md:pt-36 pb-16 px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="flex flex-col lg:grid lg:grid-cols-10 gap-8 lg:gap-12">
+          <div className="flex flex-col lg:grid lg:grid-cols-10 gap-8 lg:gap-x-12 xl:gap-x-16 lg:gap-y-8">
             
             {/* Title (Mobile: Top, Desktop: Left Col Row 1 - 60%) */}
-            <div className="lg:col-span-6 lg:col-start-1 lg:row-start-1">
+            <div className="lg:col-span-5 lg:col-start-1 lg:row-start-1">
               <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">
                 <Calendar className="w-3.5 h-3.5 text-brand-primary" />
                 <span>{currentPost.displayDate || formatDate(currentPost.date)}</span>
@@ -67,9 +67,9 @@ export default function NewsDetailPage() {
               <div className="w-12 h-[3px] bg-[#D3994B] mt-5" />
             </div>
 
-            {/* Featured Image (Mobile: Middle, Desktop: Right Col Row 1 & 2 - 40%) */}
+            {/* Featured Image (Mobile: Middle, Desktop: Right Col Row 1 & 2 - 50%) */}
             {currentPost.images.length > 0 && (
-              <div className="lg:col-span-4 lg:col-start-7 lg:row-start-1 lg:row-span-2">
+              <div className="lg:col-span-5 lg:col-start-6 lg:row-start-1 lg:row-span-2">
                 <div className="rounded-[24px] overflow-hidden bg-slate-100 relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] shadow-md border border-slate-200/60 lg:sticky lg:top-36">
                   <img
                     src={currentPost.images[0].local_path}
@@ -80,8 +80,8 @@ export default function NewsDetailPage() {
               </div>
             )}
 
-            {/* Structured Content Block (Mobile: Bottom, Desktop: Left Col Row 2 - 60%) */}
-            <div className="lg:col-span-6 lg:col-start-1 lg:row-start-2">
+            {/* Structured Content Block (Mobile: Bottom, Desktop: Left Col Row 2 - 50%) */}
+            <div className="lg:col-span-5 lg:col-start-1 lg:row-start-2">
               <div className="space-y-6 pt-4 lg:pt-0">
                 {currentPost.content.map((block, idx) => {
                   if (block.type === 'heading') {

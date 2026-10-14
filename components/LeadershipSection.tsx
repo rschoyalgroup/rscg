@@ -67,7 +67,11 @@ export default function LeadershipSection() {
           {leaders.map((leader, idx) => (
             <div
               key={idx}
-              className="w-[74vw] max-w-[290px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white border border-slate-200/80 rounded-2xl overflow-hidden flex flex-col justify-between shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
+              className={`w-[74vw] max-w-[290px] md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none ${
+                idx === leaders.length - 1 && leaders.length % 2 === 1
+                  ? "md:col-span-2 md:justify-self-center md:w-[calc(50%-14px)] lg:col-span-1 lg:w-auto lg:justify-self-stretch"
+                  : "md:w-auto"
+              } bg-white border border-slate-200/80 rounded-2xl overflow-hidden flex flex-col justify-between shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group`}
             >
               <div>
                 {/* Portrait - Natural True Size without Cropping */}

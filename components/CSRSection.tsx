@@ -82,8 +82,12 @@ export default function CSRSection() {
                     setActiveCard(isActive ? null : idx);
                   }
                 }}
-                className={`w-[74vw] max-w-[290px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none relative h-[410px] sm:h-[430px] rounded-2xl bg-white border border-slate-200/90 overflow-hidden cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-slate-300 hover:shadow-[0_16px_36px_rgba(15,23,42,0.12)] hover:-translate-y-1.5 transition-all duration-300 group focus:outline-hidden focus:ring-2 focus:ring-[#0E3321]/20 ${
+                className={`w-[74vw] max-w-[290px] md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none relative h-[410px] sm:h-[430px] rounded-2xl bg-white border border-slate-200/90 overflow-hidden cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-slate-300 hover:shadow-[0_16px_36px_rgba(15,23,42,0.12)] hover:-translate-y-1.5 transition-all duration-300 group focus:outline-hidden focus:ring-2 focus:ring-[#0E3321]/20 ${
                   isActive ? "border-slate-300 shadow-[0_16px_36px_rgba(15,23,42,0.12)] -translate-y-1.5" : ""
+                } ${
+                  idx === csrInitiatives.length - 1 && csrInitiatives.length % 2 === 1
+                    ? "md:col-span-2 md:justify-self-center md:w-[calc(50%-14px)] lg:col-span-1 lg:w-auto lg:justify-self-stretch"
+                    : "md:w-auto"
                 }`}
               >
                 {/* Logo Graphic Layer (Clean off-white backdrop) */}

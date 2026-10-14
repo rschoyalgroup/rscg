@@ -128,7 +128,7 @@ const domesticClients: ClientPartner[] = [
   { name: "Bardana Traders", src: "/images/clients/client-logo-international/35.png" },
   { name: "Simran Agritech", src: "/images/clients/client-logo-international/36.png" },
   { name: "Samastipur", src: "/images/clients/client-logo-international/38.png" },
-  { name: "TWF", src: "/images/clients/client-logo-international/39.png" },
+  { name: "TWF", src: "/images/clients/client-logo-international/39-twf.png" },
   { name: "Hi-Tech Organic Food", src: "/images/clients/client-logo-international/40.png" },
   { name: "Vedic Arotech", src: "/images/clients/client-logo-international/41.png" },
   { name: "PB", src: "/images/clients/client-logo-international/43.png" },
@@ -344,7 +344,7 @@ function WhyRSCGOrbital() {
   const scaledHeight = scale !== null ? Math.round(710 * scale) : undefined;
 
   return (
-    <div ref={containerRef} className="hidden lg:flex items-center justify-center lg:justify-end w-full">
+    <div ref={containerRef} className="hidden md:flex items-center justify-center lg:justify-end w-full">
       <div 
         style={
           scaledWidth && scaledHeight 
@@ -712,9 +712,9 @@ export default function Home() {
 
         {/* Content Container */}
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto">
-          <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-end justify-between">
+          <div className="w-full grid grid-cols-1 xl:grid-cols-12 gap-8 xl:gap-10 items-end justify-between">
             {/* Left Column: Heading with Rotating Text & Subtitle */}
-            <div className="lg:col-span-7 xl:col-span-7 space-y-4 sm:space-y-5 text-left">
+            <div className="xl:col-span-7 space-y-4 sm:space-y-5 text-left">
               <h1 className="text-3xl sm:text-5xl lg:text-[54px] xl:text-[62px] font-black text-white tracking-tight leading-[1.12] font-heading drop-shadow-md">
                 <span className="block text-white">We bring precision to</span>
                 <span className="block h-[1.28em] relative overflow-hidden mt-1 sm:mt-1.5">
@@ -737,8 +737,8 @@ export default function Home() {
             </div>
 
             {/* Right Column: 3 Glassmorphism Stat Cards */}
-            <div className="lg:col-span-5 xl:col-span-5 flex lg:justify-end pb-1">
-              <div className="grid grid-cols-3 gap-3 sm:gap-4 w-full sm:w-auto">
+            <div className="xl:col-span-5 flex xl:justify-end pb-1">
+              <div className="grid grid-cols-3 gap-3 sm:gap-4 w-full sm:w-auto sm:max-w-[520px] xl:max-w-none">
                 {[
                   { number: "60+", label: "Years of experience" },
                   { number: "275+", label: "Turnkey solutions delivered" },
@@ -746,7 +746,7 @@ export default function Home() {
                 ].map((card, idx) => (
                   <div
                     key={idx}
-                    className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 lg:p-6 shadow-2xl flex flex-col justify-center min-w-[95px] sm:min-w-[130px] lg:min-w-[145px] hover:bg-white/15 transition-all duration-300"
+                    className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 lg:p-6 shadow-2xl flex flex-col justify-center min-w-0 sm:min-w-[130px] xl:min-w-[145px] hover:bg-white/15 transition-all duration-300"
                   >
                     <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-black text-[#f7b032] tracking-tight leading-none mb-1.5 sm:mb-2 drop-shadow-xs">
                       {card.number}
@@ -1052,8 +1052,8 @@ export default function Home() {
             {/* Desktop Orbital Diagram (visible lg and up) */}
             <WhyRSCGOrbital />
 
-            {/* Mobile / Tablet View (grid format for optimal responsiveness) */}
-            <div className="block lg:hidden w-full space-y-6">
+            {/* Mobile View (stacked cards; tablets use the orbital diagram) */}
+            <div className="block md:hidden w-full space-y-6">
               <div className="flex justify-center">
                 <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#FFFDF8] via-[#FFF9ED] to-[#FEF3C7] border-2 border-amber-200 shadow-md flex flex-col items-center justify-center text-center">
                   <span className="text-slate-900 font-extrabold text-xs tracking-[0.2em]">
@@ -1062,7 +1062,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex sm:grid sm:grid-cols-2 gap-4 sm:gap-6 pt-6 pb-2 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 scroll-pl-6 sm:scroll-pl-0">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-6">
                 {[
                   {
                     icon: "/images/why-rscg-section/icons/trust.png",
@@ -1092,7 +1092,7 @@ export default function Home() {
                 ].map((item, idx) => (
                   <div 
                     key={idx} 
-                    className={`w-[72vw] max-w-[280px] sm:w-auto sm:max-w-none shrink-0 sm:shrink snap-start sm:snap-align-none relative bg-white rounded-2xl pt-7 pb-4 px-4 shadow-sm border border-amber-100/70 text-center flex flex-col items-center ${
+                    className={`relative bg-white rounded-2xl pt-7 pb-4 px-4 shadow-sm border border-amber-100/70 text-center flex flex-col items-center ${
                       idx === 4 ? "sm:col-span-2 sm:max-w-xs sm:mx-auto" : ""
                     }`}
                   >
@@ -1103,7 +1103,6 @@ export default function Home() {
                     <p className="text-slate-600 text-xs sm:text-[12.5px] leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
-                <div className="w-2 shrink-0 sm:hidden" aria-hidden="true" />
               </div>
             </div>
 
@@ -1134,7 +1133,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-7">
             
             {/* Left Tall Feature Card: Carr's Flour */}
-            <div className="relative rounded-[28px] sm:rounded-[32px] overflow-hidden group shadow-lg min-h-[460px] sm:min-h-[520px] lg:min-h-[580px] xl:min-h-[640px] flex flex-col justify-between p-6 sm:p-8 bg-slate-900 border border-slate-100">
+            <div className="relative rounded-[28px] sm:rounded-[32px] overflow-hidden group shadow-lg min-h-[300px] sm:min-h-[360px] lg:min-h-[580px] xl:min-h-[640px] flex flex-col justify-between p-6 sm:p-7 lg:p-8 bg-slate-900 border border-slate-100">
               <Image 
                 src="/images/turnkey-section/carrs-flour-mill.png" 
                 alt="Carr's Flour" 
@@ -1154,14 +1153,14 @@ export default function Home() {
               </div>
 
               {/* Bottom Content */}
-              <div className="relative z-20 space-y-4 pt-12">
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              <div className="relative z-20 space-y-3 lg:space-y-4 pt-6 lg:pt-12">
+                <h3 className="text-xl sm:text-2xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
                   Carr's Flour
                 </h3>
                 <div>
                   <Link 
                     href="/projects/carrs-flour" 
-                    className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-6 py-3 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer group/btn"
+                    className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-5 py-2.5 lg:px-6 lg:py-3 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs lg:text-sm uppercase tracking-wide cursor-pointer group/btn"
                   >
                     <span>EXPLORE PROJECT</span>
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5" />
@@ -1174,7 +1173,7 @@ export default function Home() {
             <div className="flex flex-col gap-6 lg:gap-7 h-full">
               
               {/* Card 1: Al Ghurair Foods */}
-              <div className="relative rounded-[28px] sm:rounded-[32px] overflow-hidden group shadow-lg min-h-[220px] sm:min-h-[245px] lg:min-h-[275px] flex-1 flex flex-col justify-between p-6 sm:p-7 bg-slate-900 border border-slate-100">
+              <div className="relative rounded-[28px] sm:rounded-[32px] overflow-hidden group shadow-lg min-h-[300px] sm:min-h-[360px] lg:min-h-[275px] flex-1 flex flex-col justify-between p-6 sm:p-7 bg-slate-900 border border-slate-100">
                 <Image 
                   src="/images/turnkey-section/al-ghurair.png" 
                   alt="Al Ghurair Foods" 
@@ -1210,7 +1209,7 @@ export default function Home() {
               </div>
 
               {/* Card 2: Patanjali Foods */}
-              <div className="relative rounded-[28px] sm:rounded-[32px] overflow-hidden group shadow-lg min-h-[220px] sm:min-h-[245px] lg:min-h-[275px] flex-1 flex flex-col justify-between p-6 sm:p-7 bg-slate-900 border border-slate-100">
+              <div className="relative rounded-[28px] sm:rounded-[32px] overflow-hidden group shadow-lg min-h-[300px] sm:min-h-[360px] lg:min-h-[275px] flex-1 flex flex-col justify-between p-6 sm:p-7 bg-slate-900 border border-slate-100">
                 <Image 
                   src="/images/turnkey-section/patanjali-foods.png" 
                   alt="Patanjali Foods" 
@@ -1379,11 +1378,11 @@ export default function Home() {
           <div className="lg:col-span-7 space-y-6 sm:space-y-8">
             <div className="space-y-3">
               <span className="text-sm sm:text-base font-bold text-[#015435] tracking-wide block">
-                Frequently Asked Questions
+                Frequently asked questions
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-[44px] xl:text-[48px] font-extrabold tracking-tight text-[#1c2722] leading-[1.15]">
-                Building the Future of Milling:{" "}
-                <span className="text-amber-500 block sm:inline">Every Query Answered</span>
+                Building the future of milling:{" "}
+                <span className="text-amber-500 block sm:inline">every query answered</span>
               </h2>
             </div>
 

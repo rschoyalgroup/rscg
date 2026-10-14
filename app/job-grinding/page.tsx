@@ -307,10 +307,10 @@ export default function JobGrindingPage() {
               {timelineSteps.map((step, idx) => {
                 const isLeft = idx % 2 === 0;
                 return (
-                  <div key={idx} className="relative flex items-center md:justify-between w-full">
+                  <div key={idx} className="relative flex items-start md:justify-between w-full">
                     
-                    {/* Circle Number Badge */}
-                    <div className="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 flex items-center justify-center">
+                    {/* Circle Number Badge (centred on the step's title connector line) */}
+                    <div className="absolute left-6 md:left-1/2 top-[9px] md:top-[13px] -translate-x-1/2 z-20 flex items-center justify-center">
                       <div className="w-12 h-12 rounded-full border-2 border-slate-300 bg-white flex items-center justify-center shadow-xs">
                         <div className="w-8 h-8 rounded-full bg-[#133020] text-white flex items-center justify-center font-heading font-bold text-sm">
                           {step.number}
@@ -322,7 +322,7 @@ export default function JobGrindingPage() {
                     <div className={`hidden md:block w-1/2 pr-10 lg:pr-14 ${isLeft ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
                       {isLeft && (
                         <div className="w-full flex flex-col items-start">
-                          <h4 className="font-heading font-black text-[#133020] text-base sm:text-lg tracking-wide mb-1 pl-4">
+                          <h4 className="font-heading font-black text-[#133020] text-lg leading-7 tracking-wide mb-1 pl-4">
                             {step.title}
                           </h4>
                           <div className="flex items-center w-full my-1">
@@ -340,7 +340,7 @@ export default function JobGrindingPage() {
                     <div className={`hidden md:block w-1/2 pl-10 lg:pl-14 ${!isLeft ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
                       {!isLeft && (
                         <div className="w-full flex flex-col items-start">
-                          <h4 className="font-heading font-black text-[#133020] text-base sm:text-lg tracking-wide mb-1">
+                          <h4 className="font-heading font-black text-[#133020] text-lg leading-7 tracking-wide mb-1">
                             {step.title}
                           </h4>
                           <div className="flex items-center w-full my-1">
@@ -356,7 +356,7 @@ export default function JobGrindingPage() {
 
                     {/* Mobile View (All steps on right of spine) */}
                     <div className="block md:hidden w-full pl-16 pr-2">
-                      <h4 className="font-heading font-black text-[#133020] text-base tracking-wide mb-1">
+                      <h4 className="font-heading font-black text-[#133020] text-base leading-6 tracking-wide mb-1">
                         {step.title}
                       </h4>
                       <div className="flex items-center w-full my-1">

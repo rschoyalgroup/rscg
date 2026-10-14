@@ -226,7 +226,7 @@ export default function ConsultancyPage() {
 
         {/* Why Work With Us Banner */}
         <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pb-16">
-          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[24px] sm:rounded-[28px] p-8 sm:p-12 lg:p-14 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-10 border border-white/10 relative overflow-hidden">
+          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[24px] sm:rounded-[28px] px-5 py-8 sm:p-12 lg:p-14 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10 border border-white/10 relative overflow-hidden">
             {/* Background Texture matching Homepage CTA */}
             <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
 
@@ -239,31 +239,21 @@ export default function ConsultancyPage() {
               </p>
             </div>
             
-            <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-3 gap-7 sm:gap-4 w-full sm:divide-x divide-white/20 relative z-10">
-              <div className="flex flex-col items-center text-center px-4">
-                <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#f7b032] font-heading">
-                  60+
-                </span>
-                <span className="text-white text-sm sm:text-base font-semibold mt-2 leading-snug">
-                  Years milling and engineering experience
-                </span>
-              </div>
-              <div className="flex flex-col items-center text-center px-4">
-                <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#f7b032] font-heading">
-                  25+
-                </span>
-                <span className="text-white text-sm sm:text-base font-semibold mt-2 leading-snug">
-                  Countries international market exposure
-                </span>
-              </div>
-              <div className="flex flex-col items-center text-center px-4">
-                <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#f7b032] font-heading">
-                  200+
-                </span>
-                <span className="text-white text-sm sm:text-base font-semibold mt-2 leading-snug">
-                  Projects plants delivered
-                </span>
-              </div>
+            <div className="lg:w-1/2 grid grid-cols-3 gap-2 sm:gap-4 w-full divide-x divide-white/20 relative z-10">
+              {[
+                { value: "60+", label: "Years milling and engineering experience" },
+                { value: "25+", label: "Countries international market exposure" },
+                { value: "275+", label: "Turnkey projects delivered" },
+              ].map((stat) => (
+                <div key={stat.value} className="flex flex-col items-center text-center px-1.5 sm:px-4">
+                  <span className="text-[26px] sm:text-5xl lg:text-6xl font-black text-[#f7b032] font-heading leading-none">
+                    {stat.value}
+                  </span>
+                  <span className="text-white text-[11.5px] sm:text-base font-semibold mt-2 leading-snug">
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </section>

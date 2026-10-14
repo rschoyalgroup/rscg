@@ -56,7 +56,7 @@ export default function BookDetailPage({ params }: { params: Promise<{ slug: str
         <div className="flex flex-col lg:flex-row lg:items-start w-full min-h-[85vh]">
           
           {/* Left Column (Book Visualization) */}
-          <div className="w-full lg:w-1/2 lg:sticky lg:top-28 self-start flex items-center justify-center p-6 sm:p-8 lg:px-12 lg:pt-0 lg:pb-6">
+          <div className="w-full lg:w-1/2 lg:sticky lg:top-28 self-start flex flex-col items-center justify-center p-6 sm:p-8 lg:px-12 lg:pt-0 lg:pb-6">
             
             {/* Book Display Container */}
             <div className="relative z-10 w-full max-w-xl mx-auto flex items-center justify-center">
@@ -69,6 +69,25 @@ export default function BookDetailPage({ params }: { params: Promise<{ slug: str
                 />
               </div>
             </div>
+
+            {/* Book Versions (directly below the main book image) */}
+            {initialBook.variants && initialBook.variants.length > 0 && (
+              <div className="w-full flex justify-center gap-4 pt-5 sm:pt-6">
+                {initialBook.variants.map((variant, idx) => (
+                  <button
+                    type="button"
+                    key={idx}
+                    onClick={() => setActiveVariantIndex(idx)}
+                    className={`cursor-pointer flex flex-col items-center gap-2 p-2 rounded-xl border-2 transition-all w-24 sm:w-28 ${activeVariantIndex === idx ? 'border-[#1A3A29] bg-white shadow-md scale-105' : 'border-transparent hover:bg-slate-100 hover:scale-105 opacity-70 hover:opacity-100'}`}
+                  >
+                    <div className="w-full aspect-[3/4] relative bg-white shadow-sm rounded-md overflow-hidden">
+                      <Image src={variant.image} alt={variant.label} fill className="object-cover" />
+                    </div>
+                    <span className={`text-xs font-bold text-center ${activeVariantIndex === idx ? 'text-[#1A3A29]' : 'text-slate-600'}`}>{variant.label}</span>
+                  </button>
+                ))}
+              </div>
+            )}
             
           </div>
 
@@ -114,33 +133,16 @@ export default function BookDetailPage({ params }: { params: Promise<{ slug: str
                 />
               </div>
 
-              {initialBook.variants && initialBook.variants.length > 0 && (
-                <div className="pt-2 flex gap-4">
-                  {initialBook.variants.map((variant, idx) => (
-                    <div 
-                      key={idx}
-                      onClick={() => setActiveVariantIndex(idx)}
-                      className={`cursor-pointer flex flex-col items-center gap-2 p-2 rounded-xl border-2 transition-all w-32 ${activeVariantIndex === idx ? 'border-[#1A3A29] bg-white shadow-md scale-105' : 'border-transparent hover:bg-slate-100 hover:scale-105 opacity-70 hover:opacity-100'}`}
-                    >
-                      <div className="w-full aspect-[3/4] relative bg-white shadow-sm rounded-md overflow-hidden">
-                        <Image src={variant.image} alt={variant.label} fill className="object-cover" />
-                      </div>
-                      <span className={`text-xs font-bold text-center ${activeVariantIndex === idx ? 'text-[#1A3A29]' : 'text-slate-600'}`}>{variant.label}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
-
               <div className="pt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 {initialBook.comingSoon ? (
-                  <button disabled className="h-12 flex-1 w-full bg-slate-200 text-slate-500 font-bold px-6 sm:px-8 rounded-lg cursor-not-allowed">
+                  <button disabled className="h-12 min-h-12 shrink-0 sm:flex-1 w-full bg-slate-200 text-slate-500 font-bold px-6 sm:px-8 rounded-lg cursor-not-allowed">
                     Coming soon
                   </button>
                 ) : (
                   <>
                     <button
                       onClick={handleAddToQuote}
-                      className="h-12 flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
+                      className="h-12 min-h-12 shrink-0 sm:flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
                     >
                       <PackageCheck className="w-4 h-4 text-slate-900" />
                       {addedMessage ? "Added to quote!" : "Add to quote"}
