@@ -48,9 +48,11 @@ interface HeaderProps {
     activeId?: string;
     onItemClick: (id: string) => void;
   };
+  /** Show the Choyal Grinding Solution logo next to the RS Choyal Group logo */
+  showGroupCompanyLogo?: boolean;
 }
 
-export default function Header({ onRequestCallback, submenu }: HeaderProps) {
+export default function Header({ onRequestCallback, submenu, showGroupCompanyLogo }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(false);
   
@@ -137,6 +139,16 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
                 className="h-[40px] sm:h-[48px] lg:h-[44px] xl:h-[54px] w-auto object-contain"
               />
             </Link>
+            {showGroupCompanyLogo && (
+              <>
+                <span className="h-7 sm:h-9 w-px bg-slate-200 mx-2.5 sm:mx-3.5 lg:mx-2.5 xl:mx-4" aria-hidden="true" />
+                <img
+                  src="/choyal-grinding-solution-logo.png"
+                  alt="Choyal Grinding Solution Logo"
+                  className="h-[20px] sm:h-[26px] lg:h-[22px] xl:h-[28px] w-auto object-contain"
+                />
+              </>
+            )}
           </div>
 
         {/* Desktop Navigation */}

@@ -8,6 +8,8 @@ export interface Milestone {
   title: string;
   description: string;
   image: string;
+  /** CSS object-position for the cropped frame (defaults to centre) */
+  imagePosition?: string;
 }
 
 const milestones: Milestone[] = [
@@ -38,6 +40,7 @@ const milestones: Milestone[] = [
     description:
       "We set up our first manufacturing unit at Saradhana in Ajmer under our Pvt. Ltd. company, marking a key milestone in our industrial footprint.",
     image: "/images/about/timeline/Journey/1978.png",
+    imagePosition: "50% 0%", // keep the faces along the top of the photo in frame
   },
   {
     year: "2000",
@@ -80,6 +83,7 @@ const milestones: Milestone[] = [
     description:
       "Introduced a smart digital grinder designed to make fresh, nutrient-dense flour easily accessible across community touchpoints.",
     image: "/images/about/timeline/Journey/2021.png",
+    imagePosition: "50% 0%",
   },
   {
     year: "2025",
@@ -329,6 +333,20 @@ export default function JourneyTimeline() {
         .animate-pure-fade-in {
           animation: pureFadeIn 0.8s ease-in-out forwards;
         }
+
+        /* Short desktop screens (e.g. 1280x720 laptops): tighten the heading so the pinned stage fits the viewport */
+        @media (min-width: 1024px) and (max-height: 800px) {
+          .journey-head {
+            margin-bottom: 0.5rem !important;
+          }
+          .journey-head h2 {
+            font-size: 28px !important;
+            margin-bottom: 0 !important;
+          }
+          .journey-head p {
+            display: none;
+          }
+        }
       `}</style>
 
       {/* Outer Track with 380vh scroll space on desktop */}
@@ -338,10 +356,10 @@ export default function JourneyTimeline() {
         className="relative w-full lg:h-[380vh] bg-[#F6F6EE] scroll-mt-36"
       >
         {/* Sticky Viewport Stage */}
-        <section className="relative lg:sticky lg:top-[148px] w-full lg:min-h-[calc(100vh-148px)] lg:max-h-[920px] bg-[#F6F6EE] flex flex-col justify-center py-10 lg:py-4 xl:py-8">
+        <section className="relative lg:sticky lg:top-[148px] w-full lg:h-[calc(100vh-148px)] lg:max-h-[920px] lg:overflow-hidden bg-[#F6F6EE] flex flex-col justify-center py-10 lg:py-4 xl:py-6">
           <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto flex flex-col justify-center my-auto">
             {/* Header: Eyebrow + Title + Subtitle */}
-            <div className="w-full mb-5 lg:mb-4 xl:mb-7">
+            <div className="journey-head w-full mb-5 lg:mb-4 xl:mb-7">
               <span className="inline-block text-[11px] sm:text-xs font-bold tracking-[0.16em] text-[#0B2C1C] mb-1 xl:mb-2">
                 Our heritage &amp; legacy
               </span>
@@ -405,7 +423,7 @@ export default function JourneyTimeline() {
               </nav>
 
               {/* Right Column: Timeline Content Card */}
-              <div className="relative w-full min-h-[280px] lg:min-h-[320px] xl:min-h-[400px] flex items-center">
+              <div className="relative w-full min-h-[280px] lg:min-h-0 flex items-center">
                 {/* Subtle blueprint grid overlay */}
                 <div
                   className="absolute inset-0 pointer-events-none opacity-25 select-none"
@@ -457,7 +475,8 @@ export default function JourneyTimeline() {
                       <img
                         src={displayedItem.image}
                         alt={`${displayedItem.year} - ${displayedItem.title}`}
-                        className={`w-full aspect-[4/3] h-auto lg:max-h-[380px] xl:max-h-[460px] 2xl:max-h-[500px] object-cover block select-none transition-all duration-700 cubic-bezier(0.22, 1, 0.36, 1) ${
+                        style={{ objectPosition: displayedItem.imagePosition ?? "50% 50%" }}
+                        className={`w-full aspect-[4/3] h-auto lg:max-h-[min(380px,calc(100vh-148px-280px))] xl:max-h-[min(460px,calc(100vh-148px-300px))] 2xl:max-h-[min(500px,calc(100vh-148px-300px))] object-cover block select-none transition-all duration-700 cubic-bezier(0.22, 1, 0.36, 1) ${
                           isImageChanging
                             ? "opacity-0 scale-105"
                             : "opacity-100 scale-100"

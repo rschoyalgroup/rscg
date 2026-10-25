@@ -119,7 +119,7 @@ export default function LeadershipEdPage() {
                     <div>
                       <h5 className="text-base font-bold text-slate-900">Global milling solutions</h5>
                       <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed mt-1">
-                        Pioneering the export of high-capacity automated chakki mills and turnkey solutions to over 20 nations.
+                        Pioneering the export of high-capacity automated chakki mills and turnkey solutions to 25+ countries.
                       </p>
                     </div>
                   </div>

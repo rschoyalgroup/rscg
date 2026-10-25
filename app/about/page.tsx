@@ -236,6 +236,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-brand-bg text-brand-foreground font-sans selection:bg-brand-primary selection:text-white">
       <Header
+        showGroupCompanyLogo
         submenu={{
           items: aboutSubmenuSections,
           activeId: activeTab,
@@ -334,7 +335,7 @@ export default function AboutPage() {
           {/* Bottom Campus Cutout Image - full bleed touching left, right and bottom browser edges */}
           <div className="mt-8 sm:mt-12 w-full leading-none -mb-px p-0 overflow-hidden">
             <img
-              src="/images/about/what-is-choyal/what-is-choyal.png"
+              src="/images/about/what-is-choyal/rscg-campus.webp"
               alt="Choyal Group Manufacturing Campus"
               className="w-full h-auto object-cover sm:object-contain block align-bottom select-none pointer-events-none"
             />
