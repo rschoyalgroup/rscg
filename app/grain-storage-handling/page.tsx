@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Phone, Mail, MapPin, Database, Archive, RefreshCw, Factory, Settings2, LayoutTemplate, ShieldCheck, Headset, MessageCircle } from "lucide-react";
+import { ArrowRight, Phone, Mail, MapPin, Database, Settings2, LayoutTemplate, ShieldCheck, Headset, MessageCircle, Droplets, Warehouse } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -101,30 +101,30 @@ export default function GrainStorageHandlingPage() {
       <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-6xl">
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-7 flex flex-row items-center justify-between gap-4 divide-x divide-slate-100">
           <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
-              <Database className="w-7 h-7" />
+            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
+              <ShieldCheck className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Bran, atta &amp; grain</h4>
-              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Conditioning silos</p>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">The Purity Vault</h4>
+              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Hygienic storage and seamless flour discharge.</p>
             </div>
           </div>
           <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
-              <RefreshCw className="w-7 h-7" />
+            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
+              <Droplets className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Controlled flow</h4>
-              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Storage &amp; conveying</p>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">The Conditioning Master</h4>
+              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Uniform moisture and superior flour quality.</p>
             </div>
           </div>
           <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
-              <Factory className="w-7 h-7" />
+            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
+              <Warehouse className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Turnkey silos</h4>
-              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Built for milling plants</p>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">The Heavy-Duty Guard</h4>
+              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Heavy-duty bulk storage and zero wastage.</p>
             </div>
           </div>
         </div>
@@ -134,30 +134,30 @@ export default function GrainStorageHandlingPage() {
       <div className="block md:hidden relative z-30 w-full -mt-10 mb-2">
         <div className="flex gap-3.5 overflow-x-auto snap-x snap-mandatory no-scrollbar px-5 scroll-pl-5 pt-3 pb-7">
           <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <Database className="w-6 h-6" />
+            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0">
+              <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">Bran, atta &amp; grain</h4>
-              <p className="text-xs text-slate-600 font-medium mt-0.5">Conditioning silos</p>
+              <h4 className="text-base font-bold text-slate-900">The Purity Vault</h4>
+              <p className="text-xs text-slate-600 font-medium mt-0.5">Hygienic storage and seamless flour discharge.</p>
             </div>
           </div>
           <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <RefreshCw className="w-6 h-6" />
+            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0">
+              <Droplets className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">Controlled flow</h4>
-              <p className="text-xs text-slate-600 font-medium mt-0.5">Storage &amp; conveying</p>
+              <h4 className="text-base font-bold text-slate-900">The Conditioning Master</h4>
+              <p className="text-xs text-slate-600 font-medium mt-0.5">Uniform moisture and superior flour quality.</p>
             </div>
           </div>
           <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <Factory className="w-6 h-6" />
+            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0">
+              <Warehouse className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">Turnkey silos</h4>
-              <p className="text-xs text-slate-600 font-medium mt-0.5">Built for milling plants</p>
+              <h4 className="text-base font-bold text-slate-900">The Heavy-Duty Guard</h4>
+              <p className="text-xs text-slate-600 font-medium mt-0.5">Heavy-duty bulk storage and zero wastage.</p>
             </div>
           </div>
           <div className="w-2 shrink-0" aria-hidden="true" />
@@ -168,7 +168,7 @@ export default function GrainStorageHandlingPage() {
       <section className="w-full pt-4 md:pt-20 lg:pt-24 pb-16 px-6 sm:px-12 lg:px-16 xl:px-24 relative z-10">
         <div className="w-full mx-auto space-y-6">
           <h2 className="text-2xl sm:text-3xl font-heading font-black text-slate-900">
-            Grain storage &amp; handling is crucial for maintaining the quality of grain
+            Efficient Grain Storage, Built to Last
           </h2>
           <div className="text-slate-600 text-sm sm:text-base leading-relaxed space-y-4 max-w-4xl">
             <p>
@@ -233,55 +233,55 @@ export default function GrainStorageHandlingPage() {
           <div className="flex flex-col xl:flex-row items-stretch">
             
             {/* Left Content */}
-            <div className="flex-1 flex flex-col justify-center space-y-6 sm:space-y-8 p-6 sm:p-10 xl:p-16">
+            <div className="flex-1 flex flex-col justify-center space-y-5 sm:space-y-8 p-5 sm:p-10 xl:p-16">
               <div className="space-y-4">
                 <div className="flex items-center gap-3 text-sm font-bold text-[#eab308] tracking-widest">
                   <span className="w-10 h-[3px] bg-[#eab308]"></span>
                   Silo solutions
                 </div>
-                <h2 className="text-3xl sm:text-5xl xl:text-6xl font-heading font-black text-[#0a3118] leading-[1.1] tracking-tight">
+                <h2 className="text-[28px] sm:text-5xl xl:text-6xl font-heading font-black text-[#0a3118] leading-[1.1] tracking-tight">
                   Let’s design the right<br className="hidden xl:block"/> silo for your plant.
                 </h2>
-                <p className="text-slate-600 font-medium leading-relaxed max-w-xl text-base sm:text-lg">
+                <p className="text-slate-600 font-medium leading-relaxed max-w-xl text-sm sm:text-lg">
                   From capacity planning to layout, materials and integration - our experts help you build efficient, future-ready storage systems.
                 </p>
               </div>
 
               {/* 4 Features Row */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-6 sm:gap-6 pt-6 border-t border-slate-100">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-4 sm:gap-6 pt-5 sm:pt-6 border-t border-slate-100">
                 <div className="space-y-3">
                   <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center text-slate-700">
                     <Headset className="w-6 h-6" />
                   </div>
                   <h4 className="font-extrabold text-[#0a3118] text-sm leading-tight">Expert<br/>consultation</h4>
-                  <p className="text-xs text-slate-500 font-medium">Get recommendations tailored to your process and capacity.</p>
+                  <p className="hidden sm:block text-xs text-slate-500 font-medium">Get recommendations tailored to your process and capacity.</p>
                 </div>
                 <div className="space-y-3">
                   <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center text-slate-700">
                     <LayoutTemplate className="w-6 h-6" />
                   </div>
                   <h4 className="font-extrabold text-[#0a3118] text-sm leading-tight">Custom<br/>design & layout</h4>
-                  <p className="text-xs text-slate-500 font-medium">Optimized designs that fit your plant and operations.</p>
+                  <p className="hidden sm:block text-xs text-slate-500 font-medium">Optimized designs that fit your plant and operations.</p>
                 </div>
                 <div className="space-y-3">
                   <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center text-slate-700">
                     <ShieldCheck className="w-6 h-6" />
                   </div>
                   <h4 className="font-extrabold text-[#0a3118] text-sm leading-tight">Reliable<br/>performance</h4>
-                  <p className="text-xs text-slate-500 font-medium">Engineered for safety, smooth flow and long-lasting use.</p>
+                  <p className="hidden sm:block text-xs text-slate-500 font-medium">Engineered for safety, smooth flow and long-lasting use.</p>
                 </div>
                 <div className="space-y-3">
                   <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center text-slate-700">
                     <Settings2 className="w-6 h-6" />
                   </div>
                   <h4 className="font-extrabold text-[#0a3118] text-sm leading-tight">End-to-end<br/>support</h4>
-                  <p className="text-xs text-slate-500 font-medium">From selection to installation and after-sales service.</p>
+                  <p className="hidden sm:block text-xs text-slate-500 font-medium">From selection to installation and after-sales service.</p>
                 </div>
               </div>
             </div>
 
             {/* Right Image */}
-            <div className="flex-1 relative min-h-[260px] sm:min-h-[380px] xl:min-h-[500px] overflow-hidden bg-[#f4f2eb]">
+            <div className="flex-1 relative min-h-[190px] sm:min-h-[340px] xl:min-h-[500px] overflow-hidden bg-[#f4f2eb]">
               <Image
                 src="/images/silos/silo_cta_image.png"
                 alt="Silo Solutions Design"
@@ -294,12 +294,12 @@ export default function GrainStorageHandlingPage() {
           {/* Bottom Contact Strip */}
           <div className="flex flex-col xl:flex-row border-t border-slate-200 bg-slate-50">
             {/* Dark Green CTA box */}
-            <div className="bg-[#0a3118] p-6 sm:p-8 xl:p-10 flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6 xl:w-[45%] rounded-br-[2.5rem] sm:rounded-br-[4rem] xl:rounded-br-[0] xl:rounded-tr-[4rem] relative overflow-hidden">
-               <div className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center flex-shrink-0 text-white z-10">
+            <div className="bg-[#0a3118] p-5 sm:p-8 xl:p-10 flex flex-row items-center gap-4 sm:gap-6 xl:w-[45%] rounded-br-[2.5rem] sm:rounded-br-[4rem] xl:rounded-br-[0] xl:rounded-tr-[4rem] relative overflow-hidden">
+               <div className="hidden sm:flex w-14 h-14 rounded-full border border-white/20 items-center justify-center flex-shrink-0 text-white z-10">
                  <Phone className="w-6 h-6" />
                </div>
                <div className="z-10 w-full sm:w-auto">
-                 <h3 className="text-white font-heading font-extrabold text-xl lg:text-2xl mb-4">
+                 <h3 className="text-white font-heading font-extrabold text-lg sm:text-xl lg:text-2xl mb-3 sm:mb-4">
                    Ready to discuss your<br className="hidden sm:block"/> silo requirements?
                  </h3>
                  <Link 
@@ -316,9 +316,9 @@ export default function GrainStorageHandlingPage() {
             </div>
 
             {/* Quick Contact Info */}
-            <div className="flex-1 bg-slate-50 p-6 sm:p-8 xl:p-10 grid grid-cols-1 sm:grid-cols-3 items-center gap-5 sm:gap-6">
-               <div className="flex items-center gap-4 min-w-0">
-                 <div className="w-12 h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-700 shrink-0">
+            <div className="flex-1 bg-slate-50 p-5 sm:p-8 xl:p-10 grid grid-cols-1 sm:grid-cols-3 items-center gap-3 sm:gap-6">
+               <div className="flex items-center gap-3 sm:flex-col sm:items-start sm:gap-2 xl:flex-row xl:items-center xl:gap-4 min-w-0">
+                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-700 shrink-0">
                    <Phone className="w-5 h-5" />
                  </div>
                  <div className="min-w-0">
@@ -327,8 +327,8 @@ export default function GrainStorageHandlingPage() {
                  </div>
                </div>
                
-               <div className="flex items-center gap-4 min-w-0">
-                 <div className="w-12 h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-700 shrink-0">
+               <div className="flex items-center gap-3 sm:flex-col sm:items-start sm:gap-2 xl:flex-row xl:items-center xl:gap-4 min-w-0">
+                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-700 shrink-0">
                    <Mail className="w-5 h-5" />
                  </div>
                  <div className="min-w-0">
@@ -337,8 +337,8 @@ export default function GrainStorageHandlingPage() {
                  </div>
                </div>
                
-               <div className="flex items-center gap-4 min-w-0">
-                 <div className="w-12 h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-700 shrink-0">
+               <div className="flex items-center gap-3 sm:flex-col sm:items-start sm:gap-2 xl:flex-row xl:items-center xl:gap-4 min-w-0">
+                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-700 shrink-0">
                    <MessageCircle className="w-5 h-5" />
                  </div>
                  <div className="min-w-0">

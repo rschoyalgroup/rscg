@@ -73,7 +73,7 @@ export default function AutomationPage() {
       <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-6xl">
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-7 flex flex-row items-center justify-between gap-4 divide-x divide-slate-100">
           <div className="w-full flex items-center gap-4 px-3 group hover:bg-[#eaf1ec] p-3.5 rounded-xl transition-colors cursor-default">
-            <div className="w-13 h-13 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
+            <div className="w-13 h-13 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <MonitorSmartphone className="w-6 h-6" />
             </div>
             <div>
@@ -82,7 +82,7 @@ export default function AutomationPage() {
             </div>
           </div>
           <div className="w-full flex items-center gap-4 px-3 group hover:bg-[#eaf1ec] p-3.5 rounded-xl transition-colors cursor-default">
-            <div className="w-13 h-13 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
+            <div className="w-13 h-13 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <Settings2 className="w-6 h-6" />
             </div>
             <div>
@@ -91,7 +91,7 @@ export default function AutomationPage() {
             </div>
           </div>
           <div className="w-full flex items-center gap-4 px-3 group hover:bg-[#eaf1ec] p-3.5 rounded-xl transition-colors cursor-default">
-            <div className="w-13 h-13 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
+            <div className="w-13 h-13 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <Zap className="w-6 h-6" />
             </div>
             <div>
@@ -106,7 +106,7 @@ export default function AutomationPage() {
       <div className="block md:hidden relative z-30 w-full -mt-10 mb-2">
         <div className="flex gap-3.5 overflow-x-auto snap-x snap-mandatory no-scrollbar px-5 scroll-pl-5 pt-3 pb-7">
           <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0">
               <MonitorSmartphone className="w-6 h-6" />
             </div>
             <div>
@@ -115,7 +115,7 @@ export default function AutomationPage() {
             </div>
           </div>
           <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0">
               <Settings2 className="w-6 h-6" />
             </div>
             <div>
@@ -124,7 +124,7 @@ export default function AutomationPage() {
             </div>
           </div>
           <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0">
               <Zap className="w-6 h-6" />
             </div>
             <div>
@@ -322,7 +322,7 @@ export default function AutomationPage() {
               </div>
             </div>
 
-            <div className="relative z-10 shrink-0 flex justify-center md:justify-start lg:justify-end">
+            <div className="relative z-10 shrink-0 flex justify-center md:justify-start md:pl-[88px] lg:pl-0 lg:justify-end">
               <Link 
                 href="/contact" 
                 className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap"

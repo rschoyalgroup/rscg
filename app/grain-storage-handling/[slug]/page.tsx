@@ -57,7 +57,7 @@ export default function SiloDetailPage() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-foreground font-sans selection:bg-brand-primary/20">
+    <div className="min-h-screen bg-[#f9fafb] text-slate-800 font-sans selection:bg-brand-primary/20">
       <Header />
 
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto pt-28 sm:pt-32 md:pt-36 pb-12">
@@ -80,10 +80,10 @@ export default function SiloDetailPage() {
             </div>
             
             <div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-[#0B1510] leading-tight mb-2">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-[#0a4c2a] leading-tight mb-2">
                 {product.title}
               </h1>
-              <h3 className="text-lg font-bold text-[#14532d]">
+              <h3 className="text-lg font-bold text-[#14663a]">
                 {product.subtitle}
               </h3>
             </div>
@@ -133,7 +133,7 @@ export default function SiloDetailPage() {
         {/* Key Features Section */}
         <div className="mb-16">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <h2 className="text-2xl font-black text-[#0B1510] mb-2">Key features</h2>
+            <h2 className="text-2xl font-black text-[#0a4c2a] mb-2">Key features</h2>
             <p className="text-slate-500">Engineered for high-efficiency plant integration and low-residue handling</p>
           </div>
           
@@ -158,7 +158,7 @@ export default function SiloDetailPage() {
         <div className="space-y-6 mb-16">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-6 border-b border-slate-100">
             <div>
-              <h2 className="text-2xl font-black text-[#0B1510] mb-2">Available capacities</h2>
+              <h2 className="text-2xl font-black text-[#0a4c2a] mb-2">Available capacities</h2>
               <p className="text-sm text-slate-500">Select your required material line and model capacity to add to your quote enquiry.</p>
             </div>
             

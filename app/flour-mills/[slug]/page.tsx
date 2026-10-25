@@ -66,11 +66,11 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto pt-28 sm:pt-32 md:pt-36 pb-12 flex-1">
         
         {/* Hero Product Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-start gap-12 bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-sm mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:items-start gap-6 md:gap-8 lg:gap-12 bg-white p-5 sm:p-8 lg:p-10 rounded-3xl border border-slate-200 shadow-sm mb-12 lg:mb-16">
           
           {/* Left: Images */}
-          <div className="flex flex-col gap-4 lg:sticky lg:top-28 self-start">
-            <div className={`relative w-full aspect-square lg:aspect-auto ${product.showThumbnails !== false && product.keyComponents.length > 0 ? 'lg:h-[calc(100vh-22rem)] lg:min-h-[240px] lg:max-h-[440px]' : 'lg:h-[calc(100vh-15rem)] lg:min-h-[260px] lg:max-h-[480px]'} bg-white rounded-2xl flex items-center justify-center p-6 lg:p-8`}>
+          <div className="flex flex-col gap-4 md:sticky md:top-28 self-start">
+            <div className={`relative w-full aspect-[4/3] sm:aspect-square lg:aspect-auto ${product.showThumbnails !== false && product.keyComponents.length > 0 ? 'lg:h-[calc(100vh-22rem)] lg:min-h-[240px] lg:max-h-[440px]' : 'lg:h-[calc(100vh-15rem)] lg:min-h-[260px] lg:max-h-[480px]'} bg-white rounded-2xl flex items-center justify-center p-4 sm:p-6 lg:p-8`}>
               <span className="absolute top-0 left-0 z-10 bg-slate-100 text-xs font-bold text-slate-600 px-3.5 py-1.5 rounded-full border border-slate-200">
                 {product.category}
               </span>
@@ -129,23 +129,23 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
           </div>
 
           {/* Right: Info */}
-          <div className="flex flex-col justify-start pt-4">
-            <h1 className="text-4xl sm:text-5xl font-heading font-black text-[#0a4c2a] tracking-tight mb-2">
+          <div className="flex flex-col justify-start md:pt-2 lg:pt-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-[#0a4c2a] tracking-tight mb-2">
               {product.title}
             </h1>
-            <h2 className="text-xl sm:text-2xl font-bold text-[#14663a] mb-6">
+            <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#14663a] mb-4 lg:mb-6">
               {product.subtitle}
             </h2>
-            <p className="text-slate-600 leading-relaxed mb-8 text-base sm:text-[17px]">
+            <p className="text-slate-600 leading-relaxed mb-6 lg:mb-8 text-sm sm:text-base lg:text-[17px]">
               {product.desc}
             </p>
 
             {product.keyHighlights && product.keyHighlights.length > 0 && (
-              <div className="flex flex-wrap gap-3 mb-10">
+              <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 lg:mb-10">
                 {product.keyHighlights.map((tag, idx) => (
                   <span
                     key={idx}
-                    className={`px-4 py-2 ${tagColors[idx % tagColors.length]} text-white text-sm font-bold rounded-lg shadow-sm inline-flex items-center justify-center text-center`}
+                    className={`px-3 py-1.5 sm:px-4 sm:py-2 ${tagColors[idx % tagColors.length]} text-white text-xs sm:text-sm font-bold rounded-lg shadow-sm inline-flex items-center justify-center text-center`}
                   >
                     {tag}
                   </span>
@@ -165,19 +165,20 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
             )}
 
             {/* Capacity Stats Grid */}
-            <div className={`grid gap-4 mb-10 ${product.id === 'emery-stone-dresser' ? 'grid-cols-2' : product.heroStats.length === 4 || product.heroStats.length === 8 ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-2 sm:grid-cols-3'}`}>
+            {product.heroStats.length > 0 && (
+            <div className={`grid gap-2.5 sm:gap-3 mb-8 lg:mb-10 ${product.heroStats.length <= 2 ? 'grid-cols-2' : product.heroStats.length === 4 || product.heroStats.length === 8 ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-2 sm:grid-cols-3'}`}>
               {product.heroStats.map((stat, idx) => (
-                <div key={idx} className="flex flex-col text-center bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm">
+                <div key={idx} className="flex flex-col text-center bg-white border border-slate-200 rounded-2xl px-3 py-3.5 sm:px-4 sm:py-4 md:px-2 lg:px-4 shadow-sm min-w-0">
                   {stat.topLabel && (
-                    <div className="pb-3 mb-3 border-b border-slate-100">
-                      <p className="text-xs sm:text-sm text-slate-600 font-bold tracking-wider">{stat.topLabel}</p>
+                    <div className="pb-2 mb-2 border-b border-slate-100">
+                      <p className="text-[11px] sm:text-xs text-slate-600 font-bold tracking-wide leading-snug">{stat.topLabel}</p>
                     </div>
                   )}
                   <div className="flex flex-col items-center justify-center flex-1">
-                    <p className="text-2xl sm:text-[26px] font-black text-[#0a4c2a] leading-tight">{stat.value}</p>
-                    <p className="text-xs sm:text-sm font-semibold text-slate-600 mt-1.5">{stat.label}</p>
+                    <p className="text-lg sm:text-xl md:text-base lg:text-xl xl:text-[22px] font-black text-[#0a4c2a] leading-tight break-words">{stat.value}</p>
+                    <p className="text-[11px] sm:text-xs font-semibold text-slate-600 mt-1 leading-snug">{stat.label}</p>
                     {stat.sublabel && (
-                      <p className="text-xs sm:text-[13px] font-medium text-slate-500 mt-1">{stat.sublabel}</p>
+                      <p className="text-[11px] sm:text-xs font-medium text-slate-500 mt-0.5">{stat.sublabel}</p>
                     )}
                   </div>
                   {(stat.bottomValue || stat.bottomLabel) && (
@@ -189,6 +190,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                 </div>
               ))}
             </div>
+            )}
 
             {/* Variant Selector */}
             {product.models && product.models.length > 1 && (
@@ -245,7 +247,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
             )}
 
             {/* Action Area */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-6 pt-2">
+            <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row items-stretch sm:items-center md:items-stretch lg:items-center gap-3 sm:gap-4 mb-6 pt-2">
               <button
                 onClick={handleAddToQuote}
                 className="h-12 min-h-[48px] sm:flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
@@ -258,7 +260,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                 href={`https://wa.me/919240289259?text=${encodeURIComponent(`Hi, I would like to enquire about ${product.title}.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-12 w-full sm:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap cursor-pointer"
+                className="h-12 w-full sm:w-auto md:w-full lg:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>WhatsApp Enquiry</span>
@@ -285,8 +287,8 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
 
         {/* Core Capabilities */}
         {product.coreCapabilities.length > 0 && (
-          <div className="mb-16">
-            <h3 className="text-2xl font-heading font-extrabold text-[#0a4c2a] mb-6 tracking-tight">Core capabilities</h3>
+          <div className="mb-12 lg:mb-16">
+            <h3 className="text-xl sm:text-2xl font-heading font-extrabold text-[#0a4c2a] mb-5 sm:mb-6 tracking-tight">Core capabilities</h3>
             <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
               {product.coreCapabilities.map((cap, idx) => {
                 const colors = [
@@ -327,9 +329,9 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
 
         {/* Key Components */}
         {product.keyComponents.length > 0 && (
-          <div className="mb-16">
-            <h3 className="text-2xl font-heading font-extrabold text-[#0a4c2a] mb-6 tracking-tight">{product.componentsTitle || "Key components"}</h3>
-            <div className={`grid grid-cols-2 gap-4 ${
+          <div className="mb-12 lg:mb-16">
+            <h3 className="text-xl sm:text-2xl font-heading font-extrabold text-[#0a4c2a] mb-5 sm:mb-6 tracking-tight">{product.componentsTitle || "Key components"}</h3>
+            <div className={`grid grid-cols-2 gap-3 sm:gap-4 ${product.keyComponents.length >= 3 ? 'md:grid-cols-3' : ''} ${
               product.keyComponents.length === 1 ? 'lg:grid-cols-1 max-w-sm' :
               product.keyComponents.length === 2 ? 'lg:grid-cols-2 max-w-2xl' :
               product.keyComponents.length === 3 ? 'lg:grid-cols-3' :
@@ -346,8 +348,8 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                       <img src={comp.image} alt={comp.title} className={`w-full h-full mix-blend-multiply object-contain object-center p-0`} />
                     </div>
                   )}
-                  <div className="p-4 flex-1 flex flex-col items-center justify-center">
-                    <h4 className="font-semibold text-slate-800 text-sm md:text-base text-center leading-snug px-1">{comp.title}</h4>
+                  <div className="p-3 sm:p-4 flex-1 flex flex-col items-center justify-center">
+                    <h4 className="font-semibold text-slate-800 text-xs sm:text-sm md:text-base text-center leading-snug px-1">{comp.title}</h4>
                   </div>
                 </div>
                 );
@@ -364,8 +366,8 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
             )}
             <div className={`grid gap-6 ${
               product.models.length === 1 ? 'grid-cols-1 max-w-3xl mx-auto' :
-              product.models.length === 2 ? 'grid-cols-1 lg:grid-cols-2' :
-              product.models.length === 4 ? 'grid-cols-1 lg:grid-cols-2' :
+              product.models.length === 2 ? 'grid-cols-1 md:grid-cols-2' :
+              product.models.length === 4 ? 'grid-cols-1 md:grid-cols-2' :
               'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
             }`}>
               {product.modelsLayout === 'zigzag' ? (
@@ -413,17 +415,17 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                   const isThreeCol = product.models.length === 3 || product.models.length > 4;
 
                   return (
-                    <div key={idx} className="bg-white rounded-3xl border border-slate-200/80 shadow-sm overflow-hidden flex flex-col h-full p-5 sm:p-6 xl:p-7">
-                      <div className="pb-4 text-center">
-                        <h4 className={`text-xl sm:text-2xl font-heading font-extrabold tracking-tight ${colorTitle}`}>
+                    <div key={idx} className="bg-white rounded-3xl border border-slate-200/80 shadow-sm overflow-hidden flex flex-col h-full p-4 sm:p-6 xl:p-7">
+                      <div className="pb-3 sm:pb-4 text-center">
+                        <h4 className={`text-lg sm:text-xl lg:text-2xl font-heading font-extrabold tracking-tight ${colorTitle}`}>
                           {model.name}
                         </h4>
                       </div>
-                      <div className={`flex-1 flex flex-col ${isThreeCol ? 'sm:flex-row lg:flex-col 2xl:flex-row' : 'sm:flex-row'} gap-5 sm:gap-6 items-center`}>
+                      <div className={`flex-1 flex flex-col ${isThreeCol ? 'sm:flex-row md:flex-col 2xl:flex-row' : 'sm:flex-row md:flex-col xl:flex-row'} gap-4 sm:gap-6 items-center`}>
                         
                         {model.image && (
-                          <div className={`w-full ${isThreeCol ? 'sm:w-[38%] lg:w-full 2xl:w-[36%]' : 'sm:w-[38%]'} flex-shrink-0 flex items-center justify-center p-2`}>
-                            <img src={model.image} alt={model.name} className="w-full max-w-[180px] max-h-[190px] object-contain mix-blend-multiply" />
+                          <div className={`w-full ${isThreeCol ? 'sm:w-[34%] md:w-full 2xl:w-[36%]' : 'sm:w-[34%] md:w-full xl:w-[38%]'} flex-shrink-0 flex items-center justify-center p-1 sm:p-2`}>
+                            <img src={model.image} alt={model.name} className="w-full max-w-[150px] sm:max-w-[180px] max-h-[140px] sm:max-h-[190px] object-contain mix-blend-multiply" />
                           </div>
                         )}
                         

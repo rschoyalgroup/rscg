@@ -3,29 +3,7 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { 
-  ArrowRight, 
-  Settings, 
-  Cpu, 
-  Layers, 
-  Activity, 
-  Building,
-  CheckCircle,
-  FileText,
-  Workflow,
-  Wrench,
-  Users,
-  RefreshCw,
-  Sparkles,
-  ChevronRight,
-  Phone,
-  Mail,
-  Clock,
-  X,
-  Maximize2,
-  BarChart3,
-  MapPin
-} from "lucide-react";
+import { ArrowRight, Settings, Cpu, Layers, Activity, Building, CheckCircle, FileText, Workflow, Wrench, Users, RefreshCw, Sparkles, ChevronRight, Phone, Mail, Clock, X, Maximize2, BarChart3, MapPin, ClipboardCheck, Gauge, Factory } from "lucide-react";
 import Header from "@/components/Header";
 import LeadForm from "@/components/LeadForm";
 import Footer from "@/components/Footer";
@@ -35,14 +13,17 @@ export default function TurnkeyProjects() {
 
   const statPoints = [
     {
+      icon: ClipboardCheck,
       title: "From concept to commissioning",
       desc: "Complete project support from initial planning through installation and plant start-up."
     },
     {
+      icon: Gauge,
       title: "Up to 1000 TPD",
       desc: "Scalable plant solutions designed for a wide range of production capacities."
     },
     {
+      icon: Factory,
       title: "End-to-end plant solutions",
       desc: "Integrated engineering, fabrication, automation, installation, and commissioning."
     }
@@ -165,7 +146,7 @@ export default function TurnkeyProjects() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-brand-bg text-[#1c2722] font-sans relative overflow-hidden">
+    <div className="flex flex-col min-h-screen bg-white text-[#1c2722] font-sans relative overflow-hidden">
       
       {/* Background Glowing Blobs */}
       <div className="absolute top-[-10%] left-[-10%] w-[50%] aspect-square bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none select-none"></div>
@@ -175,7 +156,7 @@ export default function TurnkeyProjects() {
       <Header onRequestCallback={() => setIsModalOpen(true)} />
 
       {/* Hero Section - Standardized responsive hero */}
-      <section className="w-full relative z-10 bg-[#0B1510] text-white aspect-[9/16] md:aspect-[1920/820] min-h-[580px] sm:min-h-[620px] md:min-h-[660px] lg:min-h-[700px] flex flex-col justify-center">
+      <section className="w-full relative z-20 bg-[#0B1510] text-white aspect-[9/16] md:aspect-[1920/820] min-h-[580px] sm:min-h-[620px] md:min-h-[660px] lg:min-h-[700px] flex flex-col justify-center">
         {/* Full-bleed Background Images */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           {/* Desktop Background Image (1920x820) */}
@@ -242,6 +223,7 @@ export default function TurnkeyProjects() {
               <div className="grid grid-cols-3 divide-x divide-slate-200">
                 {statPoints.map((stat, idx) => (
                   <div key={idx} className="p-4 sm:p-5 hover:bg-[#E8F5E9]/60 rounded-xl transition-colors duration-200 cursor-pointer text-left space-y-1.5">
+                    <div className="w-12 h-12 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs mb-2"><stat.icon className="w-6 h-6" /></div>
                     <h3 className="text-base sm:text-lg font-bold text-[#0B1510] leading-snug">
                       {stat.title}
                     </h3>
@@ -265,6 +247,7 @@ export default function TurnkeyProjects() {
               key={idx}
               className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 text-left space-y-1.5"
             >
+              <div className="w-11 h-11 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs mb-2"><stat.icon className="w-5.5 h-5.5" /></div>
               <h3 className="text-base font-bold text-[#0B1510] leading-snug">
                 {stat.title}
               </h3>
@@ -278,7 +261,7 @@ export default function TurnkeyProjects() {
       </div>
 
       {/* Intro details */}
-      <section className="w-full pt-6 sm:pt-12 md:pt-36 lg:pt-44 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 relative z-10">
+      <section className="w-full pt-6 sm:pt-12 md:pt-36 lg:pt-44 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 bg-slate-50 relative z-10">
         <div className="w-full max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1c2722]">
             Engineering the Future of Smart Flour Milling
@@ -290,7 +273,7 @@ export default function TurnkeyProjects() {
       </section>
 
       {/* End-to-End Project Capabilities Section */}
-      <section className="w-full py-16 lg:py-24 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white/40 border-t border-b border-slate-200/50 relative z-10">
+      <section className="w-full py-16 lg:py-24 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white border-t border-slate-100 relative z-10">
         <div className="w-full max-w-[1440px] mx-auto space-y-16">
           
           <div className="text-center space-y-4 max-w-3xl mx-auto">
@@ -343,7 +326,7 @@ export default function TurnkeyProjects() {
       </section>
 
       {/* Solutions Available For Section */}
-      <section className="w-full py-16 lg:py-24 px-6 sm:px-12 lg:px-16 xl:px-24 relative z-10">
+      <section className="w-full py-16 lg:py-24 px-6 sm:px-12 lg:px-16 xl:px-24 bg-slate-50 border-t border-slate-100 relative z-10">
         <div className="w-full max-w-[1440px] mx-auto space-y-16">
           
           <div className="text-center space-y-4 max-w-3xl mx-auto">
@@ -377,7 +360,7 @@ export default function TurnkeyProjects() {
       </section>
 
       {/* Featured Projects Grid */}
-      <section className="w-full py-16 lg:py-24 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white/40 border-t border-b border-slate-200/50 relative z-10">
+      <section className="w-full py-16 lg:py-24 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white border-t border-slate-100 relative z-10">
         <div className="w-full max-w-[1440px] mx-auto space-y-16">
           
           <div className="text-center space-y-4 max-w-3xl mx-auto">

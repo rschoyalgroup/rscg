@@ -4,9 +4,7 @@ import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { 
-  ArrowRight
-} from "lucide-react";
+import { ArrowRight, Cpu, Settings2, Wifi } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { flourMillsProducts } from "./flourMillsData";
@@ -127,16 +125,19 @@ export default function FlourMills() {
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-row divide-x divide-slate-100 overflow-hidden">
           
           <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
+            <div className="w-12 h-12 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs mb-3"><Cpu className="w-6 h-6" /></div>
             <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Digital mills</h3>
             <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">Touch screen PLC-driven smart grinders for high capacity and efficiency.</p>
           </div>
 
           <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
+            <div className="w-12 h-12 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs mb-3"><Settings2 className="w-6 h-6" /></div>
             <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Semi-automatic & sheller mills</h3>
             <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">Sensor-controlled modern mill plants engineered for precision grinding.</p>
           </div>
 
           <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
+            <div className="w-12 h-12 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs mb-3"><Wifi className="w-6 h-6" /></div>
             <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Operate from anywhere</h3>
             <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">Track status and remote working easily with connected milling technology.</p>
           </div>
@@ -148,16 +149,19 @@ export default function FlourMills() {
       <div className="block md:hidden relative z-30 -mt-13 w-full">
         <div className="flex gap-3.5 overflow-x-auto snap-x snap-mandatory no-scrollbar px-5 scroll-pl-5 pt-3 pb-7">
           <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 text-left space-y-1.5">
+            <div className="w-12 h-12 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs mb-2"><Cpu className="w-6 h-6" /></div>
             <h3 className="font-heading font-black text-lg text-slate-800 leading-snug">Digital mills</h3>
             <p className="text-xs text-slate-600 font-normal leading-relaxed">Touch screen PLC-driven smart grinders for high capacity and efficiency.</p>
           </div>
 
           <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 text-left space-y-1.5">
+            <div className="w-12 h-12 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs mb-2"><Settings2 className="w-6 h-6" /></div>
             <h3 className="font-heading font-black text-lg text-slate-800 leading-snug">Semi-automatic &amp; sheller mills</h3>
             <p className="text-xs text-slate-600 font-normal leading-relaxed">Sensor-controlled modern mill plants engineered for precision grinding.</p>
           </div>
 
           <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 text-left space-y-1.5">
+            <div className="w-12 h-12 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs mb-2"><Wifi className="w-6 h-6" /></div>
             <h3 className="font-heading font-black text-lg text-slate-800 leading-snug">Operate from anywhere</h3>
             <p className="text-xs text-slate-600 font-normal leading-relaxed">Track status and remote working easily with connected milling technology.</p>
           </div>

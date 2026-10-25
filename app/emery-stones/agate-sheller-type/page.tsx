@@ -36,10 +36,9 @@ export default function AgateShellerTypeStones() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-brand-bg text-[#1c2722] font-sans relative overflow-x-clip">
+    <div className="flex flex-col min-h-screen bg-[#f9fafb] text-[#1c2722] font-sans relative overflow-x-clip">
       
       {/* Background decoration */}
-      <div className="absolute top-[-10%] left-[-10%] w-[50%] aspect-square bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none select-none"></div>
 
       <Header />
 
@@ -72,7 +71,7 @@ export default function AgateShellerTypeStones() {
               Agate / sheller type
             </h2>
             <p className="text-slate-600 leading-relaxed mb-10 text-sm sm:text-base font-medium">
-              These stones are primarily used in soybean and oil extraction plants for breaking soybeans and similar products. Choyal Emery Stones are designed and manufactured with high quality emery & grain to maintain aroma & taste of the flour. Our Emery stones are made on an automatic casting plant to maintain standards and quality. Our high quality emery stones are globally accepted and have been exported to over 20 countries for five decades.
+              These stones are primarily used in soybean and oil extraction plants for breaking soybeans and similar products. Choyal Emery Stones are designed and manufactured with high quality emery & grain to maintain aroma & taste of the flour. Our Emery stones are made on an automatic casting plant to maintain standards and quality. Our high quality emery stones are globally accepted.
             </p>
 
             {/* Key Performance Advantages */}

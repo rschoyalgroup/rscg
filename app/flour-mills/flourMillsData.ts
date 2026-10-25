@@ -542,10 +542,8 @@ export const flourMillsProducts: DetailedProduct[] = [
       "2 HP Power Load",
       "Compact Design"
     ],
-    heroStats: [
-      { value: "20–25", label: "Kg/Hr Grinding Capacity" },
-      { value: "2 HP", label: "Power Load" }
-    ],
+    // Capacity and power load are already shown in the coloured highlight tags above
+    heroStats: [],
     coreCapabilities: [
       {
         title: "Grinding Performance & Efficiency",
@@ -631,8 +629,6 @@ export const flourMillsProducts: DetailedProduct[] = [
       "3 Phase, 415V, 50Hz"
     ],
     heroStats: [
-      { value: "3-4 min", label: "Per groove dressed" },
-      { value: "3 Phase 415V 50Hz", label: "Power Load" },
       { value: "50 / 75 / 100 mm", label: "Groove Width Options" },
       { value: "500 / 600 / 750 / 1200 mm", label: "Stone Compatibility" }
     ],
@@ -716,12 +712,8 @@ export const flourMillsProducts: DetailedProduct[] = [
         ]
       }
     ],
-    technicalSpecs: {
-      "Control System": "Digital PLC-based",
-      "Display": "7-inch TFT HMI touch screen",
-      "Capacity": "Controls up to 2, 4, or 6 Wonder Mills",
-      "Recipes": "30 preset grinding recipes"
-    }
+    // Key specifications removed: the same four points are already shown in the coloured highlight tags
+    technicalSpecs: {}
   },
   {
     id: "neomatic",

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Target, Disc, ShieldCheck } from "lucide-react";
+import { ArrowRight, Target, Disc, ShieldCheck, Crosshair, Sparkles } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -85,14 +85,17 @@ export default function EmeryStones() {
       <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24">
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-row divide-x divide-slate-100 overflow-hidden">
           <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
+            <div className="w-12 h-12 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs mb-3"><Crosshair className="w-6 h-6" /></div>
             <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Precision grinding</h3>
             <p className="text-xs text-slate-500 leading-relaxed">High-performance emery stones engineered for precise grinding.</p>
           </div>
           <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
+            <div className="w-12 h-12 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs mb-3"><Sparkles className="w-6 h-6" /></div>
             <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Consistent finish</h3>
             <p className="text-xs text-slate-500 leading-relaxed">Consistent flour quality across commercial stone mills.</p>
           </div>
           <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
+            <div className="w-12 h-12 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs mb-3"><ShieldCheck className="w-6 h-6" /></div>
             <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Long-lasting performance</h3>
             <p className="text-xs text-slate-500 leading-relaxed">Long service life across commercial stone mills.</p>
           </div>
@@ -103,14 +106,17 @@ export default function EmeryStones() {
       <div className="block md:hidden relative z-30 -mt-13 w-full">
         <div className="flex gap-3.5 overflow-x-auto snap-x snap-mandatory no-scrollbar px-5 scroll-pl-5 pt-3 pb-7">
           <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 text-left space-y-1.5">
+            <div className="w-12 h-12 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs mb-2"><Crosshair className="w-6 h-6" /></div>
             <h3 className="font-bold text-base text-slate-800 leading-snug">Precision grinding</h3>
             <p className="text-xs text-slate-500 leading-relaxed">High-performance emery stones engineered for precise grinding.</p>
           </div>
           <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 text-left space-y-1.5">
+            <div className="w-12 h-12 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs mb-2"><Sparkles className="w-6 h-6" /></div>
             <h3 className="font-bold text-base text-slate-800 leading-snug">Consistent finish</h3>
             <p className="text-xs text-slate-500 leading-relaxed">Consistent flour quality across commercial stone mills.</p>
           </div>
           <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 text-left space-y-1.5">
+            <div className="w-12 h-12 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs mb-2"><ShieldCheck className="w-6 h-6" /></div>
             <h3 className="font-bold text-base text-slate-800 leading-snug">Long-lasting performance</h3>
             <p className="text-xs text-slate-500 leading-relaxed">Long service life across commercial stone mills.</p>
           </div>
@@ -143,26 +149,24 @@ export default function EmeryStones() {
               href="/emery-stones/daniya-type"
               className="group flex flex-col bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/60 shadow-xs hover:shadow-2xl hover:border-brand-primary/20 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
             >
-              <div className="relative w-full aspect-square sm:aspect-[4/3] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-3 sm:p-6">
+              <div className="relative w-full aspect-[4/3] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-3 sm:p-6">
                 <img 
                   src="/emery-stone-dresser/daniya_emery_stone.png" 
                   alt="Horizontal Emery Stones - Daniya Type"
                   className="object-contain max-h-full max-w-full group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-3.5 sm:p-6 text-center flex-1 flex flex-col">
+              <div className="p-3.5 sm:p-6 text-left flex-1 flex flex-col">
                 <h3 className="text-sm sm:text-xl font-heading font-extrabold text-slate-800 group-hover:text-brand-primary transition-colors leading-snug">
                   Horizontal emery stones - Daniya type
                 </h3>
-                <p className="text-xs text-slate-400 mt-1.5 sm:mt-2 font-medium leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-500 mt-1.5 sm:mt-2 font-normal leading-relaxed line-clamp-2">
                   Designed and manufactured with premium abrasives to maintain natural wheat aroma & taste.
                 </p>
-                <span className="mt-auto pt-3 sm:pt-5 block">
-                  <span className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg sm:rounded-xl bg-brand-primary group-hover:bg-[#0a4c2a] text-white text-xs sm:text-sm font-bold py-2 sm:py-2.5 transition-colors">
-                    View product
-                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-0.5 transition-transform" />
-                  </span>
-                </span>
+                <div className="mt-auto pt-3 sm:pt-6 flex items-center justify-between text-brand-primary font-bold text-xs sm:text-base">
+                  <span>View Product</span>
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
               </div>
             </Link>
 
@@ -171,26 +175,24 @@ export default function EmeryStones() {
               href="/emery-stones/agate-sheller-type"
               className="group flex flex-col bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/60 shadow-xs hover:shadow-2xl hover:border-brand-primary/20 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
             >
-              <div className="relative w-full aspect-square sm:aspect-[4/3] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-3 sm:p-6">
+              <div className="relative w-full aspect-[4/3] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-3 sm:p-6">
                 <img 
                   src="/emery-stone-dresser/agate_emery_stone.png" 
                   alt="Horizontal Emery Stones - Agate/Sheller Type"
                   className="object-contain max-h-full max-w-full group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-3.5 sm:p-6 text-center flex-1 flex flex-col">
+              <div className="p-3.5 sm:p-6 text-left flex-1 flex flex-col">
                 <h3 className="text-sm sm:text-xl font-heading font-extrabold text-slate-800 group-hover:text-brand-primary transition-colors leading-snug">
                   Horizontal emery stones - Agate/sheller type
                 </h3>
-                <p className="text-xs text-slate-400 mt-1.5 sm:mt-2 font-medium leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-500 mt-1.5 sm:mt-2 font-normal leading-relaxed line-clamp-2">
                   Agate shelling stones optimized for de-husking, pulse splitting, and industrial mill pre-cleaning.
                 </p>
-                <span className="mt-auto pt-3 sm:pt-5 block">
-                  <span className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg sm:rounded-xl bg-brand-primary group-hover:bg-[#0a4c2a] text-white text-xs sm:text-sm font-bold py-2 sm:py-2.5 transition-colors">
-                    View product
-                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-0.5 transition-transform" />
-                  </span>
-                </span>
+                <div className="mt-auto pt-3 sm:pt-6 flex items-center justify-between text-brand-primary font-bold text-xs sm:text-base">
+                  <span>View Product</span>
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
               </div>
             </Link>
 
@@ -199,28 +201,26 @@ export default function EmeryStones() {
               href="/emery-stones/emery-stone-dresser"
               className="col-span-2 lg:col-span-1 w-[calc(50%-0.4375rem)] sm:w-[calc(50%-1rem)] lg:w-full mx-auto group flex flex-col bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/60 shadow-xs hover:shadow-2xl hover:border-brand-primary/20 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
             >
-              <div className="relative w-full aspect-square sm:aspect-[4/3] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-3 sm:p-6">
+              <div className="relative w-full aspect-[4/3] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-3 sm:p-6">
                 <img 
                   src="/emery-stone-dresser/emery_stone_dresser.png" 
                   alt="Emery Stone Dresser"
                   className="object-contain max-h-full max-w-full group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-3.5 sm:p-6 text-center flex-1 flex flex-col">
+              <div className="p-3.5 sm:p-6 text-left flex-1 flex flex-col">
                 <div>
                   <h3 className="text-sm sm:text-xl font-heading font-extrabold text-slate-800 group-hover:text-brand-primary transition-colors leading-snug">
                     Emery stone dresser
                   </h3>
-                  <p className="text-xs text-slate-400 mt-1.5 sm:mt-2 font-medium leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-500 mt-1.5 sm:mt-2 font-normal leading-relaxed line-clamp-2">
                     Engineered to restore and maintain the cutting profile of emery stones for consistent performance.
                   </p>
                 </div>
-                <span className="mt-auto pt-3 sm:pt-5 block">
-                  <span className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg sm:rounded-xl bg-brand-primary group-hover:bg-[#0a4c2a] text-white text-xs sm:text-sm font-bold py-2 sm:py-2.5 transition-colors">
-                    View product
-                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-0.5 transition-transform" />
-                  </span>
-                </span>
+                <div className="mt-auto pt-3 sm:pt-6 flex items-center justify-between text-brand-primary font-bold text-xs sm:text-base">
+                  <span>View Product</span>
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
               </div>
             </Link>
           </div>
