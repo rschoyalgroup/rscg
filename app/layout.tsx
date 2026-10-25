@@ -4,6 +4,7 @@ import "./globals.css";
 import { QuoteProvider } from "@/components/QuoteContext";
 import QuoteDrawer from "@/components/QuoteDrawer";
 import FloatingCallCTA from "@/components/FloatingCallCTA";
+import UtmCapture from "@/components/UtmCapture";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
           {children}
           <QuoteDrawer />
           <FloatingCallCTA />
+          <UtmCapture />
         </QuoteProvider>
       </body>
     </html>

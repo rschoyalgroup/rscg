@@ -3,11 +3,16 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { submitLead } from "@/lib/leads";
+import Honeypot from "./Honeypot";
 
 export default function LeadForm({
   className = "",
+  formId = "consultation",
 }: {
   className?: string;
+  /** Which form this is in Clyrix: "consultation" on service pages, "callback" in the call-back popup. */
+  formId?: "consultation" | "callback";
 }) {
   const [formData, setFormData] = useState({
     name: "",
@@ -21,6 +26,8 @@ export default function LeadForm({
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [honeypot, setHoneypot] = useState("");
   const router = useRouter();
 
   const requirements = [
@@ -48,16 +55,32 @@ export default function LeadForm({
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
     setIsSubmitting(true);
-    // Simulate API request
-    setTimeout(() => {
+    setSubmitError("");
+    const result = await submitLead({
+      form: formId,
+      formName: formId === "callback" ? "Call-back request" : "Consultation request",
+      fields: {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        city: formData.city,
+        country: formData.country,
+        interest: requirements.find((r) => r.value === formData.requirement)?.label || formData.requirement,
+        message: formData.message,
+      },
+      website: honeypot,
+    });
+    if (!result.ok) {
+      setSubmitError(result.error);
       setIsSubmitting(false);
-      router.push("/thank-you?success=true");
-    }, 1200);
+      return;
+    }
+    router.push("/thank-you?success=true");
   };
 
   return (
@@ -217,6 +240,14 @@ export default function LeadForm({
             className="w-full text-sm px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 placeholder-slate-400 focus:bg-white transition-all duration-200 outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/10 resize-none"
           />
         </div>
+
+        <Honeypot value={honeypot} onChange={setHoneypot} />
+
+        {submitError && (
+          <p role="alert" className="text-xs text-red-500 bg-red-50 border border-red-500/20 rounded-xl px-4 py-3">
+            {submitError}
+          </p>
+        )}
 
         {/* Submit Button */}
         <button

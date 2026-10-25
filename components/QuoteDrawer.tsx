@@ -4,6 +4,8 @@ import { useState } from "react";
 import { X, Trash2, Mail, Phone, User, MessageSquare } from "lucide-react";
 import { useQuote } from "./QuoteContext";
 import { useRouter } from "next/navigation";
+import { submitLead } from "@/lib/leads";
+import Honeypot from "./Honeypot";
 
 export default function QuoteDrawer() {
   const { quoteItems, removeFromQuote, updateQty, isDrawerOpen, setIsDrawerOpen, clearQuote } = useQuote();
@@ -16,6 +18,8 @@ export default function QuoteDrawer() {
     notes: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [honeypot, setHoneypot] = useState("");
 
   if (!isDrawerOpen) return null;
 
@@ -26,10 +30,21 @@ export default function QuoteDrawer() {
     if (quoteItems.length === 0) return;
     
     setIsSubmitting(true);
-    // Simulate API request delay
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    // Clear cart and close
+    setSubmitError("");
+    const result = await submitLead({
+      form: "quote-list",
+      formName: "Quote list",
+      fields: { name: formData.name, email: formData.email, phone: formData.phone, message: formData.notes },
+      items: quoteItems.map((item) => ({ id: item.id, name: item.name, category: item.category, size: item.size, qty: item.qty })),
+      website: honeypot,
+    });
+    if (!result.ok) {
+      setSubmitError(result.error);
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Only now that the enquiry is saved: clear the list and close
     clearQuote();
     setIsDrawerOpen(false);
     setIsSubmitting(false);
@@ -146,7 +161,7 @@ export default function QuoteDrawer() {
               </div>
 
               {/* Enquiry Form */}
-              <form onSubmit={handleSubmit} className="space-y-4 pt-6 border-t border-slate-100">
+              <form onSubmit={handleSubmit} className="relative space-y-4 pt-6 border-t border-slate-100">
                 <h3 className="text-sm font-bold text-slate-400 tracking-wider">
                   Contact information
                 </h3>
@@ -199,6 +214,14 @@ export default function QuoteDrawer() {
                     />
                   </div>
                 </div>
+
+                <Honeypot value={honeypot} onChange={setHoneypot} />
+
+                {submitError && (
+                  <p role="alert" className="text-xs text-red-500 bg-red-50 border border-red-500/20 rounded-xl px-4 py-3">
+                    {submitError}
+                  </p>
+                )}
 
                 <button
                   type="submit"

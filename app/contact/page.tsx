@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation";
 import { MapPin, Mail, Phone, ExternalLink, ChevronDown } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Honeypot from "@/components/Honeypot";
+import { submitLead } from "@/lib/leads";
 
 export default function ContactPage() {
   const router = useRouter();
@@ -18,14 +20,32 @@ export default function ContactPage() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [honeypot, setHoneypot] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
+    setSubmitError("");
+    const result = await submitLead({
+      form: "contact",
+      formName: "Contact page",
+      fields: {
+        name: formData.name,
+        company: formData.company,
+        email: formData.email,
+        phone: formData.phone,
+        interest: formData.subject === "Select enquiry type" ? "" : formData.subject,
+        message: formData.message,
+      },
+      website: honeypot,
+    });
+    if (!result.ok) {
+      setSubmitError(result.error);
       setIsSubmitting(false);
-      router.push("/thank-you?success=true");
-    }, 1000);
+      return;
+    }
+    router.push("/thank-you?success=true");
   };
 
   return (
@@ -190,7 +210,7 @@ export default function ContactPage() {
 
               <form
                 onSubmit={handleSubmit}
-                className="space-y-3.5 sm:space-y-5 sm:pt-2"
+                className="relative space-y-3.5 sm:space-y-5 sm:pt-2"
               >
                 {/* Row 1: Name & Company */}
                 <div className="grid grid-cols-2 gap-3 sm:gap-5">
@@ -307,6 +327,14 @@ export default function ContactPage() {
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm placeholder:text-slate-400 focus:bg-white focus:border-[#133a25] focus:ring-1 focus:ring-[#133a25] outline-none transition-all resize-y"
                   />
                 </div>
+
+                <Honeypot value={honeypot} onChange={setHoneypot} />
+
+                {submitError && (
+                  <p role="alert" className="text-xs text-red-500 bg-red-50 border border-red-500/20 rounded-xl px-4 py-3">
+                    {submitError}
+                  </p>
+                )}
 
                 {/* Submit Button */}
                 <button
