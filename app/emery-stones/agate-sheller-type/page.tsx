@@ -25,7 +25,7 @@ export default function AgateShellerTypeStones() {
 
   const handleAddToQuote = (sizeItem: StoneSize) => {
     const itemKey = `emery-stone-agate-${sizeItem.code.toLowerCase()}`;
-    
+
     addToQuote({
       id: itemKey,
       name: `Horizontal Emery Stones - Agate/Sheller Type (${sizeItem.name})`,
@@ -37,27 +37,27 @@ export default function AgateShellerTypeStones() {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#f9fafb] text-[#1c2722] font-sans relative overflow-x-clip">
-      
+
       {/* Background decoration */}
 
       <Header />
 
       {/* Main Content Section */}
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-16 flex-1 relative z-10">
-        
+
         {/* Hero Product Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-start gap-12 bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-sm mb-16">
-          
+
           {/* Left: Images */}
           <div className="flex flex-col gap-6 lg:sticky lg:top-28 self-start h-fit">
             <div className="relative w-full aspect-square lg:aspect-auto lg:h-[calc(100vh-11rem)] lg:min-h-[280px] lg:max-h-[480px] bg-white rounded-2xl flex items-center justify-center p-8 border border-slate-100 shadow-xs">
               <span className="absolute top-6 left-6 z-10 bg-slate-100 text-[10px] font-bold text-slate-500 px-3 py-1.5 rounded-full border border-slate-200">
                 Emery stones
               </span>
-              <img 
-                src="/emery-stone-dresser/agate_emery_stone.png" 
-                alt="Agate/Sheller Type Horizontal Emery Stones" 
-                className="w-full h-full object-contain" 
+              <img
+                src="/emery-stone-dresser/agate_emery_stone.png"
+                alt="Agate/Sheller Type Horizontal Emery Stones"
+                className="w-full h-full object-contain"
               />
             </div>
           </div>
@@ -106,7 +106,7 @@ export default function AgateShellerTypeStones() {
 
               <div className="space-y-3 max-h-[500px] overflow-y-auto pr-2">
               {sizes.map((sizeItem) => (
-                  <div 
+                  <div
                     key={sizeItem.code}
                     className="p-4 border border-slate-100 rounded-2xl bg-slate-50/50 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
                   >
@@ -143,18 +143,18 @@ export default function AgateShellerTypeStones() {
                 </Link>
               </div>
 
-              <div className="flex flex-wrap items-center gap-3 pt-3">
-                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-                  <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">1 year warranty</span>
+              <div className="flex flex-nowrap sm:flex-wrap items-stretch sm:items-center gap-2 sm:gap-3 pt-3">
+                <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+                  <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+                  <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">1 year warranty</span>
                 </div>
-                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-                  <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">Worldwide delivery</span>
+                <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+                  <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">Worldwide delivery</span>
                 </div>
-                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-                  <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">After sales support</span>
+                <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+                  <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">After sales support</span>
                 </div>
               </div>
             </div>

@@ -87,10 +87,8 @@ export const flourProcessingData: FlourProcessingProduct[] = [
       { title: "Suitable for continuous industrial operation", icon: "RotateCw" }
     ],
     specs: [
-      { parameter: "900 MM", specification: "300-500 kg/hr", extra: "single" },
-      { parameter: "1200 MM", specification: "500-800 kg/hr", extra: "single" },
-      { parameter: "1200 MM", specification: "600-900 kg/hr", extra: "double" },
-      { parameter: "1500 MM", specification: "1000-1200 kg/hr", extra: "double" }
+      { parameter: "900 MM", specification: "1 TPH", extra: "Single / Double", col6: "1 HP" },
+      { parameter: "1200 MM", specification: "1.5 TPH / 2 TPH", extra: "Single / Double", col6: "1.5 HP / 2 HP" }
     ],
     applications: [
       { label: "Flour mills", icon: "Factory" },
@@ -114,11 +112,10 @@ export const flourProcessingData: FlourProcessingProduct[] = [
       { title: "Easy maintenance with long service life", icon: "ShieldCheck" }
     ],
     specs: [
-      { parameter: "2×12", specification: "1800 MM", col3: "1200 MM", col4: "2500 MM", col5: "1-1.5 Ton/hr", col6: "2 HP" },
-      { parameter: "4×12", specification: "2000 MM", col3: "1800 MM", col4: "3600 MM", col5: "2.5-3 Ton/hr", col6: "3 HP" },
-      { parameter: "4×16", specification: "2000 MM", col3: "1800 MM", col4: "3600 MM", col5: "3-4 Ton/hr", col6: "3 HP" },
-      { parameter: "8×16", specification: "2400 MM", col3: "2200 MM", col4: "3600 MM", col5: "4-6 Ton/hr", col6: "3 HP" },
-      { parameter: "8×20", specification: "2400 MM", col3: "2200 MM", col4: "3800 MM", col5: "6-8 Ton/hr", col6: "3 HP" }
+      { parameter: "SVPS 2×12", specification: "1800 MM", col3: "1200 MM", col4: "2500 MM", col5: "1-2 Ton/hr", col6: "2 kW" },
+      { parameter: "SVPS 4×12", specification: "2000 MM", col3: "1800 MM", col4: "3600 MM", col5: "3-4 Ton/hr", col6: "3 kW" },
+      { parameter: "SVPS 4×16", specification: "2000 MM", col3: "2000 MM", col4: "3600 MM", col5: "4-5 Ton/hr", col6: "3 kW" },
+      { parameter: "SVPS 8×16", specification: "2400 MM", col3: "2200 MM", col4: "3600 MM", col5: "4-6 Ton/hr", col6: "5 kW" }
     ],
     applications: [
       { label: "Flour mills", icon: "Factory" },

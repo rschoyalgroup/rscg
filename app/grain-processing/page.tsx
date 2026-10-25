@@ -73,9 +73,9 @@ export default function GrainProcessingPage() {
         <div className="absolute inset-0 z-0">
           {/* Desktop Background Image (1920x820) */}
           <div className="hidden md:block absolute inset-0">
-            <Image 
-              src="/hero/grain-processing/grain_process_desktop_cropped.png" 
-              alt="Grain Processing Solutions" 
+            <Image
+              src="/hero/grain-processing/grain_process_desktop_cropped.png"
+              alt="Grain Processing Solutions"
               fill
               className="object-cover object-center"
               priority
@@ -87,9 +87,9 @@ export default function GrainProcessingPage() {
 
           {/* Mobile Background Image (9:16) */}
           <div className="block md:hidden absolute inset-0">
-            <Image 
-              src="/hero/grain-processing/grain_process_mobile.png" 
-              alt="Grain Processing Solutions" 
+            <Image
+              src="/hero/grain-processing/grain_process_mobile.png"
+              alt="Grain Processing Solutions"
               fill
               className="object-cover object-center"
               priority
@@ -113,8 +113,8 @@ export default function GrainProcessingPage() {
               High-performance machines for cleaner grain, better separation, and optimized milling efficiency.
             </p>
             <div className="pt-2 sm:pt-4">
-              <Link 
-                href="#products" 
+              <Link
+                href="#products"
                 className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer"
               >
                 EXPLORE MACHINES <ArrowRight className="w-4 h-4" />
@@ -136,7 +136,7 @@ export default function GrainProcessingPage() {
               <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Advanced separators &amp; multistage screening.</p>
             </div>
           </div>
-          
+
           <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
             <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <TrendingUp className="w-7 h-7" />
@@ -171,7 +171,7 @@ export default function GrainProcessingPage() {
               <p className="text-xs text-slate-600 font-medium mt-0.5">Advanced separators &amp; multistage screening.</p>
             </div>
           </div>
-          
+
           <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0">
               <TrendingUp className="w-6 h-6" />
@@ -200,14 +200,11 @@ export default function GrainProcessingPage() {
       <section className="w-full pt-4 md:pt-20 lg:pt-24 pb-16 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white relative z-10">
         <div className="w-full mx-auto space-y-6">
           <h2 className="text-2xl sm:text-3xl font-heading font-black text-slate-900">
-            A cleaning section plays the main role
+            Precision Cleaning for Superior Flour Quality
           </h2>
           <div className="text-slate-600 text-sm sm:text-base leading-relaxed space-y-4 max-w-4xl">
             <p>
-              Separation of the impurities, dust, stones, straw, sand, metal and other grains from the wheat is very important to get a quality flour.
-            </p>
-            <p>
-              Our machinery operates cleaning and separation section for various grains. Our expert team have worked closely to develop the finest solutions.
+              Effective grain cleaning is essential for producing high-quality flour. RS Group offers advanced cleaning and separation solutions that remove dust, stones, sand, straw, metal particles, and other impurities from wheat and various grains. Our precision-engineered machinery and industry expertise ensure efficient impurity removal, improved grain quality, and a reliable foundation for consistent milling performance.
             </p>
           </div>
         </div>
@@ -216,7 +213,7 @@ export default function GrainProcessingPage() {
       {/* Products Grid Section */}
       <section id="products" className="w-full py-16 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white">
         <div className="w-full mx-auto space-y-10">
-          
+
           <div className="text-center space-y-2">
             <h2 className="text-2xl sm:text-3xl font-heading font-black text-slate-900">
               Our advanced milling and cleaning products
@@ -276,7 +273,7 @@ export default function GrainProcessingPage() {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-white tracking-tight">
             Need a customized cleaning line setup?
           </h2>
-          <Link 
+          <Link
             href="/contact"
             className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap"
           >

@@ -45,9 +45,9 @@ export default function FlourProcessingPage() {
         <div className="absolute inset-0 z-0">
           {/* Desktop Background Image (1920x820) */}
           <div className="hidden md:block absolute inset-0">
-            <Image 
-              src="/hero/flour_process/flour_process_desktop_cropped.png" 
-              alt="Flour Processing" 
+            <Image
+              src="/hero/flour_process/flour_process_desktop_cropped.png"
+              alt="Flour Processing"
               fill
               className="object-cover object-center"
               priority
@@ -59,9 +59,9 @@ export default function FlourProcessingPage() {
 
           {/* Mobile Background Image (9:16) */}
           <div className="block md:hidden absolute inset-0">
-            <Image 
-              src="/hero/flour_process/Flour_process_mobile.png" 
-              alt="Flour Processing" 
+            <Image
+              src="/hero/flour_process/Flour_process_mobile.png"
+              alt="Flour Processing"
               fill
               className="object-cover object-center"
               priority
@@ -85,7 +85,7 @@ export default function FlourProcessingPage() {
               Explore the full journey of flour processing, from raw wheat fields to finished, high-quality flour. Our solutions cover every step for optimal results.
             </p>
             <div className="pt-2 sm:pt-4">
-              <Link 
+              <Link
                 href="#products"
                 className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer"
               >
@@ -108,7 +108,7 @@ export default function FlourProcessingPage() {
               <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Maximum safety and sanitation.</p>
             </div>
           </div>
-          
+
           <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
             <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <Layers className="w-7 h-7" />
@@ -143,7 +143,7 @@ export default function FlourProcessingPage() {
               <p className="text-xs text-slate-600 font-medium mt-0.5">Maximum safety and sanitation.</p>
             </div>
           </div>
-          
+
           <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0">
               <Layers className="w-6 h-6" />
@@ -171,7 +171,7 @@ export default function FlourProcessingPage() {
       {/* Products Grid Section */}
       <section id="products" className="w-full pt-4 md:pt-20 lg:pt-24 pb-16 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white relative">
         <div className="w-full mx-auto space-y-10">
-          
+
           <div className="text-center space-y-2">
             <h2 className="text-2xl sm:text-3xl font-heading font-black text-slate-900">
               Our advanced flour processing products
@@ -182,11 +182,16 @@ export default function FlourProcessingPage() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6 lg:gap-8 w-full">
-            {advancedProducts.map((product) => (
+            {advancedProducts.map((product, idx) => (
               <Link
                 key={product.id}
                 href={`/flour-processing/${product.slug}`}
-                className="group flex flex-col bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer"
+                className={`${
+                  // Odd last card: centre it under the row above on phones and tablets
+                  idx === advancedProducts.length - 1 && advancedProducts.length % 2 === 1
+                    ? "col-span-2 lg:col-span-1 w-[calc(50%-0.4375rem)] sm:w-[calc(50%-0.75rem)] lg:w-auto mx-auto lg:mx-0 "
+                    : ""
+                }group flex flex-col bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer`}
               >
                 {/* Image Area - Clean rounded background matching catalog page */}
                 <div className="relative aspect-square sm:aspect-[4/3] w-full bg-slate-50 overflow-hidden border-b border-slate-100 flex items-center justify-center p-3 sm:p-6">
@@ -231,7 +236,7 @@ export default function FlourProcessingPage() {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-white tracking-tight">
             Need a customized flour processing setup?
           </h2>
-          <Link 
+          <Link
             href="/contact"
             className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap"
           >

@@ -59,7 +59,6 @@ export const grainProcessingData: GrainProcessingProduct[] = [
     specs: [
       { parameter: "Magnetic Roll Size", specification: "100 mm × 1000 mm" },
       { parameter: "Magnetic Strength", specification: "Up to 10,000 Gauss" },
-      { parameter: "Capacity", specification: "2–4 TPH" },
       { parameter: "Drive Motor", specification: "1 HP Geared Motor" },
       { parameter: "Feeding System", specification: "Vibratory Hopper" },
       { parameter: "Separator Type", specification: "Permanent Drum-Type" }
@@ -138,16 +137,16 @@ export const grainProcessingData: GrainProcessingProduct[] = [
       {
         name: "S-1800",
         specs: [
-          { parameter: "Capacity", specification: "5–6 TPH" },
-          { parameter: "Power", specification: "10–15 HP" },
+          { parameter: "Capacity", specification: "4–5 TPH" },
+          { parameter: "Power", specification: "10–15 kW" },
           { parameter: "Drive", specification: "Electric Motor" }
         ]
       },
       {
         name: "S-2400",
         specs: [
-          { parameter: "Capacity", specification: "8–10 TPH" },
-          { parameter: "Power", specification: "15–20 HP" },
+          { parameter: "Capacity", specification: "6–8 TPH" },
+          { parameter: "Power", specification: "15–20 kW" },
           { parameter: "Drive", specification: "Electric Motor" }
         ]
       }
@@ -246,7 +245,7 @@ export const grainProcessingData: GrainProcessingProduct[] = [
           { parameter: "Capacity", specification: "2-3 Ton/hr" },
           { parameter: "Power", specification: "10 kW" },
           { parameter: "Air Qty", specification: "25-30 m³/min" },
-          { parameter: "Size", specification: "14X33\"" }
+          { parameter: "Size", specification: "14\" × 33\"" }
         ]
       },
       {
@@ -258,7 +257,7 @@ export const grainProcessingData: GrainProcessingProduct[] = [
           { parameter: "Capacity", specification: "5-6 Ton/hr" },
           { parameter: "Power", specification: "15-20 kW" },
           { parameter: "Air Qty", specification: "35-40 m³/min" },
-          { parameter: "Size", specification: "16x33\"" }
+          { parameter: "Size", specification: "16\" × 33\"" }
         ]
       }
     ],

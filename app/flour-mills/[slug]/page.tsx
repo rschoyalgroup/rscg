@@ -4,7 +4,7 @@ import { useState, use } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { 
+import {
   CheckCircle,
   ShoppingBag,
   FileText,
@@ -27,9 +27,9 @@ import { useQuote } from "@/components/QuoteContext";
 export default function ProductDetail({ params }: { params: Promise<{ slug: string }> }) {
   const { addToQuote } = useQuote();
   const resolvedParams = use(params);
-  
+
   const product = flourMillsProducts.find(p => p.id === resolvedParams.slug);
-  
+
   if (!product) {
     notFound();
   }
@@ -64,27 +64,27 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
       <Header />
 
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto pt-28 sm:pt-32 md:pt-36 pb-12 flex-1">
-        
+
         {/* Hero Product Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 md:items-start gap-6 md:gap-8 lg:gap-12 bg-white p-5 sm:p-8 lg:p-10 rounded-3xl border border-slate-200 shadow-sm mb-12 lg:mb-16">
-          
+
           {/* Left: Images */}
           <div className="flex flex-col gap-4 md:sticky md:top-28 self-start">
             <div className={`relative w-full aspect-[4/3] sm:aspect-square lg:aspect-auto ${product.showThumbnails !== false && product.keyComponents.length > 0 ? 'lg:h-[calc(100vh-22rem)] lg:min-h-[240px] lg:max-h-[440px]' : 'lg:h-[calc(100vh-15rem)] lg:min-h-[260px] lg:max-h-[480px]'} bg-white rounded-2xl flex items-center justify-center p-4 sm:p-6 lg:p-8`}>
               <span className="absolute top-0 left-0 z-10 bg-slate-100 text-xs font-bold text-slate-600 px-3.5 py-1.5 rounded-full border border-slate-200">
                 {product.category}
               </span>
-              <img 
-                src={activeImage} 
-                alt={product.title} 
-                className="w-full h-full object-contain" 
+              <img
+                src={activeImage}
+                alt={product.title}
+                className="w-full h-full object-contain"
               />
             </div>
-            
+
             {/* Component Thumbnails */}
             {product.showThumbnails !== false && product.keyComponents.length > 0 && (
               <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-                <button 
+                <button
                   onClick={() => setActiveImage(product.heroImage)}
                   className={`flex flex-col items-center gap-1.5 cursor-pointer group shrink-0 w-[84px] xl:w-[92px] snap-start`}
                 >
@@ -97,7 +97,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                 </button>
 
                 {product.keyComponents.slice(0, 5).map((comp, idx) => (
-                  <button 
+                  <button
                     key={idx}
                     onClick={() => comp.image && setActiveImage(comp.image)}
                     className={`flex flex-col items-center gap-1.5 cursor-pointer group shrink-0 w-[84px] xl:w-[92px] snap-start`}
@@ -205,8 +205,8 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                         if (mod.image) setActiveImage(mod.image);
                       }}
                       className={`text-left p-4 sm:p-5 rounded-xl border transition-all flex items-start gap-4 ${
-                        selectedModelIndex === idx 
-                          ? 'border-brand-primary bg-brand-primary/5 ring-1 ring-brand-primary/20 shadow-sm' 
+                        selectedModelIndex === idx
+                          ? 'border-brand-primary bg-brand-primary/5 ring-1 ring-brand-primary/20 shadow-sm'
                           : 'border-slate-200 hover:border-slate-300 bg-white'
                       }`}
                     >
@@ -255,7 +255,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                 <PackageCheck className="w-4 h-4 text-slate-900" />
                 <span>{addedMessage ? "Added to Quote!" : "Add to Quote List"}</span>
               </button>
-              
+
               <a
                 href={`https://wa.me/919240289259?text=${encodeURIComponent(`Hi, I would like to enquire about ${product.title}.`)}`}
                 target="_blank"
@@ -267,21 +267,21 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
               </a>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mt-4 pt-4">
-              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-                <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
-                <span className="text-[13px] font-bold text-slate-700">1 year warranty</span>
+            <div className="flex flex-nowrap sm:flex-wrap items-stretch sm:items-center justify-center sm:justify-start gap-2 sm:gap-3 mt-4 pt-4">
+              <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+                <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+                <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">1 year warranty</span>
               </div>
-              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-                <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                <span className="text-[13px] font-bold text-slate-700">Worldwide delivery</span>
+              <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+                <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">Worldwide delivery</span>
               </div>
-              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-                <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                <span className="text-[13px] font-bold text-slate-700">After sales support</span>
+              <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+                <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">After sales support</span>
               </div>
             </div>
-            
+
           </div>
         </div>
 
@@ -422,13 +422,13 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                         </h4>
                       </div>
                       <div className={`flex-1 flex flex-col ${isThreeCol ? 'sm:flex-row md:flex-col 2xl:flex-row' : 'sm:flex-row md:flex-col xl:flex-row'} gap-4 sm:gap-6 items-center`}>
-                        
+
                         {model.image && (
                           <div className={`w-full ${isThreeCol ? 'sm:w-[34%] md:w-full 2xl:w-[36%]' : 'sm:w-[34%] md:w-full xl:w-[38%]'} flex-shrink-0 flex items-center justify-center p-1 sm:p-2`}>
                             <img src={model.image} alt={model.name} className="w-full max-w-[150px] sm:max-w-[180px] max-h-[140px] sm:max-h-[190px] object-contain mix-blend-multiply" />
                           </div>
                         )}
-                        
+
                         <div className="flex-1 w-full min-w-0">
                           {model.description && (
                             <div className="text-sm text-slate-600 mb-4 font-medium leading-relaxed">
@@ -476,7 +476,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
         {/* Bottom Banner */}
         <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-3xl p-8 sm:p-12 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-8 relative overflow-hidden">
           <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none"></div>
-          
+
           <div className="flex items-center gap-6 relative z-10">
             <div className="w-16 h-16 rounded-full bg-[#f5a623] flex items-center justify-center shrink-0 border-4 border-white/20">
               <Settings className="w-8 h-8 text-white" />
@@ -501,7 +501,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
         </div>
 
       </div>
-      
+
       <Footer />
     </main>
   );

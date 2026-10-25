@@ -13,9 +13,9 @@ export default function ProductDetailsPage() {
   const params = useParams();
   const router = useRouter();
   const { addToQuote } = useQuote();
-  
+
   const slug = params.slug as string;
-  
+
   useEffect(() => {
     const flourProcessingSlugs = [
       "entoleter", "vibro-sifter", "plan-sifter"
@@ -26,7 +26,7 @@ export default function ProductDetailsPage() {
     }
 
     const grainProcessingSlugs = [
-      "magnetic-separator", "intensive-dampener", "horizontal-scourer", 
+      "magnetic-separator", "intensive-dampener", "horizontal-scourer",
       "bran-finisher", "emery-polisher", "emery-roll", "drum-sieve"
     ];
     if (grainProcessingSlugs.includes(slug)) {
@@ -46,7 +46,7 @@ export default function ProductDetailsPage() {
     }
 
     const powerSavingSlugs = [
-      "wonder-miller", "iquadra-smart-mill", "neomatic", 
+      "wonder-miller", "iquadra-smart-mill", "neomatic",
       "floura", "emery-stone-dresser"
     ];
     if (powerSavingSlugs.includes(slug)) {
@@ -97,7 +97,7 @@ export default function ProductDetailsPage() {
 
   const handleAddToQuote = () => {
     const variant = product.variants[selectedVariantIndex] || { name: product.title, size: "Standard" };
-    
+
     addToQuote({
       id: `${product.slug}-${selectedVariantIndex}`,
       name: `${product.title} - ${variant.name}`,
@@ -143,7 +143,7 @@ export default function ProductDetailsPage() {
         {/* Top Area: Overview + Image */}
         <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-4">
           <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-            
+
             {/* Left: Overview and Features */}
             <div className="space-y-8">
               <div className="space-y-4">
@@ -178,18 +178,18 @@ export default function ProductDetailsPage() {
 
         {/* Middle Banner */}
         <div className="w-full py-4 mt-6">
-          <div className="w-full max-w-6xl mx-auto flex flex-wrap items-center justify-end gap-3">
-             <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-               <ShieldCheck className="w-5 h-5 text-[#1eb557]" />
-               <span className="text-[13px] font-bold text-slate-700">1 year warranty</span>
+          <div className="w-full max-w-6xl mx-auto flex flex-nowrap sm:flex-wrap items-stretch sm:items-center justify-end gap-2 sm:gap-3">
+             <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+               <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+               <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">1 year warranty</span>
              </div>
-             <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-               <CheckCircle className="w-5 h-5 text-[#1eb557]" />
-               <span className="text-[13px] font-bold text-slate-700">Worldwide delivery</span>
+             <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+               <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+               <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">Worldwide delivery</span>
              </div>
-             <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-               <CheckCircle className="w-5 h-5 text-[#1eb557]" />
-               <span className="text-[13px] font-bold text-slate-700">After sales support</span>
+             <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+               <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+               <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">After sales support</span>
              </div>
           </div>
         </div>
@@ -197,7 +197,7 @@ export default function ProductDetailsPage() {
         {/* Bottom Area: Specs and Applications */}
         <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-8 mb-12">
           <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
+
             {/* Left: Technical Specs Table */}
             <div className="lg:col-span-7 space-y-4">
               <div className="flex items-center border-b border-slate-300 pb-2">
@@ -251,7 +251,7 @@ export default function ProductDetailsPage() {
               )}
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4 border-t border-slate-200">
-                <button 
+                <button
                   onClick={handleAddToQuote}
                   className="h-12 flex-1 w-full sm:w-auto flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
                 >
@@ -267,18 +267,18 @@ export default function ProductDetailsPage() {
                 </button>
               </div>
 
-              <div className="flex flex-wrap items-center gap-3 pt-2">
-                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-                  <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">1 year warranty</span>
+              <div className="flex flex-nowrap sm:flex-wrap items-stretch sm:items-center gap-2 sm:gap-3 pt-2">
+                <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+                  <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+                  <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">1 year warranty</span>
                 </div>
-                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-                  <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">Worldwide delivery</span>
+                <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+                  <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">Worldwide delivery</span>
                 </div>
-                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-                  <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">After sales support</span>
+                <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+                  <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">After sales support</span>
                 </div>
               </div>
             </div>
@@ -318,12 +318,12 @@ export default function ProductDetailsPage() {
       {/* Main Details Section */}
       <section className="w-full pt-28 sm:pt-32 md:pt-36 pb-12 px-6 sm:px-12 lg:px-16 xl:px-24">
         <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
+
           {/* Left Column: Product Image (col-span-5) */}
           <div className="lg:col-span-5 space-y-4 lg:sticky lg:top-28">
             <div className="bg-white rounded-[32px] border border-slate-200/60 p-6 lg:p-8 shadow-xs flex items-center justify-center aspect-square lg:aspect-auto lg:h-[calc(100vh-16rem)] lg:min-h-[260px] lg:max-h-[460px] relative overflow-hidden">
-              <img 
-                src={product.variants[selectedVariantIndex]?.image || product.image} 
+              <img
+                src={product.variants[selectedVariantIndex]?.image || product.image}
                 alt={product.title}
                 className="object-contain max-h-full max-w-full hover:scale-105 transition-transform duration-300"
               />
@@ -331,7 +331,7 @@ export default function ProductDetailsPage() {
                 {activeCategory?.name}
               </span>
             </div>
-            
+
             {/* Disclaimer card */}
             <div className="bg-white/40 border border-slate-200/40 rounded-2xl p-4 text-center text-[11px] text-slate-400 font-semibold leading-relaxed">
               * Dimensions, parameters, and capacities shown are for standard models. Customizable specs are available upon request. Contact our engineering team for personalized setups.
@@ -403,18 +403,18 @@ export default function ProductDetailsPage() {
               </button>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 pt-2">
-              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-                <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
-                <span className="text-[13px] font-bold text-slate-700">1 year warranty</span>
+            <div className="flex flex-nowrap sm:flex-wrap items-stretch sm:items-center gap-2 sm:gap-3 pt-2">
+              <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+                <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+                <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">1 year warranty</span>
               </div>
-              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-                <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                <span className="text-[13px] font-bold text-slate-700">Worldwide delivery</span>
+              <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+                <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">Worldwide delivery</span>
               </div>
-              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-                <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                <span className="text-[13px] font-bold text-slate-700">After sales support</span>
+              <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+                <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">After sales support</span>
               </div>
             </div>
 
@@ -447,7 +447,7 @@ export default function ProductDetailsPage() {
               {/* Tab Content Box */}
               <div className="p-6 sm:p-8">
                 {activeTab === "description" ? (
-                  <div 
+                  <div
                     className="prose prose-slate max-w-none text-slate-600 text-sm sm:text-base leading-relaxed font-medium space-y-4
                       [&>p]:leading-relaxed [&>p]:mb-4
                       [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:space-y-2 [&>ul]:mb-4
@@ -491,7 +491,7 @@ export default function ProductDetailsPage() {
       {/* Related Products Section */}
       <section className="w-full py-16 px-6 sm:px-12 lg:px-16 xl:px-24 border-t border-slate-200/50 bg-slate-50/20 overflow-hidden">
         <div className="w-full mx-auto space-y-8">
-          
+
           {/* Hide Scrollbars Utility */}
           <style dangerouslySetInnerHTML={{ __html: `
             .no-scrollbar::-webkit-scrollbar {
@@ -509,14 +509,14 @@ export default function ProductDetailsPage() {
               Related products
             </h2>
             <div className="flex items-center gap-2">
-              <button 
+              <button
                 onClick={() => scrollSlider('left')}
                 className="w-10 h-10 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-600 hover:text-slate-800 flex items-center justify-center transition-all cursor-pointer shadow-xs active:scale-95"
                 aria-label="Scroll left"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
-              <button 
+              <button
                 onClick={() => scrollSlider('right')}
                 className="w-10 h-10 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-600 hover:text-slate-800 flex items-center justify-center transition-all cursor-pointer shadow-xs active:scale-95"
                 aria-label="Scroll right"
@@ -527,25 +527,25 @@ export default function ProductDetailsPage() {
           </div>
 
           {/* Slider Container */}
-          <div 
+          <div
             ref={sliderRef}
             className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar pb-4 -mx-4 px-4 sm:-mx-6 sm:px-6"
           >
             {relatedProducts.map((p) => {
               const cat = categoriesData[p.category as keyof typeof categoriesData];
               return (
-                <div 
+                <div
                   key={p.slug}
                   className="w-[280px] sm:w-[320px] shrink-0 snap-start"
                 >
-                  <Link 
+                  <Link
                     href={`/catalog/${p.slug}`}
                     className="group bg-white rounded-[32px] border border-slate-200/60 overflow-hidden shadow-xs hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col h-full"
                   >
                     <div className="aspect-[4/3] bg-slate-50 flex items-center justify-center p-6 relative border-b border-slate-100 overflow-hidden">
-                      <img 
-                        src={p.image} 
-                        alt={p.title} 
+                      <img
+                        src={p.image}
+                        alt={p.title}
                         className="object-contain max-h-full max-w-full group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>

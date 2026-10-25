@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { 
-  ArrowRight, 
-  BarChart3, 
-  ShieldCheck, 
-  Settings, 
-  Leaf, 
+import {
+  ArrowRight,
+  BarChart3,
+  ShieldCheck,
+  Settings,
+  Leaf,
   Cpu,
   Box,
   Archive,
@@ -83,7 +83,7 @@ const modelsData = {
       Eco: {
         name: "Eco",
         subtitle: "Manual feeding",
-        image: "/images/vending-machines/floura_eco.png", 
+        image: "/images/vending-machines/floura_eco.png",
         specs: [
           { label: "Size (L X W X H)", value: '10\' x 3\'-4" x 9\'-2"', icon: Box },
           { label: "Root Blower System", value: "Yes", icon: Wind },
@@ -148,9 +148,9 @@ export default function BatchProductionPage() {
         <div className="absolute inset-0 z-0">
           {/* Desktop Background Image (1920x820) */}
           <div className="hidden md:block absolute inset-0">
-            <Image 
-              src="/hero/vending-machines/vending_machine_desktop_cropped.png" 
-              alt="Batch Production Systems" 
+            <Image
+              src="/hero/vending-machines/vending_machine_desktop_cropped.png"
+              alt="Batch Production Systems"
               fill
               className="object-cover object-center"
               priority
@@ -162,9 +162,9 @@ export default function BatchProductionPage() {
 
           {/* Mobile Background Image (9:16) */}
           <div className="block md:hidden absolute inset-0">
-            <Image 
-              src="/hero/vending-machines/vending-machine-mobile.png" 
-              alt="Batch Production Systems" 
+            <Image
+              src="/hero/vending-machines/vending-machine-mobile.png"
+              alt="Batch Production Systems"
               fill
               className="object-cover object-center"
               priority
@@ -188,7 +188,7 @@ export default function BatchProductionPage() {
               Engineered solutions for efficient, hygienic, and scalable batch processing in modern flour and food operations.
             </p>
             <div className="pt-2 sm:pt-4">
-              <button 
+              <button
                 onClick={() => {
                   const el = document.getElementById('configurator-section');
                   el?.scrollIntoView({ behavior: 'smooth' });
@@ -214,7 +214,7 @@ export default function BatchProductionPage() {
               <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Uncompromised quality.</p>
             </div>
           </div>
-          
+
           <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
             <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <ShieldCheck className="w-7 h-7" />
@@ -249,7 +249,7 @@ export default function BatchProductionPage() {
               <p className="text-xs text-slate-600 font-medium mt-0.5">Uncompromised quality.</p>
             </div>
           </div>
-          
+
           <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0">
               <ShieldCheck className="w-6 h-6" />
@@ -277,25 +277,25 @@ export default function BatchProductionPage() {
       {/* Main Interactive Configurator Section */}
       <section id="configurator-section" className="w-full pt-4 md:pt-10 lg:pt-12 pb-16 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white relative">
         {/* Breadcrumb equivalent / header */}
-        <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-widest mb-10">
+        <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-widest mb-5 sm:mb-10">
           <span>Home</span> <ArrowRight className="w-3 h-3 text-slate-300" />
           <span>Batch Production Systems</span> <ArrowRight className="w-3 h-3 text-slate-300" />
           <span className="text-slate-900">{activeModel}</span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-20 items-start">
+
           {/* Left Column: Product Image & Note */}
-          <div className="flex flex-col gap-6">
-            <div className="bg-white border border-slate-100 rounded-3xl overflow-hidden flex items-center justify-center relative shadow-sm aspect-square p-8">
+          <div className="flex flex-col gap-4 sm:gap-6 md:sticky md:top-28">
+            <div className="bg-white border border-slate-100 rounded-3xl overflow-hidden flex items-center justify-center relative shadow-sm aspect-[4/3] sm:aspect-square p-8">
               <Image
                 src={currentVariantData.image}
                 alt={`${activeModel} ${activeVariant}`}
                 fill
-                className="object-contain p-8"
+                className="object-contain p-4 sm:p-8"
               />
             </div>
-            <div className="flex items-start gap-3 bg-[#f6f9f1] border border-[#e5eddb] rounded-2xl p-5">
+            <div className="flex items-start gap-3 bg-[#f6f9f1] border border-[#e5eddb] rounded-2xl p-4 sm:p-5">
               <Info className="w-5 h-5 text-[#4a5f36] flex-shrink-0 mt-0.5" />
               <p className="text-xs text-[#4a5f36] leading-relaxed font-medium">
                 * Dimensions, parameters, and capacities shown are for standard models. Customizable specs are available upon request. Contact our engineering team for personalized setups.
@@ -304,10 +304,10 @@ export default function BatchProductionPage() {
           </div>
 
           {/* Right Column: Interactive Selection */}
-          <div className="flex flex-col space-y-10 py-4 justify-start">
-            
-            <div className="space-y-4">
-              <h3 className="text-4xl sm:text-5xl font-heading font-black text-[#0a4c2a] tracking-tight">
+          <div className="flex flex-col space-y-6 lg:space-y-10 md:py-0 lg:py-4 justify-start">
+
+            <div className="space-y-3 sm:space-y-4">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-[#0a4c2a] tracking-tight">
                 Floura
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed max-w-xl">
@@ -316,15 +316,15 @@ export default function BatchProductionPage() {
             </div>
 
             {/* Model Selection */}
-            <div className="space-y-5">
+            <div className="space-y-3 sm:space-y-5">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded border border-slate-200 flex items-center justify-center bg-white shadow-sm">
                   <Archive className="w-4 h-4 text-slate-600" />
                 </div>
-                <h3 className="text-lg font-extrabold text-slate-900">1. Choose model</h3>
+                <h3 className="text-base sm:text-lg font-extrabold text-slate-900">1. Choose model</h3>
               </div>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {(Object.keys(modelsData) as ModelKey[]).map((mod) => {
                   const isActive = activeModel === mod;
                   return (
@@ -334,25 +334,25 @@ export default function BatchProductionPage() {
                         setActiveModel(mod);
                         // Ensure the active variant exists for the new model (both have Eco and Auto here, so it's fine)
                       }}
-                      className={`relative flex items-center p-5 rounded-2xl border-2 transition-all duration-200 text-left cursor-pointer group ${
-                        isActive 
-                          ? "border-[#154627] bg-[#154627] text-white shadow-lg" 
+                      className={`relative flex items-center p-3 sm:p-5 rounded-xl sm:rounded-2xl border-2 transition-all duration-200 text-left cursor-pointer group ${
+                        isActive
+                          ? "border-[#154627] bg-[#154627] text-white shadow-lg"
                           : "border-slate-200 bg-white hover:border-[#154627]/40 hover:bg-slate-50 text-slate-800"
                       }`}
                     >
                       <div className="flex flex-col flex-1">
-                        <span className="font-black text-xl">{mod}</span>
-                        <span className={`text-sm mt-1 font-medium ${isActive ? "text-[#C1C9C3]" : "text-slate-500"}`}>
+                        <span className="font-black text-base sm:text-xl">{mod}</span>
+                        <span className={`text-xs sm:text-sm mt-0.5 sm:mt-1 font-medium leading-snug ${isActive ? "text-[#C1C9C3]" : "text-slate-500"}`}>
                           {modelsData[mod].capacity}
                         </span>
                       </div>
-                      <div className={`p-3 rounded-xl ${isActive ? "bg-white/10" : "bg-slate-100 group-hover:bg-[#154627]/5"}`}>
+                      <div className={`hidden sm:block p-3 rounded-xl ${isActive ? "bg-white/10" : "bg-slate-100 group-hover:bg-[#154627]/5"}`}>
                         <Factory className={`w-8 h-8 ${isActive ? "text-white" : "text-[#154627]/60"}`} />
                       </div>
-                      
+
                       {isActive && (
-                        <div className="absolute -top-3 -right-3 bg-white rounded-full p-0.5">
-                          <CheckCircle2 className="w-6 h-6 text-[#154627] fill-[#154627]/10" />
+                        <div className="absolute -top-2.5 -right-2.5 sm:-top-3 sm:-right-3 bg-white rounded-full p-0.5">
+                          <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#154627] fill-[#154627]/10" />
                         </div>
                       )}
                     </button>
@@ -362,42 +362,42 @@ export default function BatchProductionPage() {
             </div>
 
             {/* Variant Selection */}
-            <div className="space-y-5">
+            <div className="space-y-3 sm:space-y-5">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded border border-slate-200 flex items-center justify-center bg-white shadow-sm">
                   <ListFilter className="w-4 h-4 text-slate-600" />
                 </div>
-                <h3 className="text-lg font-extrabold text-slate-900">2. Choose variant</h3>
+                <h3 className="text-base sm:text-lg font-extrabold text-slate-900">2. Choose variant</h3>
               </div>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {(["Eco", "Auto"] as VariantKey[]).map((vari) => {
                   const isActive = activeVariant === vari;
                   const Icon = vari === "Eco" ? Leaf : Cpu;
-                  
+
                   return (
                     <button
                       key={vari}
                       onClick={() => setActiveVariant(vari)}
-                      className={`relative flex items-center p-5 rounded-2xl border-2 transition-all duration-200 text-left cursor-pointer group ${
-                        isActive 
-                          ? "border-[#154627] bg-[#154627] text-white shadow-lg" 
+                      className={`relative flex items-center p-3 sm:p-5 rounded-xl sm:rounded-2xl border-2 transition-all duration-200 text-left cursor-pointer group ${
+                        isActive
+                          ? "border-[#154627] bg-[#154627] text-white shadow-lg"
                           : "border-slate-200 bg-white hover:border-[#154627]/40 hover:bg-slate-50 text-slate-800"
                       }`}
                     >
                       <div className="flex flex-col flex-1">
-                        <span className="font-black text-xl">{vari}</span>
-                        <span className={`text-sm mt-1 font-medium ${isActive ? "text-[#C1C9C3]" : "text-slate-500"}`}>
+                        <span className="font-black text-base sm:text-xl">{vari}</span>
+                        <span className={`text-xs sm:text-sm mt-0.5 sm:mt-1 font-medium leading-snug ${isActive ? "text-[#C1C9C3]" : "text-slate-500"}`}>
                           {vari === "Eco" ? "Manual feeding" : "Automatic feeding"}
                         </span>
                       </div>
-                      <div className={`p-3 rounded-xl ${isActive ? "bg-white/10" : "bg-slate-100 group-hover:bg-[#154627]/5"}`}>
+                      <div className={`hidden sm:block p-3 rounded-xl ${isActive ? "bg-white/10" : "bg-slate-100 group-hover:bg-[#154627]/5"}`}>
                         <Icon className={`w-8 h-8 ${isActive ? "text-[#8CD5A1]" : "text-[#154627]/60"}`} />
                       </div>
-                      
+
                       {isActive && (
-                        <div className="absolute -top-3 -right-3 bg-white rounded-full p-0.5">
-                          <CheckCircle2 className="w-6 h-6 text-[#154627] fill-[#154627]/10" />
+                        <div className="absolute -top-2.5 -right-2.5 sm:-top-3 sm:-right-3 bg-white rounded-full p-0.5">
+                          <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#154627] fill-[#154627]/10" />
                         </div>
                       )}
                     </button>
@@ -405,11 +405,11 @@ export default function BatchProductionPage() {
                 })}
               </div>
             </div>
-            
+
             {/* Actions */}
-            <div className="space-y-6 pt-4">
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                <button 
+            <div className="space-y-4 sm:space-y-6 pt-1 sm:pt-4">
+              <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row items-stretch sm:items-center md:items-stretch lg:items-center gap-3 sm:gap-4">
+                <button
                   type="button"
                   onClick={() => {
                     addToQuote({
@@ -427,30 +427,30 @@ export default function BatchProductionPage() {
                   <PackageCheck className="w-4 h-4 text-slate-900" />
                   {addedMessage ? "Added to Quote!" : "Add to Quote List"}
                 </button>
-                
-                <a 
+
+                <a
                   href={`https://wa.me/919240289259?text=${encodeURIComponent(`Hi, I would like to enquire about Floura ${activeModel} (${activeVariant}).`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="h-12 w-full sm:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap"
+                  className="h-12 w-full sm:w-auto md:w-full lg:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap"
                 >
                   <MessageCircle className="w-4 h-4" />
                   WhatsApp Enquiry
                 </a>
               </div>
 
-              <div className="flex flex-wrap items-center gap-3 pt-3">
-                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-                  <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">1 year warranty</span>
+              <div className="flex flex-nowrap sm:flex-wrap items-stretch sm:items-center gap-2 sm:gap-3 pt-3">
+                <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+                  <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+                  <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">1 year warranty</span>
                 </div>
-                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-                  <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">Worldwide delivery</span>
+                <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+                  <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">Worldwide delivery</span>
                 </div>
-                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-                  <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">After sales support</span>
+                <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+                  <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">After sales support</span>
                 </div>
               </div>
             </div>
@@ -459,32 +459,32 @@ export default function BatchProductionPage() {
       </section>
 
       {/* Specifications Table Section */}
-      <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pb-24 bg-white">
-        <div className="w-full bg-[#FAFAFA] rounded-3xl border border-slate-200/70 p-6 sm:p-10 shadow-sm transition-all duration-300">
-          
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-10 gap-4 border-b border-slate-200 pb-6">
-            <h3 className="text-xl sm:text-2xl font-heading font-black text-slate-900 flex items-center gap-2">
-              Specifications 
-              <span className="text-[#154627] bg-[#154627]/10 px-3 py-1 rounded-full text-lg ml-2">
+      <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pb-12 lg:pb-24 bg-white">
+        <div className="w-full bg-[#FAFAFA] rounded-3xl border border-slate-200/70 p-4 sm:p-10 shadow-sm transition-all duration-300">
+
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3 sm:mb-10 gap-4 border-b border-slate-200 pb-4 sm:pb-6">
+            <h3 className="text-lg sm:text-2xl font-heading font-black text-slate-900 flex flex-wrap items-center gap-2">
+              Specifications
+              <span className="text-[#154627] bg-[#154627]/10 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-sm sm:text-lg sm:ml-2">
                 ( {activeModel} {activeVariant} )
               </span>
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-12 gap-y-0">
             {/* Left Specs Column */}
             <div className="flex flex-col divide-y divide-slate-200/60">
               {leftSpecs.map((spec, i) => {
                 const Icon = spec.icon;
                 return (
-                  <div key={i} className="flex items-center justify-between py-4 group hover:bg-white rounded-lg px-2 transition-colors -mx-2">
-                    <div className="flex items-center gap-4 text-slate-600 font-medium text-sm">
-                      <div className="p-2 bg-slate-100 rounded-lg text-slate-400 group-hover:text-[#154627] group-hover:bg-[#154627]/5 transition-colors">
+                  <div key={i} className="flex items-center justify-between gap-3 py-2.5 sm:py-4 group hover:bg-white rounded-lg px-2 transition-colors -mx-2">
+                    <div className="flex items-center gap-2.5 sm:gap-4 text-slate-600 font-medium text-[13px] sm:text-sm">
+                      <div className="p-1.5 sm:p-2 bg-slate-100 rounded-lg text-slate-400 group-hover:text-[#154627] group-hover:bg-[#154627]/5 transition-colors">
                         <Icon className="w-4 h-4" strokeWidth={2.5} />
                       </div>
                       {spec.label}
                     </div>
-                    <div className="font-bold text-slate-900 text-sm text-right max-w-[50%]">
+                    <div className="font-bold text-slate-900 text-[13px] sm:text-sm text-right max-w-[50%]">
                       {spec.value}
                     </div>
                   </div>
@@ -497,14 +497,14 @@ export default function BatchProductionPage() {
               {rightSpecs.map((spec, i) => {
                 const Icon = spec.icon;
                 return (
-                  <div key={i} className="flex items-center justify-between py-4 group hover:bg-white rounded-lg px-2 transition-colors -mx-2">
-                    <div className="flex items-center gap-4 text-slate-600 font-medium text-sm">
-                      <div className="p-2 bg-slate-100 rounded-lg text-slate-400 group-hover:text-[#154627] group-hover:bg-[#154627]/5 transition-colors">
+                  <div key={i} className="flex items-center justify-between gap-3 py-2.5 sm:py-4 group hover:bg-white rounded-lg px-2 transition-colors -mx-2">
+                    <div className="flex items-center gap-2.5 sm:gap-4 text-slate-600 font-medium text-[13px] sm:text-sm">
+                      <div className="p-1.5 sm:p-2 bg-slate-100 rounded-lg text-slate-400 group-hover:text-[#154627] group-hover:bg-[#154627]/5 transition-colors">
                         <Icon className="w-4 h-4" strokeWidth={2.5} />
                       </div>
                       {spec.label}
                     </div>
-                    <div className="font-bold text-slate-900 text-sm text-right max-w-[50%]">
+                    <div className="font-bold text-slate-900 text-[13px] sm:text-sm text-right max-w-[50%]">
                       {spec.value}
                     </div>
                   </div>

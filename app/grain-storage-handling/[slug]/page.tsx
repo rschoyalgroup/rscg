@@ -78,7 +78,7 @@ export default function SiloDetailPage() {
                 {product.category}
               </span>
             </div>
-            
+
             <div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-[#0a4c2a] leading-tight mb-2">
                 {product.title}
@@ -88,7 +88,7 @@ export default function SiloDetailPage() {
               </h3>
             </div>
 
-            <div 
+            <div
               className="text-base text-slate-600 leading-relaxed space-y-4"
               dangerouslySetInnerHTML={{ __html: product.description.replace(/\n/g, '<br/>') }}
             />
@@ -113,18 +113,18 @@ export default function SiloDetailPage() {
               </Link>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 pt-3">
-              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-                <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
-                <span className="text-[13px] font-bold text-slate-700">1 year warranty</span>
+            <div className="flex flex-nowrap sm:flex-wrap items-stretch sm:items-center gap-2 sm:gap-3 pt-3">
+              <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+                <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+                <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">1 year warranty</span>
               </div>
-              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-                <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                <span className="text-[13px] font-bold text-slate-700">Worldwide delivery</span>
+              <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+                <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">Worldwide delivery</span>
               </div>
-              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
-                <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                <span className="text-[13px] font-bold text-slate-700">After sales support</span>
+              <div className="flex-1 sm:flex-none min-w-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-1.5 py-2 sm:px-3.5 rounded-xl text-center">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#1eb557] shrink-0" />
+                <span className="text-[11px] sm:text-[13px] font-bold text-slate-700 leading-tight">After sales support</span>
               </div>
             </div>
           </div>
@@ -136,7 +136,7 @@ export default function SiloDetailPage() {
             <h2 className="text-2xl font-black text-[#0a4c2a] mb-2">Key features</h2>
             <p className="text-slate-500">Engineered for high-efficiency plant integration and low-residue handling</p>
           </div>
-          
+
           <div className="flex md:flex-wrap md:justify-center gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
             {product.keyFeatures.map((feature, idx) => {
               const Icon = IconMap[feature.icon] || CheckCircle2;
@@ -161,7 +161,7 @@ export default function SiloDetailPage() {
               <h2 className="text-2xl font-black text-[#0a4c2a] mb-2">Available capacities</h2>
               <p className="text-sm text-slate-500">Select your required material line and model capacity to add to your quote enquiry.</p>
             </div>
-            
+
             {product.capacitySections.length > 1 && (
               <div className="flex p-1 bg-slate-50 rounded-lg border border-slate-200 self-stretch md:self-auto shrink-0 overflow-x-auto">
                 {product.capacitySections.map((section, idx) => {
@@ -180,7 +180,7 @@ export default function SiloDetailPage() {
               </div>
             )}
           </div>
-          
+
           <div className="space-y-4">
             {product.capacitySections[activeTab]?.items.map((cap, idx) => (
                   <div key={idx} className="bg-white border border-slate-100 rounded-xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm hover:border-slate-200 transition-colors">
@@ -198,7 +198,7 @@ export default function SiloDetailPage() {
                     </div>
 
                     <div className="flex items-center gap-3 w-full md:w-auto border-t md:border-t-0 pt-4 md:pt-0 border-slate-100">
-                      <button 
+                      <button
                         onClick={() => handleAddToQuote(cap)}
                         className="h-10 px-5 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold rounded-lg text-sm flex items-center justify-center gap-2 shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all whitespace-nowrap cursor-pointer"
                       >
