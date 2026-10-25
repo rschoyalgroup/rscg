@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Disc3, Lightbulb, Cog } from "lucide-react";
 
 export default function MillingSolutionsSection() {
   const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
@@ -39,6 +39,9 @@ export default function MillingSolutionsSection() {
       desc: "Choyal built its expertise in emery stones, milling geometry, grain flow and grinding conditions, understanding the fundamentals that shape flour quality and milling performance.",
       img: "/images/stone-milling/stone-foundation-v3.png",
       alt: "Early Choyal stone mill - the foundation of stone milling",
+      // Keep the person on the left of the photo in frame when the thumbnail crops it
+      imgPos: "22% 50%",
+      icon: Disc3,
       href: "/emery-stones"
     },
     {
@@ -47,6 +50,8 @@ export default function MillingSolutionsSection() {
       desc: "The expertise led to WonderMill, the world's first digital stone mill, combining traditional stone milling with digital control, automation and intelligent monitoring.",
       img: "/images/stone-milling/digital-era-v3.png",
       alt: "Digital stone mill innovation",
+      imgPos: "50% 50%",
+      icon: Lightbulb,
       href: "/flour-mills"
     },
     {
@@ -55,6 +60,8 @@ export default function MillingSolutionsSection() {
       desc: "As milling needs evolved, Choyal expanded into precision flour mills, advanced machinery and turnkey solutions, combining engineering, process knowledge and decades of mill-floor experience.",
       img: "/images/stone-milling/turnkey-solution-v2.png",
       alt: "Engineered milling solutions",
+      imgPos: "50% 50%",
+      icon: Cog,
       href: "/turnkey-projects"
     }
   ];
@@ -62,7 +69,7 @@ export default function MillingSolutionsSection() {
   return (
     <section 
       id="end-to-end-solutions" 
-      className="relative w-full overflow-hidden bg-[#FAF9F5] border-t border-slate-200/60 py-20 sm:py-24 lg:py-28 isolate"
+      className="relative w-full overflow-hidden bg-white border-t border-slate-200/60 py-20 sm:py-24 lg:py-28 isolate"
     >
       {/* =========================================================
           BACKGROUND DECORATIVE GLOW & ORBIT
@@ -163,7 +170,7 @@ export default function MillingSolutionsSection() {
 
         {/* Soft luminous white gradient & glow overlay directly washing over the chakki */}
         <div 
-          className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/70 to-transparent" 
+          className="absolute inset-0 pointer-events-none bg-gradient-to-r from-white via-white/70 to-transparent" 
           aria-hidden="true"
         />
         <div 
@@ -276,13 +283,25 @@ export default function MillingSolutionsSection() {
                   {/* Left Column Text Content */}
                   <div className="flex-1 min-w-0 flex flex-col justify-between h-full">
                     <div>
-                      {/* Number */}
-                      <span className="text-xs xl:text-sm font-bold text-[#FFAA17] tracking-[0.08em] block transition-transform duration-300">
+                      {/* Icon (fills the empty space in collapsed cards; hidden when the card expands) */}
+                      <div className={`overflow-hidden transition-all duration-400 ease-out ${
+                        isHovered ? "max-h-0 opacity-0 mb-0" : "max-h-16 opacity-100 mb-4 xl:mb-5"
+                      }`}>
+                        <span className="inline-flex w-11 h-11 xl:w-12 xl:h-12 rounded-xl bg-[#F3F8F5] text-[#015435] items-center justify-center">
+                          <feat.icon className="w-5.5 h-5.5 xl:w-6 xl:h-6" strokeWidth={1.6} />
+                        </span>
+                      </div>
+
+                      {/* Number (shown with the description when the card expands) */}
+                      <span className={`text-xs xl:text-sm font-bold text-[#FFAA17] tracking-[0.08em] block transition-all duration-300 overflow-hidden ${
+                        isHovered ? "max-h-6 opacity-100" : "max-h-0 opacity-0"
+                      }`}>
                         {feat.num}
                       </span>
 
                       {/* Heading */}
-                      <h4 className={`font-bold text-[#0F172A] tracking-tight leading-[1.25] mt-3.5 xl:mt-4 transition-all duration-300 ${
+                      <h4 className={`font-bold text-[#0F172A] tracking-tight leading-[1.25] transition-all duration-300 ${
+                        isHovered ? "mt-3.5 xl:mt-4 " : ""}${
                         isHovered 
                           ? "text-[18px] xl:text-[20px] 2xl:text-[21px] max-w-[280px]" 
                           : hasHover 
@@ -317,7 +336,8 @@ export default function MillingSolutionsSection() {
                         src={feat.img}
                         alt={feat.alt}
                         fill
-                        className="object-cover object-center"
+                        className="object-cover"
+                        style={{ objectPosition: feat.imgPos }}
                         sizes="(max-width: 1280px) 200px, 280px"
                       />
                     </div>

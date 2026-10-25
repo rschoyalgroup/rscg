@@ -46,18 +46,18 @@ const certBadges = [
 
 export default function Footer() {
   return (
-    <footer className="w-full pt-14 pb-12 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#f6f6f4] text-[#3e4d46] border-t border-slate-300/80 relative z-10">
-      <div className="w-full mx-auto space-y-12">
+    <footer className="w-full pt-10 sm:pt-14 pb-8 sm:pb-12 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#f6f6f4] text-[#3e4d46] border-t border-slate-300/80 relative z-10">
+      <div className="w-full mx-auto space-y-8 sm:space-y-12">
         
         {/* ================= 5-COLUMN MAIN GRID ================= */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-8 lg:gap-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-x-6 gap-y-8 lg:gap-10">
           
           {/* Col 1: About Us (2 cols) */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="lg:col-span-2 space-y-3 sm:space-y-4">
             <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider">
               About us
             </h4>
-            <ul className="space-y-2.5 text-sm sm:text-[15px] font-medium text-slate-600">
+            <ul className="space-y-2 sm:space-y-2.5 text-[13px] sm:text-[15px] font-medium text-slate-600">
               {aboutLinks.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="hover:text-brand-primary transition-colors">
@@ -69,11 +69,11 @@ export default function Footer() {
           </div>
 
           {/* Col 2: Products (2 cols) */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="lg:col-span-2 space-y-3 sm:space-y-4">
             <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider">
               Products
             </h4>
-            <ul className="space-y-2.5 text-sm sm:text-[15px] font-medium text-slate-600">
+            <ul className="space-y-2 sm:space-y-2.5 text-[13px] sm:text-[15px] font-medium text-slate-600">
               {productLinks.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="hover:text-brand-primary transition-colors">
@@ -85,11 +85,11 @@ export default function Footer() {
           </div>
 
           {/* Col 3: Services (2 cols) */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="lg:col-span-2 space-y-3 sm:space-y-4">
             <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider">
               Services
             </h4>
-            <ul className="space-y-2.5 text-sm sm:text-[15px] font-medium text-slate-600">
+            <ul className="space-y-2 sm:space-y-2.5 text-[13px] sm:text-[15px] font-medium text-slate-600">
               {serviceLinks.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="hover:text-brand-primary transition-colors">
@@ -101,12 +101,12 @@ export default function Footer() {
           </div>
 
           {/* Col 4: Locations & Contact (3.5 cols) */}
-          <div className="lg:col-span-3 xl:col-span-3 space-y-4">
+          <div className="col-span-2 order-last md:order-none md:col-span-1 lg:col-span-3 xl:col-span-3 space-y-3 sm:space-y-4">
             <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider">
               Locations &amp; contact
             </h4>
             
-            <div className="space-y-4 text-sm font-medium text-slate-600">
+            <div className="space-y-3 sm:space-y-4 text-sm font-medium text-slate-600">
               {/* Corporate Headquarters */}
               <div className="flex items-start gap-3">
                 <MapPin className="h-4.5 w-4.5 text-emerald-700 mt-0.5 flex-shrink-0" />
@@ -130,7 +130,7 @@ export default function Footer() {
               </div>
 
               {/* Call, Mail & Web */}
-              <div className="pt-2 space-y-2.5">
+              <div className="pt-1 sm:pt-2 space-y-2 sm:space-y-2.5">
                 <div className="flex items-center gap-3">
                   <Phone className="h-4.5 w-4.5 text-emerald-700 flex-shrink-0" />
                   <a href="tel:+919240289259" className="text-slate-800 hover:text-brand-primary font-bold text-sm sm:text-base transition-colors">
@@ -154,7 +154,7 @@ export default function Footer() {
           </div>
 
           {/* Col 5: Social Media (2.5 cols) */}
-          <div className="lg:col-span-3 xl:col-span-3 space-y-4">
+          <div className="lg:col-span-3 xl:col-span-3 space-y-3 sm:space-y-4">
             <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider">
               Social media
             </h4>
@@ -221,7 +221,7 @@ export default function Footer() {
         </div>
 
         {/* ================= BOTTOM DIVIDER & CERTIFICATIONS ================= */}
-        <div className="border-t border-slate-200/80 pt-8 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
+        <div className="border-t border-slate-200/80 pt-6 sm:pt-8 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 sm:gap-8">
           
           {/* Left: Copyright & Tagline */}
           <div className="space-y-1.5">
@@ -234,7 +234,7 @@ export default function Footer() {
           </div>
 
           {/* Right: 8 Certification & Feature Badges */}
-          <div className="flex flex-wrap items-start justify-start lg:justify-end gap-3 sm:gap-4">
+          <div className="w-full lg:w-auto grid grid-cols-4 sm:flex sm:flex-wrap items-start justify-items-center sm:justify-start lg:justify-end gap-3 sm:gap-4">
             {certBadges.map((badge) => (
               <div key={badge.name} className="flex flex-col items-center group w-16 sm:w-18">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center p-1 transition-transform duration-200 group-hover:scale-110">

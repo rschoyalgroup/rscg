@@ -87,15 +87,15 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
 
   const productCategories = [
     { name: "Turnkey Solutions", desc: "Complete customized flour milling plants from design to commissioning.", href: "/turnkey-projects", icon: Factory, imgIcon: "/navbar-icons/turnkey_solution.png" },
-    { name: "Flour Mill", desc: "Digital, automatic, vertical, and traditional chakki mills.", href: "/flour-mills", icon: Workflow, imgIcon: "/navbar-icons/flour_mill.png" },
+    { name: "Flour Mill", desc: "Efficient solutions for quality flour production.", href: "/flour-mills", icon: Workflow, imgIcon: "/navbar-icons/flour_mill.png" },
     { name: "Emery Stones", desc: "Daniya and Danish style emery stones for premium cold-grinding.", href: "/emery-stones", icon: Layers, imgIcon: "/navbar-icons/emerystone.png" },
     { name: "Automation", desc: "Wonder Miller PLC system and computerized plant controllers.", href: "/automation", icon: Cpu, imgIcon: "/navbar-icons/automation.png" },
-    { name: "Power Saving", desc: "iQuadra smart mills and energy-efficient conveying systems.", href: "/power-saving", icon: Zap, imgIcon: "/navbar-icons/power_saving.png" },
+    { name: "Power Saving", desc: "Energy-efficient solutions for smarter milling.", href: "/power-saving", icon: Zap, imgIcon: "/navbar-icons/power_saving.png" },
     { name: "Grain Storage & Handling", desc: "Heavy-duty steel silos, load cells, and distribution networks.", href: "/grain-storage-handling", icon: Database, imgIcon: "/navbar-icons/grain_storage.png" },
-    { name: "Grain Processing", desc: "High-efficiency scourers, polishers, and entoletors.", href: "/grain-processing", icon: Filter, imgIcon: "/navbar-icons/grain_process.png" },
-    { name: "Flour Processing", desc: "Engineered flour processing solutions.", href: "/flour-processing", icon: Workflow, imgIcon: "/navbar-icons/flourprocess-v2.png" },
-    { name: "Vending Machines", desc: "Floura fresh stone-ground flour on-demand vending machines.", href: "/vending-machines", icon: ShoppingBag, imgIcon: "/navbar-icons/vending_machine.png" },
-    { name: "Books", desc: "Industry-standard guides and publications by RS Choyal.", href: "/books", icon: BookOpen, imgIcon: "/navbar-icons/book.png" },
+    { name: "Grain Processing", desc: "Advanced grain cleaning and preparation.", href: "/grain-processing", icon: Filter, imgIcon: "/navbar-icons/grain_process.png" },
+    { name: "Flour Processing", desc: "Precision solutions for quality flour production.", href: "/flour-processing", icon: Workflow, imgIcon: "/navbar-icons/flourprocess-v2.png" },
+    { name: "Vending Machines", desc: "Automated solution for fresh flour dispensing on demand.", href: "/vending-machines", icon: ShoppingBag, imgIcon: "/navbar-icons/vending_machine.png" },
+    { name: "Books", desc: "Knowledge and practical insights into flour milling.", href: "/books", icon: BookOpen, imgIcon: "/navbar-icons/book.png" },
   ];
 
   const serviceItems = [
@@ -183,7 +183,7 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
                           }}
                           className="flex items-start gap-4 p-3 rounded-xl hover:bg-white/60 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 group border border-transparent hover:border-brand-primary/5"
                         >
-                          <div className="w-12 h-12 rounded-xl bg-white border border-slate-200/80 shadow-xs group-hover:bg-brand-primary group-hover:border-brand-primary flex items-center justify-center p-2 transition-colors duration-300 flex-shrink-0">
+                          <div className="w-12 h-12 rounded-xl bg-[#F9F6F0] border border-slate-200/80 shadow-xs group-hover:bg-brand-primary group-hover:border-brand-primary flex items-center justify-center p-2 transition-colors duration-300 flex-shrink-0">
                             {item.imgIcon ? (
                               <img src={item.imgIcon} alt={item.name} className="h-8 w-8 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300" />
                             ) : (
@@ -233,7 +233,7 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
                           href={item.href}
                           className="flex items-start gap-4 p-3 rounded-xl hover:bg-white/60 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 group border border-transparent hover:border-brand-primary/5"
                         >
-                          <div className="w-12 h-12 rounded-xl bg-white border border-slate-200/80 shadow-xs group-hover:bg-brand-primary group-hover:border-brand-primary flex items-center justify-center p-2 transition-colors duration-300 flex-shrink-0">
+                          <div className="w-12 h-12 rounded-xl bg-[#F9F6F0] border border-slate-200/80 shadow-xs group-hover:bg-brand-primary group-hover:border-brand-primary flex items-center justify-center p-2 transition-colors duration-300 flex-shrink-0">
                             {item.imgIcon ? (
                               <img src={item.imgIcon} alt={item.name} className="h-8 w-8 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300" />
                             ) : (
@@ -283,7 +283,7 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
                           href={item.href}
                           className="flex items-start gap-4 p-3 rounded-xl hover:bg-white/60 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 group border border-transparent hover:border-brand-primary/5"
                         >
-                          <div className="w-12 h-12 rounded-xl bg-white border border-slate-200/80 shadow-xs group-hover:bg-brand-primary group-hover:border-brand-primary flex items-center justify-center p-2 transition-colors duration-300 flex-shrink-0">
+                          <div className="w-12 h-12 rounded-xl bg-[#F9F6F0] border border-slate-200/80 shadow-xs group-hover:bg-brand-primary group-hover:border-brand-primary flex items-center justify-center p-2 transition-colors duration-300 flex-shrink-0">
                             {item.imgIcon ? (
                               <img src={item.imgIcon} alt={item.name} className="h-8 w-8 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300" />
                             ) : (
@@ -473,7 +473,7 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
                         }}
                         className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 text-sm font-semibold text-slate-700 hover:text-brand-primary group"
                       >
-                        <div className="w-9 h-9 rounded-lg bg-white border border-slate-200/80 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-brand-primary transition-colors">
+                        <div className="w-9 h-9 rounded-lg bg-[#F9F6F0] border border-slate-200/80 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-brand-primary transition-colors">
                           {item.imgIcon ? (
                             <img src={item.imgIcon} alt={item.name} className="h-6 w-6 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300" />
                           ) : (
@@ -508,7 +508,7 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
                         onClick={() => setMobileMenuOpen(false)}
                         className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 text-sm font-semibold text-slate-700 hover:text-brand-primary group"
                       >
-                        <div className="w-9 h-9 rounded-lg bg-white border border-slate-200/80 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-brand-primary transition-colors">
+                        <div className="w-9 h-9 rounded-lg bg-[#F9F6F0] border border-slate-200/80 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-brand-primary transition-colors">
                           {item.imgIcon ? (
                             <img src={item.imgIcon} alt={item.name} className="h-6 w-6 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300" />
                           ) : (
@@ -543,7 +543,7 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
                         onClick={() => setMobileMenuOpen(false)}
                         className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 text-sm font-semibold text-slate-700 hover:text-brand-primary group"
                       >
-                        <div className="w-9 h-9 rounded-lg bg-white border border-slate-200/80 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-brand-primary transition-colors">
+                        <div className="w-9 h-9 rounded-lg bg-[#F9F6F0] border border-slate-200/80 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-brand-primary transition-colors">
                           {item.imgIcon ? (
                             <img src={item.imgIcon} alt={item.name} className="h-6 w-6 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300" />
                           ) : (

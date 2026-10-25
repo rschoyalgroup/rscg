@@ -622,12 +622,13 @@ export default function Home() {
   useEffect(() => {
     if (isTestimonialHovered) return;
 
-    const timer = setInterval(() => {
+    // Restart the countdown whenever the slide changes (auto or manual), so the deck keeps sliding on its own
+    const timer = setTimeout(() => {
       setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
     }, 4000);
 
-    return () => clearInterval(timer);
-  }, [isTestimonialHovered, testimonials.length]);
+    return () => clearTimeout(timer);
+  }, [isTestimonialHovered, activeTestimonial, testimonials.length]);
 
   const faqs = [
     {
@@ -655,6 +656,10 @@ export default function Home() {
       <div className="absolute top-[-10%] left-[-10%] w-[50%] aspect-square bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none select-none"></div>
       <div className="absolute bottom-[20%] right-[-10%] w-[50%] aspect-square bg-brand-secondary/5 rounded-full blur-[150px] pointer-events-none select-none"></div>
       <div className="absolute top-[40%] right-[30%] w-[30%] aspect-square bg-brand-tertiary/5 rounded-full blur-[100px] pointer-events-none select-none"></div>
+
+      {/* Preload hero media so the video frame shows immediately (React hoists these into <head>) */}
+      <link rel="preload" as="image" href="/hero/homepage/hero-poster.jpg" fetchPriority="high" />
+      <link rel="preload" as="video" href="/hero/homepage/hero.mp4" type="video/mp4" />
 
       {/* Navigation Header */}
       <Header />
@@ -694,14 +699,15 @@ export default function Home() {
         ref={heroRef}
         className="w-full relative z-10 min-h-[640px] sm:min-h-[700px] lg:min-h-[760px] xl:min-h-[820px] h-[90vh] max-h-[960px] flex flex-col justify-end overflow-hidden pt-28 sm:pt-32 pb-12 sm:pb-16 lg:pb-20 border-b border-[#1c2722]/5"
       >
-        {/* Background Factory Aerial Drone Video with Instant Poster Fallback */}
+        {/* Background Factory Aerial Drone Video (poster is the video's own first frame, so there is no visible swap on load) */}
         <video
           autoPlay
           loop
           muted
           playsInline
-          poster="/images/contact/factory.png"
-          className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
+          preload="auto"
+          poster="/hero/homepage/hero-poster.jpg"
+          className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none bg-[#1c2722]"
         >
           <source src="/hero/homepage/hero.mp4" type="video/mp4" />
         </video>
@@ -766,7 +772,7 @@ export default function Home() {
       <MillingSolutionsSection />
 
       {/* --- Our Expertise & Capabilities Section --- */}
-      <section id="our-expertise" className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-20 lg:py-28 relative z-10 bg-white border-t border-slate-200/60 overflow-hidden">
+      <section id="our-expertise" className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-20 lg:py-28 relative z-10 bg-slate-50 border-t border-slate-200/60 overflow-hidden">
         <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           {/* Left Column: Heading, Eyebrow & Subtitle */}
@@ -870,7 +876,7 @@ export default function Home() {
       </section>
 
       {/* --- Industrial Solutions Section --- */}
-      <section id="industrial-solutions" className="w-full px-4 sm:px-8 lg:px-6 xl:px-12 2xl:px-20 py-16 sm:py-20 lg:py-28 relative z-10 bg-[#FAF9F5] border-t border-slate-200/60 overflow-hidden">
+      <section id="industrial-solutions" className="w-full px-4 sm:px-8 lg:px-6 xl:px-12 2xl:px-20 py-16 sm:py-20 lg:py-28 relative z-10 bg-white border-t border-slate-200/60 overflow-hidden">
         <div className="w-full mx-auto space-y-12 sm:space-y-16">
           
           {/* Header */}
@@ -1029,7 +1035,7 @@ export default function Home() {
       </section>
 
       {/* --- Rooted in Tradition / Why RSC Section --- */}
-      <section id="why-rsc" className="w-full px-6 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 py-8 sm:py-10 lg:py-12 relative z-10 bg-[#FAF8F5] border-t border-slate-200/50 overflow-hidden">
+      <section id="why-rsc" className="w-full px-6 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 py-8 sm:py-10 lg:py-12 relative z-10 bg-slate-50 border-t border-slate-200/50 overflow-hidden">
         <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center justify-between">
           
           {/* Left Column: Heading and Subtitle */}
@@ -1263,13 +1269,13 @@ export default function Home() {
       </section>
 
       {/* --- Testimonials Section --- */}
-      <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-20 lg:py-28 relative z-10 bg-[#F6F6F2] border-t border-slate-200/60 overflow-hidden">
+      <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-20 lg:py-28 relative z-10 bg-slate-50 border-t border-slate-200/60 overflow-hidden">
         
 
-        <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center justify-between relative">
+        <div className="w-full mx-auto grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-8 items-center justify-between relative">
           
-          {/* Left Column: Heading & Subtitle */}
-          <div className="lg:col-span-5 space-y-6">
+          {/* Left Column: Heading & Subtitle (stacks above the deck up to xl so the side cards never overlap the text on tablets) */}
+          <div className="xl:col-span-5 space-y-6">
             <div className="space-y-3">
               <span className="text-sm font-bold text-[#015435] tracking-wide block">
                 Testimonials
@@ -1286,9 +1292,10 @@ export default function Home() {
 
           {/* Right Column: 3D Stacked Carousel Deck */}
           <div 
-            className="lg:col-span-7 relative w-full flex flex-col items-center justify-center lg:items-end select-none"
-            onMouseEnter={() => setIsTestimonialHovered(true)}
-            onMouseLeave={() => setIsTestimonialHovered(false)}
+            className="xl:col-span-7 relative w-full flex flex-col items-center justify-center xl:items-end select-none"
+            // Pause only for a real mouse hover; touch taps fire pointerenter without a matching leave and used to stop the carousel for good
+            onPointerEnter={(e) => { if (e.pointerType === "mouse") setIsTestimonialHovered(true); }}
+            onPointerLeave={() => setIsTestimonialHovered(false)}
           >
             <div className="relative w-full max-w-[580px] lg:max-w-[620px] xl:max-w-[660px] h-[440px] sm:h-[460px] flex items-center justify-center">
             {testimonials.map((t, idx) => {
@@ -1606,7 +1613,7 @@ export default function Home() {
       </section>
       */}
       {/* --- Prestigious Clients Section (Redesigned & Rearranged) --- */}
-      <section className="w-full py-16 lg:py-24 bg-[#FBFBF9] border-t border-slate-200/50 overflow-hidden relative z-10">
+      <section className="w-full py-16 lg:py-24 bg-slate-50 border-t border-slate-200/50 overflow-hidden relative z-10">
         <div className="w-full space-y-12 lg:space-y-16">
           
           {/* Subsection 1: International Markets */}
@@ -1622,8 +1629,8 @@ export default function Home() {
 
             <div className="marquee-container">
               <div className="flex overflow-hidden w-full select-none gap-5 sm:gap-6 relative">
-                <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-36 bg-gradient-to-r from-[#FBFBF9] to-transparent z-20 pointer-events-none" />
-                <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-36 bg-gradient-to-l from-[#FBFBF9] to-transparent z-20 pointer-events-none" />
+                <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-36 bg-gradient-to-r from-slate-50 to-transparent z-20 pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-36 bg-gradient-to-l from-slate-50 to-transparent z-20 pointer-events-none" />
 
                 <div className="flex shrink-0 animate-marquee items-center gap-5 sm:gap-6 min-w-full">
                   {internationalClients.map((client, idx) => (
@@ -1652,8 +1659,8 @@ export default function Home() {
 
             <div className="marquee-container">
               <div className="flex overflow-hidden w-full select-none gap-5 sm:gap-6 relative">
-                <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-36 bg-gradient-to-r from-[#FBFBF9] to-transparent z-20 pointer-events-none" />
-                <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-36 bg-gradient-to-l from-[#FBFBF9] to-transparent z-20 pointer-events-none" />
+                <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-36 bg-gradient-to-r from-slate-50 to-transparent z-20 pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-36 bg-gradient-to-l from-slate-50 to-transparent z-20 pointer-events-none" />
 
                 <div 
                   className="flex shrink-0 animate-marquee items-center gap-5 sm:gap-6 min-w-full"
