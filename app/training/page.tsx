@@ -114,9 +114,9 @@ export default function TrainingPage() {
           <div className="absolute inset-0 z-0 overflow-hidden">
             {/* Desktop Background Image (1920x820) */}
             <div className="hidden md:block absolute inset-0">
-              <Image 
-                src="/training/training_desktop_cropped.png" 
-                alt="Flour Milling Training" 
+              <Image
+                src="/training/training_desktop_cropped.png"
+                alt="Flour Milling Training"
                 fill
                 className="object-cover object-center"
                 priority
@@ -127,9 +127,9 @@ export default function TrainingPage() {
 
             {/* Mobile Background Image (1080x1920) */}
             <div className="block md:hidden absolute inset-0">
-              <Image 
-                src="/training/training_mobile.png" 
-                alt="Flour Milling Training" 
+              <Image
+                src="/training/training_mobile.png"
+                alt="Flour Milling Training"
                 fill
                 className="object-cover object-center"
                 priority
@@ -170,8 +170,8 @@ export default function TrainingPage() {
               <div className="w-full bg-white rounded-2xl shadow-xl p-4 sm:p-5 lg:p-6 border border-slate-100">
                 <div className="grid grid-cols-3 divide-x divide-slate-200">
                   {heroProofPoints.map((item, idx) => (
-                    <div 
-                      key={idx} 
+                    <div
+                      key={idx}
                       className="p-4 sm:p-5 hover:bg-[#E8F5E9]/70 rounded-xl transition-colors duration-200 cursor-default text-left space-y-1.5"
                     >
                       <h3 className="text-base sm:text-lg font-bold text-[#0B1510] leading-snug">
@@ -212,7 +212,7 @@ export default function TrainingPage() {
         {/* Learn with CHARGE Section */}
         <section className="w-full pt-6 sm:pt-12 md:pt-36 lg:pt-40 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24">
           <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            
+
             <div className="space-y-6">
               <div className="space-y-2">
                 <h2 className="text-3xl sm:text-4xl font-heading font-black text-[#133020]">
@@ -224,10 +224,10 @@ export default function TrainingPage() {
                   <div className="w-8 h-px bg-[#D3994B]" />
                 </div>
               </div>
-              
+
               <div className="text-slate-600 font-medium space-y-4 text-base sm:text-lg leading-relaxed">
                 <p>
-                  CHARGE - Choyal Hub for Agribusiness, Research, Growth and Entrepreneurship - is a CSR initiative of RS Choyal Group and the next chapter in the legacy of Choyal School of Milling Technology.
+                  CHARGE (Choyal Hub for Agribusiness, Research, Growth and Entrepreneurship) is a CSR initiative of RS Choyal Group and the next chapter in the legacy of Choyal School of Milling Technology.
                 </p>
                 <p>
                   We offer practical training for professionals, freshers, and local youth. CHARGE operates on a no-profit, no-loss basis and combines classroom learning with hands-on exposure to real milling machinery and processes.
@@ -240,9 +240,9 @@ export default function TrainingPage() {
 
             <div className="space-y-6">
               <div className="rounded-[28px] overflow-hidden shadow-lg border border-slate-100 h-72 sm:h-84 w-full relative">
-                <Image 
-                  src="/images/training-page/learn-with-charge/training.png" 
-                  alt="Learn with Charge" 
+                <Image
+                  src="/images/training-page/learn-with-charge/training.png"
+                  alt="Learn with Charge"
                   fill
                   className="object-cover"
                 />
@@ -256,13 +256,13 @@ export default function TrainingPage() {
                   { icon: "/training/learn-with-charge/training_professionals.png", text: "Training professionals, freshers & youth" }
                 ].map((fact, idx) => (
                   <div key={idx} className="flex items-center gap-3.5">
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 bg-[#F0F7F3] rounded-xl flex items-center justify-center p-2.5 border border-[#133020]/10">
-                      <Image 
-                        src={fact.icon} 
-                        alt={fact.text} 
-                        width={48} 
-                        height={48} 
-                        className="w-full h-full object-contain" 
+                    <div className="w-12 h-12 lg:w-16 lg:h-16 shrink-0 bg-[#F0F7F3] rounded-xl flex items-center justify-center p-2.5 border border-[#133020]/10">
+                      <Image
+                        src={fact.icon}
+                        alt={fact.text}
+                        width={48}
+                        height={48}
+                        className="w-full h-full object-contain"
                       />
                     </div>
                     <p className="text-xs sm:text-sm font-bold text-slate-800 leading-snug">{fact.text}</p>
@@ -292,17 +292,17 @@ export default function TrainingPage() {
 
           <div className="md:w-full flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
             {whyChargeFeatures.map((feature, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="w-[74vw] max-w-[290px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white border border-slate-100/90 rounded-[28px] p-6 sm:p-8 flex flex-col items-center text-center gap-4 shadow-xs hover:shadow-md hover:border-[#133020]/20 transition-all group"
               >
                 <div className="w-20 h-20 shrink-0 bg-[#F0F7F3] rounded-2xl flex items-center justify-center p-3.5 border border-[#133020]/10 group-hover:scale-105 group-hover:bg-[#E8F5E9] transition-all duration-300">
-                  <Image 
-                    src={feature.icon} 
-                    alt={feature.title} 
-                    width={64} 
-                    height={64} 
-                    className="w-full h-full object-contain" 
+                  <Image
+                    src={feature.icon}
+                    alt={feature.title}
+                    width={64}
+                    height={64}
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <h4 className="font-heading font-black text-[#133020] text-base sm:text-lg leading-tight mt-2">
@@ -336,19 +336,19 @@ export default function TrainingPage() {
 
           <div className="sm:w-full flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 scroll-pl-6 sm:scroll-pl-0 pb-4 sm:pb-0">
             {trainingPrograms.map((program, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="w-[74vw] max-w-[290px] sm:w-auto sm:max-w-none shrink-0 sm:shrink snap-start sm:snap-align-none group bg-white border border-[#E1EAE5] rounded-[24px] p-6 sm:p-7 shadow-xs hover:shadow-lg hover:border-[#0B2C1C]/30 transition-all duration-300 flex flex-col items-start justify-between"
               >
                 <div>
                   {/* Icon with hover effect: turns white and bg shape turns green */}
                   <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#F0F7F3] group-hover:bg-[#0B2C1C] flex items-center justify-center p-3.5 sm:p-4 transition-colors duration-300 mb-5 border border-[#133020]/10">
-                    <Image 
-                      src={program.icon} 
-                      alt={program.title} 
-                      width={56} 
-                      height={56} 
-                      className="w-full h-full object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert" 
+                    <Image
+                      src={program.icon}
+                      alt={program.title}
+                      width={56}
+                      height={56}
+                      className="w-full h-full object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
                     />
                   </div>
                   <h4 className="font-heading font-black text-[#133020] text-base sm:text-lg leading-snug mb-2">
@@ -381,28 +381,28 @@ export default function TrainingPage() {
             </p>
           </div>
 
-          <div className="md:w-full flex md:grid md:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
+          <div className="md:w-full flex md:grid md:grid-cols-3 gap-4 md:gap-5 lg:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
             {trainingExperiences.map((exp, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="w-[74vw] max-w-[290px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white rounded-[24px] overflow-hidden shadow-xs hover:shadow-md border border-slate-200/80 transition-all duration-300 flex flex-col group"
               >
-                <div className="h-52 sm:h-64 lg:h-72 w-full relative overflow-hidden">
-                  <Image 
-                    src={exp.image} 
-                    alt={exp.title} 
+                <div className="h-52 md:h-48 lg:h-72 w-full relative overflow-hidden">
+                  <Image
+                    src={exp.image}
+                    alt={exp.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500" 
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-5 sm:p-7 lg:p-8 flex items-start gap-4 bg-white flex-1">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 bg-[#F0F7F3] rounded-xl flex items-center justify-center p-2.5 border border-[#133020]/10 group-hover:bg-[#E8F5E9] transition-colors">
-                    <Image 
-                      src={exp.icon} 
-                      alt={exp.title} 
-                      width={48} 
-                      height={48} 
-                      className="w-full h-full object-contain" 
+                <div className="p-5 sm:p-6 lg:p-8 flex flex-row md:flex-col lg:flex-row items-start gap-3 md:gap-3 lg:gap-4 bg-white flex-1">
+                  <div className="w-12 h-12 lg:w-16 lg:h-16 shrink-0 bg-[#F0F7F3] rounded-xl flex items-center justify-center p-2.5 border border-[#133020]/10 group-hover:bg-[#E8F5E9] transition-colors">
+                    <Image
+                      src={exp.icon}
+                      alt={exp.title}
+                      width={48}
+                      height={48}
+                      className="w-full h-full object-contain"
                     />
                   </div>
                   <div className="space-y-1.5">
@@ -422,19 +422,19 @@ export default function TrainingPage() {
 
         {/* Bottom CTA Banner */}
         <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pb-20">
-          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[28px] p-8 sm:p-12 lg:p-14 shadow-xl flex flex-col md:flex-row items-center justify-between gap-10 border border-white/10 relative overflow-hidden">
+          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[28px] p-6 sm:p-10 lg:p-14 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10 border border-white/10 relative overflow-hidden">
             {/* Background Texture matching Wonder Mill */}
             <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
-            
-            <div className="flex items-center gap-6 sm:gap-8 max-w-2xl relative z-10">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 border-2 border-white/20 bg-white/10 rounded-full flex items-center justify-center text-[#f5a623]">
+
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 max-w-2xl relative z-10 text-center sm:text-left">
+              <div className="w-14 h-14 sm:w-20 sm:h-20 shrink-0 border-2 border-white/20 bg-white/10 rounded-full flex items-center justify-center text-[#f5a623]">
                 <GraduationCap className="w-8 h-8 sm:w-10 sm:h-10" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-2xl sm:text-3xl font-heading font-black text-white">
+                <h3 className="text-xl sm:text-3xl font-heading font-black text-white">
                   Ready to build your milling expertise?
                 </h3>
-                <p className="text-base text-white/90 leading-relaxed font-normal">
+                <p className="text-sm sm:text-base text-white/90 leading-relaxed font-normal">
                   Join CHARGE training programs to gain practical knowledge, plant exposure, and the confidence to build a stronger future in flour milling.
                 </p>
               </div>
@@ -457,7 +457,7 @@ export default function TrainingPage() {
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1c2722]/65 backdrop-blur-md animate-fade-in">
           <div className="relative w-full max-w-md animate-scale-in">
-            <button 
+            <button
               onClick={() => setIsModalOpen(false)}
               className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/80 hover:bg-white text-slate-700 hover:text-slate-900 transition-colors shadow-xs cursor-pointer border border-slate-200/40"
               aria-label="Close modal"

@@ -18,13 +18,13 @@ const workflowSteps = [
     title: "Build",
     desc: "Plant setup, engineering, automation, and execution.",
     iconPath: "/images/services/grain360/new_icons/how 360 helps/build.png",
-    iconBg: "bg-[#E8F1F5]"
+    iconBg: "bg-[#EAF3EA]"
   },
   {
     title: "Launch",
     desc: "Training, operational support, and growth guidance.",
     iconPath: "/images/services/grain360/new_icons/how 360 helps/launch.png",
-    iconBg: "bg-[#FEF3E7]"
+    iconBg: "bg-[#EAF3EA]"
   }
 ];
 
@@ -45,7 +45,7 @@ const coreServices = [
     title: "Licensing & certifications",
     desc: "Support for registrations, approvals, certifications, and statutory compliance.",
     iconPath: "/images/services/grain360/new_icons/our core services/licensing.png",
-    iconBg: "bg-[#FEF5E7]"
+    iconBg: "bg-[#EAF3EA]"
   },
   {
     title: "Operations & consultancy",
@@ -57,7 +57,7 @@ const coreServices = [
     title: "Staff & operator training",
     desc: "Hands-on training for teams operating, managing, and maintaining the plant.",
     iconPath: "/images/services/grain360/new_icons/our core services/staff_and_operator_training.png",
-    iconBg: "bg-[#FEF5E7]"
+    iconBg: "bg-[#EAF3EA]"
   },
   {
     title: "Technology upgradation",
@@ -86,9 +86,9 @@ export default function Grain360Page() {
           <div className="absolute inset-0 z-0">
             {/* Desktop Background Image (1920x820) */}
             <div className="hidden md:block absolute inset-0">
-              <Image 
-                src="/hero/grain360/grain360_desktop_cropped.png" 
-                alt="Grain360 Services & Solutions" 
+              <Image
+                src="/hero/grain360/grain360_desktop_cropped.png"
+                alt="Grain360 Services & Solutions"
                 fill
                 className="object-cover object-center"
                 priority
@@ -100,9 +100,9 @@ export default function Grain360Page() {
 
             {/* Mobile Background Image (1080x1920 -> 9:16) */}
             <div className="block md:hidden absolute inset-0">
-              <Image 
-                src="/hero/grain360/grain360_mobile.png" 
-                alt="Grain360 Services & Solutions" 
+              <Image
+                src="/hero/grain360/grain360_mobile.png"
+                alt="Grain360 Services & Solutions"
                 fill
                 className="object-cover object-center"
                 priority
@@ -125,9 +125,9 @@ export default function Grain360Page() {
               <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
                 End-to-end services to help you plan, launch, and grow your grain or flour processing business under one roof.
               </p>
-              
+
               <div className="pt-2 sm:pt-4">
-                <button 
+                <button
                   onClick={() => document.getElementById('grain360-services')?.scrollIntoView({ behavior: "smooth" })}
                   className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer"
                 >
@@ -139,7 +139,7 @@ export default function Grain360Page() {
         </section>
 
         <section id="grain360-services" className="w-full py-20 px-6 sm:px-12 lg:px-16 xl:px-24">
-          
+
           {/* Intro Section: One Partner */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start mb-24">
             <div className="space-y-6">
@@ -184,23 +184,23 @@ export default function Grain360Page() {
           </div>
 
           {/* Workflow Section: How Grain360 helps */}
-          <div className="mb-24">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-center text-[#1A3A29] mb-12 sm:mb-14">
+          <div className="mb-14 lg:mb-24">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-center text-[#1A3A29] mb-8 sm:mb-14">
               How Grain360 helps
             </h3>
-            
+
             <div className="w-full">
-              <div className="flex flex-row items-stretch lg:items-center justify-between gap-4 sm:gap-5 lg:gap-0 overflow-x-auto lg:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 lg:mx-0 lg:px-0 scroll-pl-6 sm:scroll-pl-12 lg:scroll-pl-0 pb-4 lg:pb-0">
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:flex lg:flex-row items-stretch lg:items-center justify-between gap-3 sm:gap-4 lg:gap-0">
                 {workflowSteps.map((step, idx) => (
                   <Fragment key={idx}>
                     {/* Step Card - Equalized with flex-1 across all 3 cards */}
-                    <div className="lg:flex-1 w-[74vw] max-w-[290px] lg:w-auto lg:max-w-none shrink-0 lg:shrink snap-start lg:snap-align-none bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-9 flex items-center gap-4 sm:gap-6 shadow-sm hover:shadow-md border border-slate-200/70 transition-all duration-300 min-h-[150px] sm:min-h-[170px]">
-                      <div className={`w-14 h-14 sm:w-20 sm:h-20 rounded-2xl ${step.iconBg} flex items-center justify-center shrink-0 p-3 sm:p-4 shadow-xs`}>
+                    <div className="lg:flex-1 bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-9 flex flex-row md:flex-col lg:flex-row items-center md:items-start lg:items-center gap-4 lg:gap-6 shadow-sm hover:shadow-md border border-slate-200/70 transition-all duration-300 lg:min-h-[170px]">
+                      <div className={`w-14 h-14 lg:w-20 lg:h-20 rounded-2xl ${step.iconBg} flex items-center justify-center shrink-0 p-3 sm:p-4 shadow-xs`}>
                         <img src={step.iconPath} alt={step.title} className="w-full h-full object-contain" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h4 className="font-heading font-black text-lg sm:text-2xl text-slate-800 mb-1.5 leading-snug">{step.title}</h4>
-                        <p className="text-sm sm:text-lg text-slate-600 font-normal leading-relaxed">{step.desc}</p>
+                        <h4 className="font-heading font-black text-lg lg:text-2xl text-slate-800 mb-1 lg:mb-1.5 leading-snug">{step.title}</h4>
+                        <p className="text-sm lg:text-lg text-slate-600 font-normal leading-relaxed">{step.desc}</p>
                       </div>
                     </div>
 
@@ -212,21 +212,20 @@ export default function Grain360Page() {
                     )}
                   </Fragment>
                 ))}
-                <div className="w-4 shrink-0 lg:hidden" aria-hidden="true" />
               </div>
             </div>
           </div>
 
           {/* Core Services Section */}
-          <div className="mb-24">
-            <h3 className="text-xl sm:text-2xl font-heading font-black text-center text-[#1A3A29] mb-12">
+          <div className="mb-14 lg:mb-24">
+            <h3 className="text-xl sm:text-2xl font-heading font-black text-center text-[#1A3A29] mb-6 sm:mb-12">
               Our core services
             </h3>
-            
-            <div className="flex md:grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 lg:gap-8">
               {coreServices.map((service, idx) => (
-                <div key={idx} className="w-[74vw] max-w-[290px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white rounded-2xl p-5 sm:p-7 flex items-start gap-4 sm:gap-5 shadow-sm border border-slate-200/70 hover:shadow-md hover:border-[#D3994B]/30 transition-all duration-300">
-                  <div className={`w-16 h-16 rounded-2xl ${service.iconBg} flex items-center justify-center shrink-0 p-3 shadow-xs`}>
+                <div key={idx} className="bg-white rounded-2xl p-4 sm:p-7 flex items-start gap-4 sm:gap-5 shadow-sm border border-slate-200/70 hover:shadow-md hover:border-[#D3994B]/30 transition-all duration-300">
+                  <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-2xl ${service.iconBg} flex items-center justify-center shrink-0 p-2.5 sm:p-3 shadow-xs`}>
                     <img src={service.iconPath} alt={service.title} className="w-full h-full object-contain" />
                   </div>
                   <div>
@@ -235,7 +234,6 @@ export default function Grain360Page() {
                   </div>
                 </div>
               ))}
-              <div className="w-4 shrink-0 md:hidden" aria-hidden="true" />
             </div>
           </div>
 
@@ -246,8 +244,8 @@ export default function Grain360Page() {
             </h3>
             <div className="flex flex-wrap justify-center gap-4">
               {additionalServices.map((service, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="flex items-center gap-3.5 bg-white pl-4 pr-6 py-3 rounded-full shadow-sm border border-slate-200/60 hover:bg-slate-50 transition-colors w-full max-w-[335px] sm:w-[335px] shrink-0"
                 >
                   <div className="w-10 h-10 rounded-full bg-[#EAF3EA] flex items-center justify-center p-2 shrink-0 shadow-xs">
@@ -260,16 +258,16 @@ export default function Grain360Page() {
           </div>
 
           {/* Bottom CTA Banner */}
-          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-3xl p-8 sm:p-12 lg:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 border border-white/10 shadow-xl">
+          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-3xl p-6 sm:p-12 lg:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 border border-white/10 shadow-xl">
             {/* Background Texture matching Wonder Mill */}
             <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
-            
-            <div className="relative z-10 flex items-center gap-6 max-w-2xl">
-              <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
+
+            <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 max-w-2xl text-center sm:text-left">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
                 <Phone className="w-8 h-8 text-[#f5a623]" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-2xl sm:text-3xl font-heading font-black text-white leading-tight">
+                <h3 className="text-xl sm:text-3xl font-heading font-black text-white leading-tight">
                   Planning to start or upgrade your plant?
                 </h3>
                 <p className="text-white/90 text-sm sm:text-base font-normal">
@@ -279,7 +277,7 @@ export default function Grain360Page() {
             </div>
 
             <div className="relative z-10 shrink-0 w-full md:w-auto">
-              <Link 
+              <Link
                 href="/contact"
                 className="inline-flex w-full md:w-auto items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap"
               >

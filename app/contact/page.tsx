@@ -60,10 +60,10 @@ export default function ContactPage() {
 
       {/* Main Overlapping Card Section */}
       <section className="relative z-20 w-full px-4 sm:px-12 lg:px-16 xl:px-24 mx-auto -mt-12 sm:-mt-20 lg:-mt-24 pb-12 sm:pb-28 flex-1">
-        <div className="w-full max-w-[1240px] mx-auto bg-white rounded-[24px] sm:rounded-[36px] shadow-2xl border border-slate-200/80 p-5 sm:p-12 lg:p-14">
+        <div className="w-full max-w-[1240px] mx-auto bg-white rounded-[24px] sm:rounded-[36px] shadow-2xl border border-slate-200/80 p-5 sm:p-10 lg:p-14">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-start">
             {/* Left Column: Contact Details & Map */}
-            <div className="lg:col-span-5 space-y-5 sm:space-y-8">
+            <div className="lg:col-span-5 space-y-5 sm:space-y-6 lg:space-y-8">
               <div>
                 <span className="text-xs sm:text-sm font-bold text-[#0E3321] tracking-wider block mb-1">
                   Contact
@@ -78,10 +78,10 @@ export default function ContactPage() {
               </div>
 
               {/* Contact Items (email & phone side by side on mobile) */}
-              <div className="grid grid-cols-1 gap-y-4 sm:gap-6">
+              <div className="grid grid-cols-2 gap-x-3 gap-y-4 sm:gap-6">
                 {/* Corporate Headquarters */}
-                <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                <div className="col-span-2 sm:col-span-1 flex items-start gap-3 sm:gap-4">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                     <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900" />
                   </div>
                   <div className="space-y-0.5">
@@ -96,8 +96,8 @@ export default function ContactPage() {
                 </div>
 
                 {/* Factory Unit */}
-                <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                <div className="col-span-2 sm:col-span-1 flex items-start gap-3 sm:gap-4">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                     <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900" />
                   </div>
                   <div className="space-y-0.5">
@@ -113,7 +113,7 @@ export default function ContactPage() {
 
                 {/* Email */}
                 <div className="flex items-start gap-3 sm:gap-4 min-w-0">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                     <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900" />
                   </div>
                   <div className="space-y-0.5 min-w-0">
@@ -131,7 +131,7 @@ export default function ContactPage() {
 
                 {/* Phone */}
                 <div className="flex items-start gap-3 sm:gap-4 min-w-0">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                     <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900" />
                   </div>
                   <div className="space-y-0.5">
@@ -149,7 +149,7 @@ export default function ContactPage() {
               </div>
 
               {/* Map Embed Box */}
-              <div className="relative w-full aspect-[16/9] sm:aspect-[16/10] rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm sm:mt-8">
+              <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] lg:aspect-[16/10] rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1121.2328852168694!2d74.5342179!3d26.3016254!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39696185f6ccf15b%3A0x3c82ebb0ad52417e!2sChoyal!5e1!3m2!1sen!2sin!4v1790678363898!5m2!1sen!2sin"
                   width="100%"

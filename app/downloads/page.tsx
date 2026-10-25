@@ -4,23 +4,23 @@ import { useState, useEffect, useMemo, Suspense, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { 
-  Download, 
-  CheckCircle, 
-  Search, 
-  X, 
-  Menu, 
+import {
+  Download,
+  CheckCircle,
+  Search,
+  X,
+  Menu,
   ArrowRight,
   ArrowUpDown
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { 
-  downloadCategories, 
-  downloadsData, 
+import {
+  downloadCategories,
+  downloadsData,
   downloadGroups,
   getDownloadGroup,
-  DownloadItem, 
+  DownloadItem,
 } from "./downloadsData";
 
 function CategoryIcon({ id, className = "w-4 h-4 shrink-0" }: { id: string; className?: string }) {
@@ -251,7 +251,7 @@ function DownloadsContent() {
       {/* Main 2-Column Layout */}
       <div className="w-full flex-1 border-t border-[#E2E8F0] relative px-6 sm:px-12 lg:px-16 xl:px-24 pt-32 sm:pt-36 md:pt-40 pb-16 sm:pb-20">
         <div className="w-full min-h-screen grid grid-cols-1 lg:grid-cols-[230px_minmax(0,1fr)] xl:grid-cols-[260px_minmax(0,1fr)] gap-8 lg:gap-10 xl:gap-14">
-          
+
           {/* ================= DESKTOP SIDEBAR ================= */}
           <aside className="hidden lg:flex flex-col justify-between bg-white border-r border-[#E2E8F0] pr-4 xl:pr-8 py-1 sticky top-[125px] h-[calc(100vh-150px)] overflow-hidden">
             <div className="flex flex-col min-h-0 flex-1">
@@ -261,7 +261,7 @@ function DownloadsContent() {
               </div>
 
               {/* Side Nav */}
-              <nav 
+              <nav
                 className="flex-1 overflow-y-auto pr-1 space-y-1 overscroll-contain scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-transparent"
                 aria-label="Download categories"
               >
@@ -277,11 +277,11 @@ function DownloadsContent() {
                           : "text-slate-600 hover:bg-[#F3F4F2] hover:text-[#0E3321] font-medium"
                       }`}
                     >
-                      <CategoryIcon 
-                        id={cat.id} 
+                      <CategoryIcon
+                        id={cat.id}
                         className={`w-[18px] h-[18px] transition-colors shrink-0 ${
                           isActive ? "text-[#0E3321]" : "text-slate-400 group-hover:text-[#0E3321]"
-                        }`} 
+                        }`}
                       />
                       <span className="truncate">{cat.name}</span>
                     </button>
@@ -298,8 +298,8 @@ function DownloadsContent() {
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">
                 Looking for a specific document or product resource?
               </p>
-              <Link 
-                href="/contact" 
+              <Link
+                href="/contact"
                 className="text-xs sm:text-sm font-bold text-[#0E3321] hover:text-[#FFAA17] inline-flex items-center gap-1.5 transition-colors group"
               >
                 <span>Contact our team</span>
@@ -310,11 +310,11 @@ function DownloadsContent() {
 
           {/* ================= MOBILE DRAWER ================= */}
           {mobileMenuOpen && (
-            <div 
+            <div
               className="lg:hidden fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex"
               onClick={() => setMobileMenuOpen(false)}
             >
-              <div 
+              <div
                 className="w-[280px] sm:w-[320px] bg-white h-full shadow-2xl flex flex-col p-6 overflow-y-auto animate-fade-in"
                 onClick={(e) => e.stopPropagation()}
               >
@@ -322,7 +322,7 @@ function DownloadsContent() {
                   <div className="text-xs font-extrabold tracking-[0.14em] text-[#0E3321] uppercase">
                     Resource Library
                   </div>
-                  <button 
+                  <button
                     onClick={() => setMobileMenuOpen(false)}
                     className="p-1 rounded-md text-slate-400 hover:text-slate-600 hover:bg-slate-100"
                   >
@@ -360,8 +360,8 @@ function DownloadsContent() {
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">
                     Looking for a specific document or product resource?
                   </p>
-                  <Link 
-                    href="/contact" 
+                  <Link
+                    href="/contact"
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-xs sm:text-sm font-bold text-[#0E3321] inline-flex items-center gap-1.5"
                   >
@@ -375,7 +375,7 @@ function DownloadsContent() {
 
           {/* ================= MAIN CONTENT ================= */}
           <main className="min-w-0 py-1">
-            
+
             {/* Mobile Category Toggle Button */}
             <div className="lg:hidden mb-6 flex items-center justify-between bg-white border border-[#E2E8F0] rounded-xl p-3.5 shadow-xs">
               <button
@@ -494,20 +494,20 @@ function DownloadsContent() {
                             {item.desc}
                           </p>
 
-                          {/* Card Bottom: meta + download (always visible) */}
-                          <div className="mt-auto pt-2.5 sm:pt-3 border-t border-[#E2E8F0] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                            <span className="text-[10px] sm:text-xs text-[#94A3B8] font-semibold whitespace-nowrap">
-                              {item.format} · {item.size}
-                            </span>
-
+                          {/* Card Bottom: download button with file type and size shown below it */}
+                          <div className="mt-auto pt-2.5 sm:pt-3 border-t border-[#E2E8F0] flex flex-col items-stretch gap-1.5">
                             <button
                               onClick={(e) => handleDownload(item, e)}
-                              className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 bg-[#0E5A36] hover:bg-[#176B43] text-white text-[11px] sm:text-xs font-bold px-3 py-2 rounded-lg shadow-[0_4px_10px_rgba(14,90,54,0.14)] hover:shadow-[0_8px_18px_rgba(14,51,33,0.18)] hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer group/btn"
+                              className="w-full inline-flex items-center justify-center gap-1.5 bg-[#0E5A36] hover:bg-[#176B43] text-white text-[11px] sm:text-xs font-bold px-3 py-2 rounded-lg shadow-[0_4px_10px_rgba(14,90,54,0.14)] hover:shadow-[0_8px_18px_rgba(14,51,33,0.18)] hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer group/btn"
                               title={`Download ${item.title}`}
                             >
                               <Download className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-y-0.5" />
                               <span>Download</span>
                             </button>
+
+                            <span className="text-[10px] sm:text-xs text-[#94A3B8] font-semibold text-center whitespace-nowrap">
+                              {item.format} · {item.size}
+                            </span>
                           </div>
                         </article>
                       );

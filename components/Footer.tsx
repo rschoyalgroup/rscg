@@ -48,12 +48,12 @@ export default function Footer() {
   return (
     <footer className="w-full pt-10 sm:pt-14 pb-8 sm:pb-12 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#f6f6f4] text-[#3e4d46] border-t border-slate-300/80 relative z-10">
       <div className="w-full mx-auto space-y-8 sm:space-y-12">
-        
+
         {/* ================= 5-COLUMN MAIN GRID ================= */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-x-6 gap-y-8 lg:gap-10">
-          
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-12 gap-x-6 gap-y-8 xl:gap-10">
+
           {/* Col 1: About Us (2 cols) */}
-          <div className="lg:col-span-2 space-y-3 sm:space-y-4">
+          <div className="xl:col-span-2 space-y-3 sm:space-y-4">
             <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider">
               About us
             </h4>
@@ -69,7 +69,7 @@ export default function Footer() {
           </div>
 
           {/* Col 2: Products (2 cols) */}
-          <div className="lg:col-span-2 space-y-3 sm:space-y-4">
+          <div className="xl:col-span-2 space-y-3 sm:space-y-4">
             <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider">
               Products
             </h4>
@@ -85,7 +85,7 @@ export default function Footer() {
           </div>
 
           {/* Col 3: Services (2 cols) */}
-          <div className="lg:col-span-2 space-y-3 sm:space-y-4">
+          <div className="xl:col-span-2 space-y-3 sm:space-y-4">
             <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider">
               Services
             </h4>
@@ -101,11 +101,11 @@ export default function Footer() {
           </div>
 
           {/* Col 4: Locations & Contact (3.5 cols) */}
-          <div className="col-span-2 order-last md:order-none md:col-span-1 lg:col-span-3 xl:col-span-3 space-y-3 sm:space-y-4">
+          <div className="col-span-2 order-last md:order-none md:col-span-1 xl:col-span-3 space-y-3 sm:space-y-4">
             <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider">
               Locations &amp; contact
             </h4>
-            
+
             <div className="space-y-3 sm:space-y-4 text-sm font-medium text-slate-600">
               {/* Corporate Headquarters */}
               <div className="flex items-start gap-3">
@@ -117,7 +117,7 @@ export default function Footer() {
                   </span>
                 </div>
               </div>
-              
+
               {/* Factory Unit */}
               <div className="flex items-start gap-3">
                 <Factory className="h-4.5 w-4.5 text-emerald-700 mt-0.5 flex-shrink-0" />
@@ -154,7 +154,7 @@ export default function Footer() {
           </div>
 
           {/* Col 5: Social Media (2.5 cols) */}
-          <div className="lg:col-span-3 xl:col-span-3 space-y-3 sm:space-y-4">
+          <div className="xl:col-span-3 space-y-3 sm:space-y-4">
             <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider">
               Social media
             </h4>
@@ -163,10 +163,10 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-2.5 pt-1">
               {/* Facebook */}
-              <a 
-                href="https://facebook.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Facebook"
                 className="w-10 h-10 rounded-full bg-white border border-slate-200/90 shadow-xs flex items-center justify-center text-slate-600 hover:text-brand-primary hover:border-brand-primary/40 transition-all duration-200 hover:scale-105"
               >
@@ -176,10 +176,10 @@ export default function Footer() {
               </a>
 
               {/* Instagram */}
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="w-10 h-10 rounded-full bg-white border border-slate-200/90 shadow-xs flex items-center justify-center text-slate-600 hover:text-brand-primary hover:border-brand-primary/40 transition-all duration-200 hover:scale-105"
               >
@@ -191,10 +191,10 @@ export default function Footer() {
               </a>
 
               {/* LinkedIn */}
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="w-10 h-10 rounded-full bg-white border border-slate-200/90 shadow-xs flex items-center justify-center text-slate-600 hover:text-brand-primary hover:border-brand-primary/40 transition-all duration-200 hover:scale-105"
               >
@@ -204,10 +204,10 @@ export default function Footer() {
               </a>
 
               {/* YouTube */}
-              <a 
-                href="https://youtube.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="YouTube"
                 className="w-10 h-10 rounded-full bg-white border border-slate-200/90 shadow-xs flex items-center justify-center text-slate-600 hover:text-brand-primary hover:border-brand-primary/40 transition-all duration-200 hover:scale-105"
               >
@@ -221,8 +221,8 @@ export default function Footer() {
         </div>
 
         {/* ================= BOTTOM DIVIDER & CERTIFICATIONS ================= */}
-        <div className="border-t border-slate-200/80 pt-6 sm:pt-8 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 sm:gap-8">
-          
+        <div className="border-t border-slate-200/80 pt-6 sm:pt-8 flex flex-col xl:flex-row justify-between items-start xl:items-center gap-6 sm:gap-8">
+
           {/* Left: Copyright & Tagline */}
           <div className="space-y-1.5">
             <p className="text-sm sm:text-base font-bold text-slate-800">
@@ -234,7 +234,7 @@ export default function Footer() {
           </div>
 
           {/* Right: 8 Certification & Feature Badges */}
-          <div className="w-full lg:w-auto grid grid-cols-4 sm:flex sm:flex-wrap items-start justify-items-center sm:justify-start lg:justify-end gap-3 sm:gap-4">
+          <div className="w-full xl:w-auto grid grid-cols-4 sm:flex sm:flex-wrap items-start justify-items-center sm:justify-start xl:justify-end gap-3 sm:gap-4">
             {certBadges.map((badge) => (
               <div key={badge.name} className="flex flex-col items-center group w-16 sm:w-18">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center p-1 transition-transform duration-200 group-hover:scale-110">

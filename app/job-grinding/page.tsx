@@ -71,9 +71,9 @@ export default function JobGrindingPage() {
           <div className="absolute inset-0 z-0">
             {/* Desktop Background Image (1920x820) */}
             <div className="hidden md:block absolute inset-0">
-              <Image 
-                src="/hero/job-grinding/job-grinding-desktop-cropped.png" 
-                alt="Job Grinding" 
+              <Image
+                src="/hero/job-grinding/job-grinding-desktop-cropped.png"
+                alt="Job Grinding"
                 fill
                 className="object-cover object-center"
                 priority
@@ -85,9 +85,9 @@ export default function JobGrindingPage() {
 
             {/* Mobile Background Image (1080x1920 -> 9:16) */}
             <div className="block md:hidden absolute inset-0">
-              <Image 
-                src="/hero/job-grinding/job-grinding-mobile.png" 
-                alt="Job Grinding" 
+              <Image
+                src="/hero/job-grinding/job-grinding-mobile.png"
+                alt="Job Grinding"
                 fill
                 className="object-cover object-center"
                 priority
@@ -110,9 +110,9 @@ export default function JobGrindingPage() {
               <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
                 Flexible contract grinding services for grains, spices, pulses, and food ingredients - delivering consistent particle size, hygienic processing, and dependable commercial output.
               </p>
-              
+
               <div className="pt-2 sm:pt-4">
-                <button 
+                <button
                   onClick={() => document.getElementById('job-grinding-overview')?.scrollIntoView({ behavior: "smooth" })}
                   className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm tracking-wide cursor-pointer"
                 >
@@ -126,7 +126,7 @@ export default function JobGrindingPage() {
         {/* Desktop Key Proof Points Bar (50/50 Overlapping Hero Bottom) */}
         <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-5xl">
           <div className="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-row divide-x divide-slate-100 overflow-hidden">
-            
+
             <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
               <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">
                 Custom batch sizes
@@ -181,7 +181,7 @@ export default function JobGrindingPage() {
 
         {/* Intro & Process Overview */}
         <section id="job-grinding-overview" className="w-full pt-6 sm:pt-12 md:pt-16 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 relative md:-mt-12 lg:-mt-16 overflow-hidden">
-          
+
           {/* Faded Gear Watermark */}
           <div className="absolute right-[-10%] top-[10%] opacity-5 pointer-events-none">
             <Settings className="w-[500px] h-[500px] text-brand-primary" />
@@ -229,7 +229,7 @@ export default function JobGrindingPage() {
                   </div>
                   <h3 className="font-heading font-black text-[#133020] text-lg sm:text-xl">Facility details</h3>
                 </div>
-                
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:divide-x sm:divide-slate-100">
                   <div className="flex items-center gap-4">
                     <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center p-2.5 shrink-0 border border-slate-100">
@@ -240,7 +240,7 @@ export default function JobGrindingPage() {
                       <p className="font-black text-[#133020] text-xl sm:text-2xl whitespace-nowrap">40 TPD</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center gap-4 sm:pl-6">
                     <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center p-2.5 shrink-0 border border-slate-100">
                       <img src="/images/job-grinding/facility-details/location-clean.png" alt="Location" className="w-full h-full object-contain" />
@@ -301,16 +301,16 @@ export default function JobGrindingPage() {
           {/* Timeline Container */}
           <div className="relative max-w-5xl mx-auto">
             {/* Center vertical spine line */}
-            <div className="absolute left-6 md:left-1/2 top-6 bottom-6 w-[2px] bg-slate-400 md:-translate-x-1/2 z-0" />
+            <div className="absolute left-6 md:left-1/2 top-3 bottom-6 w-[2px] bg-slate-400 md:-translate-x-1/2 z-0" />
 
             <div className="space-y-12 sm:space-y-16">
               {timelineSteps.map((step, idx) => {
                 const isLeft = idx % 2 === 0;
                 return (
                   <div key={idx} className="relative flex items-start md:justify-between w-full">
-                    
+
                     {/* Circle Number Badge (centred on the step's title connector line) */}
-                    <div className="absolute left-6 md:left-1/2 top-[9px] md:top-[13px] -translate-x-1/2 z-20 flex items-center justify-center">
+                    <div className="absolute left-6 md:left-1/2 -top-3 md:-top-2.5 -translate-x-1/2 z-20 flex items-center justify-center">
                       <div className="w-12 h-12 rounded-full border-2 border-slate-300 bg-white flex items-center justify-center shadow-xs">
                         <div className="w-8 h-8 rounded-full bg-[#133020] text-white flex items-center justify-center font-heading font-bold text-sm">
                           {step.number}
@@ -386,7 +386,7 @@ export default function JobGrindingPage() {
             </p>
           </div>
 
-          <div className="flex md:grid md:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pt-2 pb-6 md:py-0">
+          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-5 lg:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pt-2 pb-6 md:py-0">
             {[
               {
                 title: "Job grinding setup",
@@ -404,15 +404,15 @@ export default function JobGrindingPage() {
                 imgPath: "/images/job-grinding/services-offered/training-facility.png"
               }
             ].map((service, idx) => (
-              <div key={idx} className="w-[78vw] max-w-[300px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white border border-slate-200/70 rounded-[32px] overflow-hidden shadow-[0_4px_14px_rgba(0,0,0,0.05)] hover:shadow-md transition-shadow">
-                <div className="aspect-[4/3] w-full overflow-hidden p-3 pb-0">
+              <div key={idx} className="w-[78vw] max-w-[300px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white border border-slate-200/70 rounded-3xl lg:rounded-[32px] overflow-hidden shadow-[0_4px_14px_rgba(0,0,0,0.05)] hover:shadow-md transition-shadow">
+                <div className="aspect-[4/3] w-full overflow-hidden p-2.5 lg:p-3 pb-0">
                   <div className="w-full h-full rounded-2xl overflow-hidden relative">
                      <img src={service.imgPath} alt={service.title} className="w-full h-full object-cover" />
                   </div>
                 </div>
-                <div className="p-8 space-y-3">
-                  <h4 className="text-xl font-heading font-black text-[#133020] leading-snug">{service.title}</h4>
-                  <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">{service.desc}</p>
+                <div className="p-5 md:p-5 lg:p-8 space-y-2 lg:space-y-3">
+                  <h4 className="text-lg lg:text-xl font-heading font-black text-[#133020] leading-snug">{service.title}</h4>
+                  <p className="text-sm lg:text-base text-slate-600 font-normal leading-relaxed">{service.desc}</p>
                   <ArrowRight className="w-4 h-4 text-[#D3994B] mt-2" />
                 </div>
               </div>
@@ -426,15 +426,15 @@ export default function JobGrindingPage() {
           <div className="relative w-full rounded-[32px] overflow-hidden bg-[#0A120D] shadow-xl flex flex-col justify-end min-h-[460px]">
             {/* Background Image positioned to the right so chute and pouring flour are crisp and visible */}
             <div className="absolute inset-0 bg-[url('/images/job-grinding/footer-job-grinding-/jobgrinding_services.png')] bg-cover bg-right md:bg-[center_right] z-0" />
-            
+
             {/* Desktop Gradient: Reduced green, smooth dark gradient on the left half leaving the right side clear */}
             <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#0B1510] via-[#0B1510]/85 via-48% to-transparent z-0" />
-            
+
             {/* Mobile Gradient */}
             <div className="block md:hidden absolute inset-0 bg-gradient-to-b from-[#0B1510]/95 via-[#0B1510]/80 to-[#0B1510]/40 z-0" />
-            
+
             <div className="relative z-10 p-6 sm:p-12 lg:p-14 space-y-8 flex flex-col justify-between h-full">
-              
+
               <div className="space-y-4 max-w-2xl">
                 <span className="text-xs sm:text-sm font-black text-[#f7b032] tracking-widest">
                   Job grinding services
@@ -485,7 +485,7 @@ export default function JobGrindingPage() {
                     <ArrowRight className="w-4 h-4 shrink-0" />
                   </Link>
                 </div>
-                
+
                 <div className="bg-black/40 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-white/10 w-full lg:max-w-sm">
                   <p className="text-white font-bold text-xs sm:text-sm leading-tight mb-1">
                     Trusted by businesses worldwide

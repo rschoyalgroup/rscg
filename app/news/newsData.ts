@@ -136,7 +136,7 @@ export const newsData: NewsItem[] = [
     "title": "In-Bound Trade Mission – Australia,2016",
     "slug": "in-bound-trade-mission-australia",
     "date": "2016-01-24",
-    "displayDate": "24-26 January 2016",
+    "displayDate": "24 January 2016",
     "images": [
       {
         "original_url": "",

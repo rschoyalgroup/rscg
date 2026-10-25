@@ -61,15 +61,15 @@ export default function ProjectDetailPage() {
         <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] md:min-h-[480px] flex items-center overflow-hidden bg-[#0B1510]">
            {/* Project background image (Desktop & Mobile) */}
            <div className="absolute inset-0 w-full h-full">
-             <img 
-               src={currentProject.heroDesktop || currentProject.images[0] || "/images/turnkey_projects_hero.png"} 
-               alt={currentProject.title} 
-               className="hidden md:block w-full h-full object-cover object-center" 
+             <img
+               src={currentProject.heroDesktop || currentProject.images[0] || "/images/turnkey_projects_hero.png"}
+               alt={currentProject.title}
+               className="hidden md:block w-full h-full object-cover object-center"
              />
-             <img 
-               src={currentProject.heroMobile || currentProject.images[0] || "/images/turnkey_projects_hero.png"} 
-               alt={currentProject.title} 
-               className="block md:hidden w-full h-full object-cover object-center" 
+             <img
+               src={currentProject.heroMobile || currentProject.images[0] || "/images/turnkey_projects_hero.png"}
+               alt={currentProject.title}
+               className="block md:hidden w-full h-full object-cover object-center"
              />
            </div>
 
@@ -84,11 +84,11 @@ export default function ProjectDetailPage() {
                  <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
                  Case study
                </div>
-               
+
                <h1 className="text-3xl sm:text-5xl lg:text-[56px] font-heading font-black text-white leading-[1.1] tracking-tight">
                  {currentProject.title}
                </h1>
-               
+
                {currentProject.location && (
                  <p className="text-base sm:text-xl font-bold text-[#f7b032] tracking-wide">
                    {currentProject.location}
@@ -125,13 +125,13 @@ export default function ProjectDetailPage() {
 
         {/* Project Overview */}
         <section className="w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 pt-10 sm:pt-12 lg:pt-16 pb-16 lg:pb-24">
-          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-16">
-             <div className="space-y-6 lg:order-1 order-2">
+          <div className="flex flex-col xl:grid xl:grid-cols-2 gap-8 sm:gap-10 xl:gap-16">
+             <div className="space-y-6 xl:order-1 order-2">
                 <div className="mb-8">
                   <h2 className="text-2xl sm:text-[32px] font-heading font-black text-[#133020] leading-tight">Project overview</h2>
                   <div className="w-12 h-[3px] bg-[#D3994B] mt-4" />
                 </div>
-                
+
                 <div className="space-y-6">
                   {currentProject.content
                     .filter((block) => {
@@ -154,9 +154,9 @@ export default function ProjectDetailPage() {
                 </div>
 
              </div>
-             
-             <div className="lg:order-2 order-1 relative">
-                <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-slate-100 shadow-xl sticky top-32">
+
+             <div className="xl:order-2 order-1 relative">
+                <div className="aspect-[4/3] sm:aspect-[16/9] xl:aspect-[4/3] rounded-3xl overflow-hidden bg-slate-100 shadow-xl xl:sticky xl:top-32">
                    <img src={currentProject.images[0] || currentImage} alt="Project Overview" className="object-cover w-full h-full" />
                 </div>
              </div>
@@ -170,8 +170,8 @@ export default function ProjectDetailPage() {
               <h2 className="text-2xl sm:text-[32px] font-heading font-black text-[#133020] leading-tight">Project gallery</h2>
               <div className="w-12 h-[3px] bg-[#D3994B] mt-4" />
             </div>
-            
-            <div className={`flex md:grid ${currentProject.images.slice(1).length === 5 ? 'md:grid-cols-3 lg:grid-cols-5' : 'md:grid-cols-4'} gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0`}>
+
+            <div className={`flex md:grid ${currentProject.images.slice(1).length === 5 ? 'md:grid-cols-3 xl:grid-cols-5' : 'md:grid-cols-4'} gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0`}>
               {currentProject.images.slice(1).map((img, idx) => (
                 <div key={idx} className="w-[68vw] max-w-[260px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 relative group cursor-pointer" onClick={() => setActiveImageIdx(idx + 1)}>
                   <img src={img} alt={`Gallery ${idx + 1}`} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
@@ -246,7 +246,7 @@ export default function ProjectDetailPage() {
                 Read other case studies
               </h2>
 
-              <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
+              <div className="flex md:grid md:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
                 {otherProjects.map((p) => {
                   const cardCover = p.images.length > 0 ? p.images[0] : "/images/plants/turnkey_solutions.webp";
                   return (

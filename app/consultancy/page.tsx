@@ -12,21 +12,21 @@ export default function ConsultancyPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const heroProofPoints = [
-    { 
-      title: "Industry expertise", 
-      desc: "Decades of experience in flour milling" 
+    {
+      title: "Industry expertise",
+      desc: "Decades of experience in flour milling"
     },
-    { 
-      title: "Data driven approach", 
-      desc: "Practical solutions backed by analysis" 
+    {
+      title: "Data driven approach",
+      desc: "Practical solutions backed by analysis"
     },
-    { 
-      title: "End-to-end support", 
-      desc: "From planning to performance improvement" 
+    {
+      title: "End-to-end support",
+      desc: "From planning to performance improvement"
     },
-    { 
-      title: "Sustainable growth", 
-      desc: "Build efficient, future-ready milling businesses" 
+    {
+      title: "Sustainable growth",
+      desc: "Build efficient, future-ready milling businesses"
     }
   ];
 
@@ -64,7 +64,7 @@ export default function ConsultancyPage() {
   ];
 
   const clientTypes = [
-    { label: "New entrants", icon: "/consultancy/who-we-work-with/data_driven_approach-clean.png" },
+    { label: "New entrants", icon: "/consultancy/who-we-work-with/new-entrant.png" },
     { label: "Existing millers", icon: "/consultancy/who-we-work-with/existing_flour_mill_owner-clean.png" },
     { label: "Investors", icon: "/consultancy/who-we-work-with/investors_and_entrpreneurs-clean.png" },
     { label: "Cooperatives", icon: "/consultancy/who-we-work-with/farmers_and_groups-clean.png" },
@@ -83,9 +83,9 @@ export default function ConsultancyPage() {
           <div className="absolute inset-0 z-0 overflow-hidden">
             {/* Desktop Background Image (1920x820) */}
             <div className="hidden md:block absolute inset-0">
-              <Image 
-                src="/consultancy/consultancy_desktop_cropped.png" 
-                alt="Flour Milling Consultancy" 
+              <Image
+                src="/consultancy/consultancy_desktop_cropped.png"
+                alt="Flour Milling Consultancy"
                 fill
                 className="object-cover object-center"
                 priority
@@ -96,9 +96,9 @@ export default function ConsultancyPage() {
 
             {/* Mobile Background Image (1080x1920) */}
             <div className="block md:hidden absolute inset-0">
-              <Image 
-                src="/consultancy/consultancy_mobile.png" 
-                alt="Flour Milling Consultancy" 
+              <Image
+                src="/consultancy/consultancy_mobile.png"
+                alt="Flour Milling Consultancy"
                 fill
                 className="object-cover object-center"
                 priority
@@ -139,8 +139,8 @@ export default function ConsultancyPage() {
             <div className="w-full bg-white rounded-2xl shadow-xl p-4 sm:p-5 lg:p-6 border border-slate-100">
                 <div className="grid grid-cols-4 divide-x divide-slate-200">
                   {heroProofPoints.map((item, idx) => (
-                    <div 
-                      key={idx} 
+                    <div
+                      key={idx}
                       className="p-4 sm:p-5 hover:bg-[#E8F5E9]/70 rounded-xl transition-colors duration-200 cursor-default text-left space-y-1.5"
                     >
                       <h3 className="text-base sm:text-lg font-bold text-[#0B1510] leading-snug">
@@ -196,17 +196,17 @@ export default function ConsultancyPage() {
 
           <div className="flex md:grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pt-2 pb-6 md:py-0">
             {valueServices.map((service, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="w-[78vw] max-w-[300px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white border border-slate-200/70 rounded-2xl p-6 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6 shadow-[0_4px_14px_rgba(0,0,0,0.05)] hover:shadow-md hover:border-[#133020]/20 transition-all group"
               >
                 <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 bg-[#F0F7F3] rounded-2xl flex items-center justify-center border border-[#133020]/10 p-3 sm:p-3.5 group-hover:scale-105 group-hover:bg-[#E8F5E9] transition-all duration-300">
-                  <Image 
-                    src={service.icon} 
-                    alt={service.title} 
-                    width={60} 
-                    height={60} 
-                    className="w-full h-full object-contain" 
+                  <Image
+                    src={service.icon}
+                    alt={service.title}
+                    width={60}
+                    height={60}
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <div className="space-y-2 flex-1">
@@ -238,7 +238,7 @@ export default function ConsultancyPage() {
                 We combine our deep domain knowledge with hands-on industry experience to deliver practical, result-oriented solutions tailored to your business goals.
               </p>
             </div>
-            
+
             <div className="lg:w-1/2 grid grid-cols-3 gap-2 sm:gap-4 w-full divide-x divide-white/20 relative z-10">
               {[
                 { value: "60+", label: "Years milling and engineering experience" },
@@ -261,7 +261,7 @@ export default function ConsultancyPage() {
         {/* From Vision to Value Section */}
         <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pb-16">
           <div className="w-full bg-white rounded-[24px] overflow-hidden shadow-md border border-slate-100 flex flex-col md:flex-row items-stretch">
-            
+
             <div className="md:w-1/2 p-8 sm:p-12 lg:p-16 flex flex-col justify-center space-y-6">
               <h3 className="text-3xl sm:text-4xl font-heading font-black text-[#133020]">
                 From vision to value
@@ -269,7 +269,7 @@ export default function ConsultancyPage() {
               <p className="text-base sm:text-lg text-slate-600 font-medium leading-relaxed">
                 Whether you are setting up your first mill, expanding capacity, or looking to improve performance, our consultancy helps you make the right decisions and achieve measurable results.
               </p>
-              
+
               <div className="pt-2">
                 <Link
                   href="/contact"
@@ -282,14 +282,14 @@ export default function ConsultancyPage() {
             </div>
 
             <div className="md:w-1/2 relative min-h-[340px] lg:min-h-[420px]">
-              <Image 
-                src="/images/consultancy/vision-to-value/vision-to-value.png" 
-                alt="From Vision to Value" 
+              <Image
+                src="/images/consultancy/vision-to-value/vision-to-value.png"
+                alt="From Vision to Value"
                 fill
                 className="object-cover object-center"
               />
             </div>
-            
+
           </div>
         </section>
 
@@ -304,20 +304,20 @@ export default function ConsultancyPage() {
                 Partnering with organizations across the grain and milling value chain.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 text-center">
               {clientTypes.map((item, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="bg-white rounded-2xl p-6 shadow-xs hover:shadow-md border border-[#E1EAE5]/60 hover:border-[#133020]/20 transition-all flex flex-col items-center justify-between group"
                 >
                   <div className="w-20 h-20 sm:w-24 sm:h-24 bg-[#E8F5E9]/50 rounded-2xl p-3.5 sm:p-4 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E8F5E9] transition-all duration-300">
-                    <Image 
-                      src={item.icon} 
-                      alt={item.label} 
-                      width={72} 
-                      height={72} 
-                      className="w-full h-full object-contain" 
+                    <Image
+                      src={item.icon}
+                      alt={item.label}
+                      width={72}
+                      height={72}
+                      className="w-full h-full object-contain"
                     />
                   </div>
                   <span className="text-sm sm:text-base font-bold text-[#133020] mt-4">
@@ -335,7 +335,7 @@ export default function ConsultancyPage() {
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1c2722]/65 backdrop-blur-md animate-fade-in">
           <div className="relative w-full max-w-md animate-scale-in">
-            <button 
+            <button
               onClick={() => setIsModalOpen(false)}
               className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/80 hover:bg-white text-slate-700 hover:text-slate-900 transition-colors shadow-xs cursor-pointer border border-slate-200/40"
               aria-label="Close modal"
