@@ -40,7 +40,7 @@ export default function GroupCompaniesMarquee() {
   return (
     <section
       id="divisions-ecosystem"
-      className="w-full py-16 sm:py-20 bg-[#FBFBFA] border-t border-slate-200/50 overflow-hidden relative z-10 scroll-mt-36"
+      className="w-full py-16 sm:py-20 bg-slate-50 border-t border-slate-200/50 overflow-hidden relative z-10 scroll-mt-36"
     >
       <div className="w-full mx-auto">
         {/* Parent RS Choyal Group Logo */}
@@ -64,8 +64,8 @@ export default function GroupCompaniesMarquee() {
         {/* Marquee Track with Edge Gradients */}
         <div className="relative w-full overflow-hidden marquee-container py-2">
           {/* Gradient Masks */}
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-32 z-10 bg-gradient-to-r from-[#FBFBFA] to-transparent" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 z-10 bg-gradient-to-l from-[#FBFBFA] to-transparent" />
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-32 z-10 bg-gradient-to-r from-slate-50 to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 z-10 bg-gradient-to-l from-slate-50 to-transparent" />
 
           {/* Scrolling Rows */}
           <div className="flex items-center gap-6 sm:gap-10 md:gap-12 min-w-full">

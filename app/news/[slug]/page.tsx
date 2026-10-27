@@ -82,7 +82,7 @@ export default function NewsDetailPage() {
 
             {/* Structured Content Block (Mobile: Bottom, Desktop: Left Col Row 2 - 50%) */}
             <div className="xl:col-span-5 xl:col-start-1 xl:row-start-2">
-              <div className="space-y-6 pt-2 xl:pt-0 max-w-3xl">
+              <div className="space-y-6 pt-2 xl:pt-0">
                 {currentPost.content.map((block, idx) => {
                   if (block.type === 'heading') {
                     const headingLevel = block.level || 2;

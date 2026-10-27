@@ -183,7 +183,7 @@ export default function JourneyTimeline() {
     }
 
     // Scroll active button into view on mobile/tablet
-    if (typeof window !== "undefined" && window.innerWidth < 1024 && btnRefs.current[index]) {
+    if (typeof window !== "undefined" && window.innerWidth < 1280 && btnRefs.current[index]) {
       btnRefs.current[index]?.scrollIntoView({
         behavior: "smooth",
         block: "nearest",
@@ -198,7 +198,7 @@ export default function JourneyTimeline() {
     isManualClickRef.current = true;
     goToMilestone(index, true);
 
-    if (typeof window !== "undefined" && window.innerWidth >= 1024 && trackRef.current) {
+    if (typeof window !== "undefined" && window.innerWidth >= 1280 && trackRef.current) {
       const track = trackRef.current;
       const trackRect = track.getBoundingClientRect();
       const trackTop = window.scrollY + trackRect.top;
@@ -221,7 +221,7 @@ export default function JourneyTimeline() {
   // Scroll Synchronization
   useEffect(() => {
     const handleScroll = () => {
-      if (typeof window === "undefined" || window.innerWidth < 1024 || isManualClickRef.current)
+      if (typeof window === "undefined" || window.innerWidth < 1280 || isManualClickRef.current)
         return;
       const track = trackRef.current;
       if (!track) return;
@@ -335,7 +335,7 @@ export default function JourneyTimeline() {
         }
 
         /* Short desktop screens (e.g. 1280x720 laptops): tighten the heading so the pinned stage fits the viewport */
-        @media (min-width: 1024px) and (max-height: 800px) {
+        @media (min-width: 1280px) and (max-height: 800px) {
           .journey-head {
             margin-bottom: 0.5rem !important;
           }
@@ -353,10 +353,10 @@ export default function JourneyTimeline() {
       <div
         id="journey"
         ref={trackRef}
-        className="relative w-full lg:h-[380vh] bg-[#F6F6EE] scroll-mt-36"
+        className="relative w-full xl:h-[380vh] bg-slate-50 scroll-mt-36"
       >
         {/* Sticky Viewport Stage */}
-        <section className="relative lg:sticky lg:top-[148px] w-full lg:h-[calc(100vh-148px)] lg:max-h-[920px] lg:overflow-hidden bg-[#F6F6EE] flex flex-col justify-center py-10 lg:py-4 xl:py-6">
+        <section className="relative xl:sticky xl:top-[148px] w-full xl:h-[calc(100vh-148px)] xl:max-h-[920px] xl:overflow-hidden bg-slate-50 flex flex-col justify-center py-10 sm:py-14 xl:py-6">
           <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto flex flex-col justify-center my-auto">
             {/* Header: Eyebrow + Title + Subtitle */}
             <div className="journey-head w-full mb-5 lg:mb-4 xl:mb-7">
@@ -407,7 +407,7 @@ export default function JourneyTimeline() {
                         className={`hidden lg:block absolute left-[6px] top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full transition-all duration-300 ${
                           isActive
                             ? "w-[9px] h-[9px] bg-[#FFAA17] ring-2 ring-[#FFAA17]/40 shadow-xs"
-                            : "w-[7px] h-[7px] bg-[#F6F6EE] border border-slate-300 hover:border-slate-400"
+                            : "w-[7px] h-[7px] bg-slate-50 border border-slate-300 hover:border-slate-400"
                         }`}
                       />
                       <span
@@ -471,12 +471,12 @@ export default function JourneyTimeline() {
 
                   {/* Right inside card: Visual Milestone Image Frame + Mobile Arrows */}
                   <div className="relative flex flex-col items-center justify-center lg:items-end lg:justify-end w-full gap-4">
-                    <div className="relative w-full lg:max-w-[540px] xl:max-w-[640px] 2xl:max-w-[700px] rounded-2xl overflow-hidden bg-white shadow-xl shadow-slate-900/5 border border-slate-200/90 flex items-center justify-center">
+                    <div className="relative w-full max-w-[420px] sm:max-w-[460px] xl:max-w-none xl:w-auto rounded-2xl overflow-hidden bg-white shadow-xl shadow-slate-900/5 border border-slate-200/90 flex items-center justify-center">
                       <img
                         src={displayedItem.image}
                         alt={`${displayedItem.year} - ${displayedItem.title}`}
                         style={{ objectPosition: displayedItem.imagePosition ?? "50% 50%" }}
-                        className={`w-full aspect-[4/3] h-auto lg:max-h-[min(380px,calc(100vh-148px-280px))] xl:max-h-[min(460px,calc(100vh-148px-300px))] 2xl:max-h-[min(500px,calc(100vh-148px-300px))] object-cover block select-none transition-all duration-700 cubic-bezier(0.22, 1, 0.36, 1) ${
+                        className={`w-full aspect-square h-auto xl:w-auto xl:h-[min(460px,calc(100vh-148px-300px))] 2xl:h-[min(500px,calc(100vh-148px-300px))] object-cover block select-none transition-all duration-700 cubic-bezier(0.22, 1, 0.36, 1) ${
                           isImageChanging
                             ? "opacity-0 scale-105"
                             : "opacity-100 scale-100"
@@ -485,7 +485,7 @@ export default function JourneyTimeline() {
                     </div>
 
                     {/* Mobile Prev / Next Year Navigation Arrows */}
-                    <div className="flex lg:hidden items-center justify-center gap-3 pt-1 w-full">
+                    <div className="flex xl:hidden items-center justify-center gap-3 pt-1 w-full">
                       <button
                         type="button"
                         onClick={() => handleClickYear(Math.max(0, currentIndex - 1))}

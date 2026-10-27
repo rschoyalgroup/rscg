@@ -66,18 +66,18 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto pt-28 sm:pt-32 md:pt-36 pb-12 flex-1">
 
         {/* Hero Product Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 md:items-start gap-6 md:gap-8 lg:gap-12 bg-white p-5 sm:p-8 lg:p-10 rounded-3xl border border-slate-200 shadow-sm mb-12 lg:mb-16">
+        <div className="grid grid-cols-1 xl:grid-cols-2 xl:items-start gap-6 sm:gap-8 xl:gap-12 bg-white p-5 sm:p-8 xl:p-10 rounded-3xl border border-slate-200 shadow-sm mb-12 lg:mb-16">
 
           {/* Left: Images */}
-          <div className="flex flex-col gap-4 md:sticky md:top-28 self-start">
-            <div className={`relative w-full aspect-[4/3] sm:aspect-square lg:aspect-auto ${product.showThumbnails !== false && product.keyComponents.length > 0 ? 'lg:h-[calc(100vh-22rem)] lg:min-h-[240px] lg:max-h-[440px]' : 'lg:h-[calc(100vh-15rem)] lg:min-h-[260px] lg:max-h-[480px]'} bg-white rounded-2xl flex items-center justify-center p-4 sm:p-6 lg:p-8`}>
+          <div className="flex flex-col gap-4 xl:sticky xl:top-28 self-start w-full">
+            <div className={`relative w-full aspect-[4/3] sm:aspect-[16/9] xl:aspect-auto ${product.showThumbnails !== false && product.keyComponents.length > 0 ? 'xl:h-[calc(100vh-22rem)] xl:min-h-[240px] xl:max-h-[440px]' : 'xl:h-[calc(100vh-15rem)] xl:min-h-[260px] xl:max-h-[480px]'} bg-white rounded-2xl flex items-center justify-center p-4 sm:p-6 lg:p-8`}>
               <span className="absolute top-0 left-0 z-10 bg-slate-100 text-xs font-bold text-slate-600 px-3.5 py-1.5 rounded-full border border-slate-200">
                 {product.category}
               </span>
               <img
                 src={activeImage}
                 alt={product.title}
-                className="w-full h-full object-contain"
+                className="absolute inset-0 w-full h-full object-contain p-4 sm:p-6 lg:p-8"
               />
             </div>
 
@@ -129,7 +129,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
           </div>
 
           {/* Right: Info */}
-          <div className="flex flex-col justify-start md:pt-2 lg:pt-4">
+          <div className="flex flex-col justify-start xl:pt-4">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-[#0a4c2a] tracking-tight mb-2">
               {product.title}
             </h1>
@@ -168,14 +168,14 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
             {product.heroStats.length > 0 && (
             <div className={`grid gap-2.5 sm:gap-3 mb-8 lg:mb-10 ${product.heroStats.length <= 2 ? 'grid-cols-2' : product.heroStats.length === 4 || product.heroStats.length === 8 ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-2 sm:grid-cols-3'}`}>
               {product.heroStats.map((stat, idx) => (
-                <div key={idx} className="flex flex-col text-center bg-white border border-slate-200 rounded-2xl px-3 py-3.5 sm:px-4 sm:py-4 md:px-2 lg:px-4 shadow-sm min-w-0">
+                <div key={idx} className="flex flex-col text-center bg-white border border-slate-200 rounded-2xl px-3 py-3 sm:px-3 sm:py-3 xl:px-4 xl:py-4 shadow-sm min-w-0">
                   {stat.topLabel && (
                     <div className="pb-2 mb-2 border-b border-slate-100">
                       <p className="text-[11px] sm:text-xs text-slate-600 font-bold tracking-wide leading-snug">{stat.topLabel}</p>
                     </div>
                   )}
                   <div className="flex flex-col items-center justify-center flex-1">
-                    <p className="text-lg sm:text-xl md:text-base lg:text-xl xl:text-[22px] font-black text-[#0a4c2a] leading-tight break-words">{stat.value}</p>
+                    <p className="text-lg sm:text-xl xl:text-[22px] font-black text-[#0a4c2a] leading-tight break-words">{stat.value}</p>
                     <p className="text-[11px] sm:text-xs font-semibold text-slate-600 mt-1 leading-snug">{stat.label}</p>
                     {stat.sublabel && (
                       <p className="text-[11px] sm:text-xs font-medium text-slate-500 mt-0.5">{stat.sublabel}</p>
@@ -247,7 +247,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
             )}
 
             {/* Action Area */}
-            <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row items-stretch sm:items-center md:items-stretch lg:items-center gap-3 sm:gap-4 mb-6 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-6 pt-2">
               <button
                 onClick={handleAddToQuote}
                 className="h-12 min-h-[48px] sm:flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
@@ -260,7 +260,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                 href={`https://wa.me/919240289259?text=${encodeURIComponent(`Hi, I would like to enquire about ${product.title}.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-12 w-full sm:w-auto md:w-full lg:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap cursor-pointer"
+                className="h-12 w-full sm:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>WhatsApp Enquiry</span>

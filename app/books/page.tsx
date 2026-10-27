@@ -174,7 +174,7 @@ export default function BooksPage() {
       </div>
 
       {/* Main Content Section */}
-      <section id="order-books" className="w-full pt-4 md:pt-24 lg:pt-28 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#F8F9FA]">
+      <section id="order-books" className="w-full pt-4 md:pt-2 xl:pt-28 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#F8F9FA]">
         <div className="w-full mx-auto space-y-12">
           
           <div className="text-center w-full flex items-center justify-center">

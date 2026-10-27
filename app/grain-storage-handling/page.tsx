@@ -165,7 +165,7 @@ export default function GrainStorageHandlingPage() {
       </div>
 
       {/* Intro Description Section */}
-      <section className="w-full pt-4 md:pt-20 lg:pt-24 pb-16 px-6 sm:px-12 lg:px-16 xl:px-24 relative z-10">
+      <section className="w-full pt-4 md:pt-2 xl:pt-24 pb-16 px-6 sm:px-12 lg:px-16 xl:px-24 relative z-10">
         <div className="w-full mx-auto space-y-6">
           <h2 className="text-2xl sm:text-3xl font-heading font-black text-slate-900">
             Efficient Grain Storage, Built to Last

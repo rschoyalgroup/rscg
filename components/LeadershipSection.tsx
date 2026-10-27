@@ -7,7 +7,7 @@ export default function LeadershipSection() {
   return (
     <section
       id="leadership"
-      className="w-full py-16 sm:py-20 lg:py-24 bg-[#FBFBFA] border-t border-slate-200/50 scroll-mt-36"
+      className="w-full py-16 sm:py-20 lg:py-24 bg-white border-t border-slate-200/50 scroll-mt-36"
     >
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto">
         {/* Section Header */}

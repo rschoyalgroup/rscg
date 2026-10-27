@@ -190,11 +190,11 @@ export default function Grain360Page() {
             </h3>
 
             <div className="w-full">
-              <div className="grid grid-cols-1 md:grid-cols-3 lg:flex lg:flex-row items-stretch lg:items-center justify-between gap-3 sm:gap-4 lg:gap-0">
+              <div className="flex md:grid md:grid-cols-3 lg:flex lg:flex-row items-stretch justify-between gap-3 sm:gap-4 lg:gap-0 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
                 {workflowSteps.map((step, idx) => (
                   <Fragment key={idx}>
                     {/* Step Card - Equalized with flex-1 across all 3 cards */}
-                    <div className="lg:flex-1 bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-9 flex flex-row md:flex-col lg:flex-row items-center md:items-start lg:items-center gap-4 lg:gap-6 shadow-sm hover:shadow-md border border-slate-200/70 transition-all duration-300 lg:min-h-[170px]">
+                    <div className="w-[74vw] max-w-[290px] shrink-0 snap-start md:w-auto md:max-w-none md:shrink lg:flex-1 bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 xl:p-9 flex flex-col xl:flex-row items-start xl:items-center gap-4 xl:gap-6 shadow-sm hover:shadow-md border border-slate-200/70 transition-all duration-300 lg:min-h-[170px]">
                       <div className={`w-14 h-14 lg:w-20 lg:h-20 rounded-2xl ${step.iconBg} flex items-center justify-center shrink-0 p-3 sm:p-4 shadow-xs`}>
                         <img src={step.iconPath} alt={step.title} className="w-full h-full object-contain" />
                       </div>
@@ -222,9 +222,9 @@ export default function Grain360Page() {
               Our core services
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 lg:gap-8">
+            <div className="flex md:grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
               {coreServices.map((service, idx) => (
-                <div key={idx} className="bg-white rounded-2xl p-4 sm:p-7 flex items-start gap-4 sm:gap-5 shadow-sm border border-slate-200/70 hover:shadow-md hover:border-[#D3994B]/30 transition-all duration-300">
+                <div key={idx} className="w-[74vw] max-w-[290px] md:w-full md:max-w-none shrink-0 md:shrink snap-start bg-white rounded-2xl p-5 sm:p-7 flex flex-col md:flex-row items-start gap-4 sm:gap-5 shadow-sm border border-slate-200/70 hover:shadow-md hover:border-[#D3994B]/30 transition-all duration-300">
                   <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-2xl ${service.iconBg} flex items-center justify-center shrink-0 p-2.5 sm:p-3 shadow-xs`}>
                     <img src={service.iconPath} alt={service.title} className="w-full h-full object-contain" />
                   </div>

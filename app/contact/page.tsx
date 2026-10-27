@@ -49,7 +49,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f6f6f4] text-slate-800 font-sans flex flex-col">
+    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans flex flex-col">
       <Header />
 
       {/* Hero Banner Section */}
@@ -98,7 +98,7 @@ export default function ContactPage() {
               </div>
 
               {/* Contact Items (email & phone side by side on mobile) */}
-              <div className="grid grid-cols-2 gap-x-3 gap-y-4 sm:gap-6">
+              <div className="grid grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-x-3 gap-y-4 sm:gap-6">
                 {/* Corporate Headquarters */}
                 <div className="col-span-2 sm:col-span-1 flex items-start gap-3 sm:gap-4">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">

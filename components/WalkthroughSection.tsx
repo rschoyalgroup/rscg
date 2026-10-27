@@ -52,7 +52,7 @@ export default function WalkthroughSection() {
   return (
     <section
       id="infrastructure"
-      className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-24 bg-white relative z-10 border-t border-slate-200/50 scroll-mt-28"
+      className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-24 bg-slate-50 relative z-10 border-t border-slate-200/50 scroll-mt-28"
     >
       <div className="w-full mx-auto space-y-12">
         {/* Header */}

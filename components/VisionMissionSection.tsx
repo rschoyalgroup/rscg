@@ -24,9 +24,9 @@ const cards = [
 
 function VisionMissionCard({ id, Icon, eyebrow, title, desc, image }: (typeof cards)[number]) {
   return (
-    <div className="bg-white border border-slate-200/80 rounded-2xl sm:rounded-3xl overflow-hidden relative flex flex-col lg:flex-row lg:justify-between lg:min-h-[250px] shadow-[0_4px_14px_rgba(0,0,0,0.05)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+    <div className="bg-white border border-slate-200/80 rounded-2xl sm:rounded-3xl overflow-hidden relative flex flex-col xl:flex-row xl:justify-between xl:min-h-[250px] shadow-[0_4px_14px_rgba(0,0,0,0.05)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
       {/* Mobile / Tablet: image banner on top (no overlap with text) */}
-      <div className="lg:hidden relative w-full aspect-[16/9] overflow-hidden bg-[#E4EEE6]">
+      <div className="xl:hidden relative w-full aspect-[16/9] overflow-hidden bg-[#E4EEE6]">
         <img
           src={image}
           alt={eyebrow}
@@ -34,7 +34,7 @@ function VisionMissionCard({ id, Icon, eyebrow, title, desc, image }: (typeof ca
         />
       </div>
 
-      <div className="p-5 sm:p-7 lg:p-9 lg:pr-[265px] xl:pr-[285px] flex flex-col justify-between relative z-10 flex-1 min-w-0 bg-transparent">
+      <div className="p-5 sm:p-7 xl:p-9 xl:pr-[285px] flex flex-col justify-between relative z-10 flex-1 min-w-0 bg-transparent">
         <div>
           <div className="flex items-start gap-3 sm:gap-5 mb-2.5 sm:mb-4">
             <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-[#17422C] flex items-center justify-center shrink-0 text-white shadow-[0_0_0_4px_#E6EFEA] sm:shadow-[0_0_0_5px_#E6EFEA]">
@@ -44,9 +44,9 @@ function VisionMissionCard({ id, Icon, eyebrow, title, desc, image }: (typeof ca
               <span className="text-[11px] sm:text-xs font-bold text-[#FFAA17] tracking-[0.08em] block mb-0.5 sm:mb-1">
                 {eyebrow}
               </span>
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-[#0B2C1C] leading-snug">
+              <h3 className="text-lg sm:text-xl xl:text-2xl font-extrabold text-[#0B2C1C] leading-snug">
                 {title[0]}
-                <br className="hidden lg:inline" /> {title[1]}
+                <br className="hidden xl:inline" /> {title[1]}
               </h3>
               <div className="w-8 sm:w-10 h-[2px] sm:h-[2.5px] bg-[#FFAA17] mt-2 sm:mt-3.5 mb-2 sm:mb-4 rounded-full" />
             </div>
@@ -57,12 +57,12 @@ function VisionMissionCard({ id, Icon, eyebrow, title, desc, image }: (typeof ca
 
       {/* Desktop: subtle white gradient (above BG, behind text) */}
       <div
-        className="hidden lg:block absolute inset-0 z-[5] pointer-events-none bg-[linear-gradient(50deg,rgba(255,255,255,0.95)_0%,rgba(255,255,255,0.75)_48%,rgba(255,255,255,0)_70%)]"
+        className="hidden xl:block absolute inset-0 z-[5] pointer-events-none bg-[linear-gradient(50deg,rgba(255,255,255,0.95)_0%,rgba(255,255,255,0.75)_48%,rgba(255,255,255,0)_70%)]"
         aria-hidden="true"
       />
 
       {/* Desktop: graphic box with 2 background circle arcs & left-arced image */}
-      <div className="hidden lg:flex absolute right-0 inset-y-0 w-[270px] xl:w-[290px] z-0 items-center justify-end pointer-events-none select-none">
+      <div className="hidden xl:flex absolute right-0 inset-y-0 w-[270px] xl:w-[290px] z-0 items-center justify-end pointer-events-none select-none">
         <svg
           viewBox="0 0 260 280"
           className="w-full h-full overflow-visible pointer-events-none"
@@ -103,7 +103,7 @@ export default function VisionMissionSection() {
   return (
     <section
       id="mission-vision"
-      className="w-full py-16 sm:py-20 lg:py-24 bg-white border-t border-slate-200/50 scroll-mt-36"
+      className="w-full py-16 sm:py-20 lg:py-24 bg-slate-50 border-t border-slate-200/50 scroll-mt-36"
     >
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto space-y-16 sm:space-y-20">
         <div>

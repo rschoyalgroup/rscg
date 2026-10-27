@@ -62,8 +62,8 @@ export default function SiloDetailPage() {
 
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto pt-28 sm:pt-32 md:pt-36 pb-12">
         {/* Top Product Details */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-start gap-12 bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-sm mb-16">
-          <div className="relative w-full h-[350px] lg:h-[calc(100vh-11rem)] lg:min-h-[280px] lg:max-h-[460px] lg:sticky lg:top-28 self-start bg-slate-50 rounded-2xl flex items-center justify-center p-8 overflow-hidden group">
+        <div className="grid grid-cols-1 xl:grid-cols-2 xl:items-start gap-6 sm:gap-8 xl:gap-12 bg-white p-5 sm:p-8 xl:p-10 rounded-3xl border border-slate-200 shadow-sm mb-16">
+          <div className="relative w-full h-[300px] sm:h-[380px] xl:h-[calc(100vh-11rem)] xl:min-h-[280px] xl:max-h-[460px] xl:sticky xl:top-28 self-start bg-slate-50 rounded-2xl flex items-center justify-center p-8 overflow-hidden group">
             <Image
               src={product.image}
               alt={product.title}

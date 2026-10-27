@@ -46,7 +46,7 @@ const certBadges = [
 
 export default function Footer() {
   return (
-    <footer className="w-full pt-10 sm:pt-14 pb-8 sm:pb-12 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#f6f6f4] text-[#3e4d46] border-t border-slate-300/80 relative z-10">
+    <footer className="w-full pt-10 sm:pt-14 pb-8 sm:pb-12 px-6 sm:px-12 lg:px-16 xl:px-24 bg-slate-50 text-[#3e4d46] border-t border-slate-300/80 relative z-10">
       <div className="w-full mx-auto space-y-8 sm:space-y-12">
 
         {/* ================= 5-COLUMN MAIN GRID ================= */}

@@ -42,11 +42,11 @@ export default function GrainProcessingProductPage() {
         <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto pt-28 sm:pt-32 md:pt-36">
 
         {/* Top Product Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 md:items-start gap-6 md:gap-8 lg:gap-12 xl:gap-20 mb-12 lg:mb-24">
+        <div className="grid grid-cols-1 xl:grid-cols-2 xl:items-start gap-6 sm:gap-8 xl:gap-20 mb-12 lg:mb-24">
 
           {/* Left Column: Image & Note */}
-          <div className="flex flex-col gap-4 md:sticky md:top-28 self-start">
-            <div className="bg-white border border-slate-100 rounded-3xl overflow-hidden flex items-center justify-center relative shadow-sm aspect-[4/3] sm:aspect-square lg:aspect-auto lg:h-[calc(100vh-16rem)] lg:min-h-[260px] lg:max-h-[480px]">
+          <div className="flex flex-col gap-4 xl:sticky xl:top-28 self-start w-full">
+            <div className="bg-white border border-slate-100 rounded-3xl overflow-hidden flex items-center justify-center relative shadow-sm aspect-[4/3] sm:aspect-[16/9] xl:aspect-auto xl:h-[calc(100vh-16rem)] xl:min-h-[260px] xl:max-h-[480px]">
               <img
                 src={product.image}
                 alt={product.title}
@@ -90,7 +90,7 @@ export default function GrainProcessingProductPage() {
 
             {/* Actions */}
             <div className="space-y-4 lg:space-y-6 pt-1 lg:pt-4">
-              <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row items-stretch sm:items-center md:items-stretch lg:items-center gap-3 sm:gap-4">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <button
                   onClick={handleAddToQuote}
                   className="h-12 min-h-[48px] sm:flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
@@ -103,7 +103,7 @@ export default function GrainProcessingProductPage() {
                   href={`https://wa.me/919240289259?text=${encodeURIComponent(`Hi, I would like to enquire about ${product.title}.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="h-12 w-full sm:w-auto md:w-full lg:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap cursor-pointer"
+                  className="h-12 w-full sm:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap cursor-pointer"
                 >
                   <MessageCircle className="w-4 h-4" />
                   WhatsApp enquiry

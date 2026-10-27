@@ -44,7 +44,7 @@ export default function CSRSection() {
   return (
     <section
       id="social-responsibility"
-      className="w-full py-16 sm:py-24 bg-[#FCFDFD] border-t border-slate-200/50 scroll-mt-28"
+      className="w-full py-16 sm:py-24 bg-white border-t border-slate-200/50 scroll-mt-28"
     >
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto">
         {/* Header Section */}

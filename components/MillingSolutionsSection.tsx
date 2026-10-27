@@ -207,7 +207,7 @@ export default function MillingSolutionsSection() {
             {topCards.map((card, idx) => (
               <div 
                 key={idx}
-                className="w-[74vw] max-w-[290px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none group relative bg-white rounded-2xl p-6 sm:p-8 border border-[#E2E8F0] shadow-[0_10px_30px_rgba(15,23,42,0.035)] hover:shadow-[0_18px_40px_rgba(14,51,33,0.08)] hover:border-[#0E3321]/20 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between min-h-[250px] overflow-hidden"
+                className={`${idx === topCards.length - 1 && topCards.length % 2 === 1 ? "md:col-span-2 md:w-[calc(50%-12px)] md:justify-self-center lg:col-span-1 lg:w-full " : "md:w-full "}w-[74vw] max-w-[290px] md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none group relative bg-white rounded-2xl p-6 sm:p-8 border border-[#E2E8F0] shadow-[0_10px_30px_rgba(15,23,42,0.035)] hover:shadow-[0_18px_40px_rgba(14,51,33,0.08)] hover:border-[#0E3321]/20 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between min-h-[250px] overflow-hidden`}
               >
                 {/* Top Amber Accent Line on Hover */}
                 <div 
@@ -284,24 +284,16 @@ export default function MillingSolutionsSection() {
                   <div className="flex-1 min-w-0 flex flex-col justify-between h-full">
                     <div>
                       {/* Icon (fills the empty space in collapsed cards; hidden when the card expands) */}
-                      <div className={`overflow-hidden transition-all duration-400 ease-out ${
-                        isHovered ? "max-h-0 opacity-0 mb-0" : "max-h-16 opacity-100 mb-4 xl:mb-5"
-                      }`}>
+                      <div className="mb-3.5 xl:mb-4">
                         <span className="inline-flex w-11 h-11 xl:w-12 xl:h-12 rounded-xl bg-[#F3F8F5] text-[#015435] items-center justify-center">
                           <feat.icon className="w-5.5 h-5.5 xl:w-6 xl:h-6" strokeWidth={1.6} />
                         </span>
                       </div>
 
-                      {/* Number (shown with the description when the card expands) */}
-                      <span className={`text-xs xl:text-sm font-bold text-[#FFAA17] tracking-[0.08em] block transition-all duration-300 overflow-hidden ${
-                        isHovered ? "max-h-6 opacity-100" : "max-h-0 opacity-0"
-                      }`}>
-                        {feat.num}
-                      </span>
+
 
                       {/* Heading */}
                       <h4 className={`font-bold text-[#0F172A] tracking-tight leading-[1.25] transition-all duration-300 ${
-                        isHovered ? "mt-3.5 xl:mt-4 " : ""}${
                         isHovered 
                           ? "text-[18px] xl:text-[20px] 2xl:text-[21px] max-w-[280px]" 
                           : hasHover 
@@ -313,9 +305,9 @@ export default function MillingSolutionsSection() {
 
                       {/* Revealable Description */}
                       <div className={`overflow-hidden transition-all duration-400 ease-out ${
-                        isHovered ? "max-h-48 opacity-100 mt-2.5 xl:mt-3" : "max-h-0 opacity-0 mt-0"
+                        isHovered ? "max-h-48 opacity-100 mt-2.5 xl:mt-3" : hasHover ? "max-h-0 opacity-0 mt-0" : "max-h-24 opacity-100 mt-2.5"
                       }`}>
-                        <p className="text-[13px] xl:text-[14px] text-[#475569] leading-relaxed max-w-[240px] xl:max-w-[270px] font-normal">
+                        <p className={`text-[13px] xl:text-[14px] text-[#475569] leading-relaxed max-w-[240px] xl:max-w-[270px] font-normal ${isHovered ? "" : "line-clamp-3"}`}>
                           {feat.desc}
                         </p>
                       </div>
@@ -357,35 +349,36 @@ export default function MillingSolutionsSection() {
           </div>
 
           {/* Feature Cards: Mobile / Tablet Layout (Horizontally swipable on mobile) */}
-          <div className="lg:hidden flex sm:grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-10 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 sm:pb-0">
+          <div className="lg:hidden flex sm:grid sm:grid-cols-1 gap-4 sm:gap-5 mt-8 sm:mt-10 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 sm:pb-0">
             {coreFeatures.map((feat, idx) => (
               <Link
                 key={idx}
                 href={feat.href}
-                className="w-[74vw] max-w-[290px] sm:w-full sm:max-w-none shrink-0 sm:shrink snap-start sm:snap-align-none group relative bg-white rounded-2xl p-5 sm:p-7 border border-[#E2E8F0] shadow-sm hover:shadow-md hover:border-[#FFAA17]/60 transition-all flex flex-col justify-between overflow-hidden"
+                className="w-[74vw] max-w-[290px] sm:w-full sm:max-w-none shrink-0 sm:shrink snap-start sm:snap-align-none group relative bg-white rounded-2xl p-5 sm:p-6 border border-[#E2E8F0] shadow-sm hover:shadow-md hover:border-[#FFAA17]/60 transition-all flex flex-col sm:flex-row sm:items-center sm:gap-6 justify-between overflow-hidden"
               >
-                <div>
-                  <span className="block mb-3 text-xs sm:text-sm font-bold text-[#FFAA17] tracking-[0.08em]">
-                    {feat.num}
+                <div className="sm:flex-1 sm:min-w-0">
+                  <span className="inline-flex mb-3 w-10 h-10 rounded-xl bg-[#F3F8F5] text-[#015435] items-center justify-center">
+                    <feat.icon className="w-5 h-5" strokeWidth={1.6} />
                   </span>
 
                   <h4 className="text-xl sm:text-[22px] font-bold text-[#0F172A] tracking-tight leading-[1.25] mb-2.5">
                     {feat.heading}
                   </h4>
 
-                  <p className="text-[14.5px] sm:text-[15px] text-[#475569] leading-relaxed font-normal mb-5">
+                  <p className="text-[14.5px] sm:text-[15px] text-[#475569] leading-relaxed font-normal mb-5 sm:mb-0">
                     {feat.desc}
                   </p>
                 </div>
 
                 {/* Mobile Image (square, shown in full) */}
-                <div className="mt-auto">
-                  <div className="w-full aspect-square rounded-xl overflow-hidden relative bg-[#F3F4F2] shadow-inner">
+                <div className="mt-auto sm:mt-0 sm:w-[40%] sm:shrink-0">
+                  <div className="w-full aspect-square sm:aspect-[4/3] rounded-xl overflow-hidden relative bg-[#F3F4F2] shadow-inner">
                     <Image
                       src={feat.img}
                       alt={feat.alt}
                       fill
-                      className="object-cover object-center group-hover:scale-102 transition-transform duration-500"
+                      className="object-cover group-hover:scale-102 transition-transform duration-500"
+                      style={{ objectPosition: feat.imgPos }}
                       sizes="(max-width: 640px) 85vw, 400px"
                     />
                   </div>

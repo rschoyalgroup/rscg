@@ -155,10 +155,10 @@ export default function FacilityCentrePage() {
           </div>
         </div>
 
-        <section id="facility-overview" className="w-full pt-6 sm:pt-12 md:pt-16 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 relative md:-mt-12 lg:-mt-16">
+        <section id="facility-overview" className="w-full pt-6 sm:pt-12 md:pt-6 xl:pt-16 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 relative md:-mt-12 lg:-mt-16">
 
           {/* See, Test & Learn Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-20 items-stretch mb-16">
             <div className="space-y-6">
               <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-heading font-black text-[#133020] leading-tight pb-4 border-b-2 border-[#D3994B]/30 inline-block">
                 See, test & learn before you invest
@@ -177,11 +177,11 @@ export default function FacilityCentrePage() {
             </div>
 
             {/* Specifications Card */}
-            <div className="bg-white rounded-[24px] sm:rounded-[32px] p-5 sm:p-8 lg:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100">
-              <ul className="grid grid-cols-2 sm:grid-cols-1 gap-x-4 gap-y-4 sm:gap-0 sm:space-y-5">
+            <div className="bg-white rounded-[24px] sm:rounded-[32px] p-5 sm:p-8 lg:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col">
+              <ul className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-x-4 gap-y-4 sm:gap-y-0 md:gap-x-10 lg:gap-x-0 lg:flex-1 lg:content-between">
                 {facilitySpecs.map((spec, idx) => (
-                  <li key={idx} className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6 sm:pb-5 sm:border-b border-slate-100 last:border-0 last:pb-0 last:col-span-2 sm:last:col-span-1">
-                    <div className="flex items-center gap-3 sm:w-48 shrink-0">
+                  <li key={idx} className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6 sm:py-4 lg:py-5 sm:first:pt-0 md:[&:nth-child(2)]:pt-0 lg:[&:nth-child(2)]:pt-5 sm:border-b border-slate-100 last:border-0 last:pb-0 last:col-span-2 sm:last:col-span-1 md:last:col-span-2 lg:last:col-span-1">
+                    <div className="flex items-center gap-3 sm:w-48 md:w-32 lg:w-40 xl:w-48 shrink-0">
                       <img src={spec.iconPath} alt={spec.label} className="w-5 h-5 object-contain opacity-80" />
                       <span className="text-xs sm:text-base font-bold text-slate-500 sm:text-slate-700">{spec.label}</span>
                     </div>

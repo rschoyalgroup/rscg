@@ -180,7 +180,7 @@ export default function JobGrindingPage() {
         </div>
 
         {/* Intro & Process Overview */}
-        <section id="job-grinding-overview" className="w-full pt-6 sm:pt-12 md:pt-16 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 relative md:-mt-12 lg:-mt-16 overflow-hidden">
+        <section id="job-grinding-overview" className="w-full pt-6 sm:pt-12 md:pt-6 xl:pt-16 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 relative md:-mt-12 lg:-mt-16 overflow-hidden">
 
           {/* Faded Gear Watermark */}
           <div className="absolute right-[-10%] top-[10%] opacity-5 pointer-events-none">
@@ -196,9 +196,9 @@ export default function JobGrindingPage() {
             <span className="text-slate-800 font-semibold">Job Grinding</span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start relative z-10">
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 xl:gap-12 items-stretch relative z-10">
             {/* Left Column: Heading & Content Paragraphs */}
-            <div className="lg:col-span-5 xl:col-span-5 space-y-6">
+            <div className="xl:col-span-6 space-y-6">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#133020] leading-tight">
                 Our job grinding process is designed to make every batch clear, controlled, and dependable.
               </h2>
@@ -220,7 +220,7 @@ export default function JobGrindingPage() {
             </div>
 
             {/* Right Column: Facility Details Card + 3 Cards Side-by-Side */}
-            <div className="lg:col-span-7 xl:col-span-7 space-y-5 sm:space-y-6 min-w-0">
+            <div className="xl:col-span-6 flex flex-col gap-5 sm:gap-6 min-w-0">
               {/* Facility Details Card */}
               <div className="bg-white rounded-2xl sm:rounded-3xl shadow-sm border border-slate-100 p-6 sm:p-8">
                 <div className="flex items-center gap-3 pb-5 border-b border-slate-100 mb-6">
@@ -254,7 +254,7 @@ export default function JobGrindingPage() {
               </div>
 
               {/* 3 Facility Services Cards (Row of 3) */}
-              <div className="flex sm:grid sm:grid-cols-3 gap-4 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 scroll-pl-6 sm:scroll-pl-0 pt-2 pb-6 sm:py-0">
+              <div className="flex sm:grid sm:grid-cols-3 xl:flex-1 gap-4 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 scroll-pl-6 sm:scroll-pl-0 pt-2 pb-6 sm:py-0">
                 {[
                   {
                     title: "Job grinding",
@@ -272,7 +272,7 @@ export default function JobGrindingPage() {
                     icon: "/images/job-grinding/facility-services/compliant-facility-clean.png"
                   }
                 ].map((service, idx) => (
-                  <div key={idx} className="w-[78vw] max-w-[290px] sm:w-auto sm:max-w-none shrink-0 sm:shrink snap-start sm:snap-align-none bg-white rounded-2xl p-6 text-center shadow-[0_4px_14px_rgba(0,0,0,0.05)] border border-slate-200/70 hover:shadow-md hover:border-slate-200 transition-all flex flex-col items-center">
+                  <div key={idx} className="w-[78vw] max-w-[290px] sm:w-auto sm:max-w-none shrink-0 sm:shrink snap-start sm:snap-align-none bg-white rounded-2xl p-6 text-center shadow-[0_4px_14px_rgba(0,0,0,0.05)] border border-slate-200/70 hover:shadow-md hover:border-slate-200 transition-all flex flex-col items-center justify-center">
                     <div className="w-14 h-14 sm:w-16 sm:h-16 mb-4 flex items-center justify-center">
                       <img src={service.icon} alt={service.title} className="w-full h-full object-contain" />
                     </div>

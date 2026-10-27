@@ -137,7 +137,7 @@ export default function AutomationPage() {
       </div>
 
       {/* Future-Proof Flour Milling */}
-      <section className="w-full pt-4 md:pt-24 lg:pt-28 pb-20 lg:pb-28 px-6 sm:px-12 lg:px-16 xl:px-24">
+      <section className="w-full pt-4 md:pt-2 xl:pt-28 pb-20 lg:pb-28 px-6 sm:px-12 lg:px-16 xl:px-24">
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           
           {/* Content Left */}
@@ -304,11 +304,11 @@ export default function AutomationPage() {
       {/* Footer CTA */}
       <section className="w-full py-10 sm:py-14 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#f6f6f4] relative z-10">
         <div className="w-full mx-auto">
-          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[24px] sm:rounded-[28px] p-8 sm:p-10 lg:p-12 shadow-2xl flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 border border-white/10 relative overflow-hidden">
+          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[24px] sm:rounded-[28px] p-6 sm:p-10 lg:p-12 shadow-2xl flex flex-col items-center text-center lg:text-left lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 border border-white/10 relative overflow-hidden">
             {/* Background Texture matching Wonder Mill */}
             <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
 
-            <div className="flex flex-col md:flex-row items-center md:items-start lg:items-center gap-6 text-center md:text-left relative z-10">
+            <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-6 text-center lg:text-left relative z-10">
               <div className="w-16 h-16 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
                 <Settings className="w-8 h-8 text-[#f5a623] animate-spin-slow" />
               </div>
@@ -322,7 +322,7 @@ export default function AutomationPage() {
               </div>
             </div>
 
-            <div className="relative z-10 shrink-0 flex justify-center md:justify-start md:pl-[88px] lg:pl-0 lg:justify-end">
+            <div className="relative z-10 shrink-0 flex justify-center lg:justify-end">
               <Link 
                 href="/contact" 
                 className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap"

@@ -170,7 +170,7 @@ export default function FlourMills() {
         </div>
       </div>
 
-      <section className="pt-6 sm:pt-12 md:pt-16 pb-24 bg-slate-50 relative md:-mt-12 lg:-mt-16">
+      <section className="pt-6 sm:pt-12 md:pt-6 xl:pt-16 pb-24 bg-slate-50 relative md:-mt-12 lg:-mt-16">
         <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24">
           
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -279,11 +279,11 @@ export default function FlourMills() {
       {/* Link to Contact CTA Banner */}
       <section className="w-full py-10 sm:py-14 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#f6f6f4] relative z-10">
         <div className="w-full mx-auto">
-          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[24px] sm:rounded-[28px] p-8 sm:p-10 lg:p-12 shadow-2xl flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 border border-white/10 relative overflow-hidden">
+          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[24px] sm:rounded-[28px] p-6 sm:p-10 lg:p-12 shadow-2xl flex flex-col items-center text-center lg:text-left lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 border border-white/10 relative overflow-hidden">
             {/* Background Texture matching Wonder Mill */}
             <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
 
-            <div className="max-w-2xl space-y-2.5 relative z-10 text-left">
+            <div className="max-w-2xl space-y-2.5 relative z-10 text-center lg:text-left">
               <span className="text-xs font-bold text-[#f5a623] tracking-widest">
                 Get in touch
               </span>

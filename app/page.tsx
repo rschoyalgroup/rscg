@@ -1379,10 +1379,10 @@ export default function Home() {
 
       {/* --- Accordion FAQ Section --- */}
       <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-20 lg:py-28 relative z-10 bg-white border-t border-slate-100 overflow-hidden">
-        <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center justify-between">
+        <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 xl:gap-16 items-center justify-between">
           
           {/* Left Column: Heading & Accordion Items */}
-          <div className="lg:col-span-7 space-y-6 sm:space-y-8">
+          <div className="lg:col-span-6 xl:col-span-7 space-y-6 sm:space-y-8">
             <div className="space-y-3">
               <span className="text-sm sm:text-base font-bold text-[#015435] tracking-wide block">
                 Frequently asked questions
@@ -1432,7 +1432,7 @@ export default function Home() {
           </div>
 
           {/* Right Column: Visual Showcase with Blob, Floating Images & Vector Accents */}
-          <div className="lg:col-span-5 self-center my-auto relative flex items-center justify-center lg:justify-end min-h-[400px] sm:min-h-[460px] lg:min-h-[500px] select-none py-6 lg:py-0">
+          <div className="lg:col-span-6 xl:col-span-5 self-center my-auto relative flex items-center justify-center lg:justify-end min-h-[400px] sm:min-h-[460px] lg:min-h-[500px] select-none py-6 lg:py-0">
             
             {/* Background Organic Amber Blob */}
             <div className="absolute inset-0 flex items-center justify-center -z-10 pointer-events-none">
@@ -1471,7 +1471,7 @@ export default function Home() {
             </div>
 
             {/* Image Collage Grid */}
-            <div className="relative z-10 w-full max-w-[360px] sm:max-w-[440px] lg:max-w-[480px] xl:max-w-[500px] grid grid-cols-2 gap-3 sm:gap-4 items-stretch">
+            <div className="relative z-10 w-full max-w-[360px] sm:max-w-[520px] lg:max-w-[520px] xl:max-w-[500px] grid grid-cols-2 gap-3 sm:gap-4 items-stretch">
               
               {/* Left Column: 2 Stacked Cards */}
               <div className="flex flex-col gap-3 sm:gap-4">
@@ -1689,7 +1689,7 @@ export default function Home() {
       {/* --- Pre-Footer CTA Section --- */}
       <section className="w-full py-10 sm:py-14 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#f6f6f4] relative z-10">
         <div className="w-full mx-auto">
-          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[24px] sm:rounded-[28px] p-8 sm:p-10 lg:p-12 shadow-2xl flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 border border-white/10 relative overflow-hidden">
+          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[24px] sm:rounded-[28px] p-6 sm:p-10 lg:p-12 shadow-2xl flex flex-col items-center text-center lg:text-left lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 border border-white/10 relative overflow-hidden">
             {/* Background Texture matching Wonder Mill */}
             <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
 
@@ -1698,7 +1698,7 @@ export default function Home() {
               <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-black text-white leading-tight tracking-tight">
                 Come and see how the thinking becomes a plant.
               </h2>
-              <p className="text-sm sm:text-base lg:text-lg text-white/90 font-normal leading-relaxed max-w-2xl">
+              <p className="text-sm sm:text-base lg:text-lg text-white/90 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Visit the factory, workshop, Experience Centre and training facility in Ajmer or bring us the next milling problem worth solving.
               </p>
             </div>

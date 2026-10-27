@@ -169,7 +169,7 @@ export default function FlourProcessingPage() {
       </div>
 
       {/* Products Grid Section */}
-      <section id="products" className="w-full pt-4 md:pt-20 lg:pt-24 pb-16 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white relative">
+      <section id="products" className="w-full pt-4 md:pt-2 xl:pt-24 pb-16 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white relative">
         <div className="w-full mx-auto space-y-10">
 
           <div className="text-center space-y-2">

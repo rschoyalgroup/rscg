@@ -256,7 +256,7 @@ export default function TrainingPage() {
                   { icon: "/training/learn-with-charge/training_professionals.png", text: "Training professionals, freshers & youth" }
                 ].map((fact, idx) => (
                   <div key={idx} className="flex items-center gap-3.5">
-                    <div className="w-12 h-12 lg:w-16 lg:h-16 shrink-0 bg-[#F0F7F3] rounded-xl flex items-center justify-center p-2.5 border border-[#133020]/10">
+                    <div className="w-12 h-12 xl:w-16 xl:h-16 shrink-0 bg-[#F0F7F3] rounded-xl flex items-center justify-center p-2.5 border border-[#133020]/10">
                       <Image
                         src={fact.icon}
                         alt={fact.text}
@@ -387,7 +387,7 @@ export default function TrainingPage() {
                 key={idx}
                 className="w-[74vw] max-w-[290px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white rounded-[24px] overflow-hidden shadow-xs hover:shadow-md border border-slate-200/80 transition-all duration-300 flex flex-col group"
               >
-                <div className="h-52 md:h-48 lg:h-72 w-full relative overflow-hidden">
+                <div className="h-52 md:h-40 lg:h-44 xl:h-72 w-full relative overflow-hidden">
                   <Image
                     src={exp.image}
                     alt={exp.title}
@@ -395,8 +395,8 @@ export default function TrainingPage() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-5 sm:p-6 lg:p-8 flex flex-row md:flex-col lg:flex-row items-start gap-3 md:gap-3 lg:gap-4 bg-white flex-1">
-                  <div className="w-12 h-12 lg:w-16 lg:h-16 shrink-0 bg-[#F0F7F3] rounded-xl flex items-center justify-center p-2.5 border border-[#133020]/10 group-hover:bg-[#E8F5E9] transition-colors">
+                <div className="p-5 sm:p-6 xl:p-8 flex flex-row md:flex-col xl:flex-row items-start gap-3 md:gap-3 xl:gap-4 bg-white flex-1">
+                  <div className="w-12 h-12 xl:w-16 xl:h-16 shrink-0 bg-[#F0F7F3] rounded-xl flex items-center justify-center p-2.5 border border-[#133020]/10 group-hover:bg-[#E8F5E9] transition-colors">
                     <Image
                       src={exp.icon}
                       alt={exp.title}

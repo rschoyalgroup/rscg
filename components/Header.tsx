@@ -48,7 +48,7 @@ interface HeaderProps {
     activeId?: string;
     onItemClick: (id: string) => void;
   };
-  /** Show the Choyal Grinding Solution logo next to the RS Choyal Group logo */
+  /** Show the Choyal Grinding Solution logo next to the RS Choyal Group logo (on by default, site-wide) */
   showGroupCompanyLogo?: boolean;
 }
 
@@ -71,7 +71,7 @@ export default function Header({ onRequestCallback, submenu, showGroupCompanyLog
 
   // Fully opaque paper / book texture style
   const paperTextureStyle = {
-    backgroundColor: "#F9F6F0",
+    backgroundColor: "#F8FAFC",
     backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E")`,
   };
 
@@ -139,7 +139,7 @@ export default function Header({ onRequestCallback, submenu, showGroupCompanyLog
                 className="h-[40px] sm:h-[48px] lg:h-[44px] xl:h-[54px] w-auto object-contain"
               />
             </Link>
-            {showGroupCompanyLogo && (
+            {showGroupCompanyLogo !== false && (
               <>
                 <span className="h-7 sm:h-9 w-px bg-slate-200 mx-2.5 sm:mx-3.5 lg:mx-2.5 xl:mx-4" aria-hidden="true" />
                 <img
@@ -195,7 +195,7 @@ export default function Header({ onRequestCallback, submenu, showGroupCompanyLog
                           }}
                           className="flex items-start gap-4 p-3 rounded-xl hover:bg-white/60 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 group border border-transparent hover:border-brand-primary/5"
                         >
-                          <div className="w-12 h-12 rounded-xl bg-[#F9F6F0] border border-slate-200/80 shadow-xs group-hover:bg-brand-primary group-hover:border-brand-primary flex items-center justify-center p-2 transition-colors duration-300 flex-shrink-0">
+                          <div className="w-12 h-12 rounded-xl bg-white border border-slate-200/80 shadow-xs group-hover:bg-brand-primary group-hover:border-brand-primary flex items-center justify-center p-2 transition-colors duration-300 flex-shrink-0">
                             {item.imgIcon ? (
                               <img src={item.imgIcon} alt={item.name} className="h-8 w-8 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300" />
                             ) : (
@@ -245,7 +245,7 @@ export default function Header({ onRequestCallback, submenu, showGroupCompanyLog
                           href={item.href}
                           className="flex items-start gap-4 p-3 rounded-xl hover:bg-white/60 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 group border border-transparent hover:border-brand-primary/5"
                         >
-                          <div className="w-12 h-12 rounded-xl bg-[#F9F6F0] border border-slate-200/80 shadow-xs group-hover:bg-brand-primary group-hover:border-brand-primary flex items-center justify-center p-2 transition-colors duration-300 flex-shrink-0">
+                          <div className="w-12 h-12 rounded-xl bg-white border border-slate-200/80 shadow-xs group-hover:bg-brand-primary group-hover:border-brand-primary flex items-center justify-center p-2 transition-colors duration-300 flex-shrink-0">
                             {item.imgIcon ? (
                               <img src={item.imgIcon} alt={item.name} className="h-8 w-8 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300" />
                             ) : (
@@ -295,7 +295,7 @@ export default function Header({ onRequestCallback, submenu, showGroupCompanyLog
                           href={item.href}
                           className="flex items-start gap-4 p-3 rounded-xl hover:bg-white/60 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 group border border-transparent hover:border-brand-primary/5"
                         >
-                          <div className="w-12 h-12 rounded-xl bg-[#F9F6F0] border border-slate-200/80 shadow-xs group-hover:bg-brand-primary group-hover:border-brand-primary flex items-center justify-center p-2 transition-colors duration-300 flex-shrink-0">
+                          <div className="w-12 h-12 rounded-xl bg-white border border-slate-200/80 shadow-xs group-hover:bg-brand-primary group-hover:border-brand-primary flex items-center justify-center p-2 transition-colors duration-300 flex-shrink-0">
                             {item.imgIcon ? (
                               <img src={item.imgIcon} alt={item.name} className="h-8 w-8 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300" />
                             ) : (
@@ -457,7 +457,7 @@ export default function Header({ onRequestCallback, submenu, showGroupCompanyLog
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-          <div className="lg:hidden -left-[1px] -right-[1px] w-[calc(100%+2px)] bg-brand-bg border-x border-b border-slate-200/80 rounded-b-2xl px-6 py-6 absolute top-full z-40 space-y-4 shadow-xl animate-fade-in max-h-[80vh] overflow-y-auto pointer-events-auto">
+          <div className="lg:hidden -left-[1px] -right-[1px] w-[calc(100%+2px)] bg-slate-50 border-x border-b border-slate-200/80 rounded-b-2xl px-6 py-6 absolute top-full z-40 space-y-4 shadow-xl animate-fade-in max-h-[80vh] overflow-y-auto pointer-events-auto">
           <nav className="flex flex-col gap-4">
             
             {/* Mobile Accordion for About Us */}
@@ -485,7 +485,7 @@ export default function Header({ onRequestCallback, submenu, showGroupCompanyLog
                         }}
                         className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 text-sm font-semibold text-slate-700 hover:text-brand-primary group"
                       >
-                        <div className="w-9 h-9 rounded-lg bg-[#F9F6F0] border border-slate-200/80 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-brand-primary transition-colors">
+                        <div className="w-9 h-9 rounded-lg bg-white border border-slate-200/80 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-brand-primary transition-colors">
                           {item.imgIcon ? (
                             <img src={item.imgIcon} alt={item.name} className="h-6 w-6 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300" />
                           ) : (
@@ -520,7 +520,7 @@ export default function Header({ onRequestCallback, submenu, showGroupCompanyLog
                         onClick={() => setMobileMenuOpen(false)}
                         className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 text-sm font-semibold text-slate-700 hover:text-brand-primary group"
                       >
-                        <div className="w-9 h-9 rounded-lg bg-[#F9F6F0] border border-slate-200/80 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-brand-primary transition-colors">
+                        <div className="w-9 h-9 rounded-lg bg-white border border-slate-200/80 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-brand-primary transition-colors">
                           {item.imgIcon ? (
                             <img src={item.imgIcon} alt={item.name} className="h-6 w-6 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300" />
                           ) : (
@@ -555,7 +555,7 @@ export default function Header({ onRequestCallback, submenu, showGroupCompanyLog
                         onClick={() => setMobileMenuOpen(false)}
                         className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 text-sm font-semibold text-slate-700 hover:text-brand-primary group"
                       >
-                        <div className="w-9 h-9 rounded-lg bg-[#F9F6F0] border border-slate-200/80 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-brand-primary transition-colors">
+                        <div className="w-9 h-9 rounded-lg bg-white border border-slate-200/80 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-brand-primary transition-colors">
                           {item.imgIcon ? (
                             <img src={item.imgIcon} alt={item.name} className="h-6 w-6 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300" />
                           ) : (
