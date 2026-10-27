@@ -141,11 +141,11 @@ export default function Header({ onRequestCallback, submenu, showGroupCompanyLog
             </Link>
             {showGroupCompanyLogo !== false && (
               <>
-                <span className="h-7 sm:h-9 w-px bg-slate-200 mx-2.5 sm:mx-3.5 lg:mx-2.5 xl:mx-4" aria-hidden="true" />
+                <span className="h-8 sm:h-10 w-px bg-slate-200 mx-2.5 sm:mx-3.5 lg:mx-2.5 xl:mx-4" aria-hidden="true" />
                 <img
                   src="/choyal-grinding-solution-logo.png"
                   alt="Choyal Grinding Solution Logo"
-                  className="h-[20px] sm:h-[26px] lg:h-[22px] xl:h-[28px] w-auto object-contain"
+                  className="h-[28px] sm:h-[36px] lg:h-[32px] xl:h-[40px] w-auto object-contain"
                 />
               </>
             )}
