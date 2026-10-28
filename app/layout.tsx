@@ -5,6 +5,7 @@ import { QuoteProvider } from "@/components/QuoteContext";
 import QuoteDrawer from "@/components/QuoteDrawer";
 import FloatingCallCTA from "@/components/FloatingCallCTA";
 import UtmCapture from "@/components/UtmCapture";
+import { AnalyticsScripts, AnalyticsNoScript } from "@/components/Analytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,6 +20,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "RS Choyal Group | Industrial Milling & Smart Flour Plants",
   description: "Global pioneers in smart digital stone milling systems, turnkey commercial flour processing plants, emery stones, and digital stone dressing tools since 1966.",
+  // Google Search Console verification carried over from the previous website
+  verification: {
+    google: "FhZBXycUmaizW4Cgrz7vFGdrMhSb72dtkdTbxcFB_VE",
+  },
 };
 
 export default function RootLayout({
@@ -32,6 +37,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <AnalyticsNoScript />
+        <AnalyticsScripts />
         <QuoteProvider>
           {children}
           <QuoteDrawer />
