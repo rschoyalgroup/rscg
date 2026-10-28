@@ -50,7 +50,7 @@ export const leaderGroups: LeaderGroup[] = [
         description:
           "Bringing fresh perspectives and a commitment to carry the legacy forward.",
         image: "/images/about/leadership/Vibhuti%20Choyal.jpg",
-        link: "/leadership-gm",
+        link: "/vibhuti-choyal",
       },
     ],
   },

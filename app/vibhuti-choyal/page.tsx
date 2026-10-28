@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import OtherLeadersSection from "@/components/OtherLeadersSection";
 
-export default function LeadershipGmPage() {
+export default function VibhutiChoyalPage() {
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans flex flex-col justify-between">
       <div>

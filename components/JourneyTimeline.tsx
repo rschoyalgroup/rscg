@@ -9,7 +9,6 @@ export interface Milestone {
   description: string;
   image: string;
   /** CSS object-position for the cropped frame (defaults to centre) */
-  imagePosition?: string;
 }
 
 const milestones: Milestone[] = [
@@ -18,7 +17,7 @@ const milestones: Milestone[] = [
     title: "Foundation of Choyal Group",
     description:
       "B.M. Choyal along with R.D. Sharma lays the foundation of our legacy by starting the company with a vision to revolutionize the grain milling industry in India.",
-    image: "/images/about/timeline/Journey/1960.png",
+    image: "/images/about/timeline/Journey/1960.jpg",
   },
   {
     year: "1965",
@@ -40,7 +39,6 @@ const milestones: Milestone[] = [
     description:
       "We set up our first manufacturing unit at Saradhana in Ajmer under our Pvt. Ltd. company, marking a key milestone in our industrial footprint.",
     image: "/images/about/timeline/Journey/1978.png",
-    imagePosition: "50% 0%", // keep the faces along the top of the photo in frame
   },
   {
     year: "2000",
@@ -83,7 +81,6 @@ const milestones: Milestone[] = [
     description:
       "Introduced a smart digital grinder designed to make fresh, nutrient-dense flour easily accessible across community touchpoints.",
     image: "/images/about/timeline/Journey/2021.png",
-    imagePosition: "50% 0%",
   },
   {
     year: "2025",
@@ -471,19 +468,12 @@ export default function JourneyTimeline() {
 
                   {/* Right inside card: Visual Milestone Image Frame + Mobile Arrows */}
                   <div className="relative flex flex-col items-center justify-center lg:items-end lg:justify-end w-full gap-4">
-                    <div className="relative w-full max-w-[420px] sm:max-w-[460px] xl:max-w-none xl:w-auto xl:aspect-[5/4] xl:h-[min(480px,calc(100vh-148px-280px))] 2xl:h-[min(520px,calc(100vh-148px-280px))] rounded-2xl overflow-hidden bg-white shadow-xl shadow-slate-900/5 border border-slate-200/90 flex items-center justify-center">
-                      {/* Wider desktop frame: soft backdrop of the same photo so the square image is never cropped */}
-                      <img
-                        src={displayedItem.image}
-                        alt=""
-                        aria-hidden="true"
-                        className="hidden xl:block absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-60 select-none pointer-events-none"
-                      />
+                    <div className="relative w-full max-w-[420px] sm:max-w-[460px] xl:max-w-full xl:w-auto rounded-2xl overflow-hidden bg-white shadow-xl shadow-slate-900/5 border border-slate-200/90">
+                      {/* Photo at its natural shape: scaled to fit, never cropped or padded */}
                       <img
                         src={displayedItem.image}
                         alt={`${displayedItem.year} - ${displayedItem.title}`}
-                        style={{ objectPosition: displayedItem.imagePosition ?? "50% 50%" }}
-                        className={`relative w-full aspect-square h-auto xl:w-auto xl:h-full object-cover block select-none transition-all duration-700 cubic-bezier(0.22, 1, 0.36, 1) ${
+                        className={`w-full h-auto xl:w-auto xl:max-w-full xl:max-h-[min(480px,calc(100vh-148px-280px))] 2xl:max-h-[min(520px,calc(100vh-148px-280px))] block select-none transition-all duration-700 cubic-bezier(0.22, 1, 0.36, 1) ${
                           isImageChanging
                             ? "opacity-0 scale-105"
                             : "opacity-100 scale-100"
