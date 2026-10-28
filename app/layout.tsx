@@ -6,6 +6,7 @@ import QuoteDrawer from "@/components/QuoteDrawer";
 import FloatingCallCTA from "@/components/FloatingCallCTA";
 import UtmCapture from "@/components/UtmCapture";
 import { AnalyticsScripts, AnalyticsNoScript } from "@/components/Analytics";
+import BitrixChat from "@/components/BitrixChat";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,6 +46,7 @@ export default function RootLayout({
           <FloatingCallCTA />
           <UtmCapture />
         </QuoteProvider>
+        <BitrixChat />
       </body>
     </html>
   );

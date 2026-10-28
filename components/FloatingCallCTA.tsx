@@ -33,9 +33,9 @@ export default function FloatingCallCTA() {
 
   return (
     <>
-      {/* Floating Bottom CTA */}
+      {/* Floating call button, stacked above the Bitrix24 chat button (bottom-right, 50px from the edges) */}
       <div
-        className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-40 transition-all duration-500 ease-out flex items-center justify-center"
+        className="fixed bottom-[130px] right-[53px] z-40 transition-all duration-500 ease-out flex items-center justify-center"
         style={{
           transform: `translateY(${showFloatingCTA ? "0px" : "100px"}) scale(${showFloatingCTA ? 1 : 0.9})`,
           opacity: showFloatingCTA ? 1 : 0,
