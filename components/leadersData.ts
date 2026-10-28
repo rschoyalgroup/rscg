@@ -45,7 +45,7 @@ export const leaderGroups: LeaderGroup[] = [
         link: "/leadership-ed",
       },
       {
-        tag: "General Manager - Products & Services",
+        tag: "Executive Director",
         name: "Vibhuti Choyal",
         description:
           "Bringing fresh perspectives and a commitment to carry the legacy forward.",

@@ -22,7 +22,7 @@ export default function LeadershipGmPage() {
                 Vibhuti Choyal
               </h1>
               <p className="mt-2 text-sm sm:text-base lg:text-lg text-white/90 font-normal max-w-2xl leading-relaxed">
-                General Manager - Products &amp; Services
+                Executive Director
               </p>
             </div>
           </div>
@@ -44,7 +44,7 @@ export default function LeadershipGmPage() {
                 <div>
                   <h2 className="text-xl font-heading font-black text-slate-900">Vibhuti Choyal</h2>
                   <p className="text-brand-primary text-xs font-bold tracking-wider mt-1">
-                    General Manager - Products &amp; Services
+                    Executive Director
                   </p>
                 </div>
               </div>
