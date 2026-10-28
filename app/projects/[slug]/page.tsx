@@ -201,7 +201,7 @@ export default function ProjectDetailPage() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center z-10 relative pt-2">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center z-10 relative pt-2">
                <div className="flex flex-col items-center gap-3.5 group">
                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/10 border border-[#f7b032]/40 backdrop-blur-sm flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
                    <CheckCircle className="text-[#f7b032] w-7 h-7 sm:w-8 sm:h-8" />
@@ -246,7 +246,7 @@ export default function ProjectDetailPage() {
                 Read other case studies
               </h2>
 
-              <div className="flex md:grid md:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
+              <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
                 {otherProjects.map((p) => {
                   const cardCover = p.images.length > 0 ? p.images[0] : "/images/plants/turnkey_solutions.webp";
                   return (

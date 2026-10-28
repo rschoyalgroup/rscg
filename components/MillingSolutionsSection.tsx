@@ -260,7 +260,7 @@ export default function MillingSolutionsSection() {
 
           {/* Feature Cards: Interactive Expandable on Desktop */}
           <div 
-            className="hidden lg:flex flex-row gap-4 xl:gap-5.5 w-full lg:max-w-[740px] xl:max-w-[830px] 2xl:max-w-[880px] h-[295px] xl:h-[310px] 2xl:h-[325px] mt-11 sm:mt-13"
+            className="hidden md:flex flex-row gap-3 lg:gap-4 xl:gap-5.5 w-full lg:max-w-[740px] xl:max-w-[830px] 2xl:max-w-[880px] h-[315px] lg:h-[295px] xl:h-[310px] 2xl:h-[325px] mt-11 sm:mt-13"
             onMouseLeave={() => setHoveredFeature(null)}
           >
             {coreFeatures.map((feat, idx) => {
@@ -349,7 +349,7 @@ export default function MillingSolutionsSection() {
           </div>
 
           {/* Feature Cards: Mobile / Tablet Layout (Horizontally swipable on mobile) */}
-          <div className="lg:hidden flex sm:grid sm:grid-cols-1 gap-4 sm:gap-5 mt-8 sm:mt-10 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 sm:pb-0">
+          <div className="md:hidden flex sm:grid sm:grid-cols-1 gap-4 sm:gap-5 mt-8 sm:mt-10 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 sm:pb-0">
             {coreFeatures.map((feat, idx) => (
               <Link
                 key={idx}

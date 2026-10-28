@@ -96,7 +96,7 @@ export default function GrainProcessingPage() {
               sizes="100vw"
             />
             {/* Mobile gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/65 to-[#0B1510]/40"></div>
           </div>
         </div>
 
@@ -126,9 +126,9 @@ export default function GrainProcessingPage() {
 
       {/* Desktop Key Proof Points Bar (50/50 Overlapping Hero Bottom) */}
       <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-6xl">
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-7 flex flex-row items-center justify-between gap-4 divide-x divide-slate-100">
-          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 lg:p-7 flex flex-row items-stretch lg:items-center justify-between gap-2 lg:gap-4 divide-x divide-slate-100">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-start text-center lg:text-left gap-3 lg:gap-4.5 px-3 lg:px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <Filter className="w-7 h-7" />
             </div>
             <div>
@@ -137,8 +137,8 @@ export default function GrainProcessingPage() {
             </div>
           </div>
 
-          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-start text-center lg:text-left gap-3 lg:gap-4.5 px-3 lg:px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <TrendingUp className="w-7 h-7" />
             </div>
             <div>
@@ -147,8 +147,8 @@ export default function GrainProcessingPage() {
             </div>
           </div>
 
-          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-start text-center lg:text-left gap-3 lg:gap-4.5 px-3 lg:px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <Settings className="w-7 h-7" />
             </div>
             <div>
@@ -223,12 +223,12 @@ export default function GrainProcessingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6 lg:gap-8 w-full">
+          <div className="flex flex-wrap justify-center gap-3.5 sm:gap-6 lg:gap-8 w-full">
             {advancedProducts.map((product) => (
               <Link
                 key={product.id}
                 href={`/grain-processing/${product.slug}`}
-                className="group flex flex-col bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer"
+                className="w-[calc(50%-7px)] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-21.34px)] group flex flex-col bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer"
               >
                 {/* Image Area - Clean rounded background matching catalog page */}
                 <div className="relative aspect-square sm:aspect-[4/3] w-full bg-slate-50 overflow-hidden border-b border-slate-100 flex items-center justify-center p-3 sm:p-6">

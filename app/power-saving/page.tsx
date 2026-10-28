@@ -95,7 +95,7 @@ export default function PowerSavingPage() {
               sizes="100vw"
             />
             {/* Mobile gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/65 to-[#0B1510]/40"></div>
           </div>
         </div>
 
@@ -125,9 +125,9 @@ export default function PowerSavingPage() {
 
       {/* Desktop Key Proof Points Bar (50/50 Overlapping Hero Bottom) */}
       <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-6xl">
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-7 flex flex-row items-center justify-between gap-4 divide-x divide-slate-100">
-          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 lg:p-7 flex flex-row items-stretch lg:items-center justify-between gap-2 lg:gap-4 divide-x divide-slate-100">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-start text-center lg:text-left gap-3 lg:gap-4.5 px-3 lg:px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
             </div>
             <div>
@@ -135,8 +135,8 @@ export default function PowerSavingPage() {
               <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Intelligent controls</p>
             </div>
           </div>
-          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-start text-center lg:text-left gap-3 lg:gap-4.5 px-3 lg:px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
             </div>
             <div>
@@ -144,8 +144,8 @@ export default function PowerSavingPage() {
               <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Up to 30% savings</p>
             </div>
           </div>
-          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-start text-center lg:text-left gap-3 lg:gap-4.5 px-3 lg:px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             </div>
             <div>
@@ -254,12 +254,12 @@ export default function PowerSavingPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6 lg:gap-8 w-full">
+        <div className="flex flex-wrap justify-center gap-3.5 sm:gap-6 lg:gap-8 w-full">
           {products.map((product, idx) => (
             <Link
               key={idx}
               href={product.href}
-              className="group flex flex-col bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer"
+              className="w-[calc(50%-7px)] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-21.34px)] group flex flex-col bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer"
             >
               {/* Image Area - Clean rounded background matching catalog page */}
               <div className="relative aspect-square sm:aspect-[4/3] w-full bg-slate-50 overflow-hidden border-b border-slate-100 flex items-center justify-center p-3 sm:p-6">
@@ -347,7 +347,7 @@ export default function PowerSavingPage() {
               icon: "/images/power-saving/reduced_operation_cost.png"
             }
           ].map((benefit, idx) => (
-            <div key={idx} className="w-[74vw] max-w-[290px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm flex gap-4 sm:gap-6 hover:shadow-md transition-shadow">
+            <div key={idx} className="w-[74vw] max-w-[290px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 xl:p-8 shadow-sm flex flex-col xl:flex-row gap-4 xl:gap-6 hover:shadow-md transition-shadow">
               <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center flex-shrink-0 relative transform group-hover:-translate-y-2 transition-transform duration-300">
                 <Image src={benefit.icon} alt={benefit.title} fill className="object-contain drop-shadow-sm" />
               </div>
@@ -362,7 +362,7 @@ export default function PowerSavingPage() {
       </section>
 
       {/* Footer CTA */}
-      <section className="w-full py-10 sm:py-14 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#f6f6f4] relative z-10">
+      <section className="w-full py-10 sm:py-14 px-6 sm:px-12 lg:px-16 xl:px-24 bg-slate-50 relative z-10">
         <div className="w-full mx-auto">
           <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[24px] sm:rounded-[28px] p-6 sm:p-10 lg:p-12 shadow-2xl flex flex-col items-center text-center lg:text-left lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 border border-white/10 relative overflow-hidden">
             {/* Background Texture matching Wonder Mill */}

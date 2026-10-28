@@ -131,7 +131,7 @@ export default function NewsDetailPage() {
                 Read other articles
               </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                 {otherNews.map((p) => {
                   const cardImage = p.images.length > 0 ? p.images[0].local_path : "/images/other_3.webp";
                   return (
@@ -152,7 +152,7 @@ export default function NewsDetailPage() {
                           <span className="text-[10px] text-brand-muted font-bold">
                             {p.displayDate || formatDate(p.date)}
                           </span>
-                          <h3 className="font-heading font-black text-slate-800 group-hover:text-brand-primary text-sm sm:text-base transition-colors leading-snug line-clamp-2">
+                          <h3 className="font-heading font-black text-slate-800 group-hover:text-brand-primary text-sm sm:text-base transition-colors leading-snug line-clamp-3">
                             {p.title}
                           </h3>
                         </div>

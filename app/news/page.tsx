@@ -66,7 +66,7 @@ export default function NewsPage() {
                 sizes="100vw"
               />
               {/* Mobile gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/65 to-[#0B1510]/40"></div>
             </div>
           </div>
 
@@ -117,7 +117,7 @@ export default function NewsPage() {
                         <div className="text-xs sm:text-sm font-bold text-slate-500 tracking-wide uppercase">
                           {item.displayDate || formatDate(item.date)}
                         </div>
-                        <h3 className="text-xl sm:text-[22px] font-bold text-slate-900 group-hover:text-brand-primary transition-colors leading-snug line-clamp-2">
+                        <h3 className="text-xl sm:text-[22px] font-bold text-slate-900 group-hover:text-brand-primary transition-colors leading-snug line-clamp-3">
                           {item.title}
                         </h3>
                         <p className="text-sm sm:text-base text-slate-600 leading-relaxed line-clamp-3 font-normal">

@@ -41,7 +41,7 @@ export default function EmeryStones() {
               sizes="100vw"
             />
             {/* Mobile gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/65 to-[#0B1510]/40"></div>
           </div>
         </div>
         
@@ -84,17 +84,17 @@ export default function EmeryStones() {
       {/* Desktop Key Proof Points Bar */}
       <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24">
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-row divide-x divide-slate-100 overflow-hidden">
-          <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
+          <div className="flex-1 p-5 lg:p-6 xl:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-start text-center">
             <div className="w-12 h-12 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs mb-3"><Crosshair className="w-6 h-6" /></div>
             <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Precision grinding</h3>
             <p className="text-xs text-slate-500 leading-relaxed">High-performance emery stones engineered for precise grinding.</p>
           </div>
-          <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
+          <div className="flex-1 p-5 lg:p-6 xl:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-start text-center">
             <div className="w-12 h-12 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs mb-3"><Sparkles className="w-6 h-6" /></div>
             <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Consistent finish</h3>
             <p className="text-xs text-slate-500 leading-relaxed">Consistent flour quality across commercial stone mills.</p>
           </div>
-          <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
+          <div className="flex-1 p-5 lg:p-6 xl:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-start text-center">
             <div className="w-12 h-12 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs mb-3"><ShieldCheck className="w-6 h-6" /></div>
             <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Long-lasting performance</h3>
             <p className="text-xs text-slate-500 leading-relaxed">Long service life across commercial stone mills.</p>

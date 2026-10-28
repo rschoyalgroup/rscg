@@ -104,7 +104,7 @@ export default function ConsultancyPage() {
                 priority
                 sizes="100vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/90 via-[#0B1510]/55 to-transparent z-10 w-full" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/90 via-[#0B1510]/65 to-[#0B1510]/40 z-10 w-full" />
             </div>
           </div>
 
@@ -179,7 +179,7 @@ export default function ConsultancyPage() {
         </div>
 
         {/* How We Add Value Section */}
-        <section className="w-full pt-6 sm:pt-12 md:pt-36 lg:pt-40 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24">
+        <section className="w-full pt-6 sm:pt-12 md:pt-40 lg:pt-40 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24">
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-16 flex flex-col items-center">
             <h2 className="text-3xl sm:text-4xl font-heading font-black text-[#133020]">
               How we add value
@@ -198,7 +198,7 @@ export default function ConsultancyPage() {
             {valueServices.map((service, idx) => (
               <div
                 key={idx}
-                className="w-[78vw] max-w-[300px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white border border-slate-200/70 rounded-2xl p-6 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6 shadow-[0_4px_14px_rgba(0,0,0,0.05)] hover:shadow-md hover:border-[#133020]/20 transition-all group"
+                className="w-[78vw] max-w-[300px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white border border-slate-200/70 rounded-2xl p-6 sm:p-7 flex flex-col sm:flex-row items-start gap-5 sm:gap-6 shadow-[0_4px_14px_rgba(0,0,0,0.05)] hover:shadow-md hover:border-[#133020]/20 transition-all group"
               >
                 <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 bg-[#F0F7F3] rounded-2xl flex items-center justify-center border border-[#133020]/10 p-3 sm:p-3.5 group-hover:scale-105 group-hover:bg-[#E8F5E9] transition-all duration-300">
                   <Image
@@ -226,11 +226,11 @@ export default function ConsultancyPage() {
 
         {/* Why Work With Us Banner */}
         <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pb-16">
-          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[24px] sm:rounded-[28px] px-5 py-8 sm:p-12 lg:p-14 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10 border border-white/10 relative overflow-hidden">
+          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[24px] sm:rounded-[28px] px-5 py-8 sm:p-12 lg:p-14 shadow-2xl flex flex-col xl:flex-row items-center justify-between gap-8 sm:gap-10 border border-white/10 relative overflow-hidden">
             {/* Background Texture matching Homepage CTA */}
             <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
 
-            <div className="lg:w-1/2 space-y-4 text-center lg:text-left relative z-10">
+            <div className="xl:w-1/2 max-w-2xl space-y-4 text-center xl:text-left relative z-10">
               <h3 className="text-3xl sm:text-4xl font-heading font-black text-white tracking-tight">
                 Why work with us?
               </h3>
@@ -239,7 +239,7 @@ export default function ConsultancyPage() {
               </p>
             </div>
 
-            <div className="lg:w-1/2 grid grid-cols-3 gap-2 sm:gap-4 w-full divide-x divide-white/20 relative z-10">
+            <div className="xl:w-1/2 grid grid-cols-3 gap-2 sm:gap-4 w-full max-w-2xl divide-x divide-white/20 relative z-10">
               {[
                 { value: "60+", label: "Years milling and engineering experience" },
                 { value: "25+", label: "Countries international market exposure" },
@@ -260,9 +260,9 @@ export default function ConsultancyPage() {
 
         {/* From Vision to Value Section */}
         <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pb-16">
-          <div className="w-full bg-white rounded-[24px] overflow-hidden shadow-md border border-slate-100 flex flex-col md:flex-row items-stretch">
+          <div className="w-full bg-white rounded-[24px] overflow-hidden shadow-md border border-slate-100 flex flex-col lg:flex-row items-stretch">
 
-            <div className="md:w-1/2 p-8 sm:p-12 lg:p-16 flex flex-col justify-center space-y-6">
+            <div className="lg:w-1/2 p-8 sm:p-12 lg:p-16 flex flex-col justify-center space-y-6">
               <h3 className="text-3xl sm:text-4xl font-heading font-black text-[#133020]">
                 From vision to value
               </h3>
@@ -281,7 +281,7 @@ export default function ConsultancyPage() {
               </div>
             </div>
 
-            <div className="md:w-1/2 relative min-h-[340px] lg:min-h-[420px]">
+            <div className="lg:w-1/2 relative min-h-[300px] sm:min-h-[360px] lg:min-h-[420px]">
               <Image
                 src="/images/consultancy/vision-to-value/vision-to-value.png"
                 alt="From Vision to Value"

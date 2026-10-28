@@ -471,12 +471,19 @@ export default function JourneyTimeline() {
 
                   {/* Right inside card: Visual Milestone Image Frame + Mobile Arrows */}
                   <div className="relative flex flex-col items-center justify-center lg:items-end lg:justify-end w-full gap-4">
-                    <div className="relative w-full max-w-[420px] sm:max-w-[460px] xl:max-w-none xl:w-auto rounded-2xl overflow-hidden bg-white shadow-xl shadow-slate-900/5 border border-slate-200/90 flex items-center justify-center">
+                    <div className="relative w-full max-w-[420px] sm:max-w-[460px] xl:max-w-none xl:w-auto xl:aspect-[5/4] xl:h-[min(480px,calc(100vh-148px-280px))] 2xl:h-[min(520px,calc(100vh-148px-280px))] rounded-2xl overflow-hidden bg-white shadow-xl shadow-slate-900/5 border border-slate-200/90 flex items-center justify-center">
+                      {/* Wider desktop frame: soft backdrop of the same photo so the square image is never cropped */}
+                      <img
+                        src={displayedItem.image}
+                        alt=""
+                        aria-hidden="true"
+                        className="hidden xl:block absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-60 select-none pointer-events-none"
+                      />
                       <img
                         src={displayedItem.image}
                         alt={`${displayedItem.year} - ${displayedItem.title}`}
                         style={{ objectPosition: displayedItem.imagePosition ?? "50% 50%" }}
-                        className={`w-full aspect-square h-auto xl:w-auto xl:h-[min(460px,calc(100vh-148px-300px))] 2xl:h-[min(500px,calc(100vh-148px-300px))] object-cover block select-none transition-all duration-700 cubic-bezier(0.22, 1, 0.36, 1) ${
+                        className={`relative w-full aspect-square h-auto xl:w-auto xl:h-full object-cover block select-none transition-all duration-700 cubic-bezier(0.22, 1, 0.36, 1) ${
                           isImageChanging
                             ? "opacity-0 scale-105"
                             : "opacity-100 scale-100"

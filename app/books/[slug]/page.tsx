@@ -10,6 +10,20 @@ import Footer from "@/components/Footer";
 import { useQuote } from "@/components/QuoteContext";
 import { booksData } from "../booksData";
 
+// Turns the simple markdown used in booksData (one paragraph per line, **bold**, *italic*) into HTML
+function toHtml(text: string) {
+  return text
+    .trim()
+    .split(/\n+/)
+    .map((para) =>
+      `<p style="margin:0 0 1em">${para
+        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*([^*\n]+)\*/g, '<em>$1</em>')
+        }</p>`
+    )
+    .join('');
+}
+
 export default function BookDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = use(params);
   const initialBook = booksData.find((b) => b.slug === resolvedParams.slug);
@@ -53,19 +67,19 @@ export default function BookDetailPage({ params }: { params: Promise<{ slug: str
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.015' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E")`
         }}
       >
-        <div className="flex flex-col lg:flex-row lg:items-start w-full min-h-[85vh]">
+        <div className="flex flex-col xl:flex-row xl:items-start w-full min-h-[85vh]">
           
           {/* Left Column (Book Visualization) */}
-          <div className="w-full lg:w-1/2 lg:sticky lg:top-28 self-start flex flex-col items-center justify-center p-6 sm:p-8 lg:px-12 lg:pt-0 lg:pb-6">
+          <div className="w-full xl:w-1/2 xl:sticky xl:top-28 self-start flex flex-col items-center justify-center p-6 sm:p-8 xl:px-12 xl:pt-0 xl:pb-6">
             
             {/* Book Display Container */}
-            <div className="relative z-10 w-full max-w-xl mx-auto flex items-center justify-center">
+            <div className="relative z-10 w-full max-w-[340px] sm:max-w-[400px] xl:max-w-xl mx-auto flex items-center justify-center">
               {/* Book Image */}
               <div className="relative w-full h-auto z-10 hover:scale-102 transition-transform duration-500 origin-center flex items-center justify-center">
                 <img
                   src={displayImage}
                   alt={displayTitle}
-                  className="w-full h-auto lg:max-h-[calc(100vh-9rem)] object-contain mx-auto"
+                  className="w-full h-auto xl:max-h-[calc(100vh-9rem)] object-contain mx-auto"
                 />
               </div>
             </div>
@@ -92,8 +106,8 @@ export default function BookDetailPage({ params }: { params: Promise<{ slug: str
           </div>
 
           {/* Right Column (Book Content) */}
-          <div className="w-full lg:w-1/2 relative p-6 sm:p-10 lg:p-12 xl:p-14 pt-0 lg:pt-0 xl:pt-0 flex flex-col justify-start">
-            <div className="max-w-2xl space-y-8">
+          <div className="w-full xl:w-1/2 relative p-6 sm:p-10 xl:p-14 pt-0 sm:pt-2 xl:pt-0 flex flex-col justify-start">
+            <div className="max-w-none xl:max-w-2xl space-y-8">
               
               <div className="space-y-2 border-b border-slate-200/70 pb-8">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-slate-900 leading-tight">
@@ -120,7 +134,7 @@ export default function BookDetailPage({ params }: { params: Promise<{ slug: str
                 <h2 className="text-xl font-bold text-slate-900">About the book</h2>
                 <div 
                   className="prose prose-slate prose-sm sm:prose-base prose-strong:text-slate-900 prose-ul:my-2 prose-li:my-0.5 text-slate-700 leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: initialBook.aboutBook.replace(/\n/g, '<br/>').replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>') }}
+                  dangerouslySetInnerHTML={{ __html: toHtml(initialBook.aboutBook) }}
                 />
               </div>
 
@@ -129,7 +143,7 @@ export default function BookDetailPage({ params }: { params: Promise<{ slug: str
                 <h2 className="text-xl font-bold text-slate-900">About the author</h2>
                 <div 
                   className="prose prose-slate prose-sm sm:prose-base prose-strong:text-slate-900 text-slate-700 leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: initialBook.aboutAuthor.replace(/\n/g, '<br/>').replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>') }}
+                  dangerouslySetInnerHTML={{ __html: toHtml(initialBook.aboutAuthor) }}
                 />
               </div>
 

@@ -33,8 +33,8 @@ export default function LeadershipGmPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
             {/* Left Sidebar Card */}
             <div className="lg:col-span-4 lg:sticky lg:top-28">
-              <div className="bg-white border border-slate-200/80 p-6 rounded-[28px] shadow-sm space-y-6">
-                <div className="w-full relative rounded-2xl overflow-hidden border border-slate-100 bg-[#EAEAEA]">
+              <div className="bg-white border border-slate-200/80 p-6 rounded-[28px] shadow-sm space-y-6 md:space-y-0 md:flex md:items-center md:gap-8 lg:block lg:space-y-6">
+                <div className="w-full md:w-[38%] md:shrink-0 lg:w-full relative rounded-2xl overflow-hidden border border-slate-100 bg-[#EAEAEA]">
                   <img
                     src="/images/about/leadership/Vibhuti%20Choyal.jpg"
                     alt="Vibhuti Choyal"
@@ -52,7 +52,7 @@ export default function LeadershipGmPage() {
 
             {/* Right Biography Content */}
             <div className="lg:col-span-8 space-y-8">
-              <div className="space-y-4">
+              <div className="space-y-4 md:flex-1 md:min-w-0">
                 <span className="text-xs font-extrabold text-brand-primary tracking-wider">
                   Current leadership
                 </span>

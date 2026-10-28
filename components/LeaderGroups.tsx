@@ -16,13 +16,14 @@ export default function LeaderGroups() {
         <div key={group.heading}>
           {/* Group heading with hairlines on both sides */}
           <div className="flex items-center gap-4 sm:gap-6 mb-6 sm:mb-8">
-            <h3 className="text-lg sm:text-xl lg:text-2xl font-heading font-black tracking-tight text-[#0B2C1C] shrink-0">
+            <span className="h-px flex-1 bg-slate-200" aria-hidden="true" />
+            <h3 className="text-lg sm:text-xl lg:text-2xl font-heading font-black tracking-tight text-[#0B2C1C] text-center shrink-0">
               {group.heading}
             </h3>
             <span className="h-px flex-1 bg-slate-200" aria-hidden="true" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-[1100px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 w-full">
             {group.leaders.map((leader) => (
               <Link
                 key={leader.name}
@@ -30,7 +31,7 @@ export default function LeaderGroups() {
                 className="group flex bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 {/* Portrait */}
-                <div className="w-[36%] sm:w-[38%] shrink-0 p-3 sm:p-4 pr-0 sm:pr-0 xl:p-0 xl:bg-[#EAEAEA] xl:self-stretch">
+                <div className="w-[36%] sm:w-[38%] shrink-0 self-center p-3 sm:p-4 pr-0 sm:pr-0 xl:p-0 xl:bg-[#EAEAEA] xl:self-stretch">
                   {/* Natural portrait ratio, so the photo is never cropped at the sides */}
                   <div className="rounded-xl xl:rounded-none overflow-hidden bg-[#EAEAEA]">
                     <img

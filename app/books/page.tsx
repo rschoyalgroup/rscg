@@ -37,7 +37,7 @@ export default function BooksPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA] text-brand-foreground font-sans">
+    <div className="min-h-screen bg-slate-50 text-brand-foreground font-sans">
       <Header />
 
       {/* Hero Section - Standardized responsive hero */}
@@ -69,7 +69,7 @@ export default function BooksPage() {
               sizes="100vw"
             />
             {/* Mobile gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/65 to-[#0B1510]/40"></div>
           </div>
         </div>
 
@@ -103,9 +103,9 @@ export default function BooksPage() {
 
       {/* Desktop Key Proof Points Bar (50/50 Overlapping Hero Bottom) */}
       <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-6xl">
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-7 flex flex-row items-center justify-between gap-4 divide-x divide-slate-100">
-          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 lg:p-7 flex flex-row items-stretch lg:items-center justify-between gap-2 lg:gap-4 divide-x divide-slate-100">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-start text-center lg:text-left gap-3 lg:gap-4.5 px-3 lg:px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <GraduationCap className="w-7 h-7" />
             </div>
             <div>
@@ -114,8 +114,8 @@ export default function BooksPage() {
             </div>
           </div>
           
-          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-start text-center lg:text-left gap-3 lg:gap-4.5 px-3 lg:px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <BookMarked className="w-7 h-7" />
             </div>
             <div>
@@ -124,8 +124,8 @@ export default function BooksPage() {
             </div>
           </div>
 
-          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-start text-center lg:text-left gap-3 lg:gap-4.5 px-3 lg:px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <Award className="w-7 h-7" />
             </div>
             <div>
@@ -174,7 +174,7 @@ export default function BooksPage() {
       </div>
 
       {/* Main Content Section */}
-      <section id="order-books" className="w-full pt-4 md:pt-2 xl:pt-28 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#F8F9FA]">
+      <section id="order-books" className="w-full pt-4 md:pt-2 xl:pt-28 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 bg-slate-50">
         <div className="w-full mx-auto space-y-12">
           
           <div className="text-center w-full flex items-center justify-center">
@@ -207,7 +207,7 @@ export default function BooksPage() {
             <div 
               ref={scrollRef}
               onScroll={checkScroll}
-              className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth -mx-4 px-4 -mt-3 pt-3 pb-10 scroll-pl-4"
+              className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-smooth -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 -mt-3 pt-3 pb-10 scroll-pl-6 sm:scroll-pl-12"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               <style dangerouslySetInnerHTML={{__html: `
@@ -218,7 +218,7 @@ export default function BooksPage() {
                   <Link 
                     key={book.slug}
                     href={`/books/${book.slug}`}
-                    className="group bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)] hover:border-amber-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col relative shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] snap-start"
+                    className="group bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)] hover:border-amber-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col relative shrink-0 w-[74vw] max-w-[300px] sm:w-[calc(50%-12px)] sm:max-w-none md:w-auto snap-start"
                   >
                     {/* Sale Tag */}
                     {book.comingSoon ? (

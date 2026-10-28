@@ -752,7 +752,7 @@ export default function Home() {
                 ].map((card, idx) => (
                   <div
                     key={idx}
-                    className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 lg:p-6 shadow-2xl flex flex-col justify-center min-w-0 sm:min-w-[130px] xl:min-w-[145px] hover:bg-white/15 transition-all duration-300"
+                    className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 lg:p-6 shadow-2xl flex flex-col justify-start min-w-0 sm:min-w-[130px] xl:min-w-[145px] hover:bg-white/15 transition-all duration-300"
                   >
                     <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-black text-[#f7b032] tracking-tight leading-none mb-1.5 sm:mb-2 drop-shadow-xs">
                       {card.number}
@@ -876,7 +876,7 @@ export default function Home() {
       </section>
 
       {/* --- Industrial Solutions Section --- */}
-      <section id="industrial-solutions" className="w-full px-4 sm:px-8 lg:px-6 xl:px-12 2xl:px-20 py-16 sm:py-20 lg:py-28 relative z-10 bg-white border-t border-slate-200/60 overflow-hidden">
+      <section id="industrial-solutions" className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 sm:py-20 lg:py-28 relative z-10 bg-white border-t border-slate-200/60 overflow-hidden">
         <div className="w-full mx-auto space-y-12 sm:space-y-16">
           
           {/* Header */}
@@ -893,7 +893,7 @@ export default function Home() {
           </div>
 
           {/* 10 Solutions 3-Column Grid (Horizontally swipable on mobile, grid on md+) */}
-          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 xl:gap-6 md:w-full overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-4 px-4 sm:-mx-8 sm:px-8 md:mx-0 md:px-0 scroll-pl-4 sm:scroll-pl-8 md:scroll-pl-0 pb-4 md:pb-0">
+          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 xl:gap-6 md:w-full overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
             {[
               {
                 id: "01",
@@ -978,7 +978,7 @@ export default function Home() {
             ].map((card, idx) => (
               <div 
                 key={idx}
-                className={`w-[74vw] max-w-[290px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-gradient-to-br from-white via-[#FCFBF8] to-[#F8F5EC] rounded-[22px] sm:rounded-[24px] p-4.5 sm:p-5 xl:p-6 border border-[#f7b032]/45 hover:border-[#f7b032] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_28px_rgba(247,176,50,0.12)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group min-h-[195px] sm:min-h-[205px] xl:min-h-[220px] ${idx === 9 ? "lg:col-start-2" : ""}`}
+                className={`${idx === 9 ? "lg:col-start-2 " : ""}w-[74vw] max-w-[290px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-gradient-to-br from-white via-[#FCFBF8] to-[#F8F5EC] rounded-[22px] sm:rounded-[24px] p-4.5 sm:p-5 xl:p-6 border border-[#f7b032]/45 hover:border-[#f7b032] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_28px_rgba(247,176,50,0.12)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group min-h-[195px] sm:min-h-[205px] xl:min-h-[220px] ${idx === 9 ? "lg:col-start-2" : ""}`}
               >
                 <div className="flex flex-row items-stretch justify-between gap-3 sm:gap-4 h-full">
                   {/* Left: Text Content */}
@@ -1687,7 +1687,7 @@ export default function Home() {
       </section>
 
       {/* --- Pre-Footer CTA Section --- */}
-      <section className="w-full py-10 sm:py-14 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#f6f6f4] relative z-10">
+      <section className="w-full py-10 sm:py-14 px-6 sm:px-12 lg:px-16 xl:px-24 bg-slate-50 relative z-10">
         <div className="w-full mx-auto">
           <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[24px] sm:rounded-[28px] p-6 sm:p-10 lg:p-12 shadow-2xl flex flex-col items-center text-center lg:text-left lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 border border-white/10 relative overflow-hidden">
             {/* Background Texture matching Wonder Mill */}

@@ -109,7 +109,7 @@ export default function Grain360Page() {
                 sizes="100vw"
               />
               {/* Mobile gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/65 to-[#0B1510]/40"></div>
             </div>
           </div>
 
@@ -143,15 +143,15 @@ export default function Grain360Page() {
           {/* Intro Section: One Partner */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start mb-24">
             <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-full bg-[#1A3A29]/10 flex items-center justify-center shrink-0">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#1A3A29]/10 flex items-center justify-center shrink-0">
                   <Building2 className="w-7 h-7 text-[#1A3A29]" />
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-heading font-black text-[#1A3A29] leading-tight">
                   One partner for setting up your business
                 </h2>
               </div>
-              <div className="text-slate-600 space-y-4 text-base sm:text-lg leading-relaxed pl-[72px] font-normal">
+              <div className="text-slate-600 space-y-4 text-base sm:text-lg leading-relaxed sm:pl-[72px] font-normal">
                 <p>
                   Starting a food or flour business involves many moving parts - from project planning and plant setup to licensing, training, and operations support. <strong>Grain360 brings all of these services together under one roof.</strong>
                 </p>
@@ -194,7 +194,7 @@ export default function Grain360Page() {
                 {workflowSteps.map((step, idx) => (
                   <Fragment key={idx}>
                     {/* Step Card - Equalized with flex-1 across all 3 cards */}
-                    <div className="w-[74vw] max-w-[290px] shrink-0 snap-start md:w-auto md:max-w-none md:shrink lg:flex-1 bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 xl:p-9 flex flex-col xl:flex-row items-start xl:items-center gap-4 xl:gap-6 shadow-sm hover:shadow-md border border-slate-200/70 transition-all duration-300 lg:min-h-[170px]">
+                    <div className="w-[74vw] max-w-[290px] shrink-0 snap-start md:w-auto md:max-w-none md:shrink lg:flex-1 bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 xl:p-9 flex flex-col xl:flex-row items-start gap-4 xl:gap-6 shadow-sm hover:shadow-md border border-slate-200/70 transition-all duration-300 lg:min-h-[170px]">
                       <div className={`w-14 h-14 lg:w-20 lg:h-20 rounded-2xl ${step.iconBg} flex items-center justify-center shrink-0 p-3 sm:p-4 shadow-xs`}>
                         <img src={step.iconPath} alt={step.title} className="w-full h-full object-contain" />
                       </div>
@@ -246,7 +246,7 @@ export default function Grain360Page() {
               {additionalServices.map((service, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-3.5 bg-white pl-4 pr-6 py-3 rounded-full shadow-sm border border-slate-200/60 hover:bg-slate-50 transition-colors w-full max-w-[335px] sm:w-[335px] shrink-0"
+                  className="flex items-center gap-3.5 bg-white pl-4 pr-6 py-3 rounded-full shadow-sm border border-slate-200/60 hover:bg-slate-50 transition-colors w-full max-w-[335px] sm:w-[300px] lg:w-[335px] shrink-0"
                 >
                   <div className="w-10 h-10 rounded-full bg-[#EAF3EA] flex items-center justify-center p-2 shrink-0 shadow-xs">
                     <img src={service.iconPath} alt={service.title} className="w-full h-full object-contain" />
@@ -258,11 +258,11 @@ export default function Grain360Page() {
           </div>
 
           {/* Bottom CTA Banner */}
-          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-3xl p-6 sm:p-12 lg:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 border border-white/10 shadow-xl">
+          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-3xl p-6 sm:p-12 lg:p-16 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 border border-white/10 shadow-xl">
             {/* Background Texture matching Wonder Mill */}
             <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
 
-            <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 max-w-2xl text-center sm:text-left">
+            <div className="relative z-10 flex flex-col lg:flex-row items-center gap-4 lg:gap-6 max-w-2xl text-center lg:text-left">
               <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
                 <Phone className="w-8 h-8 text-[#f5a623]" />
               </div>
@@ -276,10 +276,10 @@ export default function Grain360Page() {
               </div>
             </div>
 
-            <div className="relative z-10 shrink-0 w-full md:w-auto">
+            <div className="relative z-10 shrink-0 w-full sm:w-auto">
               <Link
                 href="/contact"
-                className="inline-flex w-full md:w-auto items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap"
               >
                 <span>Discuss Your Requirement</span>
                 <ArrowRight className="w-4 h-4" />

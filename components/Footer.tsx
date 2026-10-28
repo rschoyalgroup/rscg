@@ -101,12 +101,12 @@ export default function Footer() {
           </div>
 
           {/* Col 4: Locations & Contact (3.5 cols) */}
-          <div className="col-span-2 order-last md:order-none md:col-span-1 xl:col-span-3 space-y-3 sm:space-y-4">
+          <div className="col-span-2 order-last md:order-none md:col-span-2 xl:col-span-3 space-y-3 sm:space-y-4">
             <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider">
               Locations &amp; contact
             </h4>
 
-            <div className="space-y-3 sm:space-y-4 text-sm font-medium text-slate-600">
+            <div className="space-y-3 sm:space-y-4 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-6 md:gap-y-3 xl:block xl:space-y-4 text-sm font-medium text-slate-600">
               {/* Corporate Headquarters */}
               <div className="flex items-start gap-3">
                 <MapPin className="h-4.5 w-4.5 text-emerald-700 mt-0.5 flex-shrink-0" />
@@ -234,9 +234,9 @@ export default function Footer() {
           </div>
 
           {/* Right: 8 Certification & Feature Badges */}
-          <div className="w-full xl:w-auto grid grid-cols-4 sm:flex sm:flex-wrap items-start justify-items-center sm:justify-start xl:justify-end gap-3 sm:gap-4">
+          <div className="w-full xl:w-auto grid grid-cols-4 md:grid-cols-8 xl:flex xl:flex-wrap items-start justify-items-center xl:justify-end gap-x-2 gap-y-3 sm:gap-x-3 xl:gap-4">
             {certBadges.map((badge) => (
-              <div key={badge.name} className="flex flex-col items-center group w-16 sm:w-18">
+              <div key={badge.name} className="flex flex-col items-center group w-full max-w-[84px] xl:w-20 xl:max-w-none">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center p-1 transition-transform duration-200 group-hover:scale-110">
                   <img
                     src={encodeURI(badge.src)}
@@ -244,7 +244,7 @@ export default function Footer() {
                     className="max-w-full max-h-full object-contain"
                   />
                 </div>
-                <span className="text-[11px] sm:text-xs text-slate-700 font-semibold text-center mt-1.5 leading-tight line-clamp-2">
+                <span className="text-[11px] sm:text-xs text-slate-700 font-semibold text-center mt-1.5 leading-tight">
                   {badge.name}
                 </span>
               </div>

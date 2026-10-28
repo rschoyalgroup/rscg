@@ -69,7 +69,7 @@ export default function GrainStorageHandlingPage() {
               sizes="100vw"
             />
             {/* Mobile gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/65 to-[#0B1510]/40"></div>
           </div>
         </div>
 
@@ -99,9 +99,9 @@ export default function GrainStorageHandlingPage() {
 
       {/* Desktop Key Proof Points Bar (50/50 Overlapping Hero Bottom) */}
       <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-6xl">
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-7 flex flex-row items-center justify-between gap-4 divide-x divide-slate-100">
-          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 lg:p-7 flex flex-row items-stretch lg:items-center justify-between gap-2 lg:gap-4 divide-x divide-slate-100">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-start text-center lg:text-left gap-3 lg:gap-4.5 px-3 lg:px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <ShieldCheck className="w-7 h-7" />
             </div>
             <div>
@@ -109,8 +109,8 @@ export default function GrainStorageHandlingPage() {
               <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Hygienic storage and seamless flour discharge.</p>
             </div>
           </div>
-          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-start text-center lg:text-left gap-3 lg:gap-4.5 px-3 lg:px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <Droplets className="w-7 h-7" />
             </div>
             <div>
@@ -118,8 +118,8 @@ export default function GrainStorageHandlingPage() {
               <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Uniform moisture and superior flour quality.</p>
             </div>
           </div>
-          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-start text-center lg:text-left gap-3 lg:gap-4.5 px-3 lg:px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <Warehouse className="w-7 h-7" />
             </div>
             <div>
@@ -184,12 +184,12 @@ export default function GrainStorageHandlingPage() {
       {/* Products Grid Section */}
       <section id="products" className="w-full py-8 px-6 sm:px-12 lg:px-16 xl:px-24 scroll-mt-24">
         <div className="w-full mx-auto space-y-8">
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6 lg:gap-8 w-full">
+          <div className="flex flex-wrap justify-center gap-3.5 sm:gap-6 lg:gap-8 w-full">
             {handlingCards.map((card) => (
               <Link 
                 key={card.slug}
                 href={`/grain-storage-handling/${card.slug}`}
-                className="group flex flex-col bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer"
+                className="w-[calc(50%-7px)] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-21.34px)] group flex flex-col bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer"
               >
                 {/* Image Area - Clean rounded background matching catalog page */}
                 <div className="relative aspect-square sm:aspect-[4/3] w-full bg-slate-50 overflow-hidden border-b border-slate-100 flex items-center justify-center p-3 sm:p-6">
@@ -239,8 +239,8 @@ export default function GrainStorageHandlingPage() {
                   <span className="w-10 h-[3px] bg-[#eab308]"></span>
                   Silo solutions
                 </div>
-                <h2 className="text-[28px] sm:text-5xl xl:text-6xl font-heading font-black text-[#0a3118] leading-[1.1] tracking-tight">
-                  Let’s design the right<br className="hidden xl:block"/> silo for your plant.
+                <h2 className="text-[28px] sm:text-5xl xl:text-[52px] font-heading font-black text-[#0a3118] leading-[1.1] tracking-tight">
+                  Let’s design the right silo for your plant.
                 </h2>
                 <p className="text-slate-600 font-medium leading-relaxed max-w-xl text-sm sm:text-lg">
                   From capacity planning to layout, materials and integration - our experts help you build efficient, future-ready storage systems.
@@ -317,7 +317,7 @@ export default function GrainStorageHandlingPage() {
 
             {/* Quick Contact Info */}
             <div className="flex-1 bg-slate-50 p-5 sm:p-8 xl:p-10 grid grid-cols-1 sm:grid-cols-3 items-center gap-3 sm:gap-6">
-               <div className="flex items-center gap-3 sm:flex-col sm:items-start sm:gap-2 xl:flex-row xl:items-center xl:gap-4 min-w-0">
+               <div className="flex items-center gap-3 sm:flex-col sm:items-start sm:gap-2 2xl:flex-row 2xl:items-center 2xl:gap-4 min-w-0">
                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-700 shrink-0">
                    <Phone className="w-5 h-5" />
                  </div>
@@ -327,7 +327,7 @@ export default function GrainStorageHandlingPage() {
                  </div>
                </div>
                
-               <div className="flex items-center gap-3 sm:flex-col sm:items-start sm:gap-2 xl:flex-row xl:items-center xl:gap-4 min-w-0">
+               <div className="flex items-center gap-3 sm:flex-col sm:items-start sm:gap-2 2xl:flex-row 2xl:items-center 2xl:gap-4 min-w-0">
                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-700 shrink-0">
                    <Mail className="w-5 h-5" />
                  </div>
@@ -337,7 +337,7 @@ export default function GrainStorageHandlingPage() {
                  </div>
                </div>
                
-               <div className="flex items-center gap-3 sm:flex-col sm:items-start sm:gap-2 xl:flex-row xl:items-center xl:gap-4 min-w-0">
+               <div className="flex items-center gap-3 sm:flex-col sm:items-start sm:gap-2 2xl:flex-row 2xl:items-center 2xl:gap-4 min-w-0">
                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-700 shrink-0">
                    <MessageCircle className="w-5 h-5" />
                  </div>

@@ -58,7 +58,7 @@ export default function DesignMediaPage() {
                 priority
                 sizes="100vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/90 via-[#0B1510]/55 to-transparent z-10 w-full" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/90 via-[#0B1510]/65 to-[#0B1510]/40 z-10 w-full" />
             </div>
           </div>
 
@@ -134,7 +134,7 @@ export default function DesignMediaPage() {
 
         {/* Technical Design Section */}
         <section className="w-full pt-6 sm:pt-12 md:pt-36 lg:pt-40 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16 items-center">
             
             <div className="space-y-6 lg:pr-6">
               <div className="flex items-center gap-5">
@@ -148,7 +148,7 @@ export default function DesignMediaPage() {
                   />
                 </div>
                 <div>
-                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-[#133020]">
+                  <h2 className="text-3xl sm:text-4xl xl:text-5xl font-heading font-black text-[#133020]">
                     Technical Design
                   </h2>
                   <div className="w-12 h-1 bg-[#D3994B] mt-2" />
@@ -188,7 +188,7 @@ export default function DesignMediaPage() {
 
         {/* Design for Manufacturing Section */}
         <section className="w-full py-20 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white/60">
-          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16 items-center">
             
             <div className="rounded-[28px] overflow-hidden shadow-xl border border-slate-100 relative h-[320px] sm:h-[440px] lg:h-[480px] w-full order-2 lg:order-1">
               <Image 
@@ -211,7 +211,7 @@ export default function DesignMediaPage() {
                   />
                 </div>
                 <div>
-                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-[#133020]">
+                  <h2 className="text-3xl sm:text-4xl xl:text-5xl font-heading font-black text-[#133020]">
                     Design for Manufacturing
                   </h2>
                   <div className="w-12 h-1 bg-[#D3994B] mt-2" />
@@ -261,7 +261,7 @@ export default function DesignMediaPage() {
 
         {/* Packaging Design Section */}
         <section className="w-full py-20 px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16 items-center">
             
             <div className="space-y-6 lg:pr-6">
               <div className="flex items-center gap-5">
@@ -275,7 +275,7 @@ export default function DesignMediaPage() {
                   />
                 </div>
                 <div>
-                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-[#133020]">
+                  <h2 className="text-3xl sm:text-4xl xl:text-5xl font-heading font-black text-[#133020]">
                     Packaging design
                   </h2>
                   <div className="w-12 h-1 bg-[#D3994B] mt-2" />
@@ -306,11 +306,11 @@ export default function DesignMediaPage() {
 
         {/* Bottom CTA Banner */}
         <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pb-20">
-          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[28px] p-8 sm:p-12 lg:p-14 shadow-xl flex flex-col md:flex-row items-center justify-between gap-10 border border-white/10 relative overflow-hidden">
+          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[28px] p-8 sm:p-12 lg:p-14 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-10 text-center lg:text-left border border-white/10 relative overflow-hidden">
             {/* Background Texture matching Wonder Mill */}
             <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
             
-            <div className="flex items-center gap-6 sm:gap-8 max-w-2xl relative z-10">
+            <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6 lg:gap-8 max-w-2xl relative z-10">
               <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 border-2 border-white/20 bg-white/10 rounded-full flex items-center justify-center text-[#f5a623]">
                 <Headset className="w-8 h-8 sm:w-10 sm:h-10" />
               </div>

@@ -283,7 +283,7 @@ function DownloadsContent() {
                           isActive ? "text-[#0E3321]" : "text-slate-400 group-hover:text-[#0E3321]"
                         }`}
                       />
-                      <span className="truncate">{cat.name}</span>
+                      <span className="leading-snug">{cat.name}</span>
                     </button>
                   );
                 })}
@@ -347,7 +347,7 @@ function DownloadsContent() {
                         }`}
                       >
                         <CategoryIcon id={cat.id} className="w-4 h-4 text-slate-400" />
-                        <span className="truncate">{cat.name}</span>
+                        <span className="leading-snug">{cat.name}</span>
                       </button>
                     );
                   })}
@@ -377,16 +377,16 @@ function DownloadsContent() {
           <main className="min-w-0 py-1">
 
             {/* Mobile Category Toggle Button */}
-            <div className="lg:hidden mb-6 flex items-center justify-between bg-white border border-[#E2E8F0] rounded-xl p-3.5 shadow-xs">
+            <div className="lg:hidden mb-6 flex items-center justify-between gap-3 bg-white border border-[#E2E8F0] rounded-xl p-3.5 shadow-xs">
               <button
                 onClick={() => setMobileMenuOpen(true)}
-                className="inline-flex items-center gap-2 text-sm font-bold text-[#0E3321]"
+                className="flex-1 min-w-0 inline-flex items-center gap-2 text-sm font-bold text-[#0E3321] text-left"
               >
-                <Menu className="w-4 h-4 text-[#FFAA17]" />
-                <span>Categories:</span>
-                <span className="text-slate-600 font-semibold">{activeCategoryObj?.name || "All"}</span>
+                <Menu className="w-4 h-4 text-[#FFAA17] shrink-0" />
+                <span className="hidden sm:inline shrink-0">Category:</span>
+                <span className="min-w-0 truncate text-slate-600 font-semibold">{activeCategoryObj?.name || "All"}</span>
               </button>
-              <span className="text-xs sm:text-sm text-slate-500 font-medium">
+              <span className="shrink-0 whitespace-nowrap text-xs sm:text-sm text-slate-500 font-medium">
                 {filteredItems.length} items
               </span>
             </div>

@@ -128,7 +128,7 @@ export default function ProductDetailsPage() {
 
   if (product.overview) {
     return (
-      <div className="min-h-screen bg-[#F7F9F6] text-brand-foreground font-sans">
+      <div className="min-h-screen bg-slate-50 text-brand-foreground font-sans">
         <Header />
 
         {/* Title Area */}
@@ -288,9 +288,9 @@ export default function ProductDetailsPage() {
 
         {/* CTA Banner */}
         <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pb-12">
-           <div className="w-full max-w-6xl mx-auto rounded-2xl overflow-hidden bg-gradient-to-r from-[#17462c] to-[#297a49] flex items-center justify-between p-6 lg:px-12 shadow-xl relative border border-white/10">
+           <div className="w-full max-w-6xl mx-auto rounded-2xl overflow-hidden bg-gradient-to-r from-[#17462c] to-[#297a49] flex flex-col lg:flex-row items-center justify-between gap-6 p-6 sm:p-8 lg:px-12 shadow-xl relative border border-white/10">
              <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
-             <div className="flex flex-col sm:flex-row items-center gap-6 relative z-10 text-center sm:text-left">
+             <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-6 relative z-10 text-center lg:text-left">
                 <div className="w-12 h-12 rounded-full border-2 border-white/20 bg-white/10 flex items-center justify-center shrink-0">
                   <Settings className="w-6 h-6 text-[#f7b032]" />
                 </div>

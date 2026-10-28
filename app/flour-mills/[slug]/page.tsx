@@ -69,7 +69,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
         <div className="grid grid-cols-1 xl:grid-cols-2 xl:items-start gap-6 sm:gap-8 xl:gap-12 bg-white p-5 sm:p-8 xl:p-10 rounded-3xl border border-slate-200 shadow-sm mb-12 lg:mb-16">
 
           {/* Left: Images */}
-          <div className="flex flex-col gap-4 xl:sticky xl:top-28 self-start w-full">
+          <div className="contents xl:flex xl:flex-col xl:gap-4 xl:sticky xl:top-28 xl:self-start xl:w-full">
             <div className={`relative w-full aspect-[4/3] sm:aspect-[16/9] xl:aspect-auto ${product.showThumbnails !== false && product.keyComponents.length > 0 ? 'xl:h-[calc(100vh-22rem)] xl:min-h-[240px] xl:max-h-[440px]' : 'xl:h-[calc(100vh-15rem)] xl:min-h-[260px] xl:max-h-[480px]'} bg-white rounded-2xl flex items-center justify-center p-4 sm:p-6 lg:p-8`}>
               <span className="absolute top-0 left-0 z-10 bg-slate-100 text-xs font-bold text-slate-600 px-3.5 py-1.5 rounded-full border border-slate-200">
                 {product.category}
@@ -83,7 +83,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
 
             {/* Component Thumbnails */}
             {product.showThumbnails !== false && product.keyComponents.length > 0 && (
-              <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              <div className="flex xl:flex-wrap gap-3 overflow-x-auto xl:overflow-visible snap-x snap-mandatory pb-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                 <button
                   onClick={() => setActiveImage(product.heroImage)}
                   className={`flex flex-col items-center gap-1.5 cursor-pointer group shrink-0 w-[84px] xl:w-[92px] snap-start`}
@@ -119,7 +119,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
 
             {/* Disclaimer */}
             {product.productDisclaimer && (
-              <div className="flex gap-3 bg-[#f8f9fa] rounded-2xl p-4 border border-slate-200 mt-1">
+              <div className="order-last xl:order-none flex gap-3 bg-[#f8f9fa] rounded-2xl p-4 border border-slate-200 mt-1">
                 <Info className="w-4 h-4 text-slate-500 shrink-0 mt-0.5" />
                 <p className="text-xs text-slate-600 leading-relaxed">
                   * {product.productDisclaimer}
@@ -289,7 +289,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
         {product.coreCapabilities.length > 0 && (
           <div className="mb-12 lg:mb-16">
             <h3 className="text-xl sm:text-2xl font-heading font-extrabold text-[#0a4c2a] mb-5 sm:mb-6 tracking-tight">Core capabilities</h3>
-            <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
+            <div className={`flex md:grid ${product.coreCapabilities.length === 1 ? "md:grid-cols-1" : product.coreCapabilities.length === 4 ? "md:grid-cols-2 xl:grid-cols-4" : product.coreCapabilities.length === 2 ? "md:grid-cols-2" : "md:grid-cols-2 xl:grid-cols-3"} gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0`}>
               {product.coreCapabilities.map((cap, idx) => {
                 const colors = [
                   { text: "text-[#79c500]", bg: "bg-[#79c500]/10", Icon: Activity },
@@ -302,7 +302,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                 return (
                   <div key={idx} className={`w-[78vw] max-w-[320px] md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none self-stretch bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col ${
                     idx === product.coreCapabilities.length - 1 && product.coreCapabilities.length % 2 === 1 && product.coreCapabilities.length > 1
-                      ? "md:col-span-2 md:justify-self-center md:w-[calc(50%-12px)] lg:col-span-1 lg:w-auto lg:justify-self-stretch"
+                      ? "md:col-span-2 md:justify-self-center md:w-[calc(50%-12px)] xl:col-span-1 xl:w-auto xl:justify-self-stretch"
                       : "md:w-auto"
                   }`}>
                     <div className="flex items-center gap-4 mb-5">
@@ -331,13 +331,13 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
         {product.keyComponents.length > 0 && (
           <div className="mb-12 lg:mb-16">
             <h3 className="text-xl sm:text-2xl font-heading font-extrabold text-[#0a4c2a] mb-5 sm:mb-6 tracking-tight">{product.componentsTitle || "Key components"}</h3>
-            <div className={`grid grid-cols-2 gap-3 sm:gap-4 ${product.keyComponents.length >= 3 ? 'md:grid-cols-3' : ''} ${
+            <div className={`grid grid-cols-2 gap-3 sm:gap-4 ${product.keyComponents.length >= 3 && product.keyComponents.length !== 4 ? 'md:grid-cols-3' : ''} ${
               product.keyComponents.length === 1 ? 'lg:grid-cols-1 max-w-sm' :
               product.keyComponents.length === 2 ? 'lg:grid-cols-2 max-w-2xl' :
               product.keyComponents.length === 3 ? 'lg:grid-cols-3' :
               product.keyComponents.length === 4 ? 'lg:grid-cols-4' :
-              product.keyComponents.length === 5 ? 'lg:grid-cols-5' :
-              'lg:grid-cols-6'
+              product.keyComponents.length === 5 ? 'xl:grid-cols-5' :
+              'xl:grid-cols-6'
             }`}>
               {product.keyComponents.map((comp, idx) => {
                 const isCover = comp.title.includes("Control Console");
@@ -368,7 +368,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
               product.models.length === 1 ? 'grid-cols-1 max-w-3xl mx-auto' :
               product.models.length === 2 ? 'grid-cols-1 md:grid-cols-2' :
               product.models.length === 4 ? 'grid-cols-1 md:grid-cols-2' :
-              'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+              'grid-cols-1 md:grid-cols-2 xl:grid-cols-3'
             }`}>
               {product.modelsLayout === 'zigzag' ? (
                 product.models.map((model, idx) => {
@@ -382,13 +382,13 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                   }
 
                   return (
-                    <div key={idx} className={`bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col sm:flex-row ${isReverse ? 'sm:flex-row-reverse' : ''} h-full p-6 items-center`}>
+                    <div key={idx} className={`bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col sm:flex-row ${isReverse ? 'sm:flex-row-reverse' : ''} ${product.models.length > 1 ? (product.models.length % 2 === 0 ? (isReverse ? 'md:flex-col xl:flex-row-reverse' : 'md:flex-col xl:flex-row') : 'md:flex-col') : ''} h-full p-6 items-center`}>
                       {model.image && (
-                        <div className="w-full sm:w-1/2 flex-shrink-0 flex items-center justify-center p-4">
-                          <img src={model.image} alt={model.name} className="w-full max-w-[220px] object-contain mix-blend-multiply" />
+                        <div className={`w-full sm:w-1/2 ${product.models.length > 1 ? (product.models.length % 2 === 0 ? "md:w-full xl:w-1/2" : "md:w-full") : ""} flex-shrink-0 flex items-center justify-center p-4 h-56 sm:h-60`}>
+                          <img src={model.image} alt={model.name} className="w-full max-w-[220px] max-h-full object-contain mix-blend-multiply" />
                         </div>
                       )}
-                      <div className="w-full sm:w-1/2 flex flex-col p-4 justify-center">
+                      <div className={`w-full sm:w-1/2 ${product.models.length > 1 ? (product.models.length % 2 === 0 ? "md:w-full xl:w-1/2" : "md:w-full") : ""} flex flex-col p-4 justify-center`}>
                         <h4 className="text-2xl font-bold tracking-tight mb-4 flex flex-wrap items-center gap-2">
                           {namePrefix ? (
                             <>
@@ -415,7 +415,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                   const isThreeCol = product.models.length === 3 || product.models.length > 4;
 
                   return (
-                    <div key={idx} className="bg-white rounded-3xl border border-slate-200/80 shadow-sm overflow-hidden flex flex-col h-full p-4 sm:p-6 xl:p-7">
+                    <div key={idx} className={`${idx === product.models.length - 1 && product.models.length % 2 === 1 && product.models.length > 1 ? "md:col-span-2 md:justify-self-center md:w-[calc(50%-12px)] xl:col-span-1 xl:w-auto xl:justify-self-stretch " : ""}bg-white rounded-3xl border border-slate-200/80 shadow-sm overflow-hidden flex flex-col h-full p-4 sm:p-6 xl:p-7`}>
                       <div className="pb-3 sm:pb-4 text-center">
                         <h4 className={`text-lg sm:text-xl lg:text-2xl font-heading font-extrabold tracking-tight ${colorTitle}`}>
                           {model.name}
@@ -474,10 +474,10 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
         )}
 
         {/* Bottom Banner */}
-        <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-3xl p-8 sm:p-12 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-8 relative overflow-hidden">
+        <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8 text-center lg:text-left relative overflow-hidden">
           <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none"></div>
 
-          <div className="flex items-center gap-6 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-6 relative z-10">
             <div className="w-16 h-16 rounded-full bg-[#f5a623] flex items-center justify-center shrink-0 border-4 border-white/20">
               <Settings className="w-8 h-8 text-white" />
             </div>

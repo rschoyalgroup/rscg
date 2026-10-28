@@ -77,7 +77,7 @@ export default function EmeryCTASection() {
       </div>
 
       {/* Floating Trust Box (Bottom Right) */}
-      <div className="hidden md:flex absolute bottom-8 right-8 lg:bottom-12 lg:right-12 z-20 bg-black/60 backdrop-blur-md border border-white/10 p-6 rounded-xl max-w-sm flex-col gap-2 shadow-2xl">
+      <div className="hidden xl:flex absolute bottom-12 right-12 z-20 bg-black/60 backdrop-blur-md border border-white/10 p-6 rounded-xl max-w-sm flex-col gap-2 shadow-2xl">
         <h4 className="text-white font-bold text-sm tracking-wider">Trusted worldwide</h4>
         <p className="text-slate-300 text-xs leading-relaxed">
           Delivering unparalleled grinding conditions with quality, consistency, and reliability.

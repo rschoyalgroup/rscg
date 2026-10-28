@@ -94,7 +94,7 @@ export default function JobGrindingPage() {
                 sizes="100vw"
               />
               {/* Mobile gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/65 to-[#0B1510]/40"></div>
             </div>
           </div>
 
@@ -127,8 +127,8 @@ export default function JobGrindingPage() {
         <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-5xl">
           <div className="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-row divide-x divide-slate-100 overflow-hidden">
 
-            <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
-              <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">
+            <div className="flex-1 p-5 lg:p-6 xl:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-start text-center">
+              <h3 className="font-heading font-black text-lg lg:text-xl xl:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">
                 Custom batch sizes
               </h3>
               <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">
@@ -136,8 +136,8 @@ export default function JobGrindingPage() {
               </p>
             </div>
 
-            <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
-              <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">
+            <div className="flex-1 p-5 lg:p-6 xl:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-start text-center">
+              <h3 className="font-heading font-black text-lg lg:text-xl xl:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">
                 Consistent grinding
               </h3>
               <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">
@@ -145,8 +145,8 @@ export default function JobGrindingPage() {
               </p>
             </div>
 
-            <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
-              <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">
+            <div className="flex-1 p-5 lg:p-6 xl:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-start text-center">
+              <h3 className="font-heading font-black text-lg lg:text-xl xl:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">
                 Fast turnaround
               </h3>
               <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">
@@ -180,7 +180,7 @@ export default function JobGrindingPage() {
         </div>
 
         {/* Intro & Process Overview */}
-        <section id="job-grinding-overview" className="w-full pt-6 sm:pt-12 md:pt-6 xl:pt-16 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 relative md:-mt-12 lg:-mt-16 overflow-hidden">
+        <section id="job-grinding-overview" className="w-full pt-6 sm:pt-12 md:pt-10 lg:pt-14 xl:pt-16 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 relative md:-mt-12 lg:-mt-16 overflow-hidden">
 
           {/* Faded Gear Watermark */}
           <div className="absolute right-[-10%] top-[10%] opacity-5 pointer-events-none">
@@ -272,7 +272,7 @@ export default function JobGrindingPage() {
                     icon: "/images/job-grinding/facility-services/compliant-facility-clean.png"
                   }
                 ].map((service, idx) => (
-                  <div key={idx} className="w-[78vw] max-w-[290px] sm:w-auto sm:max-w-none shrink-0 sm:shrink snap-start sm:snap-align-none bg-white rounded-2xl p-6 text-center shadow-[0_4px_14px_rgba(0,0,0,0.05)] border border-slate-200/70 hover:shadow-md hover:border-slate-200 transition-all flex flex-col items-center justify-center">
+                  <div key={idx} className="w-[78vw] max-w-[290px] sm:w-auto sm:max-w-none shrink-0 sm:shrink snap-start sm:snap-align-none bg-white rounded-2xl p-6 text-center shadow-[0_4px_14px_rgba(0,0,0,0.05)] border border-slate-200/70 hover:shadow-md hover:border-slate-200 transition-all flex flex-col items-center justify-start">
                     <div className="w-14 h-14 sm:w-16 sm:h-16 mb-4 flex items-center justify-center">
                       <img src={service.icon} alt={service.title} className="w-full h-full object-contain" />
                     </div>
@@ -404,16 +404,16 @@ export default function JobGrindingPage() {
                 imgPath: "/images/job-grinding/services-offered/training-facility.png"
               }
             ].map((service, idx) => (
-              <div key={idx} className="w-[78vw] max-w-[300px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white border border-slate-200/70 rounded-3xl lg:rounded-[32px] overflow-hidden shadow-[0_4px_14px_rgba(0,0,0,0.05)] hover:shadow-md transition-shadow">
+              <div key={idx} className="w-[78vw] max-w-[300px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white border border-slate-200/70 rounded-3xl lg:rounded-[32px] overflow-hidden shadow-[0_4px_14px_rgba(0,0,0,0.05)] hover:shadow-md transition-shadow flex flex-col">
                 <div className="aspect-[4/3] w-full overflow-hidden p-2.5 lg:p-3 pb-0">
                   <div className="w-full h-full rounded-2xl overflow-hidden relative">
                      <img src={service.imgPath} alt={service.title} className="w-full h-full object-cover" />
                   </div>
                 </div>
-                <div className="p-5 md:p-5 lg:p-8 space-y-2 lg:space-y-3">
+                <div className="p-5 md:p-5 lg:p-8 space-y-2 lg:space-y-3 flex-1 flex flex-col">
                   <h4 className="text-lg lg:text-xl font-heading font-black text-[#133020] leading-snug">{service.title}</h4>
                   <p className="text-sm lg:text-base text-slate-600 font-normal leading-relaxed">{service.desc}</p>
-                  <ArrowRight className="w-4 h-4 text-[#D3994B] mt-2" />
+                  <ArrowRight className="w-4 h-4 text-[#D3994B] mt-auto! pt-2 box-content" />
                 </div>
               </div>
             ))}
@@ -466,8 +466,8 @@ export default function JobGrindingPage() {
                 <div className="w-2 shrink-0 sm:hidden" aria-hidden="true" />
               </div>
 
-              <div className="flex flex-col lg:flex-row lg:items-center gap-6 border-t border-white/10 pt-8 justify-between">
-                <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto">
+              <div className="flex flex-col xl:flex-row xl:items-center gap-6 border-t border-white/10 pt-8 justify-between">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full xl:w-auto">
                   <a
                     href="https://wa.me/919240289259?text=Hello%2C%20I%20am%20interested%20in%20your%20Job%20Grinding%20service."
                     target="_blank"
@@ -486,7 +486,7 @@ export default function JobGrindingPage() {
                   </Link>
                 </div>
 
-                <div className="bg-black/40 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-white/10 w-full lg:max-w-sm">
+                <div className="bg-black/40 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-white/10 w-full sm:max-w-md xl:max-w-sm">
                   <p className="text-white font-bold text-xs sm:text-sm leading-tight mb-1">
                     Trusted by businesses worldwide
                   </p>

@@ -95,7 +95,7 @@ export default function AboutHero({ onScrollToSection }: AboutHeroProps) {
   return (
     <section className="relative w-full overflow-hidden bg-slate-900">
       {/* 1. HERO SLIDESHOW BANNER - Exactly matches Turnkey / Product hero aspect ratio */}
-      <div className="relative w-full aspect-[1079/1920] md:aspect-[1920/820] overflow-hidden flex items-center">
+      <div className="relative w-full aspect-[1079/1920] md:aspect-[1920/820] md:min-h-[460px] lg:min-h-[520px] overflow-hidden flex items-center">
         {/* Slides Images with smooth cross-fade */}
         {slides.map((slide, idx) => (
           <div
@@ -118,7 +118,7 @@ export default function AboutHero({ onScrollToSection }: AboutHeroProps) {
         <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-transparent z-10" />
 
         {/* Hero Left Content */}
-        <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-20 pt-16 sm:pt-20 pb-8">
+        <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-20 pt-16 sm:pt-20 md:pt-32 lg:pt-28 pb-8">
           <div className="max-w-2xl lg:max-w-3xl space-y-4 sm:space-y-6">
 
             {/* Main Heading */}

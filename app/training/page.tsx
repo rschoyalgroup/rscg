@@ -135,7 +135,7 @@ export default function TrainingPage() {
                 priority
                 sizes="100vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/90 via-[#0B1510]/55 to-transparent z-10 w-full" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/90 via-[#0B1510]/65 to-[#0B1510]/40 z-10 w-full" />
             </div>
           </div>
 
@@ -210,8 +210,8 @@ export default function TrainingPage() {
         </div>
 
         {/* Learn with CHARGE Section */}
-        <section className="w-full pt-6 sm:pt-12 md:pt-36 lg:pt-40 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <section className="w-full pt-6 sm:pt-12 md:pt-40 lg:pt-40 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24">
+          <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16 items-center">
 
             <div className="space-y-6">
               <div className="space-y-2">
@@ -334,7 +334,7 @@ export default function TrainingPage() {
             </p>
           </div>
 
-          <div className="sm:w-full flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 scroll-pl-6 sm:scroll-pl-0 pb-4 sm:pb-0">
+          <div className="sm:w-full flex sm:grid sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 scroll-pl-6 sm:scroll-pl-0 pb-4 sm:pb-0">
             {trainingPrograms.map((program, idx) => (
               <div
                 key={idx}

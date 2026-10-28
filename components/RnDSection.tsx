@@ -42,9 +42,9 @@ export default function RnDSection() {
       className="w-full py-16 sm:py-24 bg-slate-50 border-t border-slate-200/50 scroll-mt-28"
     >
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-10 xl:gap-16 items-start">
           {/* Left Column: Heading and Narrative */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="xl:col-span-5 space-y-6">
             <div>
               <p className="text-xs sm:text-sm font-bold text-slate-600 tracking-wider mb-3">
                 Research &amp; innovation
@@ -73,7 +73,7 @@ export default function RnDSection() {
           </div>
 
           {/* Right Column: 4-Item List */}
-          <div className="lg:col-span-7 divide-y divide-slate-200/80">
+          <div className="xl:col-span-7 divide-y divide-slate-200/80">
             {rndCapabilities.map((item) => (
               <div
                 key={item.number}

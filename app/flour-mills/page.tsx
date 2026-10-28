@@ -90,7 +90,7 @@ export default function FlourMills() {
               sizes="100vw"
             />
             {/* Mobile gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/65 to-[#0B1510]/40"></div>
           </div>
         </div>
 
@@ -124,21 +124,21 @@ export default function FlourMills() {
       <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-6xl">
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-row divide-x divide-slate-100 overflow-hidden">
           
-          <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
+          <div className="flex-1 p-5 lg:p-6 xl:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-start text-center">
             <div className="w-12 h-12 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs mb-3"><Cpu className="w-6 h-6" /></div>
-            <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Digital mills</h3>
+            <h3 className="font-heading font-black text-lg lg:text-xl xl:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Digital mills</h3>
             <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">Touch screen PLC-driven smart grinders for high capacity and efficiency.</p>
           </div>
 
-          <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
+          <div className="flex-1 p-5 lg:p-6 xl:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-start text-center">
             <div className="w-12 h-12 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs mb-3"><Settings2 className="w-6 h-6" /></div>
-            <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Semi-automatic & sheller mills</h3>
+            <h3 className="font-heading font-black text-lg lg:text-xl xl:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Semi-automatic & sheller mills</h3>
             <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">Sensor-controlled modern mill plants engineered for precision grinding.</p>
           </div>
 
-          <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
+          <div className="flex-1 p-5 lg:p-6 xl:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-start text-center">
             <div className="w-12 h-12 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs mb-3"><Wifi className="w-6 h-6" /></div>
-            <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Operate from anywhere</h3>
+            <h3 className="font-heading font-black text-lg lg:text-xl xl:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Operate from anywhere</h3>
             <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">Track status and remote working easily with connected milling technology.</p>
           </div>
 
@@ -234,12 +234,12 @@ export default function FlourMills() {
           </div>
 
           {/* Product Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6 lg:gap-8 pt-4 w-full">
+          <div className="flex flex-wrap justify-center gap-3.5 sm:gap-6 lg:gap-8 pt-4 w-full">
             {filteredProducts.map((prod) => (
               <Link
                 key={prod.id}
                 href={`/flour-mills/${prod.id}`}
-                className="group flex flex-col bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer"
+                className="w-[calc(50%-7px)] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-21.34px)] group flex flex-col bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer"
               >
                 <div className="relative aspect-square sm:aspect-[4/3] w-full bg-slate-50 overflow-hidden border-b border-slate-100 flex items-center justify-center p-3 sm:p-6">
                   <span className="hidden sm:inline-block absolute top-4 left-4 z-10 bg-white/90 backdrop-blur text-[10px] font-black text-brand-primary px-2.5 py-1 rounded-full border border-slate-200/50 shadow-sm">
@@ -277,7 +277,7 @@ export default function FlourMills() {
       </section>
 
       {/* Link to Contact CTA Banner */}
-      <section className="w-full py-10 sm:py-14 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#f6f6f4] relative z-10">
+      <section className="w-full py-10 sm:py-14 px-6 sm:px-12 lg:px-16 xl:px-24 bg-slate-50 relative z-10">
         <div className="w-full mx-auto">
           <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[24px] sm:rounded-[28px] p-6 sm:p-10 lg:p-12 shadow-2xl flex flex-col items-center text-center lg:text-left lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 border border-white/10 relative overflow-hidden">
             {/* Background Texture matching Wonder Mill */}

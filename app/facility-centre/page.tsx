@@ -82,7 +82,7 @@ export default function FacilityCentrePage() {
                 sizes="100vw"
               />
               {/* Mobile gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/65 to-[#0B1510]/40"></div>
             </div>
           </div>
 
@@ -115,18 +115,18 @@ export default function FacilityCentrePage() {
         <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-5xl">
           <div className="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-row divide-x divide-slate-100 overflow-hidden">
 
-            <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
-              <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">40 TPD</h3>
+            <div className="flex-1 p-5 lg:p-6 xl:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-start text-center">
+              <h3 className="font-heading font-black text-lg lg:text-xl xl:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">40 TPD</h3>
               <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">Pilot plant capacity</p>
             </div>
 
-            <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
-              <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">Machinery in action</h3>
+            <div className="flex-1 p-5 lg:p-6 xl:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-start text-center">
+              <h3 className="font-heading font-black text-lg lg:text-xl xl:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">Machinery in action</h3>
               <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">Live machine demonstrations</p>
             </div>
 
-            <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
-              <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">Train. Test. Validate.</h3>
+            <div className="flex-1 p-5 lg:p-6 xl:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-start text-center">
+              <h3 className="font-heading font-black text-lg lg:text-xl xl:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">Train. Test. Validate.</h3>
               <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">All in one place</p>
             </div>
 
@@ -155,7 +155,7 @@ export default function FacilityCentrePage() {
           </div>
         </div>
 
-        <section id="facility-overview" className="w-full pt-6 sm:pt-12 md:pt-6 xl:pt-16 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 relative md:-mt-12 lg:-mt-16">
+        <section id="facility-overview" className="w-full pt-6 sm:pt-12 md:pt-10 lg:pt-14 xl:pt-16 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 relative md:-mt-12 lg:-mt-16">
 
           {/* See, Test & Learn Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-20 items-stretch mb-16">
@@ -177,8 +177,8 @@ export default function FacilityCentrePage() {
             </div>
 
             {/* Specifications Card */}
-            <div className="bg-white rounded-[24px] sm:rounded-[32px] p-5 sm:p-8 lg:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col">
-              <ul className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-x-4 gap-y-4 sm:gap-y-0 md:gap-x-10 lg:gap-x-0 lg:flex-1 lg:content-between">
+            <div className="bg-white rounded-[24px] sm:rounded-[32px] p-5 sm:p-8 lg:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col justify-center">
+              <ul className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-x-4 gap-y-4 sm:gap-y-0 md:gap-x-10 lg:gap-x-0 lg:my-auto">
                 {facilitySpecs.map((spec, idx) => (
                   <li key={idx} className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6 sm:py-4 lg:py-5 sm:first:pt-0 md:[&:nth-child(2)]:pt-0 lg:[&:nth-child(2)]:pt-5 sm:border-b border-slate-100 last:border-0 last:pb-0 last:col-span-2 sm:last:col-span-1 md:last:col-span-2 lg:last:col-span-1">
                     <div className="flex items-center gap-3 sm:w-48 md:w-32 lg:w-40 xl:w-48 shrink-0">
@@ -197,9 +197,9 @@ export default function FacilityCentrePage() {
             {/* Background Texture matching Wonder Mill */}
             <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
 
-            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 sm:divide-x divide-white/10">
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-4 xl:divide-x divide-white/10">
               {capabilities.map((cap, idx) => (
-                <div key={idx} className={`flex items-center gap-4 ${idx > 0 ? "sm:pl-5 lg:pl-6" : ""}`}>
+                <div key={idx} className={`flex items-center gap-4 ${idx > 0 ? "xl:pl-6" : ""}`}>
                   <div className="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center p-3 shrink-0 shadow-sm">
                     <img src={cap.iconPath} alt={cap.title} className="w-full h-full object-contain" />
                   </div>
@@ -264,11 +264,11 @@ export default function FacilityCentrePage() {
           </div>
 
           {/* Bottom CTA Banner */}
-          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 shadow-xl border border-white/10">
+          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 shadow-xl border border-white/10">
             {/* Background Texture matching Wonder Mill */}
             <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 max-w-2xl relative z-10 text-center sm:text-left">
+            <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-6 max-w-2xl relative z-10 text-center lg:text-left">
               <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20 p-3.5">
                 <img src="/images/services/facility-center/icons/schedule_visit.png" alt="Schedule a Visit" className="w-full h-full object-contain brightness-0 invert" />
               </div>
@@ -282,10 +282,10 @@ export default function FacilityCentrePage() {
               </div>
             </div>
 
-            <div className="relative z-10 shrink-0 w-full md:w-auto">
+            <div className="relative z-10 shrink-0 w-full sm:w-auto">
               <Link
                 href="/contact"
-                className="inline-flex w-full md:w-auto items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm tracking-wide cursor-pointer whitespace-nowrap"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm tracking-wide cursor-pointer whitespace-nowrap"
               >
                 <span>Discuss your requirement</span>
                 <ArrowRight className="w-4 h-4" />

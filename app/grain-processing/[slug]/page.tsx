@@ -45,7 +45,7 @@ export default function GrainProcessingProductPage() {
         <div className="grid grid-cols-1 xl:grid-cols-2 xl:items-start gap-6 sm:gap-8 xl:gap-20 mb-12 lg:mb-24">
 
           {/* Left Column: Image & Note */}
-          <div className="flex flex-col gap-4 xl:sticky xl:top-28 self-start w-full">
+          <div className="contents xl:flex xl:flex-col xl:gap-4 xl:sticky xl:top-28 xl:self-start xl:w-full">
             <div className="bg-white border border-slate-100 rounded-3xl overflow-hidden flex items-center justify-center relative shadow-sm aspect-[4/3] sm:aspect-[16/9] xl:aspect-auto xl:h-[calc(100vh-16rem)] xl:min-h-[260px] xl:max-h-[480px]">
               <img
                 src={product.image}
@@ -53,7 +53,7 @@ export default function GrainProcessingProductPage() {
                 className="object-contain w-full h-full p-4 sm:p-6"
               />
             </div>
-            <div className="flex items-start gap-3 bg-[#f6f9f1] border border-[#e5eddb] rounded-2xl p-4">
+            <div className="order-last xl:order-none flex items-start gap-3 bg-[#f6f9f1] border border-[#e5eddb] rounded-2xl p-4">
               <Info className="w-4 h-4 text-[#4a5f36] flex-shrink-0 mt-0.5" />
               <p className="text-xs text-[#4a5f36] leading-relaxed font-medium">
                 * Dimensions, parameters, and capacities shown are for standard models. Customizable specs are available upon request. Contact our engineering team for personalized setups.
@@ -139,11 +139,11 @@ export default function GrainProcessingProductPage() {
               <p className="text-slate-500 font-medium">Built for continuous, high efficiency processing</p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:flex lg:flex-wrap lg:justify-center gap-3 sm:gap-4 lg:gap-6">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 lg:gap-6">
               {product.keyFeatures.map((feature, idx) => {
                 const Icon = require("lucide-react")[feature.icon] || Box;
                 return (
-                  <div key={idx} className="lg:w-[calc(25%-18px)] bg-white border border-slate-100 p-4 sm:p-5 lg:p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                  <div key={idx} className="w-[calc(50%-6px)] sm:w-[calc(50%-8px)] md:w-[calc(33.333%-10.67px)] lg:w-[calc(25%-18px)] bg-white border border-slate-100 p-4 sm:p-5 lg:p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
                     <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#f0fdf4] text-[#16a34a] rounded-lg flex items-center justify-center mb-3 sm:mb-4">
                       <Icon className="w-5 h-5" />
                     </div>
@@ -161,15 +161,15 @@ export default function GrainProcessingProductPage() {
         {/* Available Models Section */}
         {product.models && product.models.length > 0 && (
           <div className="mb-12 lg:mb-24 max-w-4xl mx-auto">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-6 mb-6 lg:mb-10 pb-4 border-b border-slate-100">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 lg:gap-6 mb-6 lg:mb-10 pb-4 border-b border-slate-100">
               <h3 className="text-xl sm:text-2xl font-heading font-black text-[#0B1510]">Available models</h3>
 
-              <div className="flex p-1 bg-slate-50 rounded-lg border border-slate-200 self-stretch md:self-auto shrink-0 overflow-x-auto">
+              <div className="flex flex-wrap gap-1 p-1 bg-slate-50 rounded-lg border border-slate-200 self-stretch lg:self-auto lg:shrink-0">
                 {product.models.map((model, mIdx) => (
                   <button
                     key={mIdx}
                     onClick={() => setActiveModelTab(mIdx)}
-                    className={`flex-1 md:flex-none whitespace-nowrap px-4 py-2 text-xs md:text-sm font-bold rounded-md transition-all duration-200 ${activeModelTab === mIdx ? 'bg-[#0f2e1a] text-white shadow-sm' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'}`}
+                    className={`flex-1 lg:flex-none text-center leading-snug px-3 sm:px-4 py-2 text-xs md:text-sm font-bold rounded-md transition-all duration-200 ${activeModelTab === mIdx ? 'bg-[#0f2e1a] text-white shadow-sm' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'}`}
                   >
                     {model.name}
                   </button>

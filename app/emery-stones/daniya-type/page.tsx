@@ -136,7 +136,7 @@ export default function DaniyaTypeStones() {
                 </p>
               </div>
 
-              <div className="space-y-3 max-h-[500px] overflow-y-auto pr-2">
+              <div className="space-y-3 xl:max-h-[500px] xl:overflow-y-auto xl:pr-2">
               {sizes.map((sizeItem) => (
                   <div
                     key={sizeItem.code}

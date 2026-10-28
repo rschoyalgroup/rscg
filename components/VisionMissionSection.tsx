@@ -34,7 +34,7 @@ function VisionMissionCard({ id, Icon, eyebrow, title, desc, image }: (typeof ca
         />
       </div>
 
-      <div className="p-5 sm:p-7 xl:p-9 xl:pr-[285px] flex flex-col justify-between relative z-10 flex-1 min-w-0 bg-transparent">
+      <div className="p-5 sm:p-7 xl:p-9 xl:pr-[285px] flex flex-col justify-start xl:justify-between relative z-10 flex-1 min-w-0 bg-transparent">
         <div>
           <div className="flex items-start gap-3 sm:gap-5 mb-2.5 sm:mb-4">
             <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-[#17422C] flex items-center justify-center shrink-0 text-white shadow-[0_0_0_4px_#E6EFEA] sm:shadow-[0_0_0_5px_#E6EFEA]">

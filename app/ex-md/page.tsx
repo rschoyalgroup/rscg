@@ -33,15 +33,15 @@ export default function ExMdPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
               {/* Left Sidebar Card */}
               <div className="lg:col-span-4 lg:sticky lg:top-28">
-                <div className="bg-white border border-slate-200/80 p-6 rounded-[28px] shadow-sm space-y-6">
-                  <div className="w-full relative rounded-2xl overflow-hidden border border-slate-100 bg-[#EAEAEA]">
+                <div className="bg-white border border-slate-200/80 p-6 rounded-[28px] shadow-sm space-y-6 md:space-y-0 md:flex md:items-center md:gap-8 lg:block lg:space-y-6">
+                  <div className="w-full md:w-[38%] md:shrink-0 lg:w-full relative rounded-2xl overflow-hidden border border-slate-100 bg-[#EAEAEA]">
                     <img
                       src="/images/about/leadership/R.D%20Sharma.jpg"
                       alt="Late Shri R. D. Sharma"
                       className="w-full h-auto block opacity-95"
                     />
                   </div>
-                  <div className="space-y-4">
+                  <div className="space-y-4 md:flex-1 md:min-w-0">
                     <div>
                       <h2 className="text-xl font-heading font-black text-slate-900">Late Shri R. D. Sharma</h2>
                       <p className="text-brand-primary text-xs font-bold tracking-wider mt-1">Co-Founder &amp; Ex-Managing Director</p>

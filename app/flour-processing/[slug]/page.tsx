@@ -44,7 +44,7 @@ export default function FlourProcessingProductPage() {
         <div className="grid grid-cols-1 xl:grid-cols-2 xl:items-start gap-6 sm:gap-8 xl:gap-20 mb-12 lg:mb-24">
 
           {/* Left Column: Image & Note */}
-          <div className="flex flex-col gap-4 xl:sticky xl:top-28 self-start w-full">
+          <div className="contents xl:flex xl:flex-col xl:gap-4 xl:sticky xl:top-28 xl:self-start xl:w-full">
             <div className="bg-white border border-slate-100 rounded-3xl overflow-hidden flex items-center justify-center relative shadow-sm aspect-[4/3] sm:aspect-[16/9] xl:aspect-auto xl:h-[calc(100vh-16rem)] xl:min-h-[260px] xl:max-h-[480px]">
                 <img
                   src={product.image}
@@ -52,7 +52,7 @@ export default function FlourProcessingProductPage() {
                   className="object-contain w-full h-full p-4 sm:p-6"
                 />
             </div>
-            <div className="flex items-start gap-3 bg-[#f6f9f1] border border-[#e5eddb] rounded-2xl p-4">
+            <div className="order-last xl:order-none flex items-start gap-3 bg-[#f6f9f1] border border-[#e5eddb] rounded-2xl p-4">
               <Info className="w-4 h-4 text-[#4a5f36] flex-shrink-0 mt-0.5" />
               <p className="text-xs text-[#4a5f36] leading-relaxed font-medium">
                 * Dimensions, parameters, and capacities shown are for standard models. Customizable specs are available upon request. Contact our engineering team for personalized setups.
@@ -138,11 +138,11 @@ export default function FlourProcessingProductPage() {
               <p className="text-slate-500 font-medium">Built for continuous, high efficiency processing</p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:flex lg:flex-wrap lg:justify-center gap-3 sm:gap-4 lg:gap-6">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 lg:gap-6">
               {product.keyFeatures.map((feature, idx) => {
                 const Icon = require("lucide-react")[feature.icon] || Box;
                 return (
-                  <div key={idx} className="lg:w-[calc(25%-18px)] bg-white border border-slate-100 p-4 sm:p-5 lg:p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                  <div key={idx} className="w-[calc(50%-6px)] sm:w-[calc(50%-8px)] md:w-[calc(33.333%-10.67px)] lg:w-[calc(25%-18px)] bg-white border border-slate-100 p-4 sm:p-5 lg:p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
                     <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#f0fdf4] text-[#16a34a] rounded-lg flex items-center justify-center mb-3 sm:mb-4">
                       <Icon className="w-5 h-5" />
                     </div>
@@ -173,26 +173,51 @@ export default function FlourProcessingProductPage() {
                 </h4>
               </div>
 
-              <div className="overflow-x-auto">
+              {/* Phones: one card per model, so no column is hidden off-screen */}
+              <div className="sm:hidden divide-y divide-slate-100">
+                {product.specs.map((spec, idx) => {
+                  const rows: [string, string | undefined][] =
+                    product.slug === 'vibro-sifter'
+                      ? [['Capacity', spec.specification], ['Deck type', spec.extra], ['Power', spec.col6]]
+                      : product.slug === 'plan-sifter'
+                      ? [['Length', spec.specification], ['Width', spec.col3], ['Height', spec.col4], ['Capacity', spec.col5], ['Power', spec.col6]]
+                      : [['Specification', spec.specification]];
+                  return (
+                    <div key={idx} className="px-4 py-4">
+                      <div className="font-bold text-slate-900 text-sm mb-2.5">{spec.parameter}</div>
+                      <dl className="grid grid-cols-2 gap-x-4 gap-y-2">
+                        {rows.filter(([, v]) => v).map(([k, v]) => (
+                          <div key={k} className="min-w-0">
+                            <dt className="text-[11px] font-bold tracking-wider text-slate-400">{k}</dt>
+                            <dd className="text-[13px] text-slate-700 font-medium break-words">{v}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="hidden sm:block overflow-x-auto">
                 <table className="w-full text-left text-[13px] sm:text-sm whitespace-nowrap">
                   <thead className="bg-white border-b border-slate-100 text-slate-400 tracking-wider text-[11px] font-bold">
                     <tr>
-                      <th className="hidden sm:table-cell px-3 py-3 sm:px-6 sm:py-4 w-12 text-center">#</th>
-                      <th className="px-3 py-3 sm:px-6 sm:py-4">
+                      <th className="hidden sm:table-cell px-3 py-3 sm:px-4 sm:py-4 lg:px-6 w-12 text-center">#</th>
+                      <th className="px-3 py-3 sm:px-4 sm:py-4 lg:px-6">
                         {product.slug === 'vibro-sifter' ? 'Vibro sifter size' :
                          product.slug === 'plan-sifter' ? 'Plan sifter size' : 'Parameter'}
                       </th>
-                      <th className="px-3 py-3 sm:px-6 sm:py-4">
+                      <th className="px-3 py-3 sm:px-4 sm:py-4 lg:px-6">
                         {product.slug === 'vibro-sifter' ? 'Capacity' :
                          product.slug === 'plan-sifter' ? 'Length' : 'Specification'}
                       </th>
-                      {product.slug === 'vibro-sifter' && (<><th className="px-3 py-3 sm:px-6 sm:py-4">Deck type</th><th className="px-3 py-3 sm:px-6 sm:py-4">Power</th></>)}
+                      {product.slug === 'vibro-sifter' && (<><th className="px-3 py-3 sm:px-4 sm:py-4 lg:px-6">Deck type</th><th className="px-3 py-3 sm:px-4 sm:py-4 lg:px-6">Power</th></>)}
                       {product.slug === 'plan-sifter' && (
                         <>
-                          <th className="px-3 py-3 sm:px-6 sm:py-4">Width</th>
-                          <th className="px-3 py-3 sm:px-6 sm:py-4">Height</th>
-                          <th className="px-3 py-3 sm:px-6 sm:py-4">Capacity</th>
-                          <th className="px-3 py-3 sm:px-6 sm:py-4">Power</th>
+                          <th className="px-3 py-3 sm:px-4 sm:py-4 lg:px-6">Width</th>
+                          <th className="px-3 py-3 sm:px-4 sm:py-4 lg:px-6">Height</th>
+                          <th className="px-3 py-3 sm:px-4 sm:py-4 lg:px-6">Capacity</th>
+                          <th className="px-3 py-3 sm:px-4 sm:py-4 lg:px-6">Power</th>
                         </>
                       )}
                     </tr>
@@ -200,16 +225,16 @@ export default function FlourProcessingProductPage() {
                   <tbody className="divide-y divide-slate-100">
                     {product.specs.map((spec, idx) => (
                       <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
-                        <td className="hidden sm:table-cell px-3 py-3 sm:px-6 sm:py-4 text-center text-slate-400 font-medium text-xs">{idx + 1}</td>
-                        <td className="px-3 py-3 sm:px-6 sm:py-4 font-bold text-slate-800">{spec.parameter}</td>
-                        <td className="px-3 py-3 sm:px-6 sm:py-4 text-slate-600 font-medium">{spec.specification}</td>
-                        {product.slug === 'vibro-sifter' && (<><td className="px-3 py-3 sm:px-6 sm:py-4 text-slate-600">{spec.extra}</td><td className="px-3 py-3 sm:px-6 sm:py-4 text-slate-600 font-medium">{spec.col6}</td></>)}
+                        <td className="hidden sm:table-cell px-3 py-3 sm:px-4 sm:py-4 lg:px-6 text-center text-slate-400 font-medium text-xs">{idx + 1}</td>
+                        <td className="px-3 py-3 sm:px-4 sm:py-4 lg:px-6 font-bold text-slate-800">{spec.parameter}</td>
+                        <td className="px-3 py-3 sm:px-4 sm:py-4 lg:px-6 text-slate-600 font-medium">{spec.specification}</td>
+                        {product.slug === 'vibro-sifter' && (<><td className="px-3 py-3 sm:px-4 sm:py-4 lg:px-6 text-slate-600">{spec.extra}</td><td className="px-3 py-3 sm:px-4 sm:py-4 lg:px-6 text-slate-600 font-medium">{spec.col6}</td></>)}
                         {product.slug === 'plan-sifter' && (
                           <>
-                            <td className="px-3 py-3 sm:px-6 sm:py-4 text-slate-600 font-medium">{spec.col3}</td>
-                            <td className="px-3 py-3 sm:px-6 sm:py-4 text-slate-600 font-medium">{spec.col4}</td>
-                            <td className="px-3 py-3 sm:px-6 sm:py-4 text-slate-600 font-medium">{spec.col5}</td>
-                            <td className="px-3 py-3 sm:px-6 sm:py-4 text-slate-600 font-medium">{spec.col6}</td>
+                            <td className="px-3 py-3 sm:px-4 sm:py-4 lg:px-6 text-slate-600 font-medium">{spec.col3}</td>
+                            <td className="px-3 py-3 sm:px-4 sm:py-4 lg:px-6 text-slate-600 font-medium">{spec.col4}</td>
+                            <td className="px-3 py-3 sm:px-4 sm:py-4 lg:px-6 text-slate-600 font-medium">{spec.col5}</td>
+                            <td className="px-3 py-3 sm:px-4 sm:py-4 lg:px-6 text-slate-600 font-medium">{spec.col6}</td>
                           </>
                         )}
                       </tr>

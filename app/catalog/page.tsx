@@ -167,7 +167,7 @@ function CatalogContent() {
                             isActive ? "text-[#0E3321]" : "text-slate-400 group-hover:text-[#0E3321]"
                           }`} 
                         />
-                        <span className="truncate">{cat.name}</span>
+                        <span className="leading-snug">{cat.name}</span>
                       </div>
                       <span className={`text-xs px-2 py-0.5 rounded-full font-semibold shrink-0 ml-2 ${
                         isActive 
@@ -241,7 +241,7 @@ function CatalogContent() {
                       >
                         <div className="flex items-center gap-3 min-w-0">
                           <CategoryIcon id={cat.id} className="w-4 h-4 text-slate-400" />
-                          <span className="truncate">{cat.name}</span>
+                          <span className="leading-snug">{cat.name}</span>
                         </div>
                         <span className="text-xs text-slate-400 font-semibold ml-2">
                           {count}
@@ -352,7 +352,7 @@ function CatalogContent() {
             </div>
 
             {/* Product Cards Grid - 2 columns on mobile, 3 columns on desktop */}
-            <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-3.5 sm:gap-6 lg:gap-8" aria-live="polite">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-3.5 sm:gap-6 lg:gap-8" aria-live="polite">
               {filteredProducts.map((product) => {
                 return (
                   <Link

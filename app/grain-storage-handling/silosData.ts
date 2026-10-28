@@ -133,7 +133,7 @@ export const silosData: SiloProduct[] = [
         ]
       },
       {
-        title: "Available capacities stainless-steel models",
+        title: "Available capacities in stainless-steel models",
         items: [
           { model: "SS-5", capacity: "5 Ton", material: "Stainless Steel" },
           { model: "SS-10", capacity: "10 Ton", material: "Stainless Steel" },

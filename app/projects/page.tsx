@@ -63,7 +63,7 @@ export default function ProjectsPage() {
         <Header />
 
         {/* Hero Section - Matches exact aspect ratio so images are never cut off */}
-        <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] flex items-center overflow-hidden bg-[#0B1510]">
+        <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] md:min-h-[520px] lg:min-h-[560px] pt-24 sm:pt-28 flex items-center overflow-hidden bg-[#0B1510]">
           {/* Full-bleed Background Slideshow */}
           <div className="absolute inset-0 z-0 overflow-hidden">
             {heroImages.map((src, index) => (
@@ -83,7 +83,7 @@ export default function ProjectsPage() {
             ))}
             {/* Dark-charcoal gradient overlay */}
             <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#0B1510]/85 via-[#0B1510]/40 to-transparent z-10"></div>
-            <div className="block md:hidden absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent z-10"></div>
+            <div className="block md:hidden absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/65 to-[#0B1510]/40 z-10"></div>
           </div>
 
           <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">

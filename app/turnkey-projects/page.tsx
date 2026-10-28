@@ -184,7 +184,7 @@ export default function TurnkeyProjects() {
               sizes="100vw"
             />
             {/* Dark-charcoal gradient overlay for mobile */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent z-10 w-full"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/65 to-[#0B1510]/40 z-10 w-full"></div>
           </div>
         </div>
 
@@ -261,7 +261,7 @@ export default function TurnkeyProjects() {
       </div>
 
       {/* Intro details */}
-      <section className="w-full pt-6 sm:pt-12 md:pt-36 lg:pt-44 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 bg-slate-50 relative z-10">
+      <section className="w-full pt-6 sm:pt-12 md:pt-44 lg:pt-44 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 bg-slate-50 relative z-10">
         <div className="w-full max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1c2722]">
             Engineering the Future of Smart Flour Milling
@@ -289,10 +289,10 @@ export default function TurnkeyProjects() {
           </div>
 
           <div className="flex lg:grid lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto lg:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 lg:pb-0">
-            {projectCapabilities.map((cap) => (
+            {projectCapabilities.map((cap, capIdx) => (
               <div 
                 key={cap.id} 
-                className="w-[74vw] max-w-[290px] lg:w-full lg:max-w-none shrink-0 lg:shrink snap-start lg:snap-align-none bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm hover:border-brand-secondary/40 hover:shadow-md transition-all duration-300 flex flex-row group"
+                className={`${capIdx === projectCapabilities.length - 1 && projectCapabilities.length % 2 === 1 ? "lg:col-span-2 lg:justify-self-center lg:w-[calc(50%-12px)] xl:col-span-1 xl:w-full " : "lg:w-full "}w-[74vw] max-w-[290px] lg:max-w-none shrink-0 lg:shrink snap-start lg:snap-align-none bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm hover:border-brand-secondary/40 hover:shadow-md transition-all duration-300 flex flex-row group`}
               >
                 {/* Image Half */}
                 <div className="w-[40%] relative shrink-0 min-h-[160px]">

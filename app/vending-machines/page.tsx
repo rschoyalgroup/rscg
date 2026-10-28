@@ -171,7 +171,7 @@ export default function BatchProductionPage() {
               sizes="100vw"
             />
             {/* Mobile gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/65 to-[#0B1510]/40"></div>
           </div>
         </div>
 
@@ -204,9 +204,9 @@ export default function BatchProductionPage() {
 
       {/* Desktop Key Proof Points Bar (50/50 Overlapping Hero Bottom) */}
       <div className="hidden md:block relative z-30 -translate-y-1/2 -mb-16 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-6xl">
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-7 flex flex-row items-center justify-between gap-4 divide-x divide-slate-100">
-          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 lg:p-7 flex flex-row items-stretch lg:items-center justify-between gap-2 lg:gap-4 divide-x divide-slate-100">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-start text-center lg:text-left gap-3 lg:gap-4.5 px-3 lg:px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <BarChart3 className="w-7 h-7" />
             </div>
             <div>
@@ -215,8 +215,8 @@ export default function BatchProductionPage() {
             </div>
           </div>
 
-          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-start text-center lg:text-left gap-3 lg:gap-4.5 px-3 lg:px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <ShieldCheck className="w-7 h-7" />
             </div>
             <div>
@@ -225,8 +225,8 @@ export default function BatchProductionPage() {
             </div>
           </div>
 
-          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-start text-center lg:text-left gap-3 lg:gap-4.5 px-3 lg:px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <Settings className="w-7 h-7" />
             </div>
             <div>
@@ -283,11 +283,11 @@ export default function BatchProductionPage() {
           <span className="text-slate-900">{activeModel}</span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-8 xl:gap-20 items-start">
 
           {/* Left Column: Product Image & Note */}
-          <div className="flex flex-col gap-4 sm:gap-6 md:sticky md:top-28">
-            <div className="bg-white border border-slate-100 rounded-3xl overflow-hidden flex items-center justify-center relative shadow-sm aspect-[4/3] sm:aspect-square p-8">
+          <div className="contents xl:flex xl:flex-col xl:gap-6 xl:sticky xl:top-28">
+            <div className="bg-white border border-slate-100 rounded-3xl overflow-hidden flex items-center justify-center relative shadow-sm aspect-[4/3] sm:aspect-[16/9] xl:aspect-square p-8">
               <Image
                 src={currentVariantData.image}
                 alt={`${activeModel} ${activeVariant}`}
@@ -295,7 +295,7 @@ export default function BatchProductionPage() {
                 className="object-contain p-4 sm:p-8"
               />
             </div>
-            <div className="flex items-start gap-3 bg-[#f6f9f1] border border-[#e5eddb] rounded-2xl p-4 sm:p-5">
+            <div className="order-last xl:order-none flex items-start gap-3 bg-[#f6f9f1] border border-[#e5eddb] rounded-2xl p-4 sm:p-5">
               <Info className="w-5 h-5 text-[#4a5f36] flex-shrink-0 mt-0.5" />
               <p className="text-xs text-[#4a5f36] leading-relaxed font-medium">
                 * Dimensions, parameters, and capacities shown are for standard models. Customizable specs are available upon request. Contact our engineering team for personalized setups.
@@ -310,7 +310,7 @@ export default function BatchProductionPage() {
               <h3 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-[#0a4c2a] tracking-tight">
                 Floura
               </h3>
-              <p className="text-slate-600 text-sm leading-relaxed max-w-xl">
+              <p className="text-slate-600 text-sm sm:text-base xl:text-sm leading-relaxed xl:max-w-xl">
                 Floura is a high-performance flour mill with batch production designed for efficient commercial grinding, high flour extraction, and effortless operation. Built for modern atta mills, Floura combines robust engineering with user-friendly operation to provide reliable performance and better control over the milling process.
               </p>
             </div>
@@ -471,7 +471,7 @@ export default function BatchProductionPage() {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-12 gap-y-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 lg:gap-x-12 gap-y-0">
             {/* Left Specs Column */}
             <div className="flex flex-col divide-y divide-slate-200/60">
               {leftSpecs.map((spec, i) => {

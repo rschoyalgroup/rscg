@@ -50,12 +50,12 @@ const solutionCards: SolutionCard[] = [
 
 export default function WebSolutionsPage() {
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-foreground font-sans flex flex-col justify-between">
+    <div className="min-h-screen bg-slate-50 text-brand-foreground font-sans flex flex-col justify-between">
       <div>
         <Header />
 
         {/* Hero Section */}
-        <section className="relative w-full h-[240px] sm:h-[300px] overflow-hidden flex items-center bg-slate-900">
+        <section className="relative w-full min-h-[340px] sm:min-h-[400px] pt-24 sm:pt-28 pb-10 overflow-hidden flex items-center bg-slate-900">
           <div className="absolute inset-0 bg-[url('/images/web-solutions/banner.jpg')] bg-cover bg-center opacity-30" />
           <div className="absolute inset-0 bg-slate-900/60" />
           <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-10">

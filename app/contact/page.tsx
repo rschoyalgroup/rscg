@@ -97,7 +97,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              {/* Contact Items (email & phone side by side on mobile) */}
+              {/* Contact Items */}
               <div className="grid grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-x-3 gap-y-4 sm:gap-6">
                 {/* Corporate Headquarters */}
                 <div className="col-span-2 sm:col-span-1 flex items-start gap-3 sm:gap-4">
@@ -132,7 +132,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Email */}
-                <div className="flex items-start gap-3 sm:gap-4 min-w-0">
+                <div className="col-span-2 sm:col-span-1 lg:col-span-1 xl:col-span-2 flex items-start gap-3 sm:gap-4 min-w-0">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                     <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900" />
                   </div>
@@ -150,7 +150,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Phone */}
-                <div className="flex items-start gap-3 sm:gap-4 min-w-0">
+                <div className="col-span-2 sm:col-span-1 lg:col-span-1 xl:col-span-2 flex items-start gap-3 sm:gap-4 min-w-0">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                     <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900" />
                   </div>

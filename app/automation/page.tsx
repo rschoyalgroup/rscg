@@ -41,7 +41,7 @@ export default function AutomationPage() {
               sizes="100vw"
             />
             {/* Mobile gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/65 to-[#0B1510]/40"></div>
           </div>
         </div>
 
@@ -71,8 +71,8 @@ export default function AutomationPage() {
 
       {/* Desktop Key Proof Points Bar (50/50 Overlapping Hero Bottom) */}
       <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-6xl">
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-7 flex flex-row items-center justify-between gap-4 divide-x divide-slate-100">
-          <div className="w-full flex items-center gap-4 px-3 group hover:bg-[#eaf1ec] p-3.5 rounded-xl transition-colors cursor-default">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 lg:p-7 flex flex-row items-stretch lg:items-center justify-between gap-2 lg:gap-4 divide-x divide-slate-100">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-start text-center lg:text-left gap-3 lg:gap-4 px-3 group hover:bg-[#eaf1ec] p-3.5 rounded-xl transition-colors cursor-default">
             <div className="w-13 h-13 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <MonitorSmartphone className="w-6 h-6" />
             </div>
@@ -81,7 +81,7 @@ export default function AutomationPage() {
               <p className="text-sm text-slate-600 font-medium mt-0.5">Complete mill operation from single control panel.</p>
             </div>
           </div>
-          <div className="w-full flex items-center gap-4 px-3 group hover:bg-[#eaf1ec] p-3.5 rounded-xl transition-colors cursor-default">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-start text-center lg:text-left gap-3 lg:gap-4 px-3 group hover:bg-[#eaf1ec] p-3.5 rounded-xl transition-colors cursor-default">
             <div className="w-13 h-13 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <Settings2 className="w-6 h-6" />
             </div>
@@ -90,7 +90,7 @@ export default function AutomationPage() {
               <p className="text-sm text-slate-600 font-medium mt-0.5">Reliable control across every milling stage.</p>
             </div>
           </div>
-          <div className="w-full flex items-center gap-4 px-3 group hover:bg-[#eaf1ec] p-3.5 rounded-xl transition-colors cursor-default">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-start text-center lg:text-left gap-3 lg:gap-4 px-3 group hover:bg-[#eaf1ec] p-3.5 rounded-xl transition-colors cursor-default">
             <div className="w-13 h-13 rounded-2xl bg-[#f0fdf4] text-[#0A4446] flex items-center justify-center flex-shrink-0 shadow-xs">
               <Zap className="w-6 h-6" />
             </div>
@@ -200,7 +200,7 @@ export default function AutomationPage() {
           </p>
         </div>
 
-        <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 sm:pb-0">
+        <div className="flex sm:flex-wrap sm:justify-center gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 sm:pb-0">
           {[
             { 
               title: "Increased yield", 
@@ -233,7 +233,7 @@ export default function AutomationPage() {
               icon: Settings2
             }
           ].map((benefit, idx) => (
-            <div key={idx} className="w-[74vw] max-w-[290px] sm:w-full sm:max-w-none shrink-0 sm:shrink snap-start sm:snap-align-none bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow">
+            <div key={idx} className="w-[74vw] max-w-[290px] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(20%-19.2px)] sm:max-w-none shrink-0 snap-start sm:snap-align-none bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow">
               <div className="relative h-40 w-full">
                 <div className="absolute inset-0 overflow-hidden">
                   <Image src={benefit.img} alt={benefit.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -302,7 +302,7 @@ export default function AutomationPage() {
       </section>
 
       {/* Footer CTA */}
-      <section className="w-full py-10 sm:py-14 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#f6f6f4] relative z-10">
+      <section className="w-full py-10 sm:py-14 px-6 sm:px-12 lg:px-16 xl:px-24 bg-slate-50 relative z-10">
         <div className="w-full mx-auto">
           <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[24px] sm:rounded-[28px] p-6 sm:p-10 lg:p-12 shadow-2xl flex flex-col items-center text-center lg:text-left lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 border border-white/10 relative overflow-hidden">
             {/* Background Texture matching Wonder Mill */}

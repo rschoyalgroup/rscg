@@ -101,6 +101,9 @@ export default function WalkthroughSection() {
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
 
+                {/* Light permanent scrim so the label and heading stay readable on bright photos */}
+                <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/75 via-black/30 to-transparent pointer-events-none" aria-hidden="true" />
+
                 {/* Dark Gradient Scrim - only appears on hover or active */}
                 <div
                   className={`absolute inset-0 bg-gradient-to-t from-black/95 via-black/75 via-45% to-transparent pointer-events-none transition-opacity duration-500 ease-out ${

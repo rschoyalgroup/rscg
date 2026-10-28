@@ -5,7 +5,7 @@ import LeaderGroups from "./LeaderGroups";
 
 export default function OtherLeadersSection() {
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24 bg-[#FBFBFA] border-t border-slate-200/60">
+    <section className="w-full py-16 sm:py-20 lg:py-24 bg-slate-50 border-t border-slate-200/60">
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto">
         {/* Section Header */}
         <div className="mb-10 sm:mb-12">
